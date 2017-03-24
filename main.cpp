@@ -17,7 +17,8 @@
  * \n Email: harshatejagarimella@gmail.com
  *
  * Jesse Gerber
- * MS Candidate, Mechanical Engineering
+ * MS Candidate, Mechanical Engineering,
+ * The Pennsylvania State University.
  * 
  * Reuben H. Kraft, Ph.D.
  * \n Shuman Asst. Professor,
