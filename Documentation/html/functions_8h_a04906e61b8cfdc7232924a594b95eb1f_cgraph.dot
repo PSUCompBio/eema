@@ -1,0 +1,25 @@
+digraph "fe_mass_hex"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node228 [label="fe_mass_hex",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node228 -> Node229 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node229 [label="guass_points_3d",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#a502e3469e1cc253deb142f46c0789a78"];
+  Node228 -> Node230 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node230 [label="guass_weights_3d",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#ad99b08ce65ae353e91486d7685c22024"];
+  Node230 -> Node231 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node231 [label="guass_weights",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fe__guass_8cpp.html#a84dcc9575e861bdb2872c10ba6238ee4"];
+  Node228 -> Node232 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node232 [label="fe_shapes_8",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#ab77a3a6d6f6b436d7e8c600bb0869927"];
+  Node228 -> Node233 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node233 [label="fe_dndr_8",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#afc547bef246c057db6cbd04bf7f866a9"];
+  Node228 -> Node234 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node234 [label="fe_dnds_8",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#ac0b5524525e1f2e89bb064c15ab8e664"];
+  Node228 -> Node235 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node235 [label="fe_dndt_8",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#a57e8e5c9f740c98e4767f29c121c2d0a"];
+  Node228 -> Node236 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node236 [label="fe_calJacobian",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#a12aa5a7a3443c6fcc5e65d3bcfc9bcc3"];
+  Node228 -> Node237 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node237 [label="fe_shapeMatrix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#a98fae74dde5fe33a7062e7457a2d3227"];
+}

@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/vsg111/Dropbox/Work/Papers/Paper_EEM_Computational/EEM_Dynamic/third-party-libs/doxygen-1.8.13/src/portable_c.c
+AvailabilityMacros.h
+-
+iconv.h
+-
+

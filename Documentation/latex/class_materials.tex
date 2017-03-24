@@ -1,0 +1,119 @@
+\hypertarget{class_materials}{}\section{Materials Class Reference}
+\label{class_materials}\index{Materials@{Materials}}
+
+
+{\ttfamily \#include $<$Materials.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_materials_a06e59a5742730b2292d39b7488523505}{read\+Mats} (int a, std\+::string b, Vector\+Xd c)
+\item 
+void \hyperlink{class_materials_acce0e8fc2993ca136273747fd75b8fc1}{print\+Mats} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_materials_af7ffbad6dfcc99fc88b130c1a7b1720a}{fe\+\_\+get\+\_\+mats} (int matl\+\_\+code, int obj\+\_\+interest)
+\item 
+std\+::string \hyperlink{class_materials_a34d6fb85943d945b7e8600d2ef4220d0}{fe\+\_\+get\+\_\+model} (int matl\+\_\+code)
+\item 
+int \hyperlink{class_materials_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 23 of file Materials.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_materials_acce0e8fc2993ca136273747fd75b8fc1}\label{class_materials_acce0e8fc2993ca136273747fd75b8fc1}} 
+\index{Materials@{Materials}!print\+Mats@{print\+Mats}}
+\index{print\+Mats@{print\+Mats}!Materials@{Materials}}
+\subsubsection{\texorpdfstring{print\+Mats()}{printMats()}}
+{\footnotesize\ttfamily void Materials\+::print\+Mats (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 15 of file Materials.\+cpp.
+
+\mbox{\Hypertarget{class_materials_a06e59a5742730b2292d39b7488523505}\label{class_materials_a06e59a5742730b2292d39b7488523505}} 
+\index{Materials@{Materials}!read\+Mats@{read\+Mats}}
+\index{read\+Mats@{read\+Mats}!Materials@{Materials}}
+\subsubsection{\texorpdfstring{read\+Mats()}{readMats()}}
+{\footnotesize\ttfamily void Materials\+::read\+Mats (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{std\+::string}]{b,  }\item[{Vector\+Xd}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6 of file Materials.\+cpp.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_materials_af7ffbad6dfcc99fc88b130c1a7b1720a}\label{class_materials_af7ffbad6dfcc99fc88b130c1a7b1720a}} 
+\index{Materials@{Materials}!fe\+\_\+get\+\_\+mats@{fe\+\_\+get\+\_\+mats}}
+\index{fe\+\_\+get\+\_\+mats@{fe\+\_\+get\+\_\+mats}!Materials@{Materials}}
+\subsubsection{\texorpdfstring{fe\+\_\+get\+\_\+mats}{fe\_get\_mats}}
+{\footnotesize\ttfamily double fe\+\_\+get\+\_\+mats (\begin{DoxyParamCaption}\item[{int}]{matl\+\_\+code,  }\item[{int}]{obj\+\_\+interest }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Extracts the material parameter values based on the material id 
+
+Definition at line 5 of file fe\+\_\+get\+\_\+mats.\+cpp.
+
+\mbox{\Hypertarget{class_materials_a34d6fb85943d945b7e8600d2ef4220d0}\label{class_materials_a34d6fb85943d945b7e8600d2ef4220d0}} 
+\index{Materials@{Materials}!fe\+\_\+get\+\_\+model@{fe\+\_\+get\+\_\+model}}
+\index{fe\+\_\+get\+\_\+model@{fe\+\_\+get\+\_\+model}!Materials@{Materials}}
+\subsubsection{\texorpdfstring{fe\+\_\+get\+\_\+model}{fe\_get\_model}}
+{\footnotesize\ttfamily std\+::string fe\+\_\+get\+\_\+model (\begin{DoxyParamCaption}\item[{int}]{matl\+\_\+code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 22 of file fe\+\_\+get\+\_\+mats.\+cpp.
+
+\mbox{\Hypertarget{class_materials_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{class_materials_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Materials@{Materials}!main@{main}}
+\index{main@{main}!Materials@{Materials}}
+\subsubsection{\texorpdfstring{main}{main}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Variable storing the nodal accelerations of the embedded mesh This is the main file. If you want to submit a new job -- this is where you do it Enter the path address for your job folder
+
+What is the Problem Dimension -\/ Degrees of Freedom per node?
+
+Simulation start time
+
+Simulation end time
+
+Output frequency -- result ouputs for every 100 timesteps
+
+Maximum time step
+
+Reduction factor
+
+Loading Amplitude
+
+number of nodes $\ast$ number of directions
+
+Degrees of freedom index data
+
+Number of bounday condition constraints
+
+Which nodes are constrained ?
+
+index corresponding to the constrained degrees of freedom
+
+Displacements of the constrained degrees of freedom
+
+Enter your choice for type of simulations below, based on the following options\+: 1 -\/ Explicit Dynamic 2 -\/ Implicit Dynamic 3 -\/ Static
+
+Definition at line 108 of file main.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/vsg111/\+Dropbox/\+Work/\+Papers/\+Paper\+\_\+\+E\+E\+M\+\_\+\+Computational/\+E\+E\+M\+\_\+\+Dynamic/headers/\hyperlink{_materials_8h}{Materials.\+h}\item 
+/\+Users/vsg111/\+Dropbox/\+Work/\+Papers/\+Paper\+\_\+\+E\+E\+M\+\_\+\+Computational/\+E\+E\+M\+\_\+\+Dynamic/source/\+Input-\/\+Output/\+Input/\hyperlink{_materials_8cpp}{Materials.\+cpp}\end{DoxyCompactItemize}

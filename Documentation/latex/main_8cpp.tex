@@ -1,0 +1,448 @@
+\hypertarget{main_8cpp}{}\section{/\+Users/vsg111/\+Dropbox/\+Work/\+Papers/\+Paper\+\_\+\+E\+E\+M\+\_\+\+Computational/\+E\+E\+M\+\_\+\+Dynamic/main.cpp File Reference}
+\label{main_8cpp}\index{/\+Users/vsg111/\+Dropbox/\+Work/\+Papers/\+Paper\+\_\+\+E\+E\+M\+\_\+\+Computational/\+E\+E\+M\+\_\+\+Dynamic/main.\+cpp@{/\+Users/vsg111/\+Dropbox/\+Work/\+Papers/\+Paper\+\_\+\+E\+E\+M\+\_\+\+Computational/\+E\+E\+M\+\_\+\+Dynamic/main.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Dense$>$}\newline
+{\ttfamily \#include \char`\"{}functions.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Mesh.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Materials.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{main_8cpp_a556ce46e457f991c51f3dac111579e2b}{home\+\_\+path}
+\item 
+std\+::string \hyperlink{main_8cpp_a5e3d7c3d50f127de0e61daaa407dc7d1}{job\+\_\+file}
+\item 
+int \hyperlink{main_8cpp_aa789fe4d8a13fd0990b630909430d5d0}{ndof}
+\item 
+int \hyperlink{main_8cpp_a509bc84434af1eff0173e4a71bd758ac}{num\+\_\+meshes}
+\item 
+\hyperlink{class_mesh}{Mesh} $\ast$ \hyperlink{main_8cpp_a6e08f89b32254fb4b129720418e7c6ea}{mesh}
+\item 
+double \hyperlink{main_8cpp_a1b01a4354147da92a548ea1a5f96d592}{t\+\_\+start}
+\item 
+double \hyperlink{main_8cpp_a4b637c5fff609e604a3b2b2787f4a9fa}{t\+\_\+end}
+\item 
+int \hyperlink{main_8cpp_ace6ace9b2f6d8d404ca9e66564289eb1}{output\+\_\+frequency}
+\item 
+double \hyperlink{main_8cpp_a068c627ac33cf3c721d8f28eab205a83}{dt\+\_\+initial}
+\item 
+double \hyperlink{main_8cpp_a0a612324885914b6799185d54c48b310}{dt\+\_\+min}
+\item 
+double \hyperlink{main_8cpp_a7700f3aeb1ca1c9bbbf712dbfb0aa349}{reduction}
+\item 
+int \hyperlink{main_8cpp_a39328cf72d69139b3b6c5b8ef6c636fe}{material\+\_\+types}
+\item 
+\hyperlink{class_materials}{Materials} $\ast$ \hyperlink{main_8cpp_acfa6799b35f9301b5fc44e6043624797}{mat}
+\item 
+double \hyperlink{main_8cpp_a41b0f465c44fe8b2de43cfaa05bb7880}{input\+\_\+load\+\_\+amp}
+\item 
+Vector\+Xi \hyperlink{main_8cpp_ab49fb3bb15f9624e4ffb12a75c7db55d}{fcdof}
+\item 
+Vector\+Xd \hyperlink{main_8cpp_ac1f3d4744efb6ce0d6c5b89774ba91aa}{fcload}
+\item 
+int \hyperlink{main_8cpp_abd406f244d4145ae5baf4ea059b5232d}{num\+\_\+constraints}
+\item 
+Vector\+Xi \hyperlink{main_8cpp_a389e085bd7632077f619ea67d3fb4087}{bcdof}
+\item 
+Vector\+Xd \hyperlink{main_8cpp_a3a53182d9f97dc5acff0a10125857cfb}{bcval}
+\item 
+Matrix\+Xd \hyperlink{main_8cpp_a6f626bfc805c8f0fb5170c06b4e61c8a}{element\+\_\+stress\+\_\+host}
+\item 
+Matrix\+Xd \hyperlink{main_8cpp_a1db1555bea7ef22b3783cdd66ebbeb0e}{element\+\_\+strain\+\_\+host}
+\item 
+Matrix\+Xd \hyperlink{main_8cpp_a1ae14dd64a0bd3139f1e153dc5e48016}{element\+\_\+stress\+\_\+truss}
+\item 
+Matrix\+Xd \hyperlink{main_8cpp_a296db0b5edbd14e04e368f248587c4eb}{element\+\_\+strain\+\_\+truss}
+\item 
+Vector\+Xd \hyperlink{main_8cpp_ae07dc1b145ffa9093a4262baf26aff7a}{fi\+\_\+prev}
+\item 
+Vector\+Xd \hyperlink{main_8cpp_a7a1410ed488bb0dd5c10344c4c4951e6}{fi\+\_\+curr}
+\item 
+Vector\+Xd \hyperlink{main_8cpp_a3ebb0eb4b098a0ac9e1f24de934a282f}{W\+\_\+int}
+\item 
+Vector\+Xd \hyperlink{main_8cpp_a032d9f703d3d55ca1e54f14f44457615}{U\+\_\+host}
+\item 
+Vector\+Xd \hyperlink{main_8cpp_ad72fa62a83a5fde880ab78c8c81c48bb}{V\+\_\+host}
+\item 
+Vector\+Xd \hyperlink{main_8cpp_a7a1e6ce58aaa0309efd50328e8f295e9}{A\+\_\+host}
+\item 
+Vector\+Xd \hyperlink{main_8cpp_a94430566d55ccfa65e497716fd404dea}{U\+\_\+truss}
+\item 
+Vector\+Xd \hyperlink{main_8cpp_a5159843113dbbfc6e912c3345c0a7916}{V\+\_\+truss}
+\item 
+Vector\+Xd \hyperlink{main_8cpp_a2f98cf28208251affb988effe3a89708}{A\+\_\+truss}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Variable storing the nodal accelerations of the embedded mesh This is the main file. If you want to submit a new job -- this is where you do it Enter the path address for your job folder
+
+What is the Problem Dimension -\/ Degrees of Freedom per node?
+
+Simulation start time
+
+Simulation end time
+
+Output frequency -- result ouputs for every 100 timesteps
+
+Maximum time step
+
+Reduction factor
+
+Loading Amplitude
+
+number of nodes $\ast$ number of directions
+
+Degrees of freedom index data
+
+Number of bounday condition constraints
+
+Which nodes are constrained ?
+
+index corresponding to the constrained degrees of freedom
+
+Displacements of the constrained degrees of freedom
+
+Enter your choice for type of simulations below, based on the following options\+: 1 -\/ Explicit Dynamic 2 -\/ Implicit Dynamic 3 -\/ Static
+
+Definition at line 108 of file main.\+cpp.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_a7a1e6ce58aaa0309efd50328e8f295e9}\label{main_8cpp_a7a1e6ce58aaa0309efd50328e8f295e9}} 
+\index{main.\+cpp@{main.\+cpp}!A\+\_\+host@{A\+\_\+host}}
+\index{A\+\_\+host@{A\+\_\+host}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{A\+\_\+host}{A\_host}}
+{\footnotesize\ttfamily Vector\+Xd A\+\_\+host}
+
+Variable storing the nodal velocities of the host mesh 
+
+Definition at line 98 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a2f98cf28208251affb988effe3a89708}\label{main_8cpp_a2f98cf28208251affb988effe3a89708}} 
+\index{main.\+cpp@{main.\+cpp}!A\+\_\+truss@{A\+\_\+truss}}
+\index{A\+\_\+truss@{A\+\_\+truss}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{A\+\_\+truss}{A\_truss}}
+{\footnotesize\ttfamily Vector\+Xd A\+\_\+truss}
+
+Variable storing the nodal velocities of the embedded mesh 
+
+Definition at line 102 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a389e085bd7632077f619ea67d3fb4087}\label{main_8cpp_a389e085bd7632077f619ea67d3fb4087}} 
+\index{main.\+cpp@{main.\+cpp}!bcdof@{bcdof}}
+\index{bcdof@{bcdof}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{bcdof}{bcdof}}
+{\footnotesize\ttfamily Vector\+Xi bcdof}
+
+D\+OF numbers for boundary conditions 
+
+Definition at line 80 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a3a53182d9f97dc5acff0a10125857cfb}\label{main_8cpp_a3a53182d9f97dc5acff0a10125857cfb}} 
+\index{main.\+cpp@{main.\+cpp}!bcval@{bcval}}
+\index{bcval@{bcval}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{bcval}{bcval}}
+{\footnotesize\ttfamily Vector\+Xd bcval}
+
+Displacement of the constrained D\+OF\textquotesingle{}s 
+
+Definition at line 82 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a068c627ac33cf3c721d8f28eab205a83}\label{main_8cpp_a068c627ac33cf3c721d8f28eab205a83}} 
+\index{main.\+cpp@{main.\+cpp}!dt\+\_\+initial@{dt\+\_\+initial}}
+\index{dt\+\_\+initial@{dt\+\_\+initial}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{dt\+\_\+initial}{dt\_initial}}
+{\footnotesize\ttfamily double dt\+\_\+initial}
+
+
+
+Definition at line 61 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a0a612324885914b6799185d54c48b310}\label{main_8cpp_a0a612324885914b6799185d54c48b310}} 
+\index{main.\+cpp@{main.\+cpp}!dt\+\_\+min@{dt\+\_\+min}}
+\index{dt\+\_\+min@{dt\+\_\+min}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{dt\+\_\+min}{dt\_min}}
+{\footnotesize\ttfamily double dt\+\_\+min}
+
+Initial time step 
+
+Definition at line 62 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a1db1555bea7ef22b3783cdd66ebbeb0e}\label{main_8cpp_a1db1555bea7ef22b3783cdd66ebbeb0e}} 
+\index{main.\+cpp@{main.\+cpp}!element\+\_\+strain\+\_\+host@{element\+\_\+strain\+\_\+host}}
+\index{element\+\_\+strain\+\_\+host@{element\+\_\+strain\+\_\+host}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{element\+\_\+strain\+\_\+host}{element\_strain\_host}}
+{\footnotesize\ttfamily Matrix\+Xd element\+\_\+strain\+\_\+host}
+
+Stores the stress tensor of an element 
+
+Definition at line 86 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a296db0b5edbd14e04e368f248587c4eb}\label{main_8cpp_a296db0b5edbd14e04e368f248587c4eb}} 
+\index{main.\+cpp@{main.\+cpp}!element\+\_\+strain\+\_\+truss@{element\+\_\+strain\+\_\+truss}}
+\index{element\+\_\+strain\+\_\+truss@{element\+\_\+strain\+\_\+truss}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{element\+\_\+strain\+\_\+truss}{element\_strain\_truss}}
+{\footnotesize\ttfamily Matrix\+Xd element\+\_\+strain\+\_\+truss}
+
+Stores the stress of a truss element 
+
+Definition at line 88 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a6f626bfc805c8f0fb5170c06b4e61c8a}\label{main_8cpp_a6f626bfc805c8f0fb5170c06b4e61c8a}} 
+\index{main.\+cpp@{main.\+cpp}!element\+\_\+stress\+\_\+host@{element\+\_\+stress\+\_\+host}}
+\index{element\+\_\+stress\+\_\+host@{element\+\_\+stress\+\_\+host}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{element\+\_\+stress\+\_\+host}{element\_stress\_host}}
+{\footnotesize\ttfamily Matrix\+Xd element\+\_\+stress\+\_\+host}
+
+
+
+Definition at line 85 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a1ae14dd64a0bd3139f1e153dc5e48016}\label{main_8cpp_a1ae14dd64a0bd3139f1e153dc5e48016}} 
+\index{main.\+cpp@{main.\+cpp}!element\+\_\+stress\+\_\+truss@{element\+\_\+stress\+\_\+truss}}
+\index{element\+\_\+stress\+\_\+truss@{element\+\_\+stress\+\_\+truss}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{element\+\_\+stress\+\_\+truss}{element\_stress\_truss}}
+{\footnotesize\ttfamily Matrix\+Xd element\+\_\+stress\+\_\+truss}
+
+Stores the strain tensor of an element 
+
+Definition at line 87 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_ab49fb3bb15f9624e4ffb12a75c7db55d}\label{main_8cpp_ab49fb3bb15f9624e4ffb12a75c7db55d}} 
+\index{main.\+cpp@{main.\+cpp}!fcdof@{fcdof}}
+\index{fcdof@{fcdof}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{fcdof}{fcdof}}
+{\footnotesize\ttfamily Vector\+Xi fcdof}
+
+Degrees of freedom -- corresponding to the applied load 
+
+Definition at line 73 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_ac1f3d4744efb6ce0d6c5b89774ba91aa}\label{main_8cpp_ac1f3d4744efb6ce0d6c5b89774ba91aa}} 
+\index{main.\+cpp@{main.\+cpp}!fcload@{fcload}}
+\index{fcload@{fcload}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{fcload}{fcload}}
+{\footnotesize\ttfamily Vector\+Xd fcload}
+
+
+
+Definition at line 74 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a7a1410ed488bb0dd5c10344c4c4951e6}\label{main_8cpp_a7a1410ed488bb0dd5c10344c4c4951e6}} 
+\index{main.\+cpp@{main.\+cpp}!fi\+\_\+curr@{fi\+\_\+curr}}
+\index{fi\+\_\+curr@{fi\+\_\+curr}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{fi\+\_\+curr}{fi\_curr}}
+{\footnotesize\ttfamily Vector\+Xd fi\+\_\+curr}
+
+Internal nodal force vector at previous time step 
+
+Definition at line 93 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_ae07dc1b145ffa9093a4262baf26aff7a}\label{main_8cpp_ae07dc1b145ffa9093a4262baf26aff7a}} 
+\index{main.\+cpp@{main.\+cpp}!fi\+\_\+prev@{fi\+\_\+prev}}
+\index{fi\+\_\+prev@{fi\+\_\+prev}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{fi\+\_\+prev}{fi\_prev}}
+{\footnotesize\ttfamily Vector\+Xd fi\+\_\+prev}
+
+Stores the strain of a truss element 
+
+Definition at line 92 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a556ce46e457f991c51f3dac111579e2b}\label{main_8cpp_a556ce46e457f991c51f3dac111579e2b}} 
+\index{main.\+cpp@{main.\+cpp}!home\+\_\+path@{home\+\_\+path}}
+\index{home\+\_\+path@{home\+\_\+path}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{home\+\_\+path}{home\_path}}
+{\footnotesize\ttfamily std\+::string home\+\_\+path}
+
+
+
+Definition at line 47 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a41b0f465c44fe8b2de43cfaa05bb7880}\label{main_8cpp_a41b0f465c44fe8b2de43cfaa05bb7880}} 
+\index{main.\+cpp@{main.\+cpp}!input\+\_\+load\+\_\+amp@{input\+\_\+load\+\_\+amp}}
+\index{input\+\_\+load\+\_\+amp@{input\+\_\+load\+\_\+amp}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{input\+\_\+load\+\_\+amp}{input\_load\_amp}}
+{\footnotesize\ttfamily double input\+\_\+load\+\_\+amp}
+
+Loading Amplitude 
+
+Definition at line 71 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a5e3d7c3d50f127de0e61daaa407dc7d1}\label{main_8cpp_a5e3d7c3d50f127de0e61daaa407dc7d1}} 
+\index{main.\+cpp@{main.\+cpp}!job\+\_\+file@{job\+\_\+file}}
+\index{job\+\_\+file@{job\+\_\+file}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{job\+\_\+file}{job\_file}}
+{\footnotesize\ttfamily std\+::string job\+\_\+file}
+
+Job folder name 
+
+Definition at line 48 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_acfa6799b35f9301b5fc44e6043624797}\label{main_8cpp_acfa6799b35f9301b5fc44e6043624797}} 
+\index{main.\+cpp@{main.\+cpp}!mat@{mat}}
+\index{mat@{mat}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{mat}{mat}}
+{\footnotesize\ttfamily \hyperlink{class_materials}{Materials}$\ast$ mat}
+
+
+
+Definition at line 67 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a39328cf72d69139b3b6c5b8ef6c636fe}\label{main_8cpp_a39328cf72d69139b3b6c5b8ef6c636fe}} 
+\index{main.\+cpp@{main.\+cpp}!material\+\_\+types@{material\+\_\+types}}
+\index{material\+\_\+types@{material\+\_\+types}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{material\+\_\+types}{material\_types}}
+{\footnotesize\ttfamily int material\+\_\+types}
+
+Reduces the timestep value by this amount Material Properties are stored in here 
+
+Definition at line 66 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a6e08f89b32254fb4b129720418e7c6ea}\label{main_8cpp_a6e08f89b32254fb4b129720418e7c6ea}} 
+\index{main.\+cpp@{main.\+cpp}!mesh@{mesh}}
+\index{mesh@{mesh}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{mesh}{mesh}}
+{\footnotesize\ttfamily \hyperlink{class_mesh}{Mesh}$\ast$ mesh}
+
+
+
+Definition at line 55 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_aa789fe4d8a13fd0990b630909430d5d0}\label{main_8cpp_aa789fe4d8a13fd0990b630909430d5d0}} 
+\index{main.\+cpp@{main.\+cpp}!ndof@{ndof}}
+\index{ndof@{ndof}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{ndof}{ndof}}
+{\footnotesize\ttfamily int ndof}
+
+Job input file name Dimension of the Simulation (3 for 3D, 2 for 2D and 1 for 1D) 
+
+Definition at line 51 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_abd406f244d4145ae5baf4ea059b5232d}\label{main_8cpp_abd406f244d4145ae5baf4ea059b5232d}} 
+\index{main.\+cpp@{main.\+cpp}!num\+\_\+constraints@{num\+\_\+constraints}}
+\index{num\+\_\+constraints@{num\+\_\+constraints}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{num\+\_\+constraints}{num\_constraints}}
+{\footnotesize\ttfamily int num\+\_\+constraints}
+
+Number of boundary conditions = nodes x dof 
+
+Definition at line 78 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a509bc84434af1eff0173e4a71bd758ac}\label{main_8cpp_a509bc84434af1eff0173e4a71bd758ac}} 
+\index{main.\+cpp@{main.\+cpp}!num\+\_\+meshes@{num\+\_\+meshes}}
+\index{num\+\_\+meshes@{num\+\_\+meshes}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{num\+\_\+meshes}{num\_meshes}}
+{\footnotesize\ttfamily int num\+\_\+meshes}
+
+Input meshes -\/ number of meshes and type of meshes 
+
+Definition at line 54 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_ace6ace9b2f6d8d404ca9e66564289eb1}\label{main_8cpp_ace6ace9b2f6d8d404ca9e66564289eb1}} 
+\index{main.\+cpp@{main.\+cpp}!output\+\_\+frequency@{output\+\_\+frequency}}
+\index{output\+\_\+frequency@{output\+\_\+frequency}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{output\+\_\+frequency}{output\_frequency}}
+{\footnotesize\ttfamily int output\+\_\+frequency}
+
+End Time 
+
+Definition at line 60 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a7700f3aeb1ca1c9bbbf712dbfb0aa349}\label{main_8cpp_a7700f3aeb1ca1c9bbbf712dbfb0aa349}} 
+\index{main.\+cpp@{main.\+cpp}!reduction@{reduction}}
+\index{reduction@{reduction}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{reduction}{reduction}}
+{\footnotesize\ttfamily double reduction}
+
+Minimum time step 
+
+Definition at line 63 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a4b637c5fff609e604a3b2b2787f4a9fa}\label{main_8cpp_a4b637c5fff609e604a3b2b2787f4a9fa}} 
+\index{main.\+cpp@{main.\+cpp}!t\+\_\+end@{t\+\_\+end}}
+\index{t\+\_\+end@{t\+\_\+end}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{t\+\_\+end}{t\_end}}
+{\footnotesize\ttfamily double t\+\_\+end}
+
+Start Time 
+
+Definition at line 59 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a1b01a4354147da92a548ea1a5f96d592}\label{main_8cpp_a1b01a4354147da92a548ea1a5f96d592}} 
+\index{main.\+cpp@{main.\+cpp}!t\+\_\+start@{t\+\_\+start}}
+\index{t\+\_\+start@{t\+\_\+start}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{t\+\_\+start}{t\_start}}
+{\footnotesize\ttfamily double t\+\_\+start}
+
+
+
+Definition at line 58 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a032d9f703d3d55ca1e54f14f44457615}\label{main_8cpp_a032d9f703d3d55ca1e54f14f44457615}} 
+\index{main.\+cpp@{main.\+cpp}!U\+\_\+host@{U\+\_\+host}}
+\index{U\+\_\+host@{U\+\_\+host}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{U\+\_\+host}{U\_host}}
+{\footnotesize\ttfamily Vector\+Xd U\+\_\+host}
+
+Internal energy at different time steps 
+
+Definition at line 96 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a94430566d55ccfa65e497716fd404dea}\label{main_8cpp_a94430566d55ccfa65e497716fd404dea}} 
+\index{main.\+cpp@{main.\+cpp}!U\+\_\+truss@{U\+\_\+truss}}
+\index{U\+\_\+truss@{U\+\_\+truss}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{U\+\_\+truss}{U\_truss}}
+{\footnotesize\ttfamily Vector\+Xd U\+\_\+truss}
+
+Variable storing the nodal accelerations of the host mesh 
+
+Definition at line 100 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_ad72fa62a83a5fde880ab78c8c81c48bb}\label{main_8cpp_ad72fa62a83a5fde880ab78c8c81c48bb}} 
+\index{main.\+cpp@{main.\+cpp}!V\+\_\+host@{V\+\_\+host}}
+\index{V\+\_\+host@{V\+\_\+host}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{V\+\_\+host}{V\_host}}
+{\footnotesize\ttfamily Vector\+Xd V\+\_\+host}
+
+Variable storing the nodal displacements of the host mesh 
+
+Definition at line 97 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a5159843113dbbfc6e912c3345c0a7916}\label{main_8cpp_a5159843113dbbfc6e912c3345c0a7916}} 
+\index{main.\+cpp@{main.\+cpp}!V\+\_\+truss@{V\+\_\+truss}}
+\index{V\+\_\+truss@{V\+\_\+truss}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{V\+\_\+truss}{V\_truss}}
+{\footnotesize\ttfamily Vector\+Xd V\+\_\+truss}
+
+Variable storing the nodal displacements of the embedded mesh 
+
+Definition at line 101 of file main.\+cpp.
+
+\mbox{\Hypertarget{main_8cpp_a3ebb0eb4b098a0ac9e1f24de934a282f}\label{main_8cpp_a3ebb0eb4b098a0ac9e1f24de934a282f}} 
+\index{main.\+cpp@{main.\+cpp}!W\+\_\+int@{W\+\_\+int}}
+\index{W\+\_\+int@{W\+\_\+int}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{W\+\_\+int}{W\_int}}
+{\footnotesize\ttfamily Vector\+Xd W\+\_\+int}
+
+Internal nodal force vector at current time step 
+
+Definition at line 94 of file main.\+cpp.
+

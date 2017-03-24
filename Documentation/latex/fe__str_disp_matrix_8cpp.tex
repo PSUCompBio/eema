@@ -1,0 +1,33 @@
+\hypertarget{fe__str_disp_matrix_8cpp}{}\section{/\+Users/vsg111/\+Dropbox/\+Work/\+Papers/\+Paper\+\_\+\+E\+E\+M\+\_\+\+Computational/\+E\+E\+M\+\_\+\+Dynamic/source/\+F\+E\+M/\+Element\+Calculations/fe\+\_\+str\+Disp\+Matrix.cpp File Reference}
+\label{fe__str_disp_matrix_8cpp}\index{/\+Users/vsg111/\+Dropbox/\+Work/\+Papers/\+Paper\+\_\+\+E\+E\+M\+\_\+\+Computational/\+E\+E\+M\+\_\+\+Dynamic/source/\+F\+E\+M/\+Element\+Calculations/fe\+\_\+str\+Disp\+Matrix.\+cpp@{/\+Users/vsg111/\+Dropbox/\+Work/\+Papers/\+Paper\+\_\+\+E\+E\+M\+\_\+\+Computational/\+E\+E\+M\+\_\+\+Dynamic/source/\+F\+E\+M/\+Element\+Calculations/fe\+\_\+str\+Disp\+Matrix.\+cpp}}
+{\ttfamily \#include \char`\"{}functions.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Matrix\+Xd \hyperlink{fe__str_disp_matrix_8cpp_a4b49d2df4f86e7d0755971ab4bfa48b2}{fe\+\_\+str\+Disp\+Matrix} (int edof, int nnel, Vector\+Xd dndx, Vector\+Xd dndy, Vector\+Xd dndz)
+\item 
+Matrix\+Xd \hyperlink{fe__str_disp_matrix_8cpp_a8c9fd519c93c847cdf52de947964eb67}{fe\+\_\+str\+Disp\+Matrix\+\_\+total\+Lagrangian} (int edof, int nnel, Vector\+Xd dndx, Vector\+Xd dndy, Vector\+Xd dndz, Vector\+Xd u)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{fe__str_disp_matrix_8cpp_a4b49d2df4f86e7d0755971ab4bfa48b2}\label{fe__str_disp_matrix_8cpp_a4b49d2df4f86e7d0755971ab4bfa48b2}} 
+\index{fe\+\_\+str\+Disp\+Matrix.\+cpp@{fe\+\_\+str\+Disp\+Matrix.\+cpp}!fe\+\_\+str\+Disp\+Matrix@{fe\+\_\+str\+Disp\+Matrix}}
+\index{fe\+\_\+str\+Disp\+Matrix@{fe\+\_\+str\+Disp\+Matrix}!fe\+\_\+str\+Disp\+Matrix.\+cpp@{fe\+\_\+str\+Disp\+Matrix.\+cpp}}
+\subsubsection{\texorpdfstring{fe\+\_\+str\+Disp\+Matrix()}{fe\_strDispMatrix()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+str\+Disp\+Matrix (\begin{DoxyParamCaption}\item[{int}]{edof,  }\item[{int}]{nnel,  }\item[{Vector\+Xd}]{dndx,  }\item[{Vector\+Xd}]{dndy,  }\item[{Vector\+Xd}]{dndz }\end{DoxyParamCaption})}
+
+Strain displacement matrix B 
+
+Definition at line 5 of file fe\+\_\+str\+Disp\+Matrix.\+cpp.
+
+\mbox{\Hypertarget{fe__str_disp_matrix_8cpp_a8c9fd519c93c847cdf52de947964eb67}\label{fe__str_disp_matrix_8cpp_a8c9fd519c93c847cdf52de947964eb67}} 
+\index{fe\+\_\+str\+Disp\+Matrix.\+cpp@{fe\+\_\+str\+Disp\+Matrix.\+cpp}!fe\+\_\+str\+Disp\+Matrix\+\_\+total\+Lagrangian@{fe\+\_\+str\+Disp\+Matrix\+\_\+total\+Lagrangian}}
+\index{fe\+\_\+str\+Disp\+Matrix\+\_\+total\+Lagrangian@{fe\+\_\+str\+Disp\+Matrix\+\_\+total\+Lagrangian}!fe\+\_\+str\+Disp\+Matrix.\+cpp@{fe\+\_\+str\+Disp\+Matrix.\+cpp}}
+\subsubsection{\texorpdfstring{fe\+\_\+str\+Disp\+Matrix\+\_\+total\+Lagrangian()}{fe\_strDispMatrix\_totalLagrangian()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+str\+Disp\+Matrix\+\_\+total\+Lagrangian (\begin{DoxyParamCaption}\item[{int}]{edof,  }\item[{int}]{nnel,  }\item[{Vector\+Xd}]{dndx,  }\item[{Vector\+Xd}]{dndy,  }\item[{Vector\+Xd}]{dndz,  }\item[{Vector\+Xd}]{u }\end{DoxyParamCaption})}
+
+Calculates the strain displacement matrix in total lagrangian system 
+
+Definition at line 31 of file fe\+\_\+str\+Disp\+Matrix.\+cpp.
+

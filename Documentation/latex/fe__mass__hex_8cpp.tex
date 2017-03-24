@@ -1,0 +1,33 @@
+\hypertarget{fe__mass__hex_8cpp}{}\section{/\+Users/vsg111/\+Dropbox/\+Work/\+Papers/\+Paper\+\_\+\+E\+E\+M\+\_\+\+Computational/\+E\+E\+M\+\_\+\+Dynamic/source/\+Elements/\+Mass/fe\+\_\+mass\+\_\+hex.cpp File Reference}
+\label{fe__mass__hex_8cpp}\index{/\+Users/vsg111/\+Dropbox/\+Work/\+Papers/\+Paper\+\_\+\+E\+E\+M\+\_\+\+Computational/\+E\+E\+M\+\_\+\+Dynamic/source/\+Elements/\+Mass/fe\+\_\+mass\+\_\+hex.\+cpp@{/\+Users/vsg111/\+Dropbox/\+Work/\+Papers/\+Paper\+\_\+\+E\+E\+M\+\_\+\+Computational/\+E\+E\+M\+\_\+\+Dynamic/source/\+Elements/\+Mass/fe\+\_\+mass\+\_\+hex.\+cpp}}
+{\ttfamily \#include \char`\"{}functions.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Matrix\+Xd \hyperlink{fe__mass__hex_8cpp_a04906e61b8cfdc7232924a594b95eb1f}{fe\+\_\+mass\+\_\+hex} (double rho, int \hyperlink{main_8cpp_aa789fe4d8a13fd0990b630909430d5d0}{ndof}, int nnel, int edof, double xcoord\mbox{[}$\,$\mbox{]}, double ycoord\mbox{[}$\,$\mbox{]}, double zcoord\mbox{[}$\,$\mbox{]})
+\item 
+Matrix\+Xd \hyperlink{fe__mass__hex_8cpp_a350d27ea0f1de929495d659b26f428d2}{fe\+\_\+mass\+\_\+truss} (double rho, double \hyperlink{main_8cpp_a2f98cf28208251affb988effe3a89708}{A\+\_\+truss}, int edof, Matrix\+Xd nodes, Matrix\+Xd elements)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{fe__mass__hex_8cpp_a04906e61b8cfdc7232924a594b95eb1f}\label{fe__mass__hex_8cpp_a04906e61b8cfdc7232924a594b95eb1f}} 
+\index{fe\+\_\+mass\+\_\+hex.\+cpp@{fe\+\_\+mass\+\_\+hex.\+cpp}!fe\+\_\+mass\+\_\+hex@{fe\+\_\+mass\+\_\+hex}}
+\index{fe\+\_\+mass\+\_\+hex@{fe\+\_\+mass\+\_\+hex}!fe\+\_\+mass\+\_\+hex.\+cpp@{fe\+\_\+mass\+\_\+hex.\+cpp}}
+\subsubsection{\texorpdfstring{fe\+\_\+mass\+\_\+hex()}{fe\_mass\_hex()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+mass\+\_\+hex (\begin{DoxyParamCaption}\item[{double}]{rho,  }\item[{int}]{ndof,  }\item[{int}]{nnel,  }\item[{int}]{edof,  }\item[{double}]{xcoord\mbox{[}$\,$\mbox{]},  }\item[{double}]{ycoord\mbox{[}$\,$\mbox{]},  }\item[{double}]{zcoord\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Calculates the mass matrix for a hex element 
+
+Definition at line 7 of file fe\+\_\+mass\+\_\+hex.\+cpp.
+
+\mbox{\Hypertarget{fe__mass__hex_8cpp_a350d27ea0f1de929495d659b26f428d2}\label{fe__mass__hex_8cpp_a350d27ea0f1de929495d659b26f428d2}} 
+\index{fe\+\_\+mass\+\_\+hex.\+cpp@{fe\+\_\+mass\+\_\+hex.\+cpp}!fe\+\_\+mass\+\_\+truss@{fe\+\_\+mass\+\_\+truss}}
+\index{fe\+\_\+mass\+\_\+truss@{fe\+\_\+mass\+\_\+truss}!fe\+\_\+mass\+\_\+hex.\+cpp@{fe\+\_\+mass\+\_\+hex.\+cpp}}
+\subsubsection{\texorpdfstring{fe\+\_\+mass\+\_\+truss()}{fe\_mass\_truss()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+mass\+\_\+truss (\begin{DoxyParamCaption}\item[{double}]{rho,  }\item[{double}]{A\+\_\+truss,  }\item[{int}]{edof,  }\item[{Matrix\+Xd}]{nodes,  }\item[{Matrix\+Xd}]{elements }\end{DoxyParamCaption})}
+
+Calculates the mass of a truss element 
+
+Definition at line 81 of file fe\+\_\+mass\+\_\+hex.\+cpp.
+

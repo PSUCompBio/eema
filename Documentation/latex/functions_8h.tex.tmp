@@ -1,0 +1,1132 @@
+\hypertarget{functions_8h}{}\section{headers/functions.h File Reference}
+\label{functions_8h}\index{headers/functions.\+h@{headers/functions.\+h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include \char`\"{}Eigen/\+Dense\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Eigen/\+Eigenvalues\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unsupported/\+Eigen/\+Matrix\+Functions\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Mesh.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Materials.\+h\char`\"{}}\newline
+Include dependency graph for functions.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Matrix\+Xd \hyperlink{functions_8h_add4fca63e194477644c3388febf88023}{text2matrix} (std\+::string name, int cols)
+\item 
+Vector\+Xd \hyperlink{functions_8h_ab77a3a6d6f6b436d7e8c600bb0869927}{fe\+\_\+shapes\+\_\+8} (double rvalue, double svalue, double tvalue)
+\item 
+Vector\+Xd \hyperlink{functions_8h_afc547bef246c057db6cbd04bf7f866a9}{fe\+\_\+dndr\+\_\+8} (double rvalue, double svalue, double tvalue)
+\item 
+Vector\+Xd \hyperlink{functions_8h_ac0b5524525e1f2e89bb064c15ab8e664}{fe\+\_\+dnds\+\_\+8} (double rvalue, double svalue, double tvalue)
+\item 
+Vector\+Xd \hyperlink{functions_8h_a57e8e5c9f740c98e4767f29c121c2d0a}{fe\+\_\+dndt\+\_\+8} (double rvalue, double svalue, double tvalue)
+\item 
+Vector\+Xd \hyperlink{functions_8h_aa6ab8c3298fa10734e299fe8266aed35}{guass\+\_\+points} (int n)
+\item 
+Vector\+Xd \hyperlink{functions_8h_a84dcc9575e861bdb2872c10ba6238ee4}{guass\+\_\+weights} (int n)
+\item 
+Matrix\+Xd \hyperlink{functions_8h_a502e3469e1cc253deb142f46c0789a78}{guass\+\_\+points\+\_\+3d} (int nx, int ny, int nz)
+\item 
+Matrix\+Xd \hyperlink{functions_8h_ad99b08ce65ae353e91486d7685c22024}{guass\+\_\+weights\+\_\+3d} (int \hyperlink{main_8cpp_aa789fe4d8a13fd0990b630909430d5d0}{ndof}, int nx, int ny, int nz)
+\item 
+Matrix\+Xd \hyperlink{functions_8h_ada816506319851dcff162fa5e54d72d5}{fe\+\_\+iso\+Elastic} (int n, double E, double nu)
+\item 
+Matrix\+Xd \hyperlink{functions_8h_a12aa5a7a3443c6fcc5e65d3bcfc9bcc3}{fe\+\_\+cal\+Jacobian} (int dim, int nnel, Vector\+Xd dndr, Vector\+Xd dnds, Vector\+Xd dndt, double xcoord\mbox{[}$\,$\mbox{]}, double ycoord\mbox{[}$\,$\mbox{]}, double zcoord\mbox{[}$\,$\mbox{]})
+\item 
+Vector\+Xd \hyperlink{functions_8h_afc6be1a5667e68156cb099e8da71170f}{fe\+\_\+dndx\+\_\+8} (int nnel, Vector\+Xd dndr, Vector\+Xd dnds, Vector\+Xd dndt, Matrix\+Xd inv\+Jacobian)
+\item 
+Vector\+Xd \hyperlink{functions_8h_a0572d7818e085c67f7fbb84eef8ecfb4}{fe\+\_\+dndy\+\_\+8} (int nnel, Vector\+Xd dndr, Vector\+Xd dnds, Vector\+Xd dndt, Matrix\+Xd inv\+Jacobian)
+\item 
+Vector\+Xd \hyperlink{functions_8h_aaf75db8433433807839c6ea17f2cf72c}{fe\+\_\+dndz\+\_\+8} (int nnel, Vector\+Xd dndr, Vector\+Xd dnds, Vector\+Xd dndt, Matrix\+Xd inv\+Jacobian)
+\item 
+Matrix\+Xd \hyperlink{functions_8h_a4b49d2df4f86e7d0755971ab4bfa48b2}{fe\+\_\+str\+Disp\+Matrix} (int edof, int nnel, Vector\+Xd dndx, Vector\+Xd dndy, Vector\+Xd dndz)
+\item 
+Matrix\+Xd \hyperlink{functions_8h_a3c73fda948017ac96aeb19889cfc1cba}{fe\+\_\+apply\+\_\+bc\+\_\+stiffness} (Matrix\+Xd kk, Vector\+Xi \hyperlink{main_8cpp_a389e085bd7632077f619ea67d3fb4087}{bcdof}, Vector\+Xd \hyperlink{main_8cpp_a3a53182d9f97dc5acff0a10125857cfb}{bcval})
+\item 
+Vector\+Xd \hyperlink{functions_8h_ac52c0e94b3bad1ca823301ad609a1549}{fe\+\_\+apply\+\_\+bc\+\_\+force} (Vector\+Xd ff, Vector\+Xi \hyperlink{main_8cpp_a389e085bd7632077f619ea67d3fb4087}{bcdof}, Vector\+Xd \hyperlink{main_8cpp_a3a53182d9f97dc5acff0a10125857cfb}{bcval})
+\item 
+void \hyperlink{functions_8h_a346547477d2a1fbeff6b5e0b05314283}{matrix2text} (std\+::string name, Matrix\+Xd new\+\_\+slave\+\_\+master, int width)
+\item 
+void \hyperlink{functions_8h_a0b5f62139051473c809da12cc0c45e29}{vector2text} (std\+::string name, Vector\+Xd vector, int width)
+\item 
+Matrix\+Xd \hyperlink{functions_8h_aa41c40dffea4251a07a8a3f5062f47ae}{fe\+\_\+cal\+Transformation} (Matrix\+Xd truss\+\_\+nodes, int choice)
+\item 
+Matrix\+Xd \hyperlink{functions_8h_ae2eeba997bf4f0bc4749b92130de7ba3}{fe\+\_\+cal\+Simp\+Transformation} (Matrix\+Xd truss\+\_\+nodes)
+\item 
+Matrix\+Xd \hyperlink{functions_8h_a9378d4fc517465015411134456235a76}{fe\+\_\+stiffness\+\_\+hex} (double E, double nu, int \hyperlink{main_8cpp_aa789fe4d8a13fd0990b630909430d5d0}{ndof}, int nnel, int edof, double xcoord\mbox{[}$\,$\mbox{]}, double ycoord\mbox{[}$\,$\mbox{]}, double zcoord\mbox{[}$\,$\mbox{]})
+\item 
+Matrix\+Xd \hyperlink{functions_8h_ab3798340a27f0972299b3820aab0ccba}{fe\+\_\+stiffness\+\_\+embed\+\_\+truss} (Matrix\+Xd nodes\+\_\+truss, Matrix\+Xd elements\+\_\+truss, double E\+\_\+truss, double \hyperlink{main_8cpp_a2f98cf28208251affb988effe3a89708}{A\+\_\+truss}, int \hyperlink{main_8cpp_aa789fe4d8a13fd0990b630909430d5d0}{ndof}, int nnel, int edof, double xcoord\mbox{[}$\,$\mbox{]}, double ycoord\mbox{[}$\,$\mbox{]}, double zcoord\mbox{[}$\,$\mbox{]})
+\item 
+Matrix\+Xd \hyperlink{functions_8h_a98fae74dde5fe33a7062e7457a2d3227}{fe\+\_\+shape\+Matrix} (int edof, int nnel, Vector\+Xd shapes)
+\item 
+Matrix\+Xd \hyperlink{functions_8h_a04906e61b8cfdc7232924a594b95eb1f}{fe\+\_\+mass\+\_\+hex} (double rho, int \hyperlink{main_8cpp_aa789fe4d8a13fd0990b630909430d5d0}{ndof}, int nnel, int edof, double xcoord\mbox{[}$\,$\mbox{]}, double ycoord\mbox{[}$\,$\mbox{]}, double zcoord\mbox{[}$\,$\mbox{]})
+\item 
+Vector\+Xd \hyperlink{functions_8h_a7d0fd8cfef8b891901eb6f0f780fd9f2}{fe\+\_\+stress\+Update} (Vector\+Xd dndx, Vector\+Xd dndy, Vector\+Xd dndz, Matrix\+Xd disp\+\_\+mat, Vector\+Xd u, int opt, int return\+\_\+opt)
+\item 
+Vector\+Xd \hyperlink{functions_8h_aa8f7f6d72c6b57c721b23a38e2e20fc5}{fe\+\_\+getforce} (Matrix\+Xd nodes, Matrix\+Xd elements, int \hyperlink{main_8cpp_aa789fe4d8a13fd0990b630909430d5d0}{ndof}, Vector\+Xd u, Vector\+Xd v, Vector\+Xd fext, int size\+\_\+counter, Matrix\+Xd nodes\+\_\+truss, Matrix\+Xd elements\+\_\+truss)
+\item 
+double \hyperlink{functions_8h_af737926a3dfd669254a56dbbf675ac92}{fe\+\_\+get\+Time\+Step} (Matrix\+Xd nodes, Matrix\+Xd elements, int \hyperlink{main_8cpp_aa789fe4d8a13fd0990b630909430d5d0}{ndof}, Vector\+Xd u, Vector\+Xd v, Vector\+Xd fext)
+\item 
+double \hyperlink{functions_8h_ab0d9d059d2b8f829000e6f1f7d1d4ffb}{fe\+\_\+cal\+Time\+Step} (double xcoord\mbox{[}$\,$\mbox{]}, double ycoord\mbox{[}$\,$\mbox{]}, double zcoord\mbox{[}$\,$\mbox{]}, double E, double nu, double rho)
+\item 
+double \hyperlink{functions_8h_ac1306a43db522f3da30471d2a6c48686}{fe\+\_\+cal\+Area\+\_\+4} (double a1, double a2, double a3, double a4, double b1, double b2, double b3, double b4, double c1, double c2, double c3, double c4)
+\item 
+double \hyperlink{functions_8h_afbe30e3a940236fc486b96028abf6f46}{fe\+\_\+cal\+Volume} (double xcoord\mbox{[}$\,$\mbox{]}, double ycoord\mbox{[}$\,$\mbox{]}, double zcoord\mbox{[}$\,$\mbox{]})
+\item 
+Vector\+Xd \hyperlink{functions_8h_a42274df47bb3a633055b1ccbb2f920ae}{fe\+\_\+apply\+\_\+bc\+\_\+displacement} (Vector\+Xd U, Vector\+Xi \hyperlink{main_8cpp_a389e085bd7632077f619ea67d3fb4087}{bcdof}, Vector\+Xd \hyperlink{main_8cpp_a3a53182d9f97dc5acff0a10125857cfb}{bcval})
+\item 
+void \hyperlink{functions_8h_ab3e39c6d01b6fd10c9e264731cef75dc}{fe\+\_\+display\+\_\+vector} (Vector\+Xd A)
+\item 
+void \hyperlink{functions_8h_a5110a192d089c6b26744b9e9d67a7c2d}{fe\+\_\+display\+\_\+matrix} (Matrix\+Xd A)
+\item 
+Matrix\+Xd \hyperlink{functions_8h_a443f24e16b6209a90ffcb7c249c15e25}{fe\+\_\+cat\+V2M} (Matrix\+Xd A, Vector\+Xd B, int opt)
+\item 
+Matrix\+Xd \hyperlink{functions_8h_ab747d046148af042245ed13ca720c5ec}{fe\+\_\+transform\+Mass} (Matrix\+Xd m, int opt)
+\item 
+double \hyperlink{functions_8h_af7ffbad6dfcc99fc88b130c1a7b1720a}{fe\+\_\+get\+\_\+mats} (int matl\+\_\+code, int obj\+\_\+interest)
+\item 
+std\+::string \hyperlink{functions_8h_a34d6fb85943d945b7e8600d2ef4220d0}{fe\+\_\+get\+\_\+model} (int matl\+\_\+code)
+\item 
+Matrix\+Xd \hyperlink{functions_8h_a8c9fd519c93c847cdf52de947964eb67}{fe\+\_\+str\+Disp\+Matrix\+\_\+total\+Lagrangian} (int edof, int nnel, Vector\+Xd dndx, Vector\+Xd dndy, Vector\+Xd dndz, Vector\+Xd u)
+\item 
+Matrix\+Xd \hyperlink{functions_8h_ae50379f74802347e04dbc022897f9cb0}{fe\+\_\+cal\+Def\+Grad} (Vector\+Xd dndx, Vector\+Xd dndy, Vector\+Xd dndz, Vector\+Xd u)
+\item 
+double \hyperlink{functions_8h_acb1ae85901899b3e4e2a1635e036fd35}{fe\+\_\+cal\+Wave\+Speed} (double E, double nu, double rho)
+\item 
+void \hyperlink{functions_8h_a9dec90c41460e15aa1d8dce787683406}{fe\+\_\+write\+Element\+Stress} (Matrix\+Xd sigma\+\_\+all, double time)
+\item 
+Matrix\+Xd \hyperlink{functions_8h_a350d27ea0f1de929495d659b26f428d2}{fe\+\_\+mass\+\_\+truss} (double rho, double \hyperlink{main_8cpp_a2f98cf28208251affb988effe3a89708}{A\+\_\+truss}, int edof, Matrix\+Xd nodes, Matrix\+Xd elements)
+\item 
+Vector\+Xd \hyperlink{functions_8h_a94c1b672863e28bc2c70d08726939929}{fe\+\_\+stress\+Update\+\_\+1d} (Vector\+Xd dndx, Vector\+Xd dndy, Vector\+Xd dndz, Vector\+Xd u\+\_\+e, int opt, Matrix\+Xd nodes)
+\item 
+void \hyperlink{functions_8h_a45a1daa8de18fc5fc463f9b569970245}{fe\+\_\+vtk\+Write\+\_\+host} (std\+::string output, int format\+\_\+choice, int mesh\+\_\+choice, int time\+\_\+step, Matrix\+Xd nodes, Matrix\+Xd elements)
+\item 
+void \hyperlink{functions_8h_a6e838460f501267efe34f29d4cf6d9cd}{fe\+\_\+vtk\+Write\+\_\+truss} (std\+::string output, int format\+\_\+choice, int mesh\+\_\+choice, int time\+\_\+step, Matrix\+Xd nodes, Matrix\+Xd elements)
+\item 
+Matrix\+Xd \hyperlink{functions_8h_a81ce693c4400df82b8753f25cc2dcabc}{fe\+\_\+update\+Nodes} (Matrix\+Xd nodes, Vector\+Xd displacements)
+\item 
+void \hyperlink{functions_8h_ab2f8704631ca6c23a453d1905efbb162}{fe\+\_\+main\+E\+X\+P\+L\+I\+C\+IT} ()
+\begin{DoxyCompactList}\small\item\em This function carries out the explicit dynamic analysis of the F\+EM problem. \end{DoxyCompactList}\item 
+Vector\+Xi \hyperlink{functions_8h_ae4dbe24b761cafa3577afab76726b382}{fe\+\_\+find\+\_\+index} (Vector\+Xi node\+\_\+list)
+\item 
+Matrix\+Xd \hyperlink{functions_8h_a04f569c566ca4fbea3b3a2a13cdd0af5}{fe\+\_\+assemble\+\_\+mass} (Matrix\+Xd mm, Matrix\+Xd m, Vector\+Xi node\+\_\+list, int sdof)
+\item 
+Vector\+Xd \hyperlink{functions_8h_ab5053cb12ac67971a7836346e2839725}{fe\+\_\+gather} (Vector\+Xd global\+\_\+vec, Vector\+Xd local\+\_\+vec, Vector\+Xi node\+\_\+list, int sdof)
+\item 
+Vector\+Xd \hyperlink{functions_8h_a6b8344e12f9005795f93f60ddda26c5c}{fe\+\_\+scatter} (Vector\+Xd global\+\_\+vec, Vector\+Xd local\+\_\+vec, Vector\+Xi node\+\_\+list, int sdof)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{functions_8h_a556ce46e457f991c51f3dac111579e2b}{home\+\_\+path}
+\item 
+int \hyperlink{functions_8h_aa789fe4d8a13fd0990b630909430d5d0}{ndof}
+\item 
+int \hyperlink{functions_8h_a509bc84434af1eff0173e4a71bd758ac}{num\+\_\+meshes}
+\item 
+\hyperlink{class_mesh}{Mesh} $\ast$ \hyperlink{functions_8h_a6e08f89b32254fb4b129720418e7c6ea}{mesh}
+\item 
+double \hyperlink{functions_8h_a1b01a4354147da92a548ea1a5f96d592}{t\+\_\+start}
+\item 
+double \hyperlink{functions_8h_a4b637c5fff609e604a3b2b2787f4a9fa}{t\+\_\+end}
+\item 
+double \hyperlink{functions_8h_a068c627ac33cf3c721d8f28eab205a83}{dt\+\_\+initial}
+\item 
+double \hyperlink{functions_8h_a0a612324885914b6799185d54c48b310}{dt\+\_\+min}
+\item 
+double \hyperlink{functions_8h_a7700f3aeb1ca1c9bbbf712dbfb0aa349}{reduction}
+\item 
+int \hyperlink{functions_8h_a39328cf72d69139b3b6c5b8ef6c636fe}{material\+\_\+types}
+\item 
+\hyperlink{class_materials}{Materials} $\ast$ \hyperlink{functions_8h_acfa6799b35f9301b5fc44e6043624797}{mat}
+\item 
+double \hyperlink{functions_8h_a41b0f465c44fe8b2de43cfaa05bb7880}{input\+\_\+load\+\_\+amp}
+\item 
+Vector\+Xi \hyperlink{functions_8h_ab49fb3bb15f9624e4ffb12a75c7db55d}{fcdof}
+\item 
+Vector\+Xd \hyperlink{functions_8h_ac1f3d4744efb6ce0d6c5b89774ba91aa}{fcload}
+\item 
+int \hyperlink{functions_8h_abd406f244d4145ae5baf4ea059b5232d}{num\+\_\+constraints}
+\item 
+Vector\+Xi \hyperlink{functions_8h_a389e085bd7632077f619ea67d3fb4087}{bcdof}
+\item 
+Vector\+Xd \hyperlink{functions_8h_a3a53182d9f97dc5acff0a10125857cfb}{bcval}
+\item 
+Matrix\+Xd \hyperlink{functions_8h_a6f626bfc805c8f0fb5170c06b4e61c8a}{element\+\_\+stress\+\_\+host}
+\item 
+Matrix\+Xd \hyperlink{functions_8h_a1db1555bea7ef22b3783cdd66ebbeb0e}{element\+\_\+strain\+\_\+host}
+\item 
+Matrix\+Xd \hyperlink{functions_8h_a1ae14dd64a0bd3139f1e153dc5e48016}{element\+\_\+stress\+\_\+truss}
+\item 
+Matrix\+Xd \hyperlink{functions_8h_a296db0b5edbd14e04e368f248587c4eb}{element\+\_\+strain\+\_\+truss}
+\item 
+Vector\+Xd \hyperlink{functions_8h_ae07dc1b145ffa9093a4262baf26aff7a}{fi\+\_\+prev}
+\item 
+Vector\+Xd \hyperlink{functions_8h_a7a1410ed488bb0dd5c10344c4c4951e6}{fi\+\_\+curr}
+\item 
+Vector\+Xd \hyperlink{functions_8h_a3ebb0eb4b098a0ac9e1f24de934a282f}{W\+\_\+int}
+\item 
+Vector\+Xd \hyperlink{functions_8h_a032d9f703d3d55ca1e54f14f44457615}{U\+\_\+host}
+\item 
+Vector\+Xd \hyperlink{functions_8h_ad72fa62a83a5fde880ab78c8c81c48bb}{V\+\_\+host}
+\item 
+Vector\+Xd \hyperlink{functions_8h_a7a1e6ce58aaa0309efd50328e8f295e9}{A\+\_\+host}
+\item 
+Vector\+Xd \hyperlink{functions_8h_a94430566d55ccfa65e497716fd404dea}{U\+\_\+truss}
+\item 
+Vector\+Xd \hyperlink{functions_8h_a5159843113dbbfc6e912c3345c0a7916}{V\+\_\+truss}
+\item 
+Vector\+Xd \hyperlink{functions_8h_a2f98cf28208251affb988effe3a89708}{A\+\_\+truss}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{functions_8h_a42274df47bb3a633055b1ccbb2f920ae}\label{functions_8h_a42274df47bb3a633055b1ccbb2f920ae}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+apply\+\_\+bc\+\_\+displacement@{fe\+\_\+apply\+\_\+bc\+\_\+displacement}}
+\index{fe\+\_\+apply\+\_\+bc\+\_\+displacement@{fe\+\_\+apply\+\_\+bc\+\_\+displacement}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+apply\+\_\+bc\+\_\+displacement()}{fe\_apply\_bc\_displacement()}}
+{\footnotesize\ttfamily Vector\+Xd fe\+\_\+apply\+\_\+bc\+\_\+displacement (\begin{DoxyParamCaption}\item[{Vector\+Xd}]{U,  }\item[{Vector\+Xi}]{bcdof,  }\item[{Vector\+Xd}]{bcval }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file fe\+\_\+apply\+\_\+bc.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{functions_8h_ac52c0e94b3bad1ca823301ad609a1549}\label{functions_8h_ac52c0e94b3bad1ca823301ad609a1549}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+apply\+\_\+bc\+\_\+force@{fe\+\_\+apply\+\_\+bc\+\_\+force}}
+\index{fe\+\_\+apply\+\_\+bc\+\_\+force@{fe\+\_\+apply\+\_\+bc\+\_\+force}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+apply\+\_\+bc\+\_\+force()}{fe\_apply\_bc\_force()}}
+{\footnotesize\ttfamily Vector\+Xd fe\+\_\+apply\+\_\+bc\+\_\+force (\begin{DoxyParamCaption}\item[{Vector\+Xd}]{ff,  }\item[{Vector\+Xi}]{bcdof,  }\item[{Vector\+Xd}]{bcval }\end{DoxyParamCaption})}
+
+
+
+Definition at line 17 of file fe\+\_\+apply\+\_\+bc.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a3c73fda948017ac96aeb19889cfc1cba}\label{functions_8h_a3c73fda948017ac96aeb19889cfc1cba}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+apply\+\_\+bc\+\_\+stiffness@{fe\+\_\+apply\+\_\+bc\+\_\+stiffness}}
+\index{fe\+\_\+apply\+\_\+bc\+\_\+stiffness@{fe\+\_\+apply\+\_\+bc\+\_\+stiffness}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+apply\+\_\+bc\+\_\+stiffness()}{fe\_apply\_bc\_stiffness()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+apply\+\_\+bc\+\_\+stiffness (\begin{DoxyParamCaption}\item[{Matrix\+Xd}]{kk,  }\item[{Vector\+Xi}]{bcdof,  }\item[{Vector\+Xd}]{bcval }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file fe\+\_\+apply\+\_\+bc.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a04f569c566ca4fbea3b3a2a13cdd0af5}\label{functions_8h_a04f569c566ca4fbea3b3a2a13cdd0af5}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+assemble\+\_\+mass@{fe\+\_\+assemble\+\_\+mass}}
+\index{fe\+\_\+assemble\+\_\+mass@{fe\+\_\+assemble\+\_\+mass}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+assemble\+\_\+mass()}{fe\_assemble\_mass()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+assemble\+\_\+mass (\begin{DoxyParamCaption}\item[{Matrix\+Xd}]{mm,  }\item[{Matrix\+Xd}]{m,  }\item[{Vector\+Xi}]{node\+\_\+list,  }\item[{int}]{sdof }\end{DoxyParamCaption})}
+
+
+
+Definition at line 24 of file fe\+\_\+assemble\+\_\+mass.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{functions_8h_ac1306a43db522f3da30471d2a6c48686}\label{functions_8h_ac1306a43db522f3da30471d2a6c48686}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+cal\+Area\+\_\+4@{fe\+\_\+cal\+Area\+\_\+4}}
+\index{fe\+\_\+cal\+Area\+\_\+4@{fe\+\_\+cal\+Area\+\_\+4}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+cal\+Area\+\_\+4()}{fe\_calArea\_4()}}
+{\footnotesize\ttfamily double fe\+\_\+cal\+Area\+\_\+4 (\begin{DoxyParamCaption}\item[{double}]{a1,  }\item[{double}]{a2,  }\item[{double}]{a3,  }\item[{double}]{a4,  }\item[{double}]{b1,  }\item[{double}]{b2,  }\item[{double}]{b3,  }\item[{double}]{b4,  }\item[{double}]{c1,  }\item[{double}]{c2,  }\item[{double}]{c3,  }\item[{double}]{c4 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file fe\+\_\+cal\+Area\+\_\+4.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{functions_8h_ae50379f74802347e04dbc022897f9cb0}\label{functions_8h_ae50379f74802347e04dbc022897f9cb0}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+cal\+Def\+Grad@{fe\+\_\+cal\+Def\+Grad}}
+\index{fe\+\_\+cal\+Def\+Grad@{fe\+\_\+cal\+Def\+Grad}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+cal\+Def\+Grad()}{fe\_calDefGrad()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+cal\+Def\+Grad (\begin{DoxyParamCaption}\item[{Vector\+Xd}]{dndx,  }\item[{Vector\+Xd}]{dndy,  }\item[{Vector\+Xd}]{dndz,  }\item[{Vector\+Xd}]{u }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file fe\+\_\+cal\+Def\+Grad.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{functions_8h_a12aa5a7a3443c6fcc5e65d3bcfc9bcc3}\label{functions_8h_a12aa5a7a3443c6fcc5e65d3bcfc9bcc3}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+cal\+Jacobian@{fe\+\_\+cal\+Jacobian}}
+\index{fe\+\_\+cal\+Jacobian@{fe\+\_\+cal\+Jacobian}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+cal\+Jacobian()}{fe\_calJacobian()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+cal\+Jacobian (\begin{DoxyParamCaption}\item[{int}]{dim,  }\item[{int}]{nnel,  }\item[{Vector\+Xd}]{dndr,  }\item[{Vector\+Xd}]{dnds,  }\item[{Vector\+Xd}]{dndt,  }\item[{double}]{xcoord\mbox{[}$\,$\mbox{]},  }\item[{double}]{ycoord\mbox{[}$\,$\mbox{]},  }\item[{double}]{zcoord\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file fe\+\_\+cal\+Jacobian.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{functions_8h_ae2eeba997bf4f0bc4749b92130de7ba3}\label{functions_8h_ae2eeba997bf4f0bc4749b92130de7ba3}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+cal\+Simp\+Transformation@{fe\+\_\+cal\+Simp\+Transformation}}
+\index{fe\+\_\+cal\+Simp\+Transformation@{fe\+\_\+cal\+Simp\+Transformation}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+cal\+Simp\+Transformation()}{fe\_calSimpTransformation()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+cal\+Simp\+Transformation (\begin{DoxyParamCaption}\item[{Matrix\+Xd}]{truss\+\_\+nodes }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file fe\+\_\+cal\+Simp\+Transformation.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{functions_8h_ab0d9d059d2b8f829000e6f1f7d1d4ffb}\label{functions_8h_ab0d9d059d2b8f829000e6f1f7d1d4ffb}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+cal\+Time\+Step@{fe\+\_\+cal\+Time\+Step}}
+\index{fe\+\_\+cal\+Time\+Step@{fe\+\_\+cal\+Time\+Step}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+cal\+Time\+Step()}{fe\_calTimeStep()}}
+{\footnotesize\ttfamily double fe\+\_\+cal\+Time\+Step (\begin{DoxyParamCaption}\item[{double}]{xcoord\mbox{[}$\,$\mbox{]},  }\item[{double}]{ycoord\mbox{[}$\,$\mbox{]},  }\item[{double}]{zcoord\mbox{[}$\,$\mbox{]},  }\item[{double}]{E,  }\item[{double}]{nu,  }\item[{double}]{rho }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file fe\+\_\+\+Time\+Step.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 9
+Here is the caller graph for this function\+:
+% FIG 10
+\mbox{\Hypertarget{functions_8h_aa41c40dffea4251a07a8a3f5062f47ae}\label{functions_8h_aa41c40dffea4251a07a8a3f5062f47ae}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+cal\+Transformation@{fe\+\_\+cal\+Transformation}}
+\index{fe\+\_\+cal\+Transformation@{fe\+\_\+cal\+Transformation}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+cal\+Transformation()}{fe\_calTransformation()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+cal\+Transformation (\begin{DoxyParamCaption}\item[{Matrix\+Xd}]{truss\+\_\+nodes,  }\item[{int}]{choice }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file fe\+\_\+cal\+Transformation.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 11
+\mbox{\Hypertarget{functions_8h_afbe30e3a940236fc486b96028abf6f46}\label{functions_8h_afbe30e3a940236fc486b96028abf6f46}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+cal\+Volume@{fe\+\_\+cal\+Volume}}
+\index{fe\+\_\+cal\+Volume@{fe\+\_\+cal\+Volume}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+cal\+Volume()}{fe\_calVolume()}}
+{\footnotesize\ttfamily double fe\+\_\+cal\+Volume (\begin{DoxyParamCaption}\item[{double}]{xcoord\mbox{[}$\,$\mbox{]},  }\item[{double}]{ycoord\mbox{[}$\,$\mbox{]},  }\item[{double}]{zcoord\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file fe\+\_\+cal\+Volume.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 12
+\mbox{\Hypertarget{functions_8h_acb1ae85901899b3e4e2a1635e036fd35}\label{functions_8h_acb1ae85901899b3e4e2a1635e036fd35}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+cal\+Wave\+Speed@{fe\+\_\+cal\+Wave\+Speed}}
+\index{fe\+\_\+cal\+Wave\+Speed@{fe\+\_\+cal\+Wave\+Speed}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+cal\+Wave\+Speed()}{fe\_calWaveSpeed()}}
+{\footnotesize\ttfamily double fe\+\_\+cal\+Wave\+Speed (\begin{DoxyParamCaption}\item[{double}]{E,  }\item[{double}]{nu,  }\item[{double}]{rho }\end{DoxyParamCaption})}
+
+
+
+Definition at line 99 of file fe\+\_\+\+Time\+Step.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 13
+\mbox{\Hypertarget{functions_8h_a443f24e16b6209a90ffcb7c249c15e25}\label{functions_8h_a443f24e16b6209a90ffcb7c249c15e25}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+cat\+V2M@{fe\+\_\+cat\+V2M}}
+\index{fe\+\_\+cat\+V2M@{fe\+\_\+cat\+V2M}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+cat\+V2\+M()}{fe\_catV2M()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+cat\+V2M (\begin{DoxyParamCaption}\item[{Matrix\+Xd}]{A,  }\item[{Vector\+Xd}]{B,  }\item[{int}]{opt }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file fe\+\_\+cat\+V2\+M.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 14
+\mbox{\Hypertarget{functions_8h_a5110a192d089c6b26744b9e9d67a7c2d}\label{functions_8h_a5110a192d089c6b26744b9e9d67a7c2d}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+display\+\_\+matrix@{fe\+\_\+display\+\_\+matrix}}
+\index{fe\+\_\+display\+\_\+matrix@{fe\+\_\+display\+\_\+matrix}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+display\+\_\+matrix()}{fe\_display\_matrix()}}
+{\footnotesize\ttfamily void fe\+\_\+display\+\_\+matrix (\begin{DoxyParamCaption}\item[{Matrix\+Xd}]{A }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file fe\+\_\+display.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_ab3e39c6d01b6fd10c9e264731cef75dc}\label{functions_8h_ab3e39c6d01b6fd10c9e264731cef75dc}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+display\+\_\+vector@{fe\+\_\+display\+\_\+vector}}
+\index{fe\+\_\+display\+\_\+vector@{fe\+\_\+display\+\_\+vector}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+display\+\_\+vector()}{fe\_display\_vector()}}
+{\footnotesize\ttfamily void fe\+\_\+display\+\_\+vector (\begin{DoxyParamCaption}\item[{Vector\+Xd}]{A }\end{DoxyParamCaption})}
+
+
+
+Definition at line 41 of file fe\+\_\+display.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_afc547bef246c057db6cbd04bf7f866a9}\label{functions_8h_afc547bef246c057db6cbd04bf7f866a9}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+dndr\+\_\+8@{fe\+\_\+dndr\+\_\+8}}
+\index{fe\+\_\+dndr\+\_\+8@{fe\+\_\+dndr\+\_\+8}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+dndr\+\_\+8()}{fe\_dndr\_8()}}
+{\footnotesize\ttfamily Vector\+Xd fe\+\_\+dndr\+\_\+8 (\begin{DoxyParamCaption}\item[{double}]{rvalue,  }\item[{double}]{svalue,  }\item[{double}]{tvalue }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6 of file fe\+\_\+dn\+\_\+iso\+\_\+8.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 15
+\mbox{\Hypertarget{functions_8h_ac0b5524525e1f2e89bb064c15ab8e664}\label{functions_8h_ac0b5524525e1f2e89bb064c15ab8e664}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+dnds\+\_\+8@{fe\+\_\+dnds\+\_\+8}}
+\index{fe\+\_\+dnds\+\_\+8@{fe\+\_\+dnds\+\_\+8}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+dnds\+\_\+8()}{fe\_dnds\_8()}}
+{\footnotesize\ttfamily Vector\+Xd fe\+\_\+dnds\+\_\+8 (\begin{DoxyParamCaption}\item[{double}]{rvalue,  }\item[{double}]{svalue,  }\item[{double}]{tvalue }\end{DoxyParamCaption})}
+
+
+
+Definition at line 44 of file fe\+\_\+dn\+\_\+iso\+\_\+8.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 16
+\mbox{\Hypertarget{functions_8h_a57e8e5c9f740c98e4767f29c121c2d0a}\label{functions_8h_a57e8e5c9f740c98e4767f29c121c2d0a}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+dndt\+\_\+8@{fe\+\_\+dndt\+\_\+8}}
+\index{fe\+\_\+dndt\+\_\+8@{fe\+\_\+dndt\+\_\+8}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+dndt\+\_\+8()}{fe\_dndt\_8()}}
+{\footnotesize\ttfamily Vector\+Xd fe\+\_\+dndt\+\_\+8 (\begin{DoxyParamCaption}\item[{double}]{rvalue,  }\item[{double}]{svalue,  }\item[{double}]{tvalue }\end{DoxyParamCaption})}
+
+
+
+Definition at line 82 of file fe\+\_\+dn\+\_\+iso\+\_\+8.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 17
+\mbox{\Hypertarget{functions_8h_afc6be1a5667e68156cb099e8da71170f}\label{functions_8h_afc6be1a5667e68156cb099e8da71170f}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+dndx\+\_\+8@{fe\+\_\+dndx\+\_\+8}}
+\index{fe\+\_\+dndx\+\_\+8@{fe\+\_\+dndx\+\_\+8}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+dndx\+\_\+8()}{fe\_dndx\_8()}}
+{\footnotesize\ttfamily Vector\+Xd fe\+\_\+dndx\+\_\+8 (\begin{DoxyParamCaption}\item[{int}]{nnel,  }\item[{Vector\+Xd}]{dndr,  }\item[{Vector\+Xd}]{dnds,  }\item[{Vector\+Xd}]{dndt,  }\item[{Matrix\+Xd}]{inv\+Jacobian }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6 of file fe\+\_\+dn\+\_\+actual\+\_\+8.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 18
+\mbox{\Hypertarget{functions_8h_a0572d7818e085c67f7fbb84eef8ecfb4}\label{functions_8h_a0572d7818e085c67f7fbb84eef8ecfb4}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+dndy\+\_\+8@{fe\+\_\+dndy\+\_\+8}}
+\index{fe\+\_\+dndy\+\_\+8@{fe\+\_\+dndy\+\_\+8}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+dndy\+\_\+8()}{fe\_dndy\_8()}}
+{\footnotesize\ttfamily Vector\+Xd fe\+\_\+dndy\+\_\+8 (\begin{DoxyParamCaption}\item[{int}]{nnel,  }\item[{Vector\+Xd}]{dndr,  }\item[{Vector\+Xd}]{dnds,  }\item[{Vector\+Xd}]{dndt,  }\item[{Matrix\+Xd}]{inv\+Jacobian }\end{DoxyParamCaption})}
+
+
+
+Definition at line 17 of file fe\+\_\+dn\+\_\+actual\+\_\+8.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 19
+\mbox{\Hypertarget{functions_8h_aaf75db8433433807839c6ea17f2cf72c}\label{functions_8h_aaf75db8433433807839c6ea17f2cf72c}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+dndz\+\_\+8@{fe\+\_\+dndz\+\_\+8}}
+\index{fe\+\_\+dndz\+\_\+8@{fe\+\_\+dndz\+\_\+8}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+dndz\+\_\+8()}{fe\_dndz\_8()}}
+{\footnotesize\ttfamily Vector\+Xd fe\+\_\+dndz\+\_\+8 (\begin{DoxyParamCaption}\item[{int}]{nnel,  }\item[{Vector\+Xd}]{dndr,  }\item[{Vector\+Xd}]{dnds,  }\item[{Vector\+Xd}]{dndt,  }\item[{Matrix\+Xd}]{inv\+Jacobian }\end{DoxyParamCaption})}
+
+
+
+Definition at line 28 of file fe\+\_\+dn\+\_\+actual\+\_\+8.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 20
+\mbox{\Hypertarget{functions_8h_ae4dbe24b761cafa3577afab76726b382}\label{functions_8h_ae4dbe24b761cafa3577afab76726b382}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+find\+\_\+index@{fe\+\_\+find\+\_\+index}}
+\index{fe\+\_\+find\+\_\+index@{fe\+\_\+find\+\_\+index}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+find\+\_\+index()}{fe\_find\_index()}}
+{\footnotesize\ttfamily Vector\+Xi fe\+\_\+find\+\_\+index (\begin{DoxyParamCaption}\item[{Vector\+Xi}]{node\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Definition at line 16 of file fe\+\_\+find\+\_\+index.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 21
+\mbox{\Hypertarget{functions_8h_ab5053cb12ac67971a7836346e2839725}\label{functions_8h_ab5053cb12ac67971a7836346e2839725}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+gather@{fe\+\_\+gather}}
+\index{fe\+\_\+gather@{fe\+\_\+gather}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+gather()}{fe\_gather()}}
+{\footnotesize\ttfamily Vector\+Xd fe\+\_\+gather (\begin{DoxyParamCaption}\item[{Vector\+Xd}]{global\+\_\+vec,  }\item[{Vector\+Xd}]{local\+\_\+vec,  }\item[{Vector\+Xi}]{node\+\_\+list,  }\item[{int}]{sdof }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6 of file fe\+\_\+gather\+\_\+scatter.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 22
+Here is the caller graph for this function\+:
+% FIG 23
+\mbox{\Hypertarget{functions_8h_af7ffbad6dfcc99fc88b130c1a7b1720a}\label{functions_8h_af7ffbad6dfcc99fc88b130c1a7b1720a}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+get\+\_\+mats@{fe\+\_\+get\+\_\+mats}}
+\index{fe\+\_\+get\+\_\+mats@{fe\+\_\+get\+\_\+mats}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+get\+\_\+mats()}{fe\_get\_mats()}}
+{\footnotesize\ttfamily double fe\+\_\+get\+\_\+mats (\begin{DoxyParamCaption}\item[{int}]{matl\+\_\+code,  }\item[{int}]{obj\+\_\+interest }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file fe\+\_\+get\+\_\+mats.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 24
+\mbox{\Hypertarget{functions_8h_a34d6fb85943d945b7e8600d2ef4220d0}\label{functions_8h_a34d6fb85943d945b7e8600d2ef4220d0}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+get\+\_\+model@{fe\+\_\+get\+\_\+model}}
+\index{fe\+\_\+get\+\_\+model@{fe\+\_\+get\+\_\+model}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+get\+\_\+model()}{fe\_get\_model()}}
+{\footnotesize\ttfamily std\+::string fe\+\_\+get\+\_\+model (\begin{DoxyParamCaption}\item[{int}]{matl\+\_\+code }\end{DoxyParamCaption})}
+
+
+
+Definition at line 22 of file fe\+\_\+get\+\_\+mats.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 25
+\mbox{\Hypertarget{functions_8h_aa8f7f6d72c6b57c721b23a38e2e20fc5}\label{functions_8h_aa8f7f6d72c6b57c721b23a38e2e20fc5}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+getforce@{fe\+\_\+getforce}}
+\index{fe\+\_\+getforce@{fe\+\_\+getforce}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+getforce()}{fe\_getforce()}}
+{\footnotesize\ttfamily Vector\+Xd fe\+\_\+getforce (\begin{DoxyParamCaption}\item[{Matrix\+Xd}]{nodes,  }\item[{Matrix\+Xd}]{elements,  }\item[{int}]{ndof,  }\item[{Vector\+Xd}]{u,  }\item[{Vector\+Xd}]{v,  }\item[{Vector\+Xd}]{fext,  }\item[{int}]{size\+\_\+counter,  }\item[{Matrix\+Xd}]{nodes\+\_\+truss,  }\item[{Matrix\+Xd}]{elements\+\_\+truss }\end{DoxyParamCaption})}
+
+This function represents the get force step in Belytschko For each hex element, this function calculates the internal nodal force vector and the resultant nodal force vector. Once, this is calculated for each element, the resultant vectors are scattered into global vectors. 
+
+Definition at line 12 of file fe\+\_\+getforce.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 26
+Here is the caller graph for this function\+:
+% FIG 27
+\mbox{\Hypertarget{functions_8h_af737926a3dfd669254a56dbbf675ac92}\label{functions_8h_af737926a3dfd669254a56dbbf675ac92}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+get\+Time\+Step@{fe\+\_\+get\+Time\+Step}}
+\index{fe\+\_\+get\+Time\+Step@{fe\+\_\+get\+Time\+Step}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+get\+Time\+Step()}{fe\_getTimeStep()}}
+{\footnotesize\ttfamily double fe\+\_\+get\+Time\+Step (\begin{DoxyParamCaption}\item[{Matrix\+Xd}]{nodes,  }\item[{Matrix\+Xd}]{elements,  }\item[{int}]{ndof,  }\item[{Vector\+Xd}]{u,  }\item[{Vector\+Xd}]{v,  }\item[{Vector\+Xd}]{fext }\end{DoxyParamCaption})}
+
+
+
+Definition at line 43 of file fe\+\_\+\+Time\+Step.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 28
+Here is the caller graph for this function\+:
+% FIG 29
+\mbox{\Hypertarget{functions_8h_ada816506319851dcff162fa5e54d72d5}\label{functions_8h_ada816506319851dcff162fa5e54d72d5}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+iso\+Elastic@{fe\+\_\+iso\+Elastic}}
+\index{fe\+\_\+iso\+Elastic@{fe\+\_\+iso\+Elastic}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+iso\+Elastic()}{fe\_isoElastic()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+iso\+Elastic (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{double}]{E,  }\item[{double}]{nu }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file fe\+\_\+iso\+Elastic.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 30
+\mbox{\Hypertarget{functions_8h_ab2f8704631ca6c23a453d1905efbb162}\label{functions_8h_ab2f8704631ca6c23a453d1905efbb162}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+main\+E\+X\+P\+L\+I\+C\+IT@{fe\+\_\+main\+E\+X\+P\+L\+I\+C\+IT}}
+\index{fe\+\_\+main\+E\+X\+P\+L\+I\+C\+IT@{fe\+\_\+main\+E\+X\+P\+L\+I\+C\+IT}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+main\+E\+X\+P\+L\+I\+C\+I\+T()}{fe\_mainEXPLICIT()}}
+{\footnotesize\ttfamily void fe\+\_\+main\+E\+X\+P\+L\+I\+C\+IT (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function carries out the explicit dynamic analysis of the F\+EM problem. 
+
+number of elements 
+
+Definition at line 7 of file fe\+\_\+main\+E\+X\+P\+L\+I\+C\+I\+T.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 31
+Here is the caller graph for this function\+:
+% FIG 32
+\mbox{\Hypertarget{functions_8h_a04906e61b8cfdc7232924a594b95eb1f}\label{functions_8h_a04906e61b8cfdc7232924a594b95eb1f}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+mass\+\_\+hex@{fe\+\_\+mass\+\_\+hex}}
+\index{fe\+\_\+mass\+\_\+hex@{fe\+\_\+mass\+\_\+hex}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+mass\+\_\+hex()}{fe\_mass\_hex()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+mass\+\_\+hex (\begin{DoxyParamCaption}\item[{double}]{rho,  }\item[{int}]{ndof,  }\item[{int}]{nnel,  }\item[{int}]{edof,  }\item[{double}]{xcoord\mbox{[}$\,$\mbox{]},  }\item[{double}]{ycoord\mbox{[}$\,$\mbox{]},  }\item[{double}]{zcoord\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file fe\+\_\+mass\+\_\+hex.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 33
+Here is the caller graph for this function\+:
+% FIG 34
+\mbox{\Hypertarget{functions_8h_a350d27ea0f1de929495d659b26f428d2}\label{functions_8h_a350d27ea0f1de929495d659b26f428d2}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+mass\+\_\+truss@{fe\+\_\+mass\+\_\+truss}}
+\index{fe\+\_\+mass\+\_\+truss@{fe\+\_\+mass\+\_\+truss}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+mass\+\_\+truss()}{fe\_mass\_truss()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+mass\+\_\+truss (\begin{DoxyParamCaption}\item[{double}]{rho,  }\item[{double}]{A\+\_\+truss,  }\item[{int}]{edof,  }\item[{Matrix\+Xd}]{nodes,  }\item[{Matrix\+Xd}]{elements }\end{DoxyParamCaption})}
+
+
+
+Definition at line 81 of file fe\+\_\+mass\+\_\+hex.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a6b8344e12f9005795f93f60ddda26c5c}\label{functions_8h_a6b8344e12f9005795f93f60ddda26c5c}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+scatter@{fe\+\_\+scatter}}
+\index{fe\+\_\+scatter@{fe\+\_\+scatter}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+scatter()}{fe\_scatter()}}
+{\footnotesize\ttfamily Vector\+Xd fe\+\_\+scatter (\begin{DoxyParamCaption}\item[{Vector\+Xd}]{global\+\_\+vec,  }\item[{Vector\+Xd}]{local\+\_\+vec,  }\item[{Vector\+Xi}]{node\+\_\+list,  }\item[{int}]{sdof }\end{DoxyParamCaption})}
+
+
+
+Definition at line 22 of file fe\+\_\+gather\+\_\+scatter.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 35
+Here is the caller graph for this function\+:
+% FIG 36
+\mbox{\Hypertarget{functions_8h_a98fae74dde5fe33a7062e7457a2d3227}\label{functions_8h_a98fae74dde5fe33a7062e7457a2d3227}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+shape\+Matrix@{fe\+\_\+shape\+Matrix}}
+\index{fe\+\_\+shape\+Matrix@{fe\+\_\+shape\+Matrix}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+shape\+Matrix()}{fe\_shapeMatrix()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+shape\+Matrix (\begin{DoxyParamCaption}\item[{int}]{edof,  }\item[{int}]{nnel,  }\item[{Vector\+Xd}]{shapes }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file fe\+\_\+shape\+Matrix.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 37
+\mbox{\Hypertarget{functions_8h_ab77a3a6d6f6b436d7e8c600bb0869927}\label{functions_8h_ab77a3a6d6f6b436d7e8c600bb0869927}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+shapes\+\_\+8@{fe\+\_\+shapes\+\_\+8}}
+\index{fe\+\_\+shapes\+\_\+8@{fe\+\_\+shapes\+\_\+8}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+shapes\+\_\+8()}{fe\_shapes\_8()}}
+{\footnotesize\ttfamily Vector\+Xd fe\+\_\+shapes\+\_\+8 (\begin{DoxyParamCaption}\item[{double}]{rvalue,  }\item[{double}]{svalue,  }\item[{double}]{tvalue }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file fe\+\_\+shapes.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 38
+\mbox{\Hypertarget{functions_8h_ab3798340a27f0972299b3820aab0ccba}\label{functions_8h_ab3798340a27f0972299b3820aab0ccba}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+stiffness\+\_\+embed\+\_\+truss@{fe\+\_\+stiffness\+\_\+embed\+\_\+truss}}
+\index{fe\+\_\+stiffness\+\_\+embed\+\_\+truss@{fe\+\_\+stiffness\+\_\+embed\+\_\+truss}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+stiffness\+\_\+embed\+\_\+truss()}{fe\_stiffness\_embed\_truss()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+stiffness\+\_\+embed\+\_\+truss (\begin{DoxyParamCaption}\item[{Matrix\+Xd}]{nodes\+\_\+truss,  }\item[{Matrix\+Xd}]{elements\+\_\+truss,  }\item[{double}]{E\+\_\+truss,  }\item[{double}]{A\+\_\+truss,  }\item[{int}]{ndof,  }\item[{int}]{nnel,  }\item[{int}]{edof,  }\item[{double}]{xcoord\mbox{[}$\,$\mbox{]},  }\item[{double}]{ycoord\mbox{[}$\,$\mbox{]},  }\item[{double}]{zcoord\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6 of file fe\+\_\+stiffness\+\_\+embed\+\_\+truss.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 39
+\mbox{\Hypertarget{functions_8h_a9378d4fc517465015411134456235a76}\label{functions_8h_a9378d4fc517465015411134456235a76}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+stiffness\+\_\+hex@{fe\+\_\+stiffness\+\_\+hex}}
+\index{fe\+\_\+stiffness\+\_\+hex@{fe\+\_\+stiffness\+\_\+hex}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+stiffness\+\_\+hex()}{fe\_stiffness\_hex()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+stiffness\+\_\+hex (\begin{DoxyParamCaption}\item[{double}]{E,  }\item[{double}]{nu,  }\item[{int}]{ndof,  }\item[{int}]{nnel,  }\item[{int}]{edof,  }\item[{double}]{xcoord\mbox{[}$\,$\mbox{]},  }\item[{double}]{ycoord\mbox{[}$\,$\mbox{]},  }\item[{double}]{zcoord\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file fe\+\_\+stiffness\+\_\+hex.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 40
+\mbox{\Hypertarget{functions_8h_a4b49d2df4f86e7d0755971ab4bfa48b2}\label{functions_8h_a4b49d2df4f86e7d0755971ab4bfa48b2}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+str\+Disp\+Matrix@{fe\+\_\+str\+Disp\+Matrix}}
+\index{fe\+\_\+str\+Disp\+Matrix@{fe\+\_\+str\+Disp\+Matrix}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+str\+Disp\+Matrix()}{fe\_strDispMatrix()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+str\+Disp\+Matrix (\begin{DoxyParamCaption}\item[{int}]{edof,  }\item[{int}]{nnel,  }\item[{Vector\+Xd}]{dndx,  }\item[{Vector\+Xd}]{dndy,  }\item[{Vector\+Xd}]{dndz }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file fe\+\_\+str\+Disp\+Matrix.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 41
+\mbox{\Hypertarget{functions_8h_a8c9fd519c93c847cdf52de947964eb67}\label{functions_8h_a8c9fd519c93c847cdf52de947964eb67}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+str\+Disp\+Matrix\+\_\+total\+Lagrangian@{fe\+\_\+str\+Disp\+Matrix\+\_\+total\+Lagrangian}}
+\index{fe\+\_\+str\+Disp\+Matrix\+\_\+total\+Lagrangian@{fe\+\_\+str\+Disp\+Matrix\+\_\+total\+Lagrangian}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+str\+Disp\+Matrix\+\_\+total\+Lagrangian()}{fe\_strDispMatrix\_totalLagrangian()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+str\+Disp\+Matrix\+\_\+total\+Lagrangian (\begin{DoxyParamCaption}\item[{int}]{edof,  }\item[{int}]{nnel,  }\item[{Vector\+Xd}]{dndx,  }\item[{Vector\+Xd}]{dndy,  }\item[{Vector\+Xd}]{dndz,  }\item[{Vector\+Xd}]{u }\end{DoxyParamCaption})}
+
+
+
+Definition at line 31 of file fe\+\_\+str\+Disp\+Matrix.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 42
+Here is the caller graph for this function\+:
+% FIG 43
+\mbox{\Hypertarget{functions_8h_a7d0fd8cfef8b891901eb6f0f780fd9f2}\label{functions_8h_a7d0fd8cfef8b891901eb6f0f780fd9f2}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+stress\+Update@{fe\+\_\+stress\+Update}}
+\index{fe\+\_\+stress\+Update@{fe\+\_\+stress\+Update}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+stress\+Update()}{fe\_stressUpdate()}}
+{\footnotesize\ttfamily Vector\+Xd fe\+\_\+stress\+Update (\begin{DoxyParamCaption}\item[{Vector\+Xd}]{dndx,  }\item[{Vector\+Xd}]{dndy,  }\item[{Vector\+Xd}]{dndz,  }\item[{Matrix\+Xd}]{disp\+\_\+mat,  }\item[{Vector\+Xd}]{u,  }\item[{int}]{opt,  }\item[{int}]{return\+\_\+opt }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file fe\+\_\+stress\+Update.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 44
+Here is the caller graph for this function\+:
+% FIG 45
+\mbox{\Hypertarget{functions_8h_a94c1b672863e28bc2c70d08726939929}\label{functions_8h_a94c1b672863e28bc2c70d08726939929}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+stress\+Update\+\_\+1d@{fe\+\_\+stress\+Update\+\_\+1d}}
+\index{fe\+\_\+stress\+Update\+\_\+1d@{fe\+\_\+stress\+Update\+\_\+1d}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+stress\+Update\+\_\+1d()}{fe\_stressUpdate\_1d()}}
+{\footnotesize\ttfamily Vector\+Xd fe\+\_\+stress\+Update\+\_\+1d (\begin{DoxyParamCaption}\item[{Vector\+Xd}]{dndx,  }\item[{Vector\+Xd}]{dndy,  }\item[{Vector\+Xd}]{dndz,  }\item[{Vector\+Xd}]{u\+\_\+e,  }\item[{int}]{opt,  }\item[{Matrix\+Xd}]{nodes }\end{DoxyParamCaption})}
+
+
+
+Definition at line 160 of file fe\+\_\+stress\+Update.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 46
+\mbox{\Hypertarget{functions_8h_ab747d046148af042245ed13ca720c5ec}\label{functions_8h_ab747d046148af042245ed13ca720c5ec}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+transform\+Mass@{fe\+\_\+transform\+Mass}}
+\index{fe\+\_\+transform\+Mass@{fe\+\_\+transform\+Mass}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+transform\+Mass()}{fe\_transformMass()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+transform\+Mass (\begin{DoxyParamCaption}\item[{Matrix\+Xd}]{m,  }\item[{int}]{opt }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6 of file fe\+\_\+transform\+Mass.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 47
+\mbox{\Hypertarget{functions_8h_a81ce693c4400df82b8753f25cc2dcabc}\label{functions_8h_a81ce693c4400df82b8753f25cc2dcabc}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+update\+Nodes@{fe\+\_\+update\+Nodes}}
+\index{fe\+\_\+update\+Nodes@{fe\+\_\+update\+Nodes}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+update\+Nodes()}{fe\_updateNodes()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+update\+Nodes (\begin{DoxyParamCaption}\item[{Matrix\+Xd}]{nodes,  }\item[{Vector\+Xd}]{displacements }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file fe\+\_\+update.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a45a1daa8de18fc5fc463f9b569970245}\label{functions_8h_a45a1daa8de18fc5fc463f9b569970245}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+vtk\+Write\+\_\+host@{fe\+\_\+vtk\+Write\+\_\+host}}
+\index{fe\+\_\+vtk\+Write\+\_\+host@{fe\+\_\+vtk\+Write\+\_\+host}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+vtk\+Write\+\_\+host()}{fe\_vtkWrite\_host()}}
+{\footnotesize\ttfamily void fe\+\_\+vtk\+Write\+\_\+host (\begin{DoxyParamCaption}\item[{std\+::string}]{output,  }\item[{int}]{format\+\_\+choice,  }\item[{int}]{mesh\+\_\+choice,  }\item[{int}]{time\+\_\+step,  }\item[{Matrix\+Xd}]{nodes,  }\item[{Matrix\+Xd}]{elements }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6 of file fe\+\_\+vtk.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 48
+\mbox{\Hypertarget{functions_8h_a6e838460f501267efe34f29d4cf6d9cd}\label{functions_8h_a6e838460f501267efe34f29d4cf6d9cd}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+vtk\+Write\+\_\+truss@{fe\+\_\+vtk\+Write\+\_\+truss}}
+\index{fe\+\_\+vtk\+Write\+\_\+truss@{fe\+\_\+vtk\+Write\+\_\+truss}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+vtk\+Write\+\_\+truss()}{fe\_vtkWrite\_truss()}}
+{\footnotesize\ttfamily void fe\+\_\+vtk\+Write\+\_\+truss (\begin{DoxyParamCaption}\item[{std\+::string}]{output,  }\item[{int}]{format\+\_\+choice,  }\item[{int}]{mesh\+\_\+choice,  }\item[{int}]{time\+\_\+step,  }\item[{Matrix\+Xd}]{nodes,  }\item[{Matrix\+Xd}]{elements }\end{DoxyParamCaption})}
+
+
+
+Definition at line 138 of file fe\+\_\+vtk.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 49
+\mbox{\Hypertarget{functions_8h_a9dec90c41460e15aa1d8dce787683406}\label{functions_8h_a9dec90c41460e15aa1d8dce787683406}} 
+\index{functions.\+h@{functions.\+h}!fe\+\_\+write\+Element\+Stress@{fe\+\_\+write\+Element\+Stress}}
+\index{fe\+\_\+write\+Element\+Stress@{fe\+\_\+write\+Element\+Stress}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fe\+\_\+write\+Element\+Stress()}{fe\_writeElementStress()}}
+{\footnotesize\ttfamily void fe\+\_\+write\+Element\+Stress (\begin{DoxyParamCaption}\item[{Matrix\+Xd}]{sigma\+\_\+all,  }\item[{double}]{time }\end{DoxyParamCaption})}
+
+
+
+Definition at line 12 of file fe\+\_\+write.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 50
+\mbox{\Hypertarget{functions_8h_aa6ab8c3298fa10734e299fe8266aed35}\label{functions_8h_aa6ab8c3298fa10734e299fe8266aed35}} 
+\index{functions.\+h@{functions.\+h}!guass\+\_\+points@{guass\+\_\+points}}
+\index{guass\+\_\+points@{guass\+\_\+points}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{guass\+\_\+points()}{guass\_points()}}
+{\footnotesize\ttfamily Vector\+Xd guass\+\_\+points (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file fe\+\_\+guass.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 51
+\mbox{\Hypertarget{functions_8h_a502e3469e1cc253deb142f46c0789a78}\label{functions_8h_a502e3469e1cc253deb142f46c0789a78}} 
+\index{functions.\+h@{functions.\+h}!guass\+\_\+points\+\_\+3d@{guass\+\_\+points\+\_\+3d}}
+\index{guass\+\_\+points\+\_\+3d@{guass\+\_\+points\+\_\+3d}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{guass\+\_\+points\+\_\+3d()}{guass\_points\_3d()}}
+{\footnotesize\ttfamily Matrix\+Xd guass\+\_\+points\+\_\+3d (\begin{DoxyParamCaption}\item[{int}]{nx,  }\item[{int}]{ny,  }\item[{int}]{nz }\end{DoxyParamCaption})}
+
+
+
+Definition at line 34 of file fe\+\_\+guass.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 52
+\mbox{\Hypertarget{functions_8h_a84dcc9575e861bdb2872c10ba6238ee4}\label{functions_8h_a84dcc9575e861bdb2872c10ba6238ee4}} 
+\index{functions.\+h@{functions.\+h}!guass\+\_\+weights@{guass\+\_\+weights}}
+\index{guass\+\_\+weights@{guass\+\_\+weights}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{guass\+\_\+weights()}{guass\_weights()}}
+{\footnotesize\ttfamily Vector\+Xd guass\+\_\+weights (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line 19 of file fe\+\_\+guass.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 53
+\mbox{\Hypertarget{functions_8h_ad99b08ce65ae353e91486d7685c22024}\label{functions_8h_ad99b08ce65ae353e91486d7685c22024}} 
+\index{functions.\+h@{functions.\+h}!guass\+\_\+weights\+\_\+3d@{guass\+\_\+weights\+\_\+3d}}
+\index{guass\+\_\+weights\+\_\+3d@{guass\+\_\+weights\+\_\+3d}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{guass\+\_\+weights\+\_\+3d()}{guass\_weights\_3d()}}
+{\footnotesize\ttfamily Matrix\+Xd guass\+\_\+weights\+\_\+3d (\begin{DoxyParamCaption}\item[{int}]{ndof,  }\item[{int}]{nx,  }\item[{int}]{ny,  }\item[{int}]{nz }\end{DoxyParamCaption})}
+
+
+
+Definition at line 65 of file fe\+\_\+guass.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 54
+Here is the caller graph for this function\+:
+% FIG 55
+\mbox{\Hypertarget{functions_8h_a346547477d2a1fbeff6b5e0b05314283}\label{functions_8h_a346547477d2a1fbeff6b5e0b05314283}} 
+\index{functions.\+h@{functions.\+h}!matrix2text@{matrix2text}}
+\index{matrix2text@{matrix2text}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{matrix2text()}{matrix2text()}}
+{\footnotesize\ttfamily void matrix2text (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{Matrix\+Xd}]{new\+\_\+slave\+\_\+master,  }\item[{int}]{width }\end{DoxyParamCaption})}
+
+
+
+Definition at line 44 of file fe\+\_\+input\+\_\+output.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 56
+\mbox{\Hypertarget{functions_8h_add4fca63e194477644c3388febf88023}\label{functions_8h_add4fca63e194477644c3388febf88023}} 
+\index{functions.\+h@{functions.\+h}!text2matrix@{text2matrix}}
+\index{text2matrix@{text2matrix}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{text2matrix()}{text2matrix()}}
+{\footnotesize\ttfamily Matrix\+Xd text2matrix (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{int}]{cols }\end{DoxyParamCaption})}
+
+
+
+Definition at line 10 of file fe\+\_\+input\+\_\+output.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 57
+\mbox{\Hypertarget{functions_8h_a0b5f62139051473c809da12cc0c45e29}\label{functions_8h_a0b5f62139051473c809da12cc0c45e29}} 
+\index{functions.\+h@{functions.\+h}!vector2text@{vector2text}}
+\index{vector2text@{vector2text}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{vector2text()}{vector2text()}}
+{\footnotesize\ttfamily void vector2text (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{Vector\+Xd}]{vector,  }\item[{int}]{width }\end{DoxyParamCaption})}
+
+
+
+Definition at line 72 of file fe\+\_\+input\+\_\+output.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 58
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{functions_8h_a7a1e6ce58aaa0309efd50328e8f295e9}\label{functions_8h_a7a1e6ce58aaa0309efd50328e8f295e9}} 
+\index{functions.\+h@{functions.\+h}!A\+\_\+host@{A\+\_\+host}}
+\index{A\+\_\+host@{A\+\_\+host}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{A\+\_\+host}{A\_host}}
+{\footnotesize\ttfamily Vector\+Xd A\+\_\+host}
+
+Variable storing the nodal accelerations of the host mesh 
+
+Definition at line 100 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a2f98cf28208251affb988effe3a89708}\label{functions_8h_a2f98cf28208251affb988effe3a89708}} 
+\index{functions.\+h@{functions.\+h}!A\+\_\+truss@{A\+\_\+truss}}
+\index{A\+\_\+truss@{A\+\_\+truss}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{A\+\_\+truss}{A\_truss}}
+{\footnotesize\ttfamily Vector\+Xd A\+\_\+truss}
+
+Variable storing the nodal accelerations of the embedded mesh 
+
+Definition at line 107 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a389e085bd7632077f619ea67d3fb4087}\label{functions_8h_a389e085bd7632077f619ea67d3fb4087}} 
+\index{functions.\+h@{functions.\+h}!bcdof@{bcdof}}
+\index{bcdof@{bcdof}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{bcdof}{bcdof}}
+{\footnotesize\ttfamily Vector\+Xi bcdof}
+
+D\+OF numbers for boundary conditions 
+
+Definition at line 79 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a3a53182d9f97dc5acff0a10125857cfb}\label{functions_8h_a3a53182d9f97dc5acff0a10125857cfb}} 
+\index{functions.\+h@{functions.\+h}!bcval@{bcval}}
+\index{bcval@{bcval}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{bcval}{bcval}}
+{\footnotesize\ttfamily Vector\+Xd bcval}
+
+Displacement of the constrained D\+OF\textquotesingle{}s 
+
+Definition at line 81 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a068c627ac33cf3c721d8f28eab205a83}\label{functions_8h_a068c627ac33cf3c721d8f28eab205a83}} 
+\index{functions.\+h@{functions.\+h}!dt\+\_\+initial@{dt\+\_\+initial}}
+\index{dt\+\_\+initial@{dt\+\_\+initial}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{dt\+\_\+initial}{dt\_initial}}
+{\footnotesize\ttfamily double dt\+\_\+initial}
+
+End Time 
+
+Definition at line 60 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a0a612324885914b6799185d54c48b310}\label{functions_8h_a0a612324885914b6799185d54c48b310}} 
+\index{functions.\+h@{functions.\+h}!dt\+\_\+min@{dt\+\_\+min}}
+\index{dt\+\_\+min@{dt\+\_\+min}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{dt\+\_\+min}{dt\_min}}
+{\footnotesize\ttfamily double dt\+\_\+min}
+
+Initial time step 
+
+Definition at line 61 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a1db1555bea7ef22b3783cdd66ebbeb0e}\label{functions_8h_a1db1555bea7ef22b3783cdd66ebbeb0e}} 
+\index{functions.\+h@{functions.\+h}!element\+\_\+strain\+\_\+host@{element\+\_\+strain\+\_\+host}}
+\index{element\+\_\+strain\+\_\+host@{element\+\_\+strain\+\_\+host}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{element\+\_\+strain\+\_\+host}{element\_strain\_host}}
+{\footnotesize\ttfamily Matrix\+Xd element\+\_\+strain\+\_\+host}
+
+
+
+Definition at line 85 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a296db0b5edbd14e04e368f248587c4eb}\label{functions_8h_a296db0b5edbd14e04e368f248587c4eb}} 
+\index{functions.\+h@{functions.\+h}!element\+\_\+strain\+\_\+truss@{element\+\_\+strain\+\_\+truss}}
+\index{element\+\_\+strain\+\_\+truss@{element\+\_\+strain\+\_\+truss}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{element\+\_\+strain\+\_\+truss}{element\_strain\_truss}}
+{\footnotesize\ttfamily Matrix\+Xd element\+\_\+strain\+\_\+truss}
+
+
+
+Definition at line 87 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a6f626bfc805c8f0fb5170c06b4e61c8a}\label{functions_8h_a6f626bfc805c8f0fb5170c06b4e61c8a}} 
+\index{functions.\+h@{functions.\+h}!element\+\_\+stress\+\_\+host@{element\+\_\+stress\+\_\+host}}
+\index{element\+\_\+stress\+\_\+host@{element\+\_\+stress\+\_\+host}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{element\+\_\+stress\+\_\+host}{element\_stress\_host}}
+{\footnotesize\ttfamily Matrix\+Xd element\+\_\+stress\+\_\+host}
+
+
+
+Definition at line 84 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a1ae14dd64a0bd3139f1e153dc5e48016}\label{functions_8h_a1ae14dd64a0bd3139f1e153dc5e48016}} 
+\index{functions.\+h@{functions.\+h}!element\+\_\+stress\+\_\+truss@{element\+\_\+stress\+\_\+truss}}
+\index{element\+\_\+stress\+\_\+truss@{element\+\_\+stress\+\_\+truss}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{element\+\_\+stress\+\_\+truss}{element\_stress\_truss}}
+{\footnotesize\ttfamily Matrix\+Xd element\+\_\+stress\+\_\+truss}
+
+
+
+Definition at line 86 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_ab49fb3bb15f9624e4ffb12a75c7db55d}\label{functions_8h_ab49fb3bb15f9624e4ffb12a75c7db55d}} 
+\index{functions.\+h@{functions.\+h}!fcdof@{fcdof}}
+\index{fcdof@{fcdof}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fcdof}{fcdof}}
+{\footnotesize\ttfamily Vector\+Xi fcdof}
+
+Degrees of freedom -- corresponding to the applied load 
+
+Definition at line 72 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_ac1f3d4744efb6ce0d6c5b89774ba91aa}\label{functions_8h_ac1f3d4744efb6ce0d6c5b89774ba91aa}} 
+\index{functions.\+h@{functions.\+h}!fcload@{fcload}}
+\index{fcload@{fcload}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fcload}{fcload}}
+{\footnotesize\ttfamily Vector\+Xd fcload}
+
+
+
+Definition at line 73 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a7a1410ed488bb0dd5c10344c4c4951e6}\label{functions_8h_a7a1410ed488bb0dd5c10344c4c4951e6}} 
+\index{functions.\+h@{functions.\+h}!fi\+\_\+curr@{fi\+\_\+curr}}
+\index{fi\+\_\+curr@{fi\+\_\+curr}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fi\+\_\+curr}{fi\_curr}}
+{\footnotesize\ttfamily Vector\+Xd fi\+\_\+curr}
+
+
+
+Definition at line 92 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_ae07dc1b145ffa9093a4262baf26aff7a}\label{functions_8h_ae07dc1b145ffa9093a4262baf26aff7a}} 
+\index{functions.\+h@{functions.\+h}!fi\+\_\+prev@{fi\+\_\+prev}}
+\index{fi\+\_\+prev@{fi\+\_\+prev}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{fi\+\_\+prev}{fi\_prev}}
+{\footnotesize\ttfamily Vector\+Xd fi\+\_\+prev}
+
+Internal nodal force at previous and current timesteps. Used in the calculation of internal energy of the system. 
+
+Definition at line 91 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a556ce46e457f991c51f3dac111579e2b}\label{functions_8h_a556ce46e457f991c51f3dac111579e2b}} 
+\index{functions.\+h@{functions.\+h}!home\+\_\+path@{home\+\_\+path}}
+\index{home\+\_\+path@{home\+\_\+path}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{home\+\_\+path}{home\_path}}
+{\footnotesize\ttfamily std\+::string home\+\_\+path}
+
+Here one should enter the details of the job-\/folder 
+
+Definition at line 48 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a41b0f465c44fe8b2de43cfaa05bb7880}\label{functions_8h_a41b0f465c44fe8b2de43cfaa05bb7880}} 
+\index{functions.\+h@{functions.\+h}!input\+\_\+load\+\_\+amp@{input\+\_\+load\+\_\+amp}}
+\index{input\+\_\+load\+\_\+amp@{input\+\_\+load\+\_\+amp}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{input\+\_\+load\+\_\+amp}{input\_load\_amp}}
+{\footnotesize\ttfamily double input\+\_\+load\+\_\+amp}
+
+Loading Amplitude 
+
+Definition at line 70 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_acfa6799b35f9301b5fc44e6043624797}\label{functions_8h_acfa6799b35f9301b5fc44e6043624797}} 
+\index{functions.\+h@{functions.\+h}!mat@{mat}}
+\index{mat@{mat}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{mat}{mat}}
+{\footnotesize\ttfamily \hyperlink{class_materials}{Materials}$\ast$ mat}
+
+
+
+Definition at line 66 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a39328cf72d69139b3b6c5b8ef6c636fe}\label{functions_8h_a39328cf72d69139b3b6c5b8ef6c636fe}} 
+\index{functions.\+h@{functions.\+h}!material\+\_\+types@{material\+\_\+types}}
+\index{material\+\_\+types@{material\+\_\+types}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{material\+\_\+types}{material\_types}}
+{\footnotesize\ttfamily int material\+\_\+types}
+
+Reduces the timestep value by this amount Material Properties are stored in here 
+
+Definition at line 65 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a6e08f89b32254fb4b129720418e7c6ea}\label{functions_8h_a6e08f89b32254fb4b129720418e7c6ea}} 
+\index{functions.\+h@{functions.\+h}!mesh@{mesh}}
+\index{mesh@{mesh}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{mesh}{mesh}}
+{\footnotesize\ttfamily \hyperlink{class_mesh}{Mesh}$\ast$ mesh}
+
+
+
+Definition at line 55 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_aa789fe4d8a13fd0990b630909430d5d0}\label{functions_8h_aa789fe4d8a13fd0990b630909430d5d0}} 
+\index{functions.\+h@{functions.\+h}!ndof@{ndof}}
+\index{ndof@{ndof}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{ndof}{ndof}}
+{\footnotesize\ttfamily int ndof}
+
+Dimension of the Simulation (3 for 3D, 2 for 2D and 1 for 1D) 
+
+Definition at line 51 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_abd406f244d4145ae5baf4ea059b5232d}\label{functions_8h_abd406f244d4145ae5baf4ea059b5232d}} 
+\index{functions.\+h@{functions.\+h}!num\+\_\+constraints@{num\+\_\+constraints}}
+\index{num\+\_\+constraints@{num\+\_\+constraints}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{num\+\_\+constraints}{num\_constraints}}
+{\footnotesize\ttfamily int num\+\_\+constraints}
+
+Number of boundary conditions = nodes x dof 
+
+Definition at line 77 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a509bc84434af1eff0173e4a71bd758ac}\label{functions_8h_a509bc84434af1eff0173e4a71bd758ac}} 
+\index{functions.\+h@{functions.\+h}!num\+\_\+meshes@{num\+\_\+meshes}}
+\index{num\+\_\+meshes@{num\+\_\+meshes}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{num\+\_\+meshes}{num\_meshes}}
+{\footnotesize\ttfamily int num\+\_\+meshes}
+
+Input meshes -\/ number of meshes and type of meshes 
+
+Definition at line 54 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a7700f3aeb1ca1c9bbbf712dbfb0aa349}\label{functions_8h_a7700f3aeb1ca1c9bbbf712dbfb0aa349}} 
+\index{functions.\+h@{functions.\+h}!reduction@{reduction}}
+\index{reduction@{reduction}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{reduction}{reduction}}
+{\footnotesize\ttfamily double reduction}
+
+Minimum time step 
+
+Definition at line 62 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a4b637c5fff609e604a3b2b2787f4a9fa}\label{functions_8h_a4b637c5fff609e604a3b2b2787f4a9fa}} 
+\index{functions.\+h@{functions.\+h}!t\+\_\+end@{t\+\_\+end}}
+\index{t\+\_\+end@{t\+\_\+end}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{t\+\_\+end}{t\_end}}
+{\footnotesize\ttfamily double t\+\_\+end}
+
+Start Time 
+
+Definition at line 59 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a1b01a4354147da92a548ea1a5f96d592}\label{functions_8h_a1b01a4354147da92a548ea1a5f96d592}} 
+\index{functions.\+h@{functions.\+h}!t\+\_\+start@{t\+\_\+start}}
+\index{t\+\_\+start@{t\+\_\+start}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{t\+\_\+start}{t\_start}}
+{\footnotesize\ttfamily double t\+\_\+start}
+
+
+
+Definition at line 58 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a032d9f703d3d55ca1e54f14f44457615}\label{functions_8h_a032d9f703d3d55ca1e54f14f44457615}} 
+\index{functions.\+h@{functions.\+h}!U\+\_\+host@{U\+\_\+host}}
+\index{U\+\_\+host@{U\+\_\+host}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{U\+\_\+host}{U\_host}}
+{\footnotesize\ttfamily Vector\+Xd U\+\_\+host}
+
+Variable storing the nodal displacements of the host mesh 
+
+Definition at line 96 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a94430566d55ccfa65e497716fd404dea}\label{functions_8h_a94430566d55ccfa65e497716fd404dea}} 
+\index{functions.\+h@{functions.\+h}!U\+\_\+truss@{U\+\_\+truss}}
+\index{U\+\_\+truss@{U\+\_\+truss}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{U\+\_\+truss}{U\_truss}}
+{\footnotesize\ttfamily Vector\+Xd U\+\_\+truss}
+
+Variable storing the nodal displacements of the embedded mesh 
+
+Definition at line 103 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_ad72fa62a83a5fde880ab78c8c81c48bb}\label{functions_8h_ad72fa62a83a5fde880ab78c8c81c48bb}} 
+\index{functions.\+h@{functions.\+h}!V\+\_\+host@{V\+\_\+host}}
+\index{V\+\_\+host@{V\+\_\+host}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{V\+\_\+host}{V\_host}}
+{\footnotesize\ttfamily Vector\+Xd V\+\_\+host}
+
+Variable storing the nodal velocities of the host mesh 
+
+Definition at line 98 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a5159843113dbbfc6e912c3345c0a7916}\label{functions_8h_a5159843113dbbfc6e912c3345c0a7916}} 
+\index{functions.\+h@{functions.\+h}!V\+\_\+truss@{V\+\_\+truss}}
+\index{V\+\_\+truss@{V\+\_\+truss}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{V\+\_\+truss}{V\_truss}}
+{\footnotesize\ttfamily Vector\+Xd V\+\_\+truss}
+
+Variable storing the nodal velocities of the embedded mesh 
+
+Definition at line 105 of file main.\+cpp.
+
+\mbox{\Hypertarget{functions_8h_a3ebb0eb4b098a0ac9e1f24de934a282f}\label{functions_8h_a3ebb0eb4b098a0ac9e1f24de934a282f}} 
+\index{functions.\+h@{functions.\+h}!W\+\_\+int@{W\+\_\+int}}
+\index{W\+\_\+int@{W\+\_\+int}!functions.\+h@{functions.\+h}}
+\subsubsection{\texorpdfstring{W\+\_\+int}{W\_int}}
+{\footnotesize\ttfamily Vector\+Xd W\+\_\+int}
+
+
+
+Definition at line 93 of file main.\+cpp.
+

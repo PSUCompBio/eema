@@ -1,0 +1,45 @@
+\hypertarget{fe__apply__bc_8cpp}{}\section{/\+Users/vsg111/\+Dropbox/\+Work/\+Papers/\+Paper\+\_\+\+E\+E\+M\+\_\+\+Computational/\+E\+E\+M\+\_\+\+Dynamic/source/\+F\+E\+M/\+Boundary\+Conditions/fe\+\_\+apply\+\_\+bc.cpp File Reference}
+\label{fe__apply__bc_8cpp}\index{/\+Users/vsg111/\+Dropbox/\+Work/\+Papers/\+Paper\+\_\+\+E\+E\+M\+\_\+\+Computational/\+E\+E\+M\+\_\+\+Dynamic/source/\+F\+E\+M/\+Boundary\+Conditions/fe\+\_\+apply\+\_\+bc.\+cpp@{/\+Users/vsg111/\+Dropbox/\+Work/\+Papers/\+Paper\+\_\+\+E\+E\+M\+\_\+\+Computational/\+E\+E\+M\+\_\+\+Dynamic/source/\+F\+E\+M/\+Boundary\+Conditions/fe\+\_\+apply\+\_\+bc.\+cpp}}
+{\ttfamily \#include \char`\"{}functions.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Vector\+Xd \hyperlink{fe__apply__bc_8cpp_a42274df47bb3a633055b1ccbb2f920ae}{fe\+\_\+apply\+\_\+bc\+\_\+displacement} (Vector\+Xd U, Vector\+Xi \hyperlink{main_8cpp_a389e085bd7632077f619ea67d3fb4087}{bcdof}, Vector\+Xd \hyperlink{main_8cpp_a3a53182d9f97dc5acff0a10125857cfb}{bcval})
+\item 
+Vector\+Xd \hyperlink{fe__apply__bc_8cpp_ac52c0e94b3bad1ca823301ad609a1549}{fe\+\_\+apply\+\_\+bc\+\_\+force} (Vector\+Xd ff, Vector\+Xi \hyperlink{main_8cpp_a389e085bd7632077f619ea67d3fb4087}{bcdof}, Vector\+Xd \hyperlink{main_8cpp_a3a53182d9f97dc5acff0a10125857cfb}{bcval})
+\item 
+Matrix\+Xd \hyperlink{fe__apply__bc_8cpp_a3c73fda948017ac96aeb19889cfc1cba}{fe\+\_\+apply\+\_\+bc\+\_\+stiffness} (Matrix\+Xd kk, Vector\+Xi \hyperlink{main_8cpp_a389e085bd7632077f619ea67d3fb4087}{bcdof}, Vector\+Xd \hyperlink{main_8cpp_a3a53182d9f97dc5acff0a10125857cfb}{bcval})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{fe__apply__bc_8cpp_a42274df47bb3a633055b1ccbb2f920ae}\label{fe__apply__bc_8cpp_a42274df47bb3a633055b1ccbb2f920ae}} 
+\index{fe\+\_\+apply\+\_\+bc.\+cpp@{fe\+\_\+apply\+\_\+bc.\+cpp}!fe\+\_\+apply\+\_\+bc\+\_\+displacement@{fe\+\_\+apply\+\_\+bc\+\_\+displacement}}
+\index{fe\+\_\+apply\+\_\+bc\+\_\+displacement@{fe\+\_\+apply\+\_\+bc\+\_\+displacement}!fe\+\_\+apply\+\_\+bc.\+cpp@{fe\+\_\+apply\+\_\+bc.\+cpp}}
+\subsubsection{\texorpdfstring{fe\+\_\+apply\+\_\+bc\+\_\+displacement()}{fe\_apply\_bc\_displacement()}}
+{\footnotesize\ttfamily Vector\+Xd fe\+\_\+apply\+\_\+bc\+\_\+displacement (\begin{DoxyParamCaption}\item[{Vector\+Xd}]{U,  }\item[{Vector\+Xi}]{bcdof,  }\item[{Vector\+Xd}]{bcval }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file fe\+\_\+apply\+\_\+bc.\+cpp.
+
+\mbox{\Hypertarget{fe__apply__bc_8cpp_ac52c0e94b3bad1ca823301ad609a1549}\label{fe__apply__bc_8cpp_ac52c0e94b3bad1ca823301ad609a1549}} 
+\index{fe\+\_\+apply\+\_\+bc.\+cpp@{fe\+\_\+apply\+\_\+bc.\+cpp}!fe\+\_\+apply\+\_\+bc\+\_\+force@{fe\+\_\+apply\+\_\+bc\+\_\+force}}
+\index{fe\+\_\+apply\+\_\+bc\+\_\+force@{fe\+\_\+apply\+\_\+bc\+\_\+force}!fe\+\_\+apply\+\_\+bc.\+cpp@{fe\+\_\+apply\+\_\+bc.\+cpp}}
+\subsubsection{\texorpdfstring{fe\+\_\+apply\+\_\+bc\+\_\+force()}{fe\_apply\_bc\_force()}}
+{\footnotesize\ttfamily Vector\+Xd fe\+\_\+apply\+\_\+bc\+\_\+force (\begin{DoxyParamCaption}\item[{Vector\+Xd}]{ff,  }\item[{Vector\+Xi}]{bcdof,  }\item[{Vector\+Xd}]{bcval }\end{DoxyParamCaption})}
+
+
+
+Definition at line 17 of file fe\+\_\+apply\+\_\+bc.\+cpp.
+
+\mbox{\Hypertarget{fe__apply__bc_8cpp_a3c73fda948017ac96aeb19889cfc1cba}\label{fe__apply__bc_8cpp_a3c73fda948017ac96aeb19889cfc1cba}} 
+\index{fe\+\_\+apply\+\_\+bc.\+cpp@{fe\+\_\+apply\+\_\+bc.\+cpp}!fe\+\_\+apply\+\_\+bc\+\_\+stiffness@{fe\+\_\+apply\+\_\+bc\+\_\+stiffness}}
+\index{fe\+\_\+apply\+\_\+bc\+\_\+stiffness@{fe\+\_\+apply\+\_\+bc\+\_\+stiffness}!fe\+\_\+apply\+\_\+bc.\+cpp@{fe\+\_\+apply\+\_\+bc.\+cpp}}
+\subsubsection{\texorpdfstring{fe\+\_\+apply\+\_\+bc\+\_\+stiffness()}{fe\_apply\_bc\_stiffness()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+apply\+\_\+bc\+\_\+stiffness (\begin{DoxyParamCaption}\item[{Matrix\+Xd}]{kk,  }\item[{Vector\+Xi}]{bcdof,  }\item[{Vector\+Xd}]{bcval }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file fe\+\_\+apply\+\_\+bc.\+cpp.
+

@@ -1,0 +1,33 @@
+\hypertarget{fe__tensor__vector_8cpp}{}\section{/\+Users/vsg111/\+Dropbox/\+Work/\+Papers/\+Paper\+\_\+\+E\+E\+M\+\_\+\+Computational/\+E\+E\+M\+\_\+\+Dynamic/source/\+Math/fe\+\_\+tensor\+\_\+vector.cpp File Reference}
+\label{fe__tensor__vector_8cpp}\index{/\+Users/vsg111/\+Dropbox/\+Work/\+Papers/\+Paper\+\_\+\+E\+E\+M\+\_\+\+Computational/\+E\+E\+M\+\_\+\+Dynamic/source/\+Math/fe\+\_\+tensor\+\_\+vector.\+cpp@{/\+Users/vsg111/\+Dropbox/\+Work/\+Papers/\+Paper\+\_\+\+E\+E\+M\+\_\+\+Computational/\+E\+E\+M\+\_\+\+Dynamic/source/\+Math/fe\+\_\+tensor\+\_\+vector.\+cpp}}
+{\ttfamily \#include \char`\"{}functions.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Vector\+Xd \hyperlink{fe__tensor__vector_8cpp_a468b52865e68342a131b5dea4756fa9e}{fe\+\_\+tensor2vector} (Matrix\+Xd A)
+\item 
+Matrix\+Xd \hyperlink{fe__tensor__vector_8cpp_a64cef7d820a1ebc8e556c07cdb9bf433}{fe\+\_\+vector2tensor} (Vector\+Xd B)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{fe__tensor__vector_8cpp_a468b52865e68342a131b5dea4756fa9e}\label{fe__tensor__vector_8cpp_a468b52865e68342a131b5dea4756fa9e}} 
+\index{fe\+\_\+tensor\+\_\+vector.\+cpp@{fe\+\_\+tensor\+\_\+vector.\+cpp}!fe\+\_\+tensor2vector@{fe\+\_\+tensor2vector}}
+\index{fe\+\_\+tensor2vector@{fe\+\_\+tensor2vector}!fe\+\_\+tensor\+\_\+vector.\+cpp@{fe\+\_\+tensor\+\_\+vector.\+cpp}}
+\subsubsection{\texorpdfstring{fe\+\_\+tensor2vector()}{fe\_tensor2vector()}}
+{\footnotesize\ttfamily Vector\+Xd fe\+\_\+tensor2vector (\begin{DoxyParamCaption}\item[{Matrix\+Xd}]{A }\end{DoxyParamCaption})}
+
+This function converts tensor into voigt\textquotesingle{}s vector notation The tensor should be either 2\+X2 or 3\+X3. The tensor should be symmetric for its transformation into Voigt Vector 
+
+Definition at line 8 of file fe\+\_\+tensor\+\_\+vector.\+cpp.
+
+\mbox{\Hypertarget{fe__tensor__vector_8cpp_a64cef7d820a1ebc8e556c07cdb9bf433}\label{fe__tensor__vector_8cpp_a64cef7d820a1ebc8e556c07cdb9bf433}} 
+\index{fe\+\_\+tensor\+\_\+vector.\+cpp@{fe\+\_\+tensor\+\_\+vector.\+cpp}!fe\+\_\+vector2tensor@{fe\+\_\+vector2tensor}}
+\index{fe\+\_\+vector2tensor@{fe\+\_\+vector2tensor}!fe\+\_\+tensor\+\_\+vector.\+cpp@{fe\+\_\+tensor\+\_\+vector.\+cpp}}
+\subsubsection{\texorpdfstring{fe\+\_\+vector2tensor()}{fe\_vector2tensor()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+vector2tensor (\begin{DoxyParamCaption}\item[{Vector\+Xd}]{B }\end{DoxyParamCaption})}
+
+This function converts vector in voigt\textquotesingle{}s vector notation into a tensor The tensor will be either 2\+X2 or 3\+X3. 
+
+Definition at line 36 of file fe\+\_\+tensor\+\_\+vector.\+cpp.
+

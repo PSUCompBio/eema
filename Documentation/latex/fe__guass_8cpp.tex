@@ -1,0 +1,57 @@
+\hypertarget{fe__guass_8cpp}{}\section{/\+Users/vsg111/\+Dropbox/\+Work/\+Papers/\+Paper\+\_\+\+E\+E\+M\+\_\+\+Computational/\+E\+E\+M\+\_\+\+Dynamic/source/\+Elements/fe\+\_\+guass.cpp File Reference}
+\label{fe__guass_8cpp}\index{/\+Users/vsg111/\+Dropbox/\+Work/\+Papers/\+Paper\+\_\+\+E\+E\+M\+\_\+\+Computational/\+E\+E\+M\+\_\+\+Dynamic/source/\+Elements/fe\+\_\+guass.\+cpp@{/\+Users/vsg111/\+Dropbox/\+Work/\+Papers/\+Paper\+\_\+\+E\+E\+M\+\_\+\+Computational/\+E\+E\+M\+\_\+\+Dynamic/source/\+Elements/fe\+\_\+guass.\+cpp}}
+{\ttfamily \#include \char`\"{}functions.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Vector\+Xd \hyperlink{fe__guass_8cpp_aa6ab8c3298fa10734e299fe8266aed35}{guass\+\_\+points} (int n)
+\item 
+Vector\+Xd \hyperlink{fe__guass_8cpp_a84dcc9575e861bdb2872c10ba6238ee4}{guass\+\_\+weights} (int n)
+\item 
+Matrix\+Xd \hyperlink{fe__guass_8cpp_a502e3469e1cc253deb142f46c0789a78}{guass\+\_\+points\+\_\+3d} (int nx, int ny, int nz)
+\item 
+Matrix\+Xd \hyperlink{fe__guass_8cpp_ad99b08ce65ae353e91486d7685c22024}{guass\+\_\+weights\+\_\+3d} (int \hyperlink{main_8cpp_aa789fe4d8a13fd0990b630909430d5d0}{ndof}, int nx, int ny, int nz)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{fe__guass_8cpp_aa6ab8c3298fa10734e299fe8266aed35}\label{fe__guass_8cpp_aa6ab8c3298fa10734e299fe8266aed35}} 
+\index{fe\+\_\+guass.\+cpp@{fe\+\_\+guass.\+cpp}!guass\+\_\+points@{guass\+\_\+points}}
+\index{guass\+\_\+points@{guass\+\_\+points}!fe\+\_\+guass.\+cpp@{fe\+\_\+guass.\+cpp}}
+\subsubsection{\texorpdfstring{guass\+\_\+points()}{guass\_points()}}
+{\footnotesize\ttfamily Vector\+Xd guass\+\_\+points (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+Create a guass\+\_\+point vector of n values 
+
+Definition at line 5 of file fe\+\_\+guass.\+cpp.
+
+\mbox{\Hypertarget{fe__guass_8cpp_a502e3469e1cc253deb142f46c0789a78}\label{fe__guass_8cpp_a502e3469e1cc253deb142f46c0789a78}} 
+\index{fe\+\_\+guass.\+cpp@{fe\+\_\+guass.\+cpp}!guass\+\_\+points\+\_\+3d@{guass\+\_\+points\+\_\+3d}}
+\index{guass\+\_\+points\+\_\+3d@{guass\+\_\+points\+\_\+3d}!fe\+\_\+guass.\+cpp@{fe\+\_\+guass.\+cpp}}
+\subsubsection{\texorpdfstring{guass\+\_\+points\+\_\+3d()}{guass\_points\_3d()}}
+{\footnotesize\ttfamily Matrix\+Xd guass\+\_\+points\+\_\+3d (\begin{DoxyParamCaption}\item[{int}]{nx,  }\item[{int}]{ny,  }\item[{int}]{nz }\end{DoxyParamCaption})}
+
+Creates a guass point matrix in 3D 
+
+Definition at line 34 of file fe\+\_\+guass.\+cpp.
+
+\mbox{\Hypertarget{fe__guass_8cpp_a84dcc9575e861bdb2872c10ba6238ee4}\label{fe__guass_8cpp_a84dcc9575e861bdb2872c10ba6238ee4}} 
+\index{fe\+\_\+guass.\+cpp@{fe\+\_\+guass.\+cpp}!guass\+\_\+weights@{guass\+\_\+weights}}
+\index{guass\+\_\+weights@{guass\+\_\+weights}!fe\+\_\+guass.\+cpp@{fe\+\_\+guass.\+cpp}}
+\subsubsection{\texorpdfstring{guass\+\_\+weights()}{guass\_weights()}}
+{\footnotesize\ttfamily Vector\+Xd guass\+\_\+weights (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+Creates a guass\+\_\+weight vector of n values 
+
+Definition at line 19 of file fe\+\_\+guass.\+cpp.
+
+\mbox{\Hypertarget{fe__guass_8cpp_ad99b08ce65ae353e91486d7685c22024}\label{fe__guass_8cpp_ad99b08ce65ae353e91486d7685c22024}} 
+\index{fe\+\_\+guass.\+cpp@{fe\+\_\+guass.\+cpp}!guass\+\_\+weights\+\_\+3d@{guass\+\_\+weights\+\_\+3d}}
+\index{guass\+\_\+weights\+\_\+3d@{guass\+\_\+weights\+\_\+3d}!fe\+\_\+guass.\+cpp@{fe\+\_\+guass.\+cpp}}
+\subsubsection{\texorpdfstring{guass\+\_\+weights\+\_\+3d()}{guass\_weights\_3d()}}
+{\footnotesize\ttfamily Matrix\+Xd guass\+\_\+weights\+\_\+3d (\begin{DoxyParamCaption}\item[{int}]{ndof,  }\item[{int}]{nx,  }\item[{int}]{ny,  }\item[{int}]{nz }\end{DoxyParamCaption})}
+
+Creates a guass weight matrix in 3D 
+
+Definition at line 65 of file fe\+\_\+guass.\+cpp.
+

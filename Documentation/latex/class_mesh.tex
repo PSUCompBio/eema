@@ -1,0 +1,101 @@
+\hypertarget{class_mesh}{}\section{Mesh Class Reference}
+\label{class_mesh}\index{Mesh@{Mesh}}
+
+
+{\ttfamily \#include $<$Mesh.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_mesh_a2e0931c78a7ef01ccc9bf8f0dd74afb0}{read\+Mesh} (Matrix\+Xd n, Matrix\+Xd e)
+\item 
+Matrix\+Xd \hyperlink{class_mesh_a0b0f7458f07745240d9bda967cda12de}{get\+Nodes} ()
+\item 
+Matrix\+Xd \hyperlink{class_mesh_af3cbe568c8a36832659ac01025e8d774}{get\+Elements} ()
+\item 
+Matrix\+Xd \hyperlink{class_mesh_a52ecce406bbef80cbf3610db3ea5ea40}{get\+New\+Nodes} ()
+\item 
+Matrix\+Xd \hyperlink{class_mesh_af242dbb4627c09410975a0e67389e0de}{get\+New\+Elements} ()
+\item 
+void \hyperlink{class_mesh_aa8a6f260e9589be4c0a2fcc146e696d5}{preprocess\+Mesh} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 23 of file Mesh.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_mesh_af3cbe568c8a36832659ac01025e8d774}\label{class_mesh_af3cbe568c8a36832659ac01025e8d774}} 
+\index{Mesh@{Mesh}!get\+Elements@{get\+Elements}}
+\index{get\+Elements@{get\+Elements}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Elements()}{getElements()}}
+{\footnotesize\ttfamily Matrix\+Xd Mesh\+::get\+Elements (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 15 of file Mesh.\+cpp.
+
+\mbox{\Hypertarget{class_mesh_af242dbb4627c09410975a0e67389e0de}\label{class_mesh_af242dbb4627c09410975a0e67389e0de}} 
+\index{Mesh@{Mesh}!get\+New\+Elements@{get\+New\+Elements}}
+\index{get\+New\+Elements@{get\+New\+Elements}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+New\+Elements()}{getNewElements()}}
+{\footnotesize\ttfamily Matrix\+Xd Mesh\+::get\+New\+Elements (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 23 of file Mesh.\+cpp.
+
+\mbox{\Hypertarget{class_mesh_a52ecce406bbef80cbf3610db3ea5ea40}\label{class_mesh_a52ecce406bbef80cbf3610db3ea5ea40}} 
+\index{Mesh@{Mesh}!get\+New\+Nodes@{get\+New\+Nodes}}
+\index{get\+New\+Nodes@{get\+New\+Nodes}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+New\+Nodes()}{getNewNodes()}}
+{\footnotesize\ttfamily Matrix\+Xd Mesh\+::get\+New\+Nodes (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 19 of file Mesh.\+cpp.
+
+\mbox{\Hypertarget{class_mesh_a0b0f7458f07745240d9bda967cda12de}\label{class_mesh_a0b0f7458f07745240d9bda967cda12de}} 
+\index{Mesh@{Mesh}!get\+Nodes@{get\+Nodes}}
+\index{get\+Nodes@{get\+Nodes}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{get\+Nodes()}{getNodes()}}
+{\footnotesize\ttfamily Matrix\+Xd Mesh\+::get\+Nodes (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 11 of file Mesh.\+cpp.
+
+\mbox{\Hypertarget{class_mesh_aa8a6f260e9589be4c0a2fcc146e696d5}\label{class_mesh_aa8a6f260e9589be4c0a2fcc146e696d5}} 
+\index{Mesh@{Mesh}!preprocess\+Mesh@{preprocess\+Mesh}}
+\index{preprocess\+Mesh@{preprocess\+Mesh}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{preprocess\+Mesh()}{preprocessMesh()}}
+{\footnotesize\ttfamily void Mesh\+::preprocess\+Mesh (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Nodes Preprocessing -\/ Putting the numbering in order
+
+Elements Preprocessing -\/ Correcting the element definitions
+
+find\+\_\+in\+\_\+matrix gives the row number of node in nodes matrix 
+
+Definition at line 27 of file Mesh.\+cpp.
+
+\mbox{\Hypertarget{class_mesh_a2e0931c78a7ef01ccc9bf8f0dd74afb0}\label{class_mesh_a2e0931c78a7ef01ccc9bf8f0dd74afb0}} 
+\index{Mesh@{Mesh}!read\+Mesh@{read\+Mesh}}
+\index{read\+Mesh@{read\+Mesh}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{read\+Mesh()}{readMesh()}}
+{\footnotesize\ttfamily void Mesh\+::read\+Mesh (\begin{DoxyParamCaption}\item[{Matrix\+Xd}]{n,  }\item[{Matrix\+Xd}]{e }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6 of file Mesh.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/vsg111/\+Dropbox/\+Work/\+Papers/\+Paper\+\_\+\+E\+E\+M\+\_\+\+Computational/\+E\+E\+M\+\_\+\+Dynamic/headers/\hyperlink{_mesh_8h}{Mesh.\+h}\item 
+/\+Users/vsg111/\+Dropbox/\+Work/\+Papers/\+Paper\+\_\+\+E\+E\+M\+\_\+\+Computational/\+E\+E\+M\+\_\+\+Dynamic/source/\+Input-\/\+Output/\+Input/\hyperlink{_mesh_8cpp}{Mesh.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,48 @@
+digraph "fe_getforce"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="fe_getforce",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 [label="fe_gather",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#ab5053cb12ac67971a7836346e2839725"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="fe_find_index",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#ae4dbe24b761cafa3577afab76726b382"];
+  Node0 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="guass_points_3d",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#a502e3469e1cc253deb142f46c0789a78"];
+  Node0 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="guass_weights_3d",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#ad99b08ce65ae353e91486d7685c22024"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="guass_weights",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fe__guass_8cpp.html#a84dcc9575e861bdb2872c10ba6238ee4"];
+  Node0 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="fe_dndr_8",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#afc547bef246c057db6cbd04bf7f866a9"];
+  Node0 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="fe_dnds_8",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#ac0b5524525e1f2e89bb064c15ab8e664"];
+  Node0 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="fe_dndt_8",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#a57e8e5c9f740c98e4767f29c121c2d0a"];
+  Node0 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="fe_calJacobian",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#a12aa5a7a3443c6fcc5e65d3bcfc9bcc3"];
+  Node0 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="fe_dndx_8",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#afc6be1a5667e68156cb099e8da71170f"];
+  Node0 -> Node11 [color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="fe_dndy_8",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#a0572d7818e085c67f7fbb84eef8ecfb4"];
+  Node0 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="fe_dndz_8",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#aaf75db8433433807839c6ea17f2cf72c"];
+  Node0 -> Node13 [color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="fe_strDispMatrix_totalLagrangian",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#a8c9fd519c93c847cdf52de947964eb67"];
+  Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="fe_calDefGrad",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#ae50379f74802347e04dbc022897f9cb0"];
+  Node0 -> Node15 [color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="fe_stressUpdate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#a7d0fd8cfef8b891901eb6f0f780fd9f2"];
+  Node15 -> Node16 [color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="fe_get_model",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#a34d6fb85943d945b7e8600d2ef4220d0"];
+  Node15 -> Node17 [color="midnightblue",fontsize="10",style="solid"];
+  Node17 [label="fe_get_mats",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#af7ffbad6dfcc99fc88b130c1a7b1720a"];
+  Node15 -> Node18 [color="midnightblue",fontsize="10",style="solid"];
+  Node18 [label="fe_isoElastic",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#ada816506319851dcff162fa5e54d72d5"];
+  Node15 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node0 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
+  Node0 -> Node19 [color="midnightblue",fontsize="10",style="solid"];
+  Node19 [label="fe_scatter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$functions_8h.html#a6b8344e12f9005795f93f60ddda26c5c"];
+  Node19 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+}
