@@ -16,6 +16,9 @@
  * \n University Park, Pennsylvania, USA.
  * \n Email: harshatejagarimella@gmail.com
  *
+ * Jesse Gerber
+ * MS Candidate, Mechanical Engineering
+ * 
  * Reuben H. Kraft, Ph.D.
  * \n Shuman Asst. Professor,
  * \n Department of Mechanical Engineering,
