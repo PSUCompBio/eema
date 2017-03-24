@@ -1,0 +1,7 @@
+2
+mooney-rivlin_hyperelastic
+1040
+2.0e9
+0.5
+1000
+1000
