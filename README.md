@@ -10,7 +10,7 @@ Computational Brain Biomechanics
 ## Acknowledgements:
 Funding from CFDRC and Funding from ARL
 
-## Contact:
+## Contact Details:
 Harsha T Garimella,
 Ph.D. Candidate, Mechanical Engineering,
 The Pennsylvania State University,
@@ -19,7 +19,7 @@ Email: harshatejagarimella@gmail.com
 
 Reuben H. Kraft, Ph.D.
 Shuman Asst. Professor,
-\n Department of Mechanical Engineering,
+Department of Mechanical Engineering,
 Department of Biomedical Engineering,
 The Pennsylvania State University,
 University Park, Pennsylvania, USA.
