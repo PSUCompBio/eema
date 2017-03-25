@@ -24,3 +24,7 @@ Department of Biomedical Engineering,
 The Pennsylvania State University,
 University Park, Pennsylvania, USA.
 Email: reuben.kraft@psu.edu
+
+## How to run the code?
+Step-1: Build the code. Command: make
+Step-2: Run the code. Command: ./main
