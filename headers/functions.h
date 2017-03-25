@@ -83,6 +83,8 @@ extern VectorXd U_truss;
 extern VectorXd V_truss;
 extern VectorXd A_truss;
 
+extern double eps_nr; /** Convergence Criteria for Newton Rhapson Method */
+
 /*
  * Functions
  */

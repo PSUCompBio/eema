@@ -1,7 +1,7 @@
 #!/bin/bash
 # My first script
 
-JOB="./../Jobs/job-3/results"
+JOB="./examples/example-1/results"
 
 rm -r $JOB/*
 mkdir $JOB/vtk
