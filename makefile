@@ -1,6 +1,6 @@
 CC = g++
 CFLAGS = -g -Wall
-INCLUDES = -I./third-party-libs/eigen3 -I./source -I./headers -I./obj
+INCLUDES = -I./third-party-libs/eigen3 -I./headers
 
 # If you increase the number of source subdirectories, then add include the new name here and
 # add the new rule at the end.
@@ -12,7 +12,7 @@ SRC_3 = ./source/*/*/*
 HDR = ./headers
 OBJ = ./obj
 MAIN = main
-JOB = ./../Jobs/job-3
+JOB = ./examples/example-1
 
 OBJECTS := $(OBJ)/$(MAIN).o $(OBJ)/fe_vector2text.o\
 			 $(OBJ)/fe_apply_bc.o\

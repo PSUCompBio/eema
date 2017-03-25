@@ -109,6 +109,8 @@ VectorXd U_truss; /** Variable storing the nodal displacements of the embedded m
 VectorXd V_truss; /** Variable storing the nodal velocities of the embedded mesh */
 VectorXd A_truss; /** Variable storing the nodal accelerations of the embedded mesh */
 
+double eps_nr; /** Convergence criteria used in the newton rhapson method */
+
 /**
  * This is the main file. If you want to submit a new job -- this is where you do it
  */
@@ -118,8 +120,11 @@ int main(){
 	clock_t t;
 	t = clock();
 
+	/** Constants used in the code */
+	eps_nr = 1e-6;
+
 	/** Enter the path address for your job folder */
-	home_path = "./../Jobs/job-3/";
+	home_path = "./examples/example-1/";
 	job_file = "input.inp";
 
 	/** What is the Problem Dimension - Degrees of Freedom per node? */
