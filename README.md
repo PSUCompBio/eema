@@ -26,5 +26,5 @@ University Park, Pennsylvania, USA.
 Email: reuben.kraft@psu.edu
 
 ## How to run the code?
-Step-1: Build the code. Command: make
-Step-2: Run the code. Command: ./main
+Step-1: Build the code using the command "make" or "make all"
+Step-2: Run the code using the command "./main"
