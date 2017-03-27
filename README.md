@@ -17,6 +17,12 @@ The Pennsylvania State University,
 University Park, Pennsylvania, USA.
 Email: harshatejagarimella@gmail.com
 
+Jesse Gerber,
+M.S. Student, Mechanical Engineering,
+The Pennsylvania State University,
+University Park, Pennsylvania, USA.
+Email: jig6@psu.edu
+
 Reuben H. Kraft, Ph.D.
 Shuman Asst. Professor,
 Department of Mechanical Engineering,
