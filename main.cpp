@@ -10,17 +10,19 @@
  * Funding from CFDRC and Funding from ARL
  *
  * ## Contact:
- * Harsha T Garimella,
+ * # Harsha T Garimella,
  * \n Ph.D. Candidate, Mechanical Engineering,
  * \n The Pennsylvania State University,
  * \n University Park, Pennsylvania, USA.
  * \n Email: harshatejagarimella@gmail.com
  *
- * Jesse Gerber
- * MS Candidate, Mechanical Engineering,
- * The Pennsylvania State University.
+ * # Jesse Gerber
+ * \n MS Candidate, Mechanical Engineering,
+ * \n The Pennsylvania State University,
+ * \n University Park, Pennsylvania, USA.
+ * \n Email: jig6@psu.edu
  * 
- * Reuben H. Kraft, Ph.D.
+ * # Reuben H. Kraft, Ph.D.
  * \n Shuman Asst. Professor,
  * \n Department of Mechanical Engineering,
  * \n Department of Biomedical Engineering,
@@ -95,11 +97,21 @@ MatrixXd element_strain_host; /** Stores the strain tensor of an element */
 MatrixXd element_stress_truss; /** Stores the stress of a truss element */
 MatrixXd element_strain_truss; /** Stores the strain of a truss element */
 
-/* Internal nodal force at previous and current timesteps.
-   Used in the calculation of internal energy of the system. */
+/* System Internal Energy */
 VectorXd fi_prev; /** Internal nodal force vector at previous time step */
 VectorXd fi_curr; /** Internal nodal force vector at current time step */
 VectorXd W_int; /** Internal energy at different time steps */
+
+/* System External Energy */
+VectorXd fe_prev; 
+VectorXd fe_curr;
+VectorXd W_ext;
+
+/* System Kinetic Energy */
+VectorXd W_kin;
+
+/* System Total Energy */
+VectorXd W_tot;
 
 VectorXd U_host; /** Variable storing the nodal displacements of the host mesh */
 VectorXd V_host; /** Variable storing the nodal velocities of the host mesh */
@@ -110,6 +122,8 @@ VectorXd V_truss; /** Variable storing the nodal velocities of the embedded mesh
 VectorXd A_truss; /** Variable storing the nodal accelerations of the embedded mesh */
 
 double eps_nr; /** Convergence criteria used in the newton rhapson method */
+double iterations_nr;
+double eps_energy;
 
 /**
  * This is the main file. If you want to submit a new job -- this is where you do it
@@ -122,6 +136,8 @@ int main(){
 
 	/** Constants used in the code */
 	eps_nr = 1e-6;
+	iterations_nr = 100;
+	eps_energy = 0.01;
 
 	/** Enter the path address for your job folder */
 	home_path = "./examples/example-1/";
@@ -135,7 +151,7 @@ int main(){
 	// Initialize Time Variables
 	t_start = 0; /** Simulation start time */
 	t_end = 0.001; /** Simulation end time */
-	output_frequency = 1; /** Output frequency -- result ouputs for every 100 timesteps */
+	output_frequency = 50; /** Output frequency -- result ouputs for every 100 timesteps */
 	dt_initial = 1*pow(10,-6); /** Maximum time step */
 	dt_min = dt_initial;
 	reduction = 0.5; /** Reduction factor */

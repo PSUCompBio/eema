@@ -4,7 +4,7 @@
 
 using namespace Eigen;
 
-MatrixXd fe_mass_hex(double rho, int ndof, int nnel, int edof, double xcoord[], double ycoord[], double zcoord[]){
+MatrixXd fe_mass_hex(double rho, int ndof, int nnel, int edof, VectorXd xcoord, VectorXd ycoord, VectorXd zcoord){
 
 	int nglx = 2;
 	int ngly = 2;

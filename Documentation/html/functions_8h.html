@@ -5,10 +5,17 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>PSU-Compbio-FEM: /Users/vsg111/Dropbox/Work/Papers/Paper_EEM_Computational/EEM_Dynamic/headers/functions.h File Reference</title>
+<title>PSU-Compbio-FEM: headers/functions.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +31,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PSU-Compbio-FEM
    </div>
-   <div id="projectbrief">Finite element code with support to embedded element technique.</div>
+   <div id="projectbrief">Finite element code with support to FEM</div>
   </td>
  </tr>
  </tbody>
@@ -44,6 +51,21 @@ $(function() {
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('functions_8h.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -58,11 +80,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_7f57b1e41c5acd0e859ae5f3a2b075a9.html">headers</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a> &#124;
@@ -83,6 +100,15 @@ $(function() {
 <code>#include &quot;unsupported/Eigen/MatrixFunctions&quot;</code><br />
 <code>#include &quot;<a class="el" href="_mesh_8h_source.html">Mesh.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_materials_8h_source.html">Materials.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for functions.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h__incl.png" border="0" usemap="#headers_2functions_8h" alt=""/></div>
+<map name="headers_2functions_8h" id="headers_2functions_8h">
+<area shape="rect" id="node12" href="_mesh_8h.html" title="Mesh.h" alt="" coords="262,85,327,111"/>
+<area shape="rect" id="node13" href="_materials_8h.html" title="Materials.h" alt="" coords="352,85,438,111"/>
+</map>
+</div>
 </div>
 <p><a href="functions_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -106,8 +132,8 @@ Functions</h2></td></tr>
 <tr class="separator:a502e3469e1cc253deb142f46c0789a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad99b08ce65ae353e91486d7685c22024"><td class="memItemLeft" align="right" valign="top">MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#ad99b08ce65ae353e91486d7685c22024">guass_weights_3d</a> (int <a class="el" href="main_8cpp.html#aa789fe4d8a13fd0990b630909430d5d0">ndof</a>, int nx, int ny, int nz)</td></tr>
 <tr class="separator:ad99b08ce65ae353e91486d7685c22024"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada816506319851dcff162fa5e54d72d5"><td class="memItemLeft" align="right" valign="top">MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#ada816506319851dcff162fa5e54d72d5">fe_isoElastic</a> (int n, double E, double nu)</td></tr>
-<tr class="separator:ada816506319851dcff162fa5e54d72d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbc5cafd6bb8048b69b3bd6f26ceb5f8"><td class="memItemLeft" align="right" valign="top">MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#abbc5cafd6bb8048b69b3bd6f26ceb5f8">fe_calculate_matlmat</a> (int n, double E, double nu)</td></tr>
+<tr class="separator:abbc5cafd6bb8048b69b3bd6f26ceb5f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12aa5a7a3443c6fcc5e65d3bcfc9bcc3"><td class="memItemLeft" align="right" valign="top">MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a12aa5a7a3443c6fcc5e65d3bcfc9bcc3">fe_calJacobian</a> (int dim, int nnel, VectorXd dndr, VectorXd dnds, VectorXd dndt, double xcoord[], double ycoord[], double zcoord[])</td></tr>
 <tr class="separator:a12aa5a7a3443c6fcc5e65d3bcfc9bcc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc6be1a5667e68156cb099e8da71170f"><td class="memItemLeft" align="right" valign="top">VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#afc6be1a5667e68156cb099e8da71170f">fe_dndx_8</a> (int nnel, VectorXd dndr, VectorXd dnds, VectorXd dndt, MatrixXd invJacobian)</td></tr>
@@ -120,8 +146,6 @@ Functions</h2></td></tr>
 <tr class="separator:a4b49d2df4f86e7d0755971ab4bfa48b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c73fda948017ac96aeb19889cfc1cba"><td class="memItemLeft" align="right" valign="top">MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a3c73fda948017ac96aeb19889cfc1cba">fe_apply_bc_stiffness</a> (MatrixXd kk, VectorXi <a class="el" href="main_8cpp.html#a389e085bd7632077f619ea67d3fb4087">bcdof</a>, VectorXd <a class="el" href="main_8cpp.html#a3a53182d9f97dc5acff0a10125857cfb">bcval</a>)</td></tr>
 <tr class="separator:a3c73fda948017ac96aeb19889cfc1cba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac52c0e94b3bad1ca823301ad609a1549"><td class="memItemLeft" align="right" valign="top">VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#ac52c0e94b3bad1ca823301ad609a1549">fe_apply_bc_force</a> (VectorXd ff, VectorXi <a class="el" href="main_8cpp.html#a389e085bd7632077f619ea67d3fb4087">bcdof</a>, VectorXd <a class="el" href="main_8cpp.html#a3a53182d9f97dc5acff0a10125857cfb">bcval</a>)</td></tr>
-<tr class="separator:ac52c0e94b3bad1ca823301ad609a1549"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a346547477d2a1fbeff6b5e0b05314283"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a346547477d2a1fbeff6b5e0b05314283">matrix2text</a> (std::string name, MatrixXd new_slave_master, int width)</td></tr>
 <tr class="separator:a346547477d2a1fbeff6b5e0b05314283"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b5f62139051473c809da12cc0c45e29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a0b5f62139051473c809da12cc0c45e29">vector2text</a> (std::string name, VectorXd vector, int width)</td></tr>
@@ -139,6 +163,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a04906e61b8cfdc7232924a594b95eb1f"><td class="memItemLeft" align="right" valign="top">MatrixXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a04906e61b8cfdc7232924a594b95eb1f">fe_mass_hex</a> (double rho, int <a class="el" href="main_8cpp.html#aa789fe4d8a13fd0990b630909430d5d0">ndof</a>, int nnel, int edof, double xcoord[], double ycoord[], double zcoord[])</td></tr>
 <tr class="separator:a04906e61b8cfdc7232924a594b95eb1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d0fd8cfef8b891901eb6f0f780fd9f2"><td class="memItemLeft" align="right" valign="top">VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a7d0fd8cfef8b891901eb6f0f780fd9f2">fe_stressUpdate</a> (VectorXd dndx, VectorXd dndy, VectorXd dndz, MatrixXd disp_mat, VectorXd u, int opt, int return_opt)</td></tr>
+<tr class="memdesc:a7d0fd8cfef8b891901eb6f0f780fd9f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function calculates the updated stress for 3d elements - elastic, hyperelastic material models were implemented so far.  <a href="#a7d0fd8cfef8b891901eb6f0f780fd9f2">More...</a><br /></td></tr>
 <tr class="separator:a7d0fd8cfef8b891901eb6f0f780fd9f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8f7f6d72c6b57c721b23a38e2e20fc5"><td class="memItemLeft" align="right" valign="top">VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#aa8f7f6d72c6b57c721b23a38e2e20fc5">fe_getforce</a> (MatrixXd nodes, MatrixXd elements, int <a class="el" href="main_8cpp.html#aa789fe4d8a13fd0990b630909430d5d0">ndof</a>, VectorXd u, VectorXd v, VectorXd fext, int size_counter, MatrixXd nodes_truss, MatrixXd elements_truss)</td></tr>
 <tr class="memdesc:aa8f7f6d72c6b57c721b23a38e2e20fc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the resultant nodal force after each time step.  <a href="#aa8f7f6d72c6b57c721b23a38e2e20fc5">More...</a><br /></td></tr>
@@ -151,8 +176,6 @@ Functions</h2></td></tr>
 <tr class="separator:ac1306a43db522f3da30471d2a6c48686"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbe30e3a940236fc486b96028abf6f46"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#afbe30e3a940236fc486b96028abf6f46">fe_calVolume</a> (double xcoord[], double ycoord[], double zcoord[])</td></tr>
 <tr class="separator:afbe30e3a940236fc486b96028abf6f46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42274df47bb3a633055b1ccbb2f920ae"><td class="memItemLeft" align="right" valign="top">VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a42274df47bb3a633055b1ccbb2f920ae">fe_apply_bc_displacement</a> (VectorXd U, VectorXi <a class="el" href="main_8cpp.html#a389e085bd7632077f619ea67d3fb4087">bcdof</a>, VectorXd <a class="el" href="main_8cpp.html#a3a53182d9f97dc5acff0a10125857cfb">bcval</a>)</td></tr>
-<tr class="separator:a42274df47bb3a633055b1ccbb2f920ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3e39c6d01b6fd10c9e264731cef75dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#ab3e39c6d01b6fd10c9e264731cef75dc">fe_display_vector</a> (VectorXd A)</td></tr>
 <tr class="separator:ab3e39c6d01b6fd10c9e264731cef75dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5110a192d089c6b26744b9e9d67a7c2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a5110a192d089c6b26744b9e9d67a7c2d">fe_display_matrix</a> (MatrixXd A)</td></tr>
@@ -202,6 +225,25 @@ Functions</h2></td></tr>
 <tr class="separator:a983304137f9a961469a558437d5d2d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a64e915e17f876fe72bedd820e87c33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a8a64e915e17f876fe72bedd820e87c33">fe_mainRead</a> (std::string file)</td></tr>
 <tr class="separator:a8a64e915e17f876fe72bedd820e87c33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ce8a3cf9dcc8b599ac40f7f3a48f196"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a5ce8a3cf9dcc8b599ac40f7f3a48f196">fe_function</a> (double a, std::string b, double time)</td></tr>
+<tr class="separator:a5ce8a3cf9dcc8b599ac40f7f3a48f196"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af42938e5b32edb33ef4a35866949eba6"><td class="memItemLeft" align="right" valign="top">VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#af42938e5b32edb33ef4a35866949eba6">fe_apply_bc_displacement</a> (VectorXd U, double time)</td></tr>
+<tr class="separator:af42938e5b32edb33ef4a35866949eba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba32cc24bd74a4965c560fa62c5b213e"><td class="memItemLeft" align="right" valign="top">VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#aba32cc24bd74a4965c560fa62c5b213e">fe_apply_bc_load</a> (VectorXd fe, double time)</td></tr>
+<tr class="separator:aba32cc24bd74a4965c560fa62c5b213e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66b469439c736421744f6aef9e05a485"><td class="memItemLeft" align="right" valign="top">VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a66b469439c736421744f6aef9e05a485">fe_mooneyrivlin_hyperelastic</a> (VectorXd dndx, VectorXd dndy, VectorXd dndz, VectorXd u, int opt, int return_opt)</td></tr>
+<tr class="separator:a66b469439c736421744f6aef9e05a485"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab27ecb703db33cb21a8a6d2fbfbf125f"><td class="memItemLeft" align="right" valign="top">VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#ab27ecb703db33cb21a8a6d2fbfbf125f">fe_ogden_hyperelastic</a> (VectorXd dndx, VectorXd dndy, VectorXd dndz, VectorXd u, int opt, int return_opt)</td></tr>
+<tr class="separator:ab27ecb703db33cb21a8a6d2fbfbf125f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0911abb05a0ca06eb4f330890ee0641"><td class="memItemLeft" align="right" valign="top">VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#ab0911abb05a0ca06eb4f330890ee0641">fe_simple_elastic</a> (VectorXd dndx, VectorXd dndy, VectorXd dndz, MatrixXd disp_mat, VectorXd u, int opt, int return_opt)</td></tr>
+<tr class="separator:ab0911abb05a0ca06eb4f330890ee0641"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2a970e883d0c4a7ad750547c07c5f24"><td class="memItemLeft" align="right" valign="top">VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#af2a970e883d0c4a7ad750547c07c5f24">fe_saintvenant_elastic</a> (VectorXd dndx, VectorXd dndy, VectorXd dndz, VectorXd u, int opt, int return_opt)</td></tr>
+<tr class="separator:af2a970e883d0c4a7ad750547c07c5f24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad631819edfa9ade5d6e379d0085810b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#ad631819edfa9ade5d6e379d0085810b6">fe_vtuWrite</a> (std::string output, int time_step, MatrixXd nodes, MatrixXd elements)</td></tr>
+<tr class="separator:ad631819edfa9ade5d6e379d0085810b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7c031b962da3b431c536b473cdba7f8"><td class="memItemLeft" align="right" valign="top">VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#ad7c031b962da3b431c536b473cdba7f8">fe_newtonRhapson</a> (VectorXd nat_coord, double xcoord[], double ycoord[], double zcoord[], int nnel)</td></tr>
+<tr class="memdesc:ad7c031b962da3b431c536b473cdba7f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">This functions calculates the isoparametric coordinates of a set of coordinates in global system.  <a href="#ad7c031b962da3b431c536b473cdba7f8">More...</a><br /></td></tr>
+<tr class="separator:ad7c031b962da3b431c536b473cdba7f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -231,12 +273,22 @@ Variables</h2></td></tr>
 <tr class="separator:a39328cf72d69139b3b6c5b8ef6c636fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfa6799b35f9301b5fc44e6043624797"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_materials.html">Materials</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#acfa6799b35f9301b5fc44e6043624797">mat</a></td></tr>
 <tr class="separator:acfa6799b35f9301b5fc44e6043624797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a724026f5fcdde8a7ee4936d710ac415d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a724026f5fcdde8a7ee4936d710ac415d">num_load_constraints</a></td></tr>
+<tr class="separator:a724026f5fcdde8a7ee4936d710ac415d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41b0f465c44fe8b2de43cfaa05bb7880"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a41b0f465c44fe8b2de43cfaa05bb7880">input_load_amp</a></td></tr>
 <tr class="separator:a41b0f465c44fe8b2de43cfaa05bb7880"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab49fb3bb15f9624e4ffb12a75c7db55d"><td class="memItemLeft" align="right" valign="top">VectorXi&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#ab49fb3bb15f9624e4ffb12a75c7db55d">fcdof</a></td></tr>
 <tr class="separator:ab49fb3bb15f9624e4ffb12a75c7db55d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1f3d4744efb6ce0d6c5b89774ba91aa"><td class="memItemLeft" align="right" valign="top">VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#ac1f3d4744efb6ce0d6c5b89774ba91aa">fcload</a></td></tr>
-<tr class="separator:ac1f3d4744efb6ce0d6c5b89774ba91aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51e2def539afa6941aecc0db01966133"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a51e2def539afa6941aecc0db01966133">fc_curve</a></td></tr>
+<tr class="separator:a51e2def539afa6941aecc0db01966133"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfafb3651a4fe2c074c247d95f28635a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#acfafb3651a4fe2c074c247d95f28635a">num_disp_constraints</a></td></tr>
+<tr class="separator:acfafb3651a4fe2c074c247d95f28635a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8610c01521192e9f3677b50b275ff2bf"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a8610c01521192e9f3677b50b275ff2bf">input_disp_amp</a></td></tr>
+<tr class="separator:a8610c01521192e9f3677b50b275ff2bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a769eb6abca3cfe15c55c120f68bf1461"><td class="memItemLeft" align="right" valign="top">VectorXi&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a769eb6abca3cfe15c55c120f68bf1461">dcdof</a></td></tr>
+<tr class="separator:a769eb6abca3cfe15c55c120f68bf1461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f448b56fa6e59123cfe5fcf0082e8de"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a7f448b56fa6e59123cfe5fcf0082e8de">dc_curve</a></td></tr>
+<tr class="separator:a7f448b56fa6e59123cfe5fcf0082e8de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd406f244d4145ae5baf4ea059b5232d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#abd406f244d4145ae5baf4ea059b5232d">num_constraints</a></td></tr>
 <tr class="separator:abd406f244d4145ae5baf4ea059b5232d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a389e085bd7632077f619ea67d3fb4087"><td class="memItemLeft" align="right" valign="top">VectorXi&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a389e085bd7632077f619ea67d3fb4087">bcdof</a></td></tr>
@@ -269,10 +321,14 @@ Variables</h2></td></tr>
 <tr class="separator:a5159843113dbbfc6e912c3345c0a7916"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f98cf28208251affb988effe3a89708"><td class="memItemLeft" align="right" valign="top">VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a2f98cf28208251affb988effe3a89708">A_truss</a></td></tr>
 <tr class="separator:a2f98cf28208251affb988effe3a89708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3d80cd8d6370090eb6cc57a523bcd6c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#ad3d80cd8d6370090eb6cc57a523bcd6c">eps_nr</a></td></tr>
+<tr class="separator:ad3d80cd8d6370090eb6cc57a523bcd6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43f0d7a4e9f3ece65db80d07bb79192f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functions_8h.html#a43f0d7a4e9f3ece65db80d07bb79192f">iterations_nr</a></td></tr>
+<tr class="separator:a43f0d7a4e9f3ece65db80d07bb79192f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a42274df47bb3a633055b1ccbb2f920ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42274df47bb3a633055b1ccbb2f920ae">&#9670;&nbsp;</a></span>fe_apply_bc_displacement()</h2>
+<a id="af42938e5b32edb33ef4a35866949eba6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af42938e5b32edb33ef4a35866949eba6">&#9670;&nbsp;</a></span>fe_apply_bc_displacement()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -286,14 +342,8 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">VectorXi&#160;</td>
-          <td class="paramname"><em>bcdof</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">VectorXd&#160;</td>
-          <td class="paramname"><em>bcval</em>&#160;</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>time</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -304,32 +354,43 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="fe__apply__bc_8cpp_source.html#l00005">5</a> of file <a class="el" href="fe__apply__bc_8cpp_source.html">fe_apply_bc.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_af42938e5b32edb33ef4a35866949eba6_cgraph.png" border="0" usemap="#functions_8h_af42938e5b32edb33ef4a35866949eba6_cgraph" alt=""/></div>
+<map name="functions_8h_af42938e5b32edb33ef4a35866949eba6_cgraph" id="functions_8h_af42938e5b32edb33ef4a35866949eba6_cgraph">
+<area shape="rect" id="node2" href="functions_8h.html#a5ce8a3cf9dcc8b599ac40f7f3a48f196" title="fe_function" alt="" coords="233,5,319,31"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_af42938e5b32edb33ef4a35866949eba6_icgraph.png" border="0" usemap="#functions_8h_af42938e5b32edb33ef4a35866949eba6_icgraph" alt=""/></div>
+<map name="functions_8h_af42938e5b32edb33ef4a35866949eba6_icgraph" id="functions_8h_af42938e5b32edb33ef4a35866949eba6_icgraph">
+<area shape="rect" id="node2" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="233,5,361,31"/>
+<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="409,5,459,31"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="ac52c0e94b3bad1ca823301ad609a1549"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac52c0e94b3bad1ca823301ad609a1549">&#9670;&nbsp;</a></span>fe_apply_bc_force()</h2>
+<a id="aba32cc24bd74a4965c560fa62c5b213e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba32cc24bd74a4965c560fa62c5b213e">&#9670;&nbsp;</a></span>fe_apply_bc_load()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">VectorXd fe_apply_bc_force </td>
+          <td class="memname">VectorXd fe_apply_bc_load </td>
           <td>(</td>
           <td class="paramtype">VectorXd&#160;</td>
-          <td class="paramname"><em>ff</em>, </td>
+          <td class="paramname"><em>fe</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">VectorXi&#160;</td>
-          <td class="paramname"><em>bcdof</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">VectorXd&#160;</td>
-          <td class="paramname"><em>bcval</em>&#160;</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>time</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -339,7 +400,24 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="fe__apply__bc_8cpp_source.html#l00017">17</a> of file <a class="el" href="fe__apply__bc_8cpp_source.html">fe_apply_bc.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fe__apply__bc_8cpp_source.html#l00024">24</a> of file <a class="el" href="fe__apply__bc_8cpp_source.html">fe_apply_bc.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_aba32cc24bd74a4965c560fa62c5b213e_cgraph.png" border="0" usemap="#functions_8h_aba32cc24bd74a4965c560fa62c5b213e_cgraph" alt=""/></div>
+<map name="functions_8h_aba32cc24bd74a4965c560fa62c5b213e_cgraph" id="functions_8h_aba32cc24bd74a4965c560fa62c5b213e_cgraph">
+<area shape="rect" id="node2" href="functions_8h.html#a5ce8a3cf9dcc8b599ac40f7f3a48f196" title="fe_function" alt="" coords="179,5,266,31"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_aba32cc24bd74a4965c560fa62c5b213e_icgraph.png" border="0" usemap="#functions_8h_aba32cc24bd74a4965c560fa62c5b213e_icgraph" alt=""/></div>
+<map name="functions_8h_aba32cc24bd74a4965c560fa62c5b213e_icgraph" id="functions_8h_aba32cc24bd74a4965c560fa62c5b213e_icgraph">
+<area shape="rect" id="node2" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="179,5,307,31"/>
+<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="355,5,405,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -375,7 +453,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="fe__apply__bc_8cpp_source.html#l00029">29</a> of file <a class="el" href="fe__apply__bc_8cpp_source.html">fe_apply_bc.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fe__apply__bc_8cpp_source.html#l00036">36</a> of file <a class="el" href="fe__apply__bc_8cpp_source.html">fe_apply_bc.cpp</a>.</p>
 
 </div>
 </div>
@@ -419,6 +497,23 @@ Variables</h2></td></tr>
 <p>Assembles the global mass matrix </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__assemble__mass_8cpp_source.html#l00024">24</a> of file <a class="el" href="fe__assemble__mass_8cpp_source.html">fe_assemble_mass.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a04f569c566ca4fbea3b3a2a13cdd0af5_cgraph.png" border="0" usemap="#functions_8h_a04f569c566ca4fbea3b3a2a13cdd0af5_cgraph" alt=""/></div>
+<map name="functions_8h_a04f569c566ca4fbea3b3a2a13cdd0af5_cgraph" id="functions_8h_a04f569c566ca4fbea3b3a2a13cdd0af5_cgraph">
+<area shape="rect" id="node2" href="functions_8h.html#ae4dbe24b761cafa3577afab76726b382" title="fe_find_index" alt="" coords="190,5,290,31"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a04f569c566ca4fbea3b3a2a13cdd0af5_icgraph.png" border="0" usemap="#functions_8h_a04f569c566ca4fbea3b3a2a13cdd0af5_icgraph" alt=""/></div>
+<map name="functions_8h_a04f569c566ca4fbea3b3a2a13cdd0af5_icgraph" id="functions_8h_a04f569c566ca4fbea3b3a2a13cdd0af5_icgraph">
+<area shape="rect" id="node2" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="190,5,318,31"/>
+<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="366,5,416,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -510,6 +605,66 @@ Variables</h2></td></tr>
 <p>Calculates the area of a face with 4 vertices </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__cal_area__4_8cpp_source.html#l00005">5</a> of file <a class="el" href="fe__cal_area__4_8cpp_source.html">fe_calArea_4.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ac1306a43db522f3da30471d2a6c48686_icgraph.png" border="0" usemap="#functions_8h_ac1306a43db522f3da30471d2a6c48686_icgraph" alt=""/></div>
+<map name="functions_8h_ac1306a43db522f3da30471d2a6c48686_icgraph" id="functions_8h_ac1306a43db522f3da30471d2a6c48686_icgraph">
+<area shape="rect" id="node2" href="fe__cal_time_step_8cpp.html#ab0d9d059d2b8f829000e6f1f7d1d4ffb" title="fe_calTimeStep" alt="" coords="153,5,267,31"/>
+<area shape="rect" id="node3" href="fe__get_time_step_8cpp.html#af737926a3dfd669254a56dbbf675ac92" title="fe_getTimeStep" alt="" coords="315,5,430,31"/>
+<area shape="rect" id="node4" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="478,5,606,31"/>
+<area shape="rect" id="node5" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="654,5,704,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abbc5cafd6bb8048b69b3bd6f26ceb5f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbc5cafd6bb8048b69b3bd6f26ceb5f8">&#9670;&nbsp;</a></span>fe_calculate_matlmat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MatrixXd fe_calculate_matlmat </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>E</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>nu</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Create material matrix for isotropic elastic case </p>
+
+<p class="definition">Definition at line <a class="el" href="fe__simple__elastic_8cpp_source.html#l00020">20</a> of file <a class="el" href="fe__simple__elastic_8cpp_source.html">fe_simple_elastic.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_abbc5cafd6bb8048b69b3bd6f26ceb5f8_icgraph.png" border="0" usemap="#functions_8h_abbc5cafd6bb8048b69b3bd6f26ceb5f8_icgraph" alt=""/></div>
+<map name="functions_8h_abbc5cafd6bb8048b69b3bd6f26ceb5f8_icgraph" id="functions_8h_abbc5cafd6bb8048b69b3bd6f26ceb5f8_icgraph">
+<area shape="rect" id="node2" href="fe__simple__elastic_8cpp.html#ab0911abb05a0ca06eb4f330890ee0641" title="fe_simple_elastic" alt="" coords="201,5,324,31"/>
+<area shape="rect" id="node3" href="fe__stress_update_8cpp.html#a7d0fd8cfef8b891901eb6f0f780fd9f2" title="This function calculates the updated stress for 3d elements &#45; elastic, hyperelastic material models w..." alt="" coords="372,5,491,31"/>
+<area shape="rect" id="node4" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="539,5,627,31"/>
+<area shape="rect" id="node5" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="675,5,803,31"/>
+<area shape="rect" id="node6" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="851,5,901,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -552,7 +707,23 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Calculates the deformation gradient </p>
 
-<p class="definition">Definition at line <a class="el" href="fe__cal_def_grad_8cpp_source.html#l00007">7</a> of file <a class="el" href="fe__cal_def_grad_8cpp_source.html">fe_calDefGrad.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fe__cal_def_grad_8cpp_source.html#l00008">8</a> of file <a class="el" href="fe__cal_def_grad_8cpp_source.html">fe_calDefGrad.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ae50379f74802347e04dbc022897f9cb0_icgraph.png" border="0" usemap="#functions_8h_ae50379f74802347e04dbc022897f9cb0_icgraph" alt=""/></div>
+<map name="functions_8h_ae50379f74802347e04dbc022897f9cb0_icgraph" id="functions_8h_ae50379f74802347e04dbc022897f9cb0_icgraph">
+<area shape="rect" id="node2" href="fe__str_disp_matrix_8cpp.html#a8c9fd519c93c847cdf52de947964eb67" title="fe_strDispMatrix_totalLagrangian" alt="" coords="402,5,619,31"/>
+<area shape="rect" id="node3" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="667,56,755,81"/>
+<area shape="rect" id="node6" href="fe__mooneyrivlin__hyperelastic_8cpp.html#a66b469439c736421744f6aef9e05a485" title="fe_mooneyrivlin_hyperelastic" alt="" coords="161,107,354,132"/>
+<area shape="rect" id="node8" href="fe__ogden__hyperelastic_8cpp.html#ab27ecb703db33cb21a8a6d2fbfbf125f" title="fe_ogden_hyperelastic" alt="" coords="180,156,335,181"/>
+<area shape="rect" id="node9" href="fe__saintvenant__elastic_8cpp.html#af2a970e883d0c4a7ad750547c07c5f24" title="fe_saintvenant_elastic" alt="" coords="181,205,334,231"/>
+<area shape="rect" id="node10" href="fe__stress_update__1d_8cpp.html#a94c1b672863e28bc2c70d08726939929" title="fe_stressUpdate_1d" alt="" coords="187,255,328,280"/>
+<area shape="rect" id="node4" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="803,56,931,81"/>
+<area shape="rect" id="node5" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="979,56,1029,81"/>
+<area shape="rect" id="node7" href="fe__stress_update_8cpp.html#a7d0fd8cfef8b891901eb6f0f780fd9f2" title="This function calculates the updated stress for 3d elements &#45; elastic, hyperelastic material models w..." alt="" coords="451,131,570,156"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -620,6 +791,20 @@ Variables</h2></td></tr>
 <p>Calculates the jacobian &ndash; using the derivates of shape functions </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__cal_jacobian_8cpp_source.html#l00007">7</a> of file <a class="el" href="fe__cal_jacobian_8cpp_source.html">fe_calJacobian.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a12aa5a7a3443c6fcc5e65d3bcfc9bcc3_icgraph.png" border="0" usemap="#functions_8h_a12aa5a7a3443c6fcc5e65d3bcfc9bcc3_icgraph" alt=""/></div>
+<map name="functions_8h_a12aa5a7a3443c6fcc5e65d3bcfc9bcc3_icgraph" id="functions_8h_a12aa5a7a3443c6fcc5e65d3bcfc9bcc3_icgraph">
+<area shape="rect" id="node2" href="fe__stiffness__embed__truss_8cpp.html#ab3798340a27f0972299b3820aab0ccba" title="fe_stiffness_embed\l_truss" alt="" coords="164,5,300,44"/>
+<area shape="rect" id="node3" href="fe__stiffness__hex_8cpp.html#a9378d4fc517465015411134456235a76" title="fe_stiffness_hex" alt="" coords="173,68,291,93"/>
+<area shape="rect" id="node4" href="fe__mass__hex_8cpp.html#a04906e61b8cfdc7232924a594b95eb1f" title="fe_mass_hex" alt="" coords="348,120,449,145"/>
+<area shape="rect" id="node7" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="355,169,443,195"/>
+<area shape="rect" id="node8" href="fe__newton_rhapson_8cpp.html#ad7c031b962da3b431c536b473cdba7f8" title="This functions calculates the isoparametric coordinates of a set of coordinates in global system..." alt="" coords="164,220,300,245"/>
+<area shape="rect" id="node5" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="497,145,625,171"/>
+<area shape="rect" id="node6" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="673,145,723,171"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -640,6 +825,14 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="fe__cal_simp_transformation_8cpp_source.html#l00007">7</a> of file <a class="el" href="fe__cal_simp_transformation_8cpp_source.html">fe_calSimpTransformation.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ae2eeba997bf4f0bc4749b92130de7ba3_icgraph.png" border="0" usemap="#functions_8h_ae2eeba997bf4f0bc4749b92130de7ba3_icgraph" alt=""/></div>
+<map name="functions_8h_ae2eeba997bf4f0bc4749b92130de7ba3_icgraph" id="functions_8h_ae2eeba997bf4f0bc4749b92130de7ba3_icgraph">
+<area shape="rect" id="node2" href="fe__stiffness__embed__truss_8cpp.html#ab3798340a27f0972299b3820aab0ccba" title="fe_stiffness_embed\l_truss" alt="" coords="230,5,367,44"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -696,6 +889,26 @@ Variables</h2></td></tr>
 <p>For a single element - this function calculates the volume of the element and calculates the critical time step based on the wave speed. </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__cal_time_step_8cpp_source.html#l00005">5</a> of file <a class="el" href="fe__cal_time_step_8cpp_source.html">fe_calTimeStep.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ab0d9d059d2b8f829000e6f1f7d1d4ffb_cgraph.png" border="0" usemap="#functions_8h_ab0d9d059d2b8f829000e6f1f7d1d4ffb_cgraph" alt=""/></div>
+<map name="functions_8h_ab0d9d059d2b8f829000e6f1f7d1d4ffb_cgraph" id="functions_8h_ab0d9d059d2b8f829000e6f1f7d1d4ffb_cgraph">
+<area shape="rect" id="node2" href="functions_8h.html#ac1306a43db522f3da30471d2a6c48686" title="fe_calArea_4" alt="" coords="181,5,281,31"/>
+<area shape="rect" id="node3" href="functions_8h.html#afbe30e3a940236fc486b96028abf6f46" title="fe_calVolume" alt="" coords="181,55,282,80"/>
+<area shape="rect" id="node4" href="functions_8h.html#acb1ae85901899b3e4e2a1635e036fd35" title="fe_calWaveSpeed" alt="" coords="167,104,296,129"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ab0d9d059d2b8f829000e6f1f7d1d4ffb_icgraph.png" border="0" usemap="#functions_8h_ab0d9d059d2b8f829000e6f1f7d1d4ffb_icgraph" alt=""/></div>
+<map name="functions_8h_ab0d9d059d2b8f829000e6f1f7d1d4ffb_icgraph" id="functions_8h_ab0d9d059d2b8f829000e6f1f7d1d4ffb_icgraph">
+<area shape="rect" id="node2" href="fe__get_time_step_8cpp.html#af737926a3dfd669254a56dbbf675ac92" title="fe_getTimeStep" alt="" coords="167,5,282,31"/>
+<area shape="rect" id="node3" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="330,5,458,31"/>
+<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="506,5,556,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -727,6 +940,15 @@ Variables</h2></td></tr>
 <p>Calculates the transformation matrix - transformation from local (truss) coordinate system to global (3d hex) coordinate system </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__cal_transformation_8cpp_source.html#l00007">7</a> of file <a class="el" href="fe__cal_transformation_8cpp_source.html">fe_calTransformation.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_aa41c40dffea4251a07a8a3f5062f47ae_icgraph.png" border="0" usemap="#functions_8h_aa41c40dffea4251a07a8a3f5062f47ae_icgraph" alt=""/></div>
+<map name="functions_8h_aa41c40dffea4251a07a8a3f5062f47ae_icgraph" id="functions_8h_aa41c40dffea4251a07a8a3f5062f47ae_icgraph">
+<area shape="rect" id="node2" href="fe__stiffness__embed__truss_8cpp.html#ab3798340a27f0972299b3820aab0ccba" title="fe_stiffness_embed\l_truss" alt="" coords="201,5,338,44"/>
+<area shape="rect" id="node3" href="fe__stress_update__1d_8cpp.html#a94c1b672863e28bc2c70d08726939929" title="fe_stressUpdate_1d" alt="" coords="199,68,340,93"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -764,6 +986,17 @@ Variables</h2></td></tr>
 <p>Calculates the volume of a 3d element </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__cal_volume_8cpp_source.html#l00007">7</a> of file <a class="el" href="fe__cal_volume_8cpp_source.html">fe_calVolume.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_afbe30e3a940236fc486b96028abf6f46_icgraph.png" border="0" usemap="#functions_8h_afbe30e3a940236fc486b96028abf6f46_icgraph" alt=""/></div>
+<map name="functions_8h_afbe30e3a940236fc486b96028abf6f46_icgraph" id="functions_8h_afbe30e3a940236fc486b96028abf6f46_icgraph">
+<area shape="rect" id="node2" href="fe__cal_time_step_8cpp.html#ab0d9d059d2b8f829000e6f1f7d1d4ffb" title="fe_calTimeStep" alt="" coords="155,5,268,31"/>
+<area shape="rect" id="node3" href="fe__get_time_step_8cpp.html#af737926a3dfd669254a56dbbf675ac92" title="fe_getTimeStep" alt="" coords="316,5,431,31"/>
+<area shape="rect" id="node4" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="479,5,607,31"/>
+<area shape="rect" id="node5" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="655,5,705,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -802,6 +1035,17 @@ Variables</h2></td></tr>
 <p>This function calculates the wave speed for an element based on its material properties </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__cal_wave_speed_8cpp_source.html#l00006">6</a> of file <a class="el" href="fe__cal_wave_speed_8cpp_source.html">fe_calWaveSpeed.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_acb1ae85901899b3e4e2a1635e036fd35_icgraph.png" border="0" usemap="#functions_8h_acb1ae85901899b3e4e2a1635e036fd35_icgraph" alt=""/></div>
+<map name="functions_8h_acb1ae85901899b3e4e2a1635e036fd35_icgraph" id="functions_8h_acb1ae85901899b3e4e2a1635e036fd35_icgraph">
+<area shape="rect" id="node2" href="fe__cal_time_step_8cpp.html#ab0d9d059d2b8f829000e6f1f7d1d4ffb" title="fe_calTimeStep" alt="" coords="182,5,296,31"/>
+<area shape="rect" id="node3" href="fe__get_time_step_8cpp.html#af737926a3dfd669254a56dbbf675ac92" title="fe_getTimeStep" alt="" coords="344,5,459,31"/>
+<area shape="rect" id="node4" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="507,5,635,31"/>
+<area shape="rect" id="node5" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="683,5,733,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -839,6 +1083,15 @@ Variables</h2></td></tr>
 <p>Concatenate a vector to a matrix &ndash; rowwise or coloumn wise </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__concatenate__vector2matrix_8cpp_source.html#l00005">5</a> of file <a class="el" href="fe__concatenate__vector2matrix_8cpp_source.html">fe_concatenate_vector2matrix.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ac2d90cb6719488bc8551e6f9437f4f76_icgraph.png" border="0" usemap="#functions_8h_ac2d90cb6719488bc8551e6f9437f4f76_icgraph" alt=""/></div>
+<map name="functions_8h_ac2d90cb6719488bc8551e6f9437f4f76_icgraph" id="functions_8h_ac2d90cb6719488bc8551e6f9437f4f76_icgraph">
+<area shape="rect" id="node2" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="253,5,381,31"/>
+<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="429,5,480,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -918,6 +1171,20 @@ Variables</h2></td></tr>
 <p>dndr of isoparametric element calculated for particular r, s, and t </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__dn__iso__8_8cpp_source.html#l00006">6</a> of file <a class="el" href="fe__dn__iso__8_8cpp_source.html">fe_dn_iso_8.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_afc547bef246c057db6cbd04bf7f866a9_icgraph.png" border="0" usemap="#functions_8h_afc547bef246c057db6cbd04bf7f866a9_icgraph" alt=""/></div>
+<map name="functions_8h_afc547bef246c057db6cbd04bf7f866a9_icgraph" id="functions_8h_afc547bef246c057db6cbd04bf7f866a9_icgraph">
+<area shape="rect" id="node2" href="fe__stiffness__embed__truss_8cpp.html#ab3798340a27f0972299b3820aab0ccba" title="fe_stiffness_embed\l_truss" alt="" coords="135,5,271,44"/>
+<area shape="rect" id="node3" href="fe__stiffness__hex_8cpp.html#a9378d4fc517465015411134456235a76" title="fe_stiffness_hex" alt="" coords="144,68,262,93"/>
+<area shape="rect" id="node4" href="fe__mass__hex_8cpp.html#a04906e61b8cfdc7232924a594b95eb1f" title="fe_mass_hex" alt="" coords="319,120,420,145"/>
+<area shape="rect" id="node7" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="326,169,414,195"/>
+<area shape="rect" id="node8" href="fe__newton_rhapson_8cpp.html#ad7c031b962da3b431c536b473cdba7f8" title="This functions calculates the isoparametric coordinates of a set of coordinates in global system..." alt="" coords="135,220,271,245"/>
+<area shape="rect" id="node5" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="468,145,596,171"/>
+<area shape="rect" id="node6" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="644,145,694,171"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -955,6 +1222,20 @@ Variables</h2></td></tr>
 <p>dnds of isoparametric element calculated for particular r, s, and t </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__dn__iso__8_8cpp_source.html#l00044">44</a> of file <a class="el" href="fe__dn__iso__8_8cpp_source.html">fe_dn_iso_8.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ac0b5524525e1f2e89bb064c15ab8e664_icgraph.png" border="0" usemap="#functions_8h_ac0b5524525e1f2e89bb064c15ab8e664_icgraph" alt=""/></div>
+<map name="functions_8h_ac0b5524525e1f2e89bb064c15ab8e664_icgraph" id="functions_8h_ac0b5524525e1f2e89bb064c15ab8e664_icgraph">
+<area shape="rect" id="node2" href="fe__stiffness__embed__truss_8cpp.html#ab3798340a27f0972299b3820aab0ccba" title="fe_stiffness_embed\l_truss" alt="" coords="137,5,274,44"/>
+<area shape="rect" id="node3" href="fe__stiffness__hex_8cpp.html#a9378d4fc517465015411134456235a76" title="fe_stiffness_hex" alt="" coords="147,68,264,93"/>
+<area shape="rect" id="node4" href="fe__mass__hex_8cpp.html#a04906e61b8cfdc7232924a594b95eb1f" title="fe_mass_hex" alt="" coords="322,120,422,145"/>
+<area shape="rect" id="node7" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="328,169,416,195"/>
+<area shape="rect" id="node8" href="fe__newton_rhapson_8cpp.html#ad7c031b962da3b431c536b473cdba7f8" title="This functions calculates the isoparametric coordinates of a set of coordinates in global system..." alt="" coords="137,220,273,245"/>
+<area shape="rect" id="node5" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="470,145,598,171"/>
+<area shape="rect" id="node6" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="646,145,697,171"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -992,6 +1273,20 @@ Variables</h2></td></tr>
 <p>dndt of isoparametric element calculated for particular r, s, and t </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__dn__iso__8_8cpp_source.html#l00082">82</a> of file <a class="el" href="fe__dn__iso__8_8cpp_source.html">fe_dn_iso_8.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a57e8e5c9f740c98e4767f29c121c2d0a_icgraph.png" border="0" usemap="#functions_8h_a57e8e5c9f740c98e4767f29c121c2d0a_icgraph" alt=""/></div>
+<map name="functions_8h_a57e8e5c9f740c98e4767f29c121c2d0a_icgraph" id="functions_8h_a57e8e5c9f740c98e4767f29c121c2d0a_icgraph">
+<area shape="rect" id="node2" href="fe__stiffness__embed__truss_8cpp.html#ab3798340a27f0972299b3820aab0ccba" title="fe_stiffness_embed\l_truss" alt="" coords="134,5,271,44"/>
+<area shape="rect" id="node3" href="fe__stiffness__hex_8cpp.html#a9378d4fc517465015411134456235a76" title="fe_stiffness_hex" alt="" coords="144,68,261,93"/>
+<area shape="rect" id="node4" href="fe__mass__hex_8cpp.html#a04906e61b8cfdc7232924a594b95eb1f" title="fe_mass_hex" alt="" coords="319,120,419,145"/>
+<area shape="rect" id="node7" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="325,169,413,195"/>
+<area shape="rect" id="node8" href="fe__newton_rhapson_8cpp.html#ad7c031b962da3b431c536b473cdba7f8" title="This functions calculates the isoparametric coordinates of a set of coordinates in global system..." alt="" coords="134,220,270,245"/>
+<area shape="rect" id="node5" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="467,145,595,171"/>
+<area shape="rect" id="node6" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="643,145,694,171"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1041,6 +1336,18 @@ Variables</h2></td></tr>
 <p>dndx of actual element calculates using jacobian and shape function derivates calculated in the isoparametric element </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__dn__actual__8_8cpp_source.html#l00006">6</a> of file <a class="el" href="fe__dn__actual__8_8cpp_source.html">fe_dn_actual_8.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_afc6be1a5667e68156cb099e8da71170f_icgraph.png" border="0" usemap="#functions_8h_afc6be1a5667e68156cb099e8da71170f_icgraph" alt=""/></div>
+<map name="functions_8h_afc6be1a5667e68156cb099e8da71170f_icgraph" id="functions_8h_afc6be1a5667e68156cb099e8da71170f_icgraph">
+<area shape="rect" id="node2" href="fe__stiffness__embed__truss_8cpp.html#ab3798340a27f0972299b3820aab0ccba" title="fe_stiffness_embed\l_truss" alt="" coords="137,5,274,44"/>
+<area shape="rect" id="node3" href="fe__stiffness__hex_8cpp.html#a9378d4fc517465015411134456235a76" title="fe_stiffness_hex" alt="" coords="147,68,264,93"/>
+<area shape="rect" id="node4" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="161,117,249,143"/>
+<area shape="rect" id="node5" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="322,117,450,143"/>
+<area shape="rect" id="node6" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="498,117,548,143"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1090,6 +1397,18 @@ Variables</h2></td></tr>
 <p>dndy of actual element calculates using jacobian and shape function derivates calculated in the isoparametric element </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__dn__actual__8_8cpp_source.html#l00017">17</a> of file <a class="el" href="fe__dn__actual__8_8cpp_source.html">fe_dn_actual_8.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a0572d7818e085c67f7fbb84eef8ecfb4_icgraph.png" border="0" usemap="#functions_8h_a0572d7818e085c67f7fbb84eef8ecfb4_icgraph" alt=""/></div>
+<map name="functions_8h_a0572d7818e085c67f7fbb84eef8ecfb4_icgraph" id="functions_8h_a0572d7818e085c67f7fbb84eef8ecfb4_icgraph">
+<area shape="rect" id="node2" href="fe__stiffness__embed__truss_8cpp.html#ab3798340a27f0972299b3820aab0ccba" title="fe_stiffness_embed\l_truss" alt="" coords="137,5,274,44"/>
+<area shape="rect" id="node3" href="fe__stiffness__hex_8cpp.html#a9378d4fc517465015411134456235a76" title="fe_stiffness_hex" alt="" coords="147,68,264,93"/>
+<area shape="rect" id="node4" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="161,117,249,143"/>
+<area shape="rect" id="node5" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="322,117,450,143"/>
+<area shape="rect" id="node6" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="498,117,548,143"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1139,6 +1458,18 @@ Variables</h2></td></tr>
 <p>dndz of actual element calculates using jacobian and shape function derivates calculated in the isoparametric element </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__dn__actual__8_8cpp_source.html#l00028">28</a> of file <a class="el" href="fe__dn__actual__8_8cpp_source.html">fe_dn_actual_8.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_aaf75db8433433807839c6ea17f2cf72c_icgraph.png" border="0" usemap="#functions_8h_aaf75db8433433807839c6ea17f2cf72c_icgraph" alt=""/></div>
+<map name="functions_8h_aaf75db8433433807839c6ea17f2cf72c_icgraph" id="functions_8h_aaf75db8433433807839c6ea17f2cf72c_icgraph">
+<area shape="rect" id="node2" href="fe__stiffness__embed__truss_8cpp.html#ab3798340a27f0972299b3820aab0ccba" title="fe_stiffness_embed\l_truss" alt="" coords="137,5,274,44"/>
+<area shape="rect" id="node3" href="fe__stiffness__hex_8cpp.html#a9378d4fc517465015411134456235a76" title="fe_stiffness_hex" alt="" coords="147,68,264,93"/>
+<area shape="rect" id="node4" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="161,117,249,143"/>
+<area shape="rect" id="node5" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="322,117,450,143"/>
+<area shape="rect" id="node6" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="498,117,548,143"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1170,6 +1501,16 @@ Variables</h2></td></tr>
 <p>find the poistion index of a value in a vector &ndash; analogous to 'find' function in MATLAB </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__find_8cpp_source.html#l00004">4</a> of file <a class="el" href="fe__find_8cpp_source.html">fe_find.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a983304137f9a961469a558437d5d2d59_icgraph.png" border="0" usemap="#functions_8h_a983304137f9a961469a558437d5d2d59_icgraph" alt=""/></div>
+<map name="functions_8h_a983304137f9a961469a558437d5d2d59_icgraph" id="functions_8h_a983304137f9a961469a558437d5d2d59_icgraph">
+<area shape="rect" id="node2" href="class_mesh.html#aa8a6f260e9589be4c0a2fcc146e696d5" title="Mesh::preprocessMesh" alt="" coords="115,5,275,31"/>
+<area shape="rect" id="node3" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="323,5,451,31"/>
+<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="499,5,549,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1191,6 +1532,68 @@ Variables</h2></td></tr>
 <p>Find the index based on the DOF of a particular node </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__find__index_8cpp_source.html#l00016">16</a> of file <a class="el" href="fe__find__index_8cpp_source.html">fe_find_index.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ae4dbe24b761cafa3577afab76726b382_icgraph.png" border="0" usemap="#functions_8h_ae4dbe24b761cafa3577afab76726b382_icgraph" alt=""/></div>
+<map name="functions_8h_ae4dbe24b761cafa3577afab76726b382_icgraph" id="functions_8h_ae4dbe24b761cafa3577afab76726b382_icgraph">
+<area shape="rect" id="node2" href="fe__assemble__mass_8cpp.html#a04f569c566ca4fbea3b3a2a13cdd0af5" title="fe_assemble_mass" alt="" coords="282,5,418,31"/>
+<area shape="rect" id="node5" href="fe__gather_8cpp.html#ab5053cb12ac67971a7836346e2839725" title="fe_gather" alt="" coords="155,104,233,129"/>
+<area shape="rect" id="node8" href="fe__scatter_8cpp.html#a6b8344e12f9005795f93f60ddda26c5c" title="fe_scatter" alt="" coords="154,55,234,80"/>
+<area shape="rect" id="node3" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="466,55,594,80"/>
+<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="642,55,692,80"/>
+<area shape="rect" id="node6" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="306,55,394,80"/>
+<area shape="rect" id="node7" href="fe__get_time_step_8cpp.html#af737926a3dfd669254a56dbbf675ac92" title="fe_getTimeStep" alt="" coords="292,104,407,129"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5ce8a3cf9dcc8b599ac40f7f3a48f196"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ce8a3cf9dcc8b599ac40f7f3a48f196">&#9670;&nbsp;</a></span>fe_function()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double fe_function </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>time</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Function outputs the standard curve values </p>
+
+<p class="definition">Definition at line <a class="el" href="fe__function_8cpp_source.html#l00005">5</a> of file <a class="el" href="fe__function_8cpp_source.html">fe_function.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a5ce8a3cf9dcc8b599ac40f7f3a48f196_icgraph.png" border="0" usemap="#functions_8h_a5ce8a3cf9dcc8b599ac40f7f3a48f196_icgraph" alt=""/></div>
+<map name="functions_8h_a5ce8a3cf9dcc8b599ac40f7f3a48f196_icgraph" id="functions_8h_a5ce8a3cf9dcc8b599ac40f7f3a48f196_icgraph">
+<area shape="rect" id="node2" href="fe__apply__bc_8cpp.html#af42938e5b32edb33ef4a35866949eba6" title="fe_apply_bc_displacement" alt="" coords="140,5,319,31"/>
+<area shape="rect" id="node5" href="fe__apply__bc_8cpp.html#aba32cc24bd74a4965c560fa62c5b213e" title="fe_apply_bc_load" alt="" coords="167,55,292,80"/>
+<area shape="rect" id="node3" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="367,31,495,56"/>
+<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="543,31,593,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1234,6 +1637,25 @@ Variables</h2></td></tr>
 <p>Creates element level vector (displacement, velocity, acceleration etc.) from a system level vector </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__gather_8cpp_source.html#l00006">6</a> of file <a class="el" href="fe__gather_8cpp_source.html">fe_gather.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ab5053cb12ac67971a7836346e2839725_cgraph.png" border="0" usemap="#functions_8h_ab5053cb12ac67971a7836346e2839725_cgraph" alt=""/></div>
+<map name="functions_8h_ab5053cb12ac67971a7836346e2839725_cgraph" id="functions_8h_ab5053cb12ac67971a7836346e2839725_cgraph">
+<area shape="rect" id="node2" href="functions_8h.html#ae4dbe24b761cafa3577afab76726b382" title="fe_find_index" alt="" coords="131,5,232,31"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ab5053cb12ac67971a7836346e2839725_icgraph.png" border="0" usemap="#functions_8h_ab5053cb12ac67971a7836346e2839725_icgraph" alt=""/></div>
+<map name="functions_8h_ab5053cb12ac67971a7836346e2839725_icgraph" id="functions_8h_ab5053cb12ac67971a7836346e2839725_icgraph">
+<area shape="rect" id="node2" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="144,5,233,31"/>
+<area shape="rect" id="node5" href="fe__get_time_step_8cpp.html#af737926a3dfd669254a56dbbf675ac92" title="fe_getTimeStep" alt="" coords="131,55,246,80"/>
+<area shape="rect" id="node3" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="294,31,422,56"/>
+<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="470,31,520,56"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1265,6 +1687,23 @@ Variables</h2></td></tr>
 <p>Extracts the material parameter values based on the material id </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__get__mats_8cpp_source.html#l00005">5</a> of file <a class="el" href="fe__get__mats_8cpp_source.html">fe_get_mats.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_af7ffbad6dfcc99fc88b130c1a7b1720a_icgraph.png" border="0" usemap="#functions_8h_af7ffbad6dfcc99fc88b130c1a7b1720a_icgraph" alt=""/></div>
+<map name="functions_8h_af7ffbad6dfcc99fc88b130c1a7b1720a_icgraph" id="functions_8h_af7ffbad6dfcc99fc88b130c1a7b1720a_icgraph">
+<area shape="rect" id="node2" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="692,129,820,154"/>
+<area shape="rect" id="node4" href="fe__simple__elastic_8cpp.html#ab0911abb05a0ca06eb4f330890ee0641" title="fe_simple_elastic" alt="" coords="183,54,306,80"/>
+<area shape="rect" id="node7" href="fe__mooneyrivlin__hyperelastic_8cpp.html#a66b469439c736421744f6aef9e05a485" title="fe_mooneyrivlin_hyperelastic" alt="" coords="148,104,341,129"/>
+<area shape="rect" id="node8" href="fe__ogden__hyperelastic_8cpp.html#ab27ecb703db33cb21a8a6d2fbfbf125f" title="fe_ogden_hyperelastic" alt="" coords="167,153,322,178"/>
+<area shape="rect" id="node9" href="fe__saintvenant__elastic_8cpp.html#af2a970e883d0c4a7ad750547c07c5f24" title="fe_saintvenant_elastic" alt="" coords="168,202,321,228"/>
+<area shape="rect" id="node10" href="fe__stress_update__1d_8cpp.html#a94c1b672863e28bc2c70d08726939929" title="fe_stressUpdate_1d" alt="" coords="174,252,315,277"/>
+<area shape="rect" id="node11" href="fe__get_time_step_8cpp.html#af737926a3dfd669254a56dbbf675ac92" title="fe_getTimeStep" alt="" coords="391,253,506,278"/>
+<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="868,129,918,154"/>
+<area shape="rect" id="node5" href="fe__stress_update_8cpp.html#a7d0fd8cfef8b891901eb6f0f780fd9f2" title="This function calculates the updated stress for 3d elements &#45; elastic, hyperelastic material models w..." alt="" coords="389,129,508,154"/>
+<area shape="rect" id="node6" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="556,129,644,154"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1285,6 +1724,18 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="fe__get__mats_8cpp_source.html#l00022">22</a> of file <a class="el" href="fe__get__mats_8cpp_source.html">fe_get_mats.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a34d6fb85943d945b7e8600d2ef4220d0_icgraph.png" border="0" usemap="#functions_8h_a34d6fb85943d945b7e8600d2ef4220d0_icgraph" alt=""/></div>
+<map name="functions_8h_a34d6fb85943d945b7e8600d2ef4220d0_icgraph" id="functions_8h_a34d6fb85943d945b7e8600d2ef4220d0_icgraph">
+<area shape="rect" id="node2" href="fe__stress_update_8cpp.html#a7d0fd8cfef8b891901eb6f0f780fd9f2" title="This function calculates the updated stress for 3d elements &#45; elastic, hyperelastic material models w..." alt="" coords="167,5,285,31"/>
+<area shape="rect" id="node6" href="fe__stress_update__1d_8cpp.html#a94c1b672863e28bc2c70d08726939929" title="fe_stressUpdate_1d" alt="" coords="155,55,296,80"/>
+<area shape="rect" id="node3" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="344,5,432,31"/>
+<area shape="rect" id="node4" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="480,5,608,31"/>
+<area shape="rect" id="node5" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="656,5,706,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1361,6 +1812,49 @@ Variables</h2></td></tr>
 <p>This function represents the 'getforce' step in Belytschko (Box 6.1 - Explicit FEM Algorithm). For each hex element, this function calculates the internal nodal force vector and the resultant nodal force vector. Once, this is calculated for each element, the resultant vectors are scattered into global vectors. </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__getforce_8cpp_source.html#l00013">13</a> of file <a class="el" href="fe__getforce_8cpp_source.html">fe_getforce.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_aa8f7f6d72c6b57c721b23a38e2e20fc5_cgraph.png" border="0" usemap="#functions_8h_aa8f7f6d72c6b57c721b23a38e2e20fc5_cgraph" alt=""/></div>
+<map name="functions_8h_aa8f7f6d72c6b57c721b23a38e2e20fc5_cgraph" id="functions_8h_aa8f7f6d72c6b57c721b23a38e2e20fc5_cgraph">
+<area shape="rect" id="node2" href="functions_8h.html#ab5053cb12ac67971a7836346e2839725" title="fe_gather" alt="" coords="211,55,289,80"/>
+<area shape="rect" id="node4" href="functions_8h.html#a502e3469e1cc253deb142f46c0789a78" title="guass_points_3d" alt="" coords="189,104,311,129"/>
+<area shape="rect" id="node5" href="functions_8h.html#ad99b08ce65ae353e91486d7685c22024" title="guass_weights_3d" alt="" coords="184,153,316,179"/>
+<area shape="rect" id="node7" href="functions_8h.html#afc547bef246c057db6cbd04bf7f866a9" title="fe_dndr_8" alt="" coords="462,203,544,228"/>
+<area shape="rect" id="node8" href="functions_8h.html#ac0b5524525e1f2e89bb064c15ab8e664" title="fe_dnds_8" alt="" coords="461,252,545,277"/>
+<area shape="rect" id="node9" href="functions_8h.html#a57e8e5c9f740c98e4767f29c121c2d0a" title="fe_dndt_8" alt="" coords="463,400,543,425"/>
+<area shape="rect" id="node10" href="functions_8h.html#a12aa5a7a3443c6fcc5e65d3bcfc9bcc3" title="fe_calJacobian" alt="" coords="448,449,558,475"/>
+<area shape="rect" id="node11" href="functions_8h.html#afc6be1a5667e68156cb099e8da71170f" title="fe_dndx_8" alt="" coords="208,457,292,483"/>
+<area shape="rect" id="node12" href="functions_8h.html#a0572d7818e085c67f7fbb84eef8ecfb4" title="fe_dndy_8" alt="" coords="208,507,292,532"/>
+<area shape="rect" id="node13" href="functions_8h.html#aaf75db8433433807839c6ea17f2cf72c" title="fe_dndz_8" alt="" coords="208,556,292,581"/>
+<area shape="rect" id="node14" href="functions_8h.html#a8c9fd519c93c847cdf52de947964eb67" title="fe_strDispMatrix_totalLagrangian" alt="" coords="141,605,358,631"/>
+<area shape="rect" id="node15" href="functions_8h.html#ae50379f74802347e04dbc022897f9cb0" title="fe_calDefGrad" alt="" coords="668,707,775,732"/>
+<area shape="rect" id="node16" href="functions_8h.html#a7d0fd8cfef8b891901eb6f0f780fd9f2" title="This function calculates the updated stress for 3d elements &#45; elastic, hyperelastic material models w..." alt="" coords="191,780,309,805"/>
+<area shape="rect" id="node25" href="functions_8h.html#ad7c031b962da3b431c536b473cdba7f8" title="This functions calculates the isoparametric coordinates of a set of coordinates in global system..." alt="" coords="182,305,318,331"/>
+<area shape="rect" id="node28" href="functions_8h.html#a6b8344e12f9005795f93f60ddda26c5c" title="fe_scatter" alt="" coords="210,5,290,31"/>
+<area shape="rect" id="node3" href="functions_8h.html#ae4dbe24b761cafa3577afab76726b382" title="fe_find_index" alt="" coords="453,31,553,56"/>
+<area shape="rect" id="node6" href="functions_8h.html#a84dcc9575e861bdb2872c10ba6238ee4" title="guass_weights" alt="" coords="448,153,558,179"/>
+<area shape="rect" id="node17" href="functions_8h.html#a34d6fb85943d945b7e8600d2ef4220d0" title="fe_get_model" alt="" coords="452,904,554,929"/>
+<area shape="rect" id="node18" href="functions_8h.html#ab0911abb05a0ca06eb4f330890ee0641" title="fe_simple_elastic" alt="" coords="441,855,565,880"/>
+<area shape="rect" id="node21" href="functions_8h.html#af2a970e883d0c4a7ad750547c07c5f24" title="fe_saintvenant_elastic" alt="" coords="426,707,580,732"/>
+<area shape="rect" id="node23" href="functions_8h.html#a66b469439c736421744f6aef9e05a485" title="fe_mooneyrivlin_hyperelastic" alt="" coords="406,756,600,781"/>
+<area shape="rect" id="node24" href="functions_8h.html#ab27ecb703db33cb21a8a6d2fbfbf125f" title="fe_ogden_hyperelastic" alt="" coords="425,805,581,831"/>
+<area shape="rect" id="node19" href="functions_8h.html#af7ffbad6dfcc99fc88b130c1a7b1720a" title="fe_get_mats" alt="" coords="674,805,769,831"/>
+<area shape="rect" id="node20" href="fe__simple__elastic_8cpp.html#abbc5cafd6bb8048b69b3bd6f26ceb5f8" title="fe_calculate_matlmat" alt="" coords="648,855,795,880"/>
+<area shape="rect" id="node22" href="functions_8h.html#a73c4523ec7068af2af9e8431021f5fdf" title="fe_tensor2voigt" alt="" coords="665,756,778,781"/>
+<area shape="rect" id="node26" href="functions_8h.html#ab77a3a6d6f6b436d7e8c600bb0869927" title="fe_shapes_8" alt="" coords="454,351,552,376"/>
+<area shape="rect" id="node27" href="functions_8h.html#a98fae74dde5fe33a7062e7457a2d3227" title="fe_shapeMatrix" alt="" coords="447,301,559,327"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_aa8f7f6d72c6b57c721b23a38e2e20fc5_icgraph.png" border="0" usemap="#functions_8h_aa8f7f6d72c6b57c721b23a38e2e20fc5_icgraph" alt=""/></div>
+<map name="functions_8h_aa8f7f6d72c6b57c721b23a38e2e20fc5_icgraph" id="functions_8h_aa8f7f6d72c6b57c721b23a38e2e20fc5_icgraph">
+<area shape="rect" id="node2" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="141,5,269,31"/>
+<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="317,5,368,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1417,43 +1911,29 @@ Variables</h2></td></tr>
 <p>For all elements &ndash; this function calculates the minimum critical timestep </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__get_time_step_8cpp_source.html#l00006">6</a> of file <a class="el" href="fe__get_time_step_8cpp_source.html">fe_getTimeStep.cpp</a>.</p>
-
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_af737926a3dfd669254a56dbbf675ac92_cgraph.png" border="0" usemap="#functions_8h_af737926a3dfd669254a56dbbf675ac92_cgraph" alt=""/></div>
+<map name="functions_8h_af737926a3dfd669254a56dbbf675ac92_cgraph" id="functions_8h_af737926a3dfd669254a56dbbf675ac92_cgraph">
+<area shape="rect" id="node2" href="functions_8h.html#af7ffbad6dfcc99fc88b130c1a7b1720a" title="fe_get_mats" alt="" coords="178,5,272,31"/>
+<area shape="rect" id="node3" href="functions_8h.html#ab5053cb12ac67971a7836346e2839725" title="fe_gather" alt="" coords="186,55,264,80"/>
+<area shape="rect" id="node5" href="functions_8h.html#ab0d9d059d2b8f829000e6f1f7d1d4ffb" title="fe_calTimeStep" alt="" coords="168,116,282,141"/>
+<area shape="rect" id="node4" href="functions_8h.html#ae4dbe24b761cafa3577afab76726b382" title="fe_find_index" alt="" coords="344,41,445,67"/>
+<area shape="rect" id="node6" href="functions_8h.html#ac1306a43db522f3da30471d2a6c48686" title="fe_calArea_4" alt="" coords="344,91,444,116"/>
+<area shape="rect" id="node7" href="functions_8h.html#afbe30e3a940236fc486b96028abf6f46" title="fe_calVolume" alt="" coords="344,140,445,165"/>
+<area shape="rect" id="node8" href="functions_8h.html#acb1ae85901899b3e4e2a1635e036fd35" title="fe_calWaveSpeed" alt="" coords="330,189,459,215"/>
+</map>
 </div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_af737926a3dfd669254a56dbbf675ac92_icgraph.png" border="0" usemap="#functions_8h_af737926a3dfd669254a56dbbf675ac92_icgraph" alt=""/></div>
+<map name="functions_8h_af737926a3dfd669254a56dbbf675ac92_icgraph" id="functions_8h_af737926a3dfd669254a56dbbf675ac92_icgraph">
+<area shape="rect" id="node2" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="168,5,296,31"/>
+<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="344,5,395,31"/>
+</map>
 </div>
-<a id="ada816506319851dcff162fa5e54d72d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada816506319851dcff162fa5e54d72d5">&#9670;&nbsp;</a></span>fe_isoElastic()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">MatrixXd fe_isoElastic </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>E</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>nu</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Create material matrix for isotropic elastic case </p>
-
-<p class="definition">Definition at line <a class="el" href="fe__iso_elastic_8cpp_source.html#l00007">7</a> of file <a class="el" href="fe__iso_elastic_8cpp_source.html">fe_isoElastic.cpp</a>.</p>
 
 </div>
 </div>
@@ -1478,6 +1958,70 @@ Variables</h2></td></tr>
 <p>Writing the output to VTK files </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__main_e_x_p_l_i_c_i_t_8cpp_source.html#l00008">8</a> of file <a class="el" href="fe__main_e_x_p_l_i_c_i_t_8cpp_source.html">fe_mainEXPLICIT.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ab2f8704631ca6c23a453d1905efbb162_cgraph.png" border="0" usemap="#functions_8h_ab2f8704631ca6c23a453d1905efbb162_cgraph" alt=""/></div>
+<map name="functions_8h_ab2f8704631ca6c23a453d1905efbb162_cgraph" id="functions_8h_ab2f8704631ca6c23a453d1905efbb162_cgraph">
+<area shape="rect" id="node2" href="class_mesh.html#aa8a6f260e9589be4c0a2fcc146e696d5" title="Mesh::preprocessMesh" alt="" coords="201,133,361,159"/>
+<area shape="rect" id="node4" href="class_mesh.html#a52ecce406bbef80cbf3610db3ea5ea40" title="Mesh::getNewNodes" alt="" coords="209,311,354,336"/>
+<area shape="rect" id="node5" href="class_mesh.html#af242dbb4627c09410975a0e67389e0de" title="Mesh::getNewElements" alt="" coords="200,360,362,385"/>
+<area shape="rect" id="node6" href="functions_8h.html#aba32cc24bd74a4965c560fa62c5b213e" title="fe_apply_bc_load" alt="" coords="218,409,344,435"/>
+<area shape="rect" id="node8" href="functions_8h.html#af7ffbad6dfcc99fc88b130c1a7b1720a" title="fe_get_mats" alt="" coords="962,733,1057,759"/>
+<area shape="rect" id="node9" href="functions_8h.html#a04906e61b8cfdc7232924a594b95eb1f" title="fe_mass_hex" alt="" coords="488,256,588,281"/>
+<area shape="rect" id="node19" href="functions_8h.html#a04f569c566ca4fbea3b3a2a13cdd0af5" title="fe_assemble_mass" alt="" coords="470,907,606,932"/>
+<area shape="rect" id="node21" href="functions_8h.html#ab747d046148af042245ed13ca720c5ec" title="fe_transformMass" alt="" coords="217,609,345,635"/>
+<area shape="rect" id="node22" href="functions_8h.html#a346547477d2a1fbeff6b5e0b05314283" title="matrix2text" alt="" coords="238,659,325,684"/>
+<area shape="rect" id="node23" href="functions_8h.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="237,560,325,585"/>
+<area shape="rect" id="node40" href="functions_8h.html#ad631819edfa9ade5d6e379d0085810b6" title="fe_vtuWrite" alt="" coords="237,757,326,783"/>
+<area shape="rect" id="node41" href="functions_8h.html#a45a1daa8de18fc5fc463f9b569970245" title="fe_vtkWrite_host" alt="" coords="221,807,342,832"/>
+<area shape="rect" id="node42" href="functions_8h.html#a6e838460f501267efe34f29d4cf6d9cd" title="fe_vtkWrite_truss" alt="" coords="219,856,343,881"/>
+<area shape="rect" id="node43" href="functions_8h.html#af737926a3dfd669254a56dbbf675ac92" title="fe_getTimeStep" alt="" coords="224,708,339,733"/>
+<area shape="rect" id="node48" href="functions_8h.html#af42938e5b32edb33ef4a35866949eba6" title="fe_apply_bc_displacement" alt="" coords="192,459,371,484"/>
+<area shape="rect" id="node49" href="functions_8h.html#ac2d90cb6719488bc8551e6f9437f4f76" title="fe_concatenate_vector2matrix" alt="" coords="181,1059,381,1084"/>
+<area shape="rect" id="node50" href="functions_8h.html#a0b5f62139051473c809da12cc0c45e29" title="vector2text" alt="" coords="238,1108,325,1133"/>
+<area shape="rect" id="node3" href="functions_8h.html#a983304137f9a961469a558437d5d2d59" title="fe_find" alt="" coords="507,5,569,31"/>
+<area shape="rect" id="node7" href="functions_8h.html#a5ce8a3cf9dcc8b599ac40f7f3a48f196" title="fe_function" alt="" coords="495,55,581,80"/>
+<area shape="rect" id="node10" href="functions_8h.html#a502e3469e1cc253deb142f46c0789a78" title="guass_points_3d" alt="" coords="730,456,852,481"/>
+<area shape="rect" id="node11" href="functions_8h.html#ad99b08ce65ae353e91486d7685c22024" title="guass_weights_3d" alt="" coords="725,407,857,432"/>
+<area shape="rect" id="node13" href="functions_8h.html#ab77a3a6d6f6b436d7e8c600bb0869927" title="fe_shapes_8" alt="" coords="742,256,840,281"/>
+<area shape="rect" id="node14" href="functions_8h.html#afc547bef246c057db6cbd04bf7f866a9" title="fe_dndr_8" alt="" coords="750,157,832,183"/>
+<area shape="rect" id="node15" href="functions_8h.html#ac0b5524525e1f2e89bb064c15ab8e664" title="fe_dnds_8" alt="" coords="749,108,833,133"/>
+<area shape="rect" id="node16" href="functions_8h.html#a57e8e5c9f740c98e4767f29c121c2d0a" title="fe_dndt_8" alt="" coords="751,305,831,331"/>
+<area shape="rect" id="node17" href="functions_8h.html#a12aa5a7a3443c6fcc5e65d3bcfc9bcc3" title="fe_calJacobian" alt="" coords="736,355,846,380"/>
+<area shape="rect" id="node18" href="functions_8h.html#a98fae74dde5fe33a7062e7457a2d3227" title="fe_shapeMatrix" alt="" coords="735,207,847,232"/>
+<area shape="rect" id="node12" href="functions_8h.html#a84dcc9575e861bdb2872c10ba6238ee4" title="guass_weights" alt="" coords="954,407,1064,432"/>
+<area shape="rect" id="node20" href="functions_8h.html#ae4dbe24b761cafa3577afab76726b382" title="fe_find_index" alt="" coords="741,857,841,883"/>
+<area shape="rect" id="node24" href="functions_8h.html#ab5053cb12ac67971a7836346e2839725" title="fe_gather" alt="" coords="499,857,577,883"/>
+<area shape="rect" id="node25" href="functions_8h.html#afc6be1a5667e68156cb099e8da71170f" title="fe_dndx_8" alt="" coords="496,660,580,685"/>
+<area shape="rect" id="node26" href="functions_8h.html#a0572d7818e085c67f7fbb84eef8ecfb4" title="fe_dndy_8" alt="" coords="496,709,580,735"/>
+<area shape="rect" id="node27" href="functions_8h.html#aaf75db8433433807839c6ea17f2cf72c" title="fe_dndz_8" alt="" coords="496,759,580,784"/>
+<area shape="rect" id="node28" href="functions_8h.html#a8c9fd519c93c847cdf52de947964eb67" title="fe_strDispMatrix_totalLagrangian" alt="" coords="429,509,646,535"/>
+<area shape="rect" id="node29" href="functions_8h.html#ae50379f74802347e04dbc022897f9cb0" title="fe_calDefGrad" alt="" coords="956,611,1063,636"/>
+<area shape="rect" id="node30" href="functions_8h.html#a7d0fd8cfef8b891901eb6f0f780fd9f2" title="This function calculates the updated stress for 3d elements &#45; elastic, hyperelastic material models w..." alt="" coords="479,611,597,636"/>
+<area shape="rect" id="node38" href="functions_8h.html#ad7c031b962da3b431c536b473cdba7f8" title="This functions calculates the isoparametric coordinates of a set of coordinates in global system..." alt="" coords="470,207,606,232"/>
+<area shape="rect" id="node39" href="functions_8h.html#a6b8344e12f9005795f93f60ddda26c5c" title="fe_scatter" alt="" coords="498,808,578,833"/>
+<area shape="rect" id="node31" href="functions_8h.html#a34d6fb85943d945b7e8600d2ef4220d0" title="fe_get_model" alt="" coords="740,759,842,784"/>
+<area shape="rect" id="node32" href="functions_8h.html#ab0911abb05a0ca06eb4f330890ee0641" title="fe_simple_elastic" alt="" coords="729,808,853,833"/>
+<area shape="rect" id="node34" href="functions_8h.html#af2a970e883d0c4a7ad750547c07c5f24" title="fe_saintvenant_elastic" alt="" coords="714,709,868,735"/>
+<area shape="rect" id="node36" href="functions_8h.html#a66b469439c736421744f6aef9e05a485" title="fe_mooneyrivlin_hyperelastic" alt="" coords="694,660,888,685"/>
+<area shape="rect" id="node37" href="functions_8h.html#ab27ecb703db33cb21a8a6d2fbfbf125f" title="fe_ogden_hyperelastic" alt="" coords="713,611,869,636"/>
+<area shape="rect" id="node33" href="fe__simple__elastic_8cpp.html#abbc5cafd6bb8048b69b3bd6f26ceb5f8" title="fe_calculate_matlmat" alt="" coords="936,808,1083,833"/>
+<area shape="rect" id="node35" href="functions_8h.html#a73c4523ec7068af2af9e8431021f5fdf" title="fe_tensor2voigt" alt="" coords="953,660,1066,685"/>
+<area shape="rect" id="node44" href="functions_8h.html#ab0d9d059d2b8f829000e6f1f7d1d4ffb" title="fe_calTimeStep" alt="" coords="481,1083,595,1108"/>
+<area shape="rect" id="node45" href="functions_8h.html#ac1306a43db522f3da30471d2a6c48686" title="fe_calArea_4" alt="" coords="741,1059,841,1084"/>
+<area shape="rect" id="node46" href="functions_8h.html#afbe30e3a940236fc486b96028abf6f46" title="fe_calVolume" alt="" coords="740,1108,842,1133"/>
+<area shape="rect" id="node47" href="functions_8h.html#acb1ae85901899b3e4e2a1635e036fd35" title="fe_calWaveSpeed" alt="" coords="726,1157,855,1183"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ab2f8704631ca6c23a453d1905efbb162_icgraph.png" border="0" usemap="#functions_8h_ab2f8704631ca6c23a453d1905efbb162_icgraph" alt=""/></div>
+<map name="functions_8h_ab2f8704631ca6c23a453d1905efbb162_icgraph" id="functions_8h_ab2f8704631ca6c23a453d1905efbb162_icgraph">
+<area shape="rect" id="node2" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="181,5,232,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1499,6 +2043,23 @@ Variables</h2></td></tr>
 <p>Read the input text file &ndash; for a particular job </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__main_read_8cpp_source.html#l00005">5</a> of file <a class="el" href="fe__main_read_8cpp_source.html">fe_mainRead.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a8a64e915e17f876fe72bedd820e87c33_cgraph.png" border="0" usemap="#functions_8h_a8a64e915e17f876fe72bedd820e87c33_cgraph" alt=""/></div>
+<map name="functions_8h_a8a64e915e17f876fe72bedd820e87c33_cgraph" id="functions_8h_a8a64e915e17f876fe72bedd820e87c33_cgraph">
+<area shape="rect" id="node2" href="class_mesh.html#a2e0931c78a7ef01ccc9bf8f0dd74afb0" title="Mesh::readMesh" alt="" coords="163,5,284,31"/>
+<area shape="rect" id="node3" href="class_materials.html#a06e59a5742730b2292d39b7488523505" title="Materials::readMats" alt="" coords="154,55,292,80"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a8a64e915e17f876fe72bedd820e87c33_icgraph.png" border="0" usemap="#functions_8h_a8a64e915e17f876fe72bedd820e87c33_icgraph" alt=""/></div>
+<map name="functions_8h_a8a64e915e17f876fe72bedd820e87c33_icgraph" id="functions_8h_a8a64e915e17f876fe72bedd820e87c33_icgraph">
+<area shape="rect" id="node2" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="154,5,204,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1560,6 +2121,31 @@ Variables</h2></td></tr>
 <p>Calculates the mass matrix for a hex element </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__mass__hex_8cpp_source.html#l00007">7</a> of file <a class="el" href="fe__mass__hex_8cpp_source.html">fe_mass_hex.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a04906e61b8cfdc7232924a594b95eb1f_cgraph.png" border="0" usemap="#functions_8h_a04906e61b8cfdc7232924a594b95eb1f_cgraph" alt=""/></div>
+<map name="functions_8h_a04906e61b8cfdc7232924a594b95eb1f_cgraph" id="functions_8h_a04906e61b8cfdc7232924a594b95eb1f_cgraph">
+<area shape="rect" id="node2" href="functions_8h.html#a502e3469e1cc253deb142f46c0789a78" title="guass_points_3d" alt="" coords="159,5,281,31"/>
+<area shape="rect" id="node3" href="functions_8h.html#ad99b08ce65ae353e91486d7685c22024" title="guass_weights_3d" alt="" coords="154,55,286,80"/>
+<area shape="rect" id="node5" href="functions_8h.html#ab77a3a6d6f6b436d7e8c600bb0869927" title="fe_shapes_8" alt="" coords="171,104,269,129"/>
+<area shape="rect" id="node6" href="functions_8h.html#afc547bef246c057db6cbd04bf7f866a9" title="fe_dndr_8" alt="" coords="179,153,261,179"/>
+<area shape="rect" id="node7" href="functions_8h.html#ac0b5524525e1f2e89bb064c15ab8e664" title="fe_dnds_8" alt="" coords="178,203,262,228"/>
+<area shape="rect" id="node8" href="functions_8h.html#a57e8e5c9f740c98e4767f29c121c2d0a" title="fe_dndt_8" alt="" coords="180,252,260,277"/>
+<area shape="rect" id="node9" href="functions_8h.html#a12aa5a7a3443c6fcc5e65d3bcfc9bcc3" title="fe_calJacobian" alt="" coords="165,301,275,327"/>
+<area shape="rect" id="node10" href="functions_8h.html#a98fae74dde5fe33a7062e7457a2d3227" title="fe_shapeMatrix" alt="" coords="164,351,276,376"/>
+<area shape="rect" id="node4" href="functions_8h.html#a84dcc9575e861bdb2872c10ba6238ee4" title="guass_weights" alt="" coords="334,55,443,80"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a04906e61b8cfdc7232924a594b95eb1f_icgraph.png" border="0" usemap="#functions_8h_a04906e61b8cfdc7232924a594b95eb1f_icgraph" alt=""/></div>
+<map name="functions_8h_a04906e61b8cfdc7232924a594b95eb1f_icgraph" id="functions_8h_a04906e61b8cfdc7232924a594b95eb1f_icgraph">
+<area shape="rect" id="node2" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="154,5,282,31"/>
+<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="330,5,380,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1612,6 +2198,310 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a66b469439c736421744f6aef9e05a485"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66b469439c736421744f6aef9e05a485">&#9670;&nbsp;</a></span>fe_mooneyrivlin_hyperelastic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VectorXd fe_mooneyrivlin_hyperelastic </td>
+          <td>(</td>
+          <td class="paramtype">VectorXd&#160;</td>
+          <td class="paramname"><em>dndx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VectorXd&#160;</td>
+          <td class="paramname"><em>dndy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VectorXd&#160;</td>
+          <td class="paramname"><em>dndz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VectorXd&#160;</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>opt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>return_opt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>outputs 2nd cauchy stress tensor in vector form</p>
+<p>outputs cauchy stress tensor in vector form </p>
+
+<p class="definition">Definition at line <a class="el" href="fe__mooneyrivlin__hyperelastic_8cpp_source.html#l00005">5</a> of file <a class="el" href="fe__mooneyrivlin__hyperelastic_8cpp_source.html">fe_mooneyrivlin_hyperelastic.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a66b469439c736421744f6aef9e05a485_cgraph.png" border="0" usemap="#functions_8h_a66b469439c736421744f6aef9e05a485_cgraph" alt=""/></div>
+<map name="functions_8h_a66b469439c736421744f6aef9e05a485_cgraph" id="functions_8h_a66b469439c736421744f6aef9e05a485_cgraph">
+<area shape="rect" id="node2" href="functions_8h.html#ae50379f74802347e04dbc022897f9cb0" title="fe_calDefGrad" alt="" coords="249,5,357,31"/>
+<area shape="rect" id="node3" href="functions_8h.html#af7ffbad6dfcc99fc88b130c1a7b1720a" title="fe_get_mats" alt="" coords="256,55,350,80"/>
+<area shape="rect" id="node4" href="functions_8h.html#a73c4523ec7068af2af9e8431021f5fdf" title="fe_tensor2voigt" alt="" coords="247,104,359,129"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a66b469439c736421744f6aef9e05a485_icgraph.png" border="0" usemap="#functions_8h_a66b469439c736421744f6aef9e05a485_icgraph" alt=""/></div>
+<map name="functions_8h_a66b469439c736421744f6aef9e05a485_icgraph" id="functions_8h_a66b469439c736421744f6aef9e05a485_icgraph">
+<area shape="rect" id="node2" href="fe__stress_update_8cpp.html#a7d0fd8cfef8b891901eb6f0f780fd9f2" title="This function calculates the updated stress for 3d elements &#45; elastic, hyperelastic material models w..." alt="" coords="247,5,365,31"/>
+<area shape="rect" id="node3" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="413,5,501,31"/>
+<area shape="rect" id="node4" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="549,5,677,31"/>
+<area shape="rect" id="node5" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="725,5,775,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad7c031b962da3b431c536b473cdba7f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7c031b962da3b431c536b473cdba7f8">&#9670;&nbsp;</a></span>fe_newtonRhapson()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VectorXd fe_newtonRhapson </td>
+          <td>(</td>
+          <td class="paramtype">VectorXd&#160;</td>
+          <td class="paramname"><em>nat_coord</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>xcoord</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ycoord</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>zcoord</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nnel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This functions calculates the isoparametric coordinates of a set of coordinates in global system. </p>
+<p>n </p>
+<p>Vector showing the coordinates in iso-parametric system </p>
+
+<p class="definition">Definition at line <a class="el" href="fe__newton_rhapson_8cpp_source.html#l00007">7</a> of file <a class="el" href="fe__newton_rhapson_8cpp_source.html">fe_newtonRhapson.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ad7c031b962da3b431c536b473cdba7f8_cgraph.png" border="0" usemap="#functions_8h_ad7c031b962da3b431c536b473cdba7f8_cgraph" alt=""/></div>
+<map name="functions_8h_ad7c031b962da3b431c536b473cdba7f8_cgraph" id="functions_8h_ad7c031b962da3b431c536b473cdba7f8_cgraph">
+<area shape="rect" id="node2" href="functions_8h.html#ab77a3a6d6f6b436d7e8c600bb0869927" title="fe_shapes_8" alt="" coords="197,5,295,31"/>
+<area shape="rect" id="node3" href="functions_8h.html#a98fae74dde5fe33a7062e7457a2d3227" title="fe_shapeMatrix" alt="" coords="190,55,302,80"/>
+<area shape="rect" id="node4" href="functions_8h.html#afc547bef246c057db6cbd04bf7f866a9" title="fe_dndr_8" alt="" coords="205,104,287,129"/>
+<area shape="rect" id="node5" href="functions_8h.html#ac0b5524525e1f2e89bb064c15ab8e664" title="fe_dnds_8" alt="" coords="204,153,288,179"/>
+<area shape="rect" id="node6" href="functions_8h.html#a57e8e5c9f740c98e4767f29c121c2d0a" title="fe_dndt_8" alt="" coords="205,203,286,228"/>
+<area shape="rect" id="node7" href="functions_8h.html#a12aa5a7a3443c6fcc5e65d3bcfc9bcc3" title="fe_calJacobian" alt="" coords="191,252,301,277"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ad7c031b962da3b431c536b473cdba7f8_icgraph.png" border="0" usemap="#functions_8h_ad7c031b962da3b431c536b473cdba7f8_icgraph" alt=""/></div>
+<map name="functions_8h_ad7c031b962da3b431c536b473cdba7f8_icgraph" id="functions_8h_ad7c031b962da3b431c536b473cdba7f8_icgraph">
+<area shape="rect" id="node2" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="190,5,278,31"/>
+<area shape="rect" id="node3" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="326,5,454,31"/>
+<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="502,5,552,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab27ecb703db33cb21a8a6d2fbfbf125f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab27ecb703db33cb21a8a6d2fbfbf125f">&#9670;&nbsp;</a></span>fe_ogden_hyperelastic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VectorXd fe_ogden_hyperelastic </td>
+          <td>(</td>
+          <td class="paramtype">VectorXd&#160;</td>
+          <td class="paramname"><em>dndx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VectorXd&#160;</td>
+          <td class="paramname"><em>dndy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VectorXd&#160;</td>
+          <td class="paramname"><em>dndz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VectorXd&#160;</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>opt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>return_opt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fe__ogden__hyperelastic_8cpp_source.html#l00005">5</a> of file <a class="el" href="fe__ogden__hyperelastic_8cpp_source.html">fe_ogden_hyperelastic.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ab27ecb703db33cb21a8a6d2fbfbf125f_cgraph.png" border="0" usemap="#functions_8h_ab27ecb703db33cb21a8a6d2fbfbf125f_cgraph" alt=""/></div>
+<map name="functions_8h_ab27ecb703db33cb21a8a6d2fbfbf125f_cgraph" id="functions_8h_ab27ecb703db33cb21a8a6d2fbfbf125f_cgraph">
+<area shape="rect" id="node2" href="functions_8h.html#ae50379f74802347e04dbc022897f9cb0" title="fe_calDefGrad" alt="" coords="211,5,319,31"/>
+<area shape="rect" id="node3" href="functions_8h.html#af7ffbad6dfcc99fc88b130c1a7b1720a" title="fe_get_mats" alt="" coords="218,55,312,80"/>
+<area shape="rect" id="node4" href="functions_8h.html#a73c4523ec7068af2af9e8431021f5fdf" title="fe_tensor2voigt" alt="" coords="209,104,321,129"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ab27ecb703db33cb21a8a6d2fbfbf125f_icgraph.png" border="0" usemap="#functions_8h_ab27ecb703db33cb21a8a6d2fbfbf125f_icgraph" alt=""/></div>
+<map name="functions_8h_ab27ecb703db33cb21a8a6d2fbfbf125f_icgraph" id="functions_8h_ab27ecb703db33cb21a8a6d2fbfbf125f_icgraph">
+<area shape="rect" id="node2" href="fe__stress_update_8cpp.html#a7d0fd8cfef8b891901eb6f0f780fd9f2" title="This function calculates the updated stress for 3d elements &#45; elastic, hyperelastic material models w..." alt="" coords="209,5,327,31"/>
+<area shape="rect" id="node3" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="375,5,463,31"/>
+<area shape="rect" id="node4" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="511,5,639,31"/>
+<area shape="rect" id="node5" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="687,5,738,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af2a970e883d0c4a7ad750547c07c5f24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2a970e883d0c4a7ad750547c07c5f24">&#9670;&nbsp;</a></span>fe_saintvenant_elastic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VectorXd fe_saintvenant_elastic </td>
+          <td>(</td>
+          <td class="paramtype">VectorXd&#160;</td>
+          <td class="paramname"><em>dndx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VectorXd&#160;</td>
+          <td class="paramname"><em>dndy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VectorXd&#160;</td>
+          <td class="paramname"><em>dndz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VectorXd&#160;</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>opt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>return_opt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>outputs 2nd cauchy stress tensor in vector form</p>
+<p>outputs cauchy stress tensor in vector form </p>
+
+<p class="definition">Definition at line <a class="el" href="fe__saintvenant__elastic_8cpp_source.html#l00005">5</a> of file <a class="el" href="fe__saintvenant__elastic_8cpp_source.html">fe_saintvenant_elastic.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_af2a970e883d0c4a7ad750547c07c5f24_cgraph.png" border="0" usemap="#functions_8h_af2a970e883d0c4a7ad750547c07c5f24_cgraph" alt=""/></div>
+<map name="functions_8h_af2a970e883d0c4a7ad750547c07c5f24_cgraph" id="functions_8h_af2a970e883d0c4a7ad750547c07c5f24_cgraph">
+<area shape="rect" id="node2" href="functions_8h.html#af7ffbad6dfcc99fc88b130c1a7b1720a" title="fe_get_mats" alt="" coords="216,5,310,31"/>
+<area shape="rect" id="node3" href="functions_8h.html#ae50379f74802347e04dbc022897f9cb0" title="fe_calDefGrad" alt="" coords="209,55,317,80"/>
+<area shape="rect" id="node4" href="functions_8h.html#a73c4523ec7068af2af9e8431021f5fdf" title="fe_tensor2voigt" alt="" coords="207,104,319,129"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_af2a970e883d0c4a7ad750547c07c5f24_icgraph.png" border="0" usemap="#functions_8h_af2a970e883d0c4a7ad750547c07c5f24_icgraph" alt=""/></div>
+<map name="functions_8h_af2a970e883d0c4a7ad750547c07c5f24_icgraph" id="functions_8h_af2a970e883d0c4a7ad750547c07c5f24_icgraph">
+<area shape="rect" id="node2" href="fe__stress_update_8cpp.html#a7d0fd8cfef8b891901eb6f0f780fd9f2" title="This function calculates the updated stress for 3d elements &#45; elastic, hyperelastic material models w..." alt="" coords="207,5,325,31"/>
+<area shape="rect" id="node3" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="373,5,461,31"/>
+<area shape="rect" id="node4" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="509,5,637,31"/>
+<area shape="rect" id="node5" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="685,5,735,31"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a6b8344e12f9005795f93f60ddda26c5c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6b8344e12f9005795f93f60ddda26c5c">&#9670;&nbsp;</a></span>fe_scatter()</h2>
 
@@ -1652,6 +2542,24 @@ Variables</h2></td></tr>
 <p>Updates a system level vector based on the element level vector </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__scatter_8cpp_source.html#l00006">6</a> of file <a class="el" href="fe__scatter_8cpp_source.html">fe_scatter.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a6b8344e12f9005795f93f60ddda26c5c_cgraph.png" border="0" usemap="#functions_8h_a6b8344e12f9005795f93f60ddda26c5c_cgraph" alt=""/></div>
+<map name="functions_8h_a6b8344e12f9005795f93f60ddda26c5c_cgraph" id="functions_8h_a6b8344e12f9005795f93f60ddda26c5c_cgraph">
+<area shape="rect" id="node2" href="functions_8h.html#ae4dbe24b761cafa3577afab76726b382" title="fe_find_index" alt="" coords="133,5,234,31"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a6b8344e12f9005795f93f60ddda26c5c_icgraph.png" border="0" usemap="#functions_8h_a6b8344e12f9005795f93f60ddda26c5c_icgraph" alt=""/></div>
+<map name="functions_8h_a6b8344e12f9005795f93f60ddda26c5c_icgraph" id="functions_8h_a6b8344e12f9005795f93f60ddda26c5c_icgraph">
+<area shape="rect" id="node2" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="133,5,221,31"/>
+<area shape="rect" id="node3" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="269,5,397,31"/>
+<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="445,5,496,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1689,6 +2597,18 @@ Variables</h2></td></tr>
 <p>Outputs the shape function matrix for an element </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__shape_matrix_8cpp_source.html#l00007">7</a> of file <a class="el" href="fe__shape_matrix_8cpp_source.html">fe_shapeMatrix.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a98fae74dde5fe33a7062e7457a2d3227_icgraph.png" border="0" usemap="#functions_8h_a98fae74dde5fe33a7062e7457a2d3227_icgraph" alt=""/></div>
+<map name="functions_8h_a98fae74dde5fe33a7062e7457a2d3227_icgraph" id="functions_8h_a98fae74dde5fe33a7062e7457a2d3227_icgraph">
+<area shape="rect" id="node2" href="fe__mass__hex_8cpp.html#a04906e61b8cfdc7232924a594b95eb1f" title="fe_mass_hex" alt="" coords="350,5,451,31"/>
+<area shape="rect" id="node5" href="fe__newton_rhapson_8cpp.html#ad7c031b962da3b431c536b473cdba7f8" title="This functions calculates the isoparametric coordinates of a set of coordinates in global system..." alt="" coords="166,55,302,80"/>
+<area shape="rect" id="node3" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="499,31,627,56"/>
+<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="675,31,725,56"/>
+<area shape="rect" id="node6" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="356,55,444,80"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1726,6 +2646,99 @@ Variables</h2></td></tr>
 <p>Creates the shape functions for an 8 noded element </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__shapes_8cpp_source.html#l00007">7</a> of file <a class="el" href="fe__shapes_8cpp_source.html">fe_shapes.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ab77a3a6d6f6b436d7e8c600bb0869927_icgraph.png" border="0" usemap="#functions_8h_ab77a3a6d6f6b436d7e8c600bb0869927_icgraph" alt=""/></div>
+<map name="functions_8h_ab77a3a6d6f6b436d7e8c600bb0869927_icgraph" id="functions_8h_ab77a3a6d6f6b436d7e8c600bb0869927_icgraph">
+<area shape="rect" id="node2" href="fe__stiffness__hex_8cpp.html#a9378d4fc517465015411134456235a76" title="fe_stiffness_hex" alt="" coords="160,5,278,31"/>
+<area shape="rect" id="node3" href="fe__mass__hex_8cpp.html#a04906e61b8cfdc7232924a594b95eb1f" title="fe_mass_hex" alt="" coords="335,57,436,83"/>
+<area shape="rect" id="node6" href="fe__newton_rhapson_8cpp.html#ad7c031b962da3b431c536b473cdba7f8" title="This functions calculates the isoparametric coordinates of a set of coordinates in global system..." alt="" coords="151,107,287,132"/>
+<area shape="rect" id="node4" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="484,83,612,108"/>
+<area shape="rect" id="node5" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="660,83,710,108"/>
+<area shape="rect" id="node7" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="342,107,430,132"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab0911abb05a0ca06eb4f330890ee0641"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0911abb05a0ca06eb4f330890ee0641">&#9670;&nbsp;</a></span>fe_simple_elastic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VectorXd fe_simple_elastic </td>
+          <td>(</td>
+          <td class="paramtype">VectorXd&#160;</td>
+          <td class="paramname"><em>dndx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VectorXd&#160;</td>
+          <td class="paramname"><em>dndy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VectorXd&#160;</td>
+          <td class="paramname"><em>dndz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MatrixXd&#160;</td>
+          <td class="paramname"><em>disp_mat</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VectorXd&#160;</td>
+          <td class="paramname"><em>u</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>opt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>return_opt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fe__simple__elastic_8cpp_source.html#l00007">7</a> of file <a class="el" href="fe__simple__elastic_8cpp_source.html">fe_simple_elastic.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ab0911abb05a0ca06eb4f330890ee0641_cgraph.png" border="0" usemap="#functions_8h_ab0911abb05a0ca06eb4f330890ee0641_cgraph" alt=""/></div>
+<map name="functions_8h_ab0911abb05a0ca06eb4f330890ee0641_cgraph" id="functions_8h_ab0911abb05a0ca06eb4f330890ee0641_cgraph">
+<area shape="rect" id="node2" href="functions_8h.html#af7ffbad6dfcc99fc88b130c1a7b1720a" title="fe_get_mats" alt="" coords="203,5,298,31"/>
+<area shape="rect" id="node3" href="fe__simple__elastic_8cpp.html#abbc5cafd6bb8048b69b3bd6f26ceb5f8" title="fe_calculate_matlmat" alt="" coords="177,55,324,80"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ab0911abb05a0ca06eb4f330890ee0641_icgraph.png" border="0" usemap="#functions_8h_ab0911abb05a0ca06eb4f330890ee0641_icgraph" alt=""/></div>
+<map name="functions_8h_ab0911abb05a0ca06eb4f330890ee0641_icgraph" id="functions_8h_ab0911abb05a0ca06eb4f330890ee0641_icgraph">
+<area shape="rect" id="node2" href="fe__stress_update_8cpp.html#a7d0fd8cfef8b891901eb6f0f780fd9f2" title="This function calculates the updated stress for 3d elements &#45; elastic, hyperelastic material models w..." alt="" coords="177,5,295,31"/>
+<area shape="rect" id="node3" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="343,5,431,31"/>
+<area shape="rect" id="node4" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="479,5,607,31"/>
+<area shape="rect" id="node5" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="655,5,706,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1805,6 +2818,26 @@ Variables</h2></td></tr>
 <p>Internal nodal force vector for a truss (1D) element </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__stiffness__embed__truss_8cpp_source.html#l00006">6</a> of file <a class="el" href="fe__stiffness__embed__truss_8cpp_source.html">fe_stiffness_embed_truss.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ab3798340a27f0972299b3820aab0ccba_cgraph.png" border="0" usemap="#functions_8h_ab3798340a27f0972299b3820aab0ccba_cgraph" alt=""/></div>
+<map name="functions_8h_ab3798340a27f0972299b3820aab0ccba_cgraph" id="functions_8h_ab3798340a27f0972299b3820aab0ccba_cgraph">
+<area shape="rect" id="node2" href="functions_8h.html#aa41c40dffea4251a07a8a3f5062f47ae" title="fe_calTransformation" alt="" coords="205,5,351,31"/>
+<area shape="rect" id="node3" href="functions_8h.html#aa6ab8c3298fa10734e299fe8266aed35" title="guass_points" alt="" coords="228,55,328,80"/>
+<area shape="rect" id="node4" href="functions_8h.html#a84dcc9575e861bdb2872c10ba6238ee4" title="guass_weights" alt="" coords="224,104,333,129"/>
+<area shape="rect" id="node5" href="functions_8h.html#ae2eeba997bf4f0bc4749b92130de7ba3" title="fe_calSimpTransformation" alt="" coords="190,153,367,179"/>
+<area shape="rect" id="node6" href="functions_8h.html#afc547bef246c057db6cbd04bf7f866a9" title="fe_dndr_8" alt="" coords="238,203,319,228"/>
+<area shape="rect" id="node7" href="functions_8h.html#ac0b5524525e1f2e89bb064c15ab8e664" title="fe_dnds_8" alt="" coords="236,252,320,277"/>
+<area shape="rect" id="node8" href="functions_8h.html#a57e8e5c9f740c98e4767f29c121c2d0a" title="fe_dndt_8" alt="" coords="238,301,319,327"/>
+<area shape="rect" id="node9" href="functions_8h.html#a12aa5a7a3443c6fcc5e65d3bcfc9bcc3" title="fe_calJacobian" alt="" coords="223,351,333,376"/>
+<area shape="rect" id="node10" href="functions_8h.html#afc6be1a5667e68156cb099e8da71170f" title="fe_dndx_8" alt="" coords="236,400,320,425"/>
+<area shape="rect" id="node11" href="functions_8h.html#a0572d7818e085c67f7fbb84eef8ecfb4" title="fe_dndy_8" alt="" coords="236,449,320,475"/>
+<area shape="rect" id="node12" href="functions_8h.html#aaf75db8433433807839c6ea17f2cf72c" title="fe_dndz_8" alt="" coords="236,499,320,524"/>
+<area shape="rect" id="node13" href="functions_8h.html#a4b49d2df4f86e7d0755971ab4bfa48b2" title="fe_strDispMatrix" alt="" coords="219,548,337,573"/>
+<area shape="rect" id="node14" href="functions_8h.html#a346547477d2a1fbeff6b5e0b05314283" title="matrix2text" alt="" coords="235,597,322,623"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1872,6 +2905,25 @@ Variables</h2></td></tr>
 <p>Internal nodal force vector for a hexahedral element </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__stiffness__hex_8cpp_source.html#l00007">7</a> of file <a class="el" href="fe__stiffness__hex_8cpp_source.html">fe_stiffness_hex.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a9378d4fc517465015411134456235a76_cgraph.png" border="0" usemap="#functions_8h_a9378d4fc517465015411134456235a76_cgraph" alt=""/></div>
+<map name="functions_8h_a9378d4fc517465015411134456235a76_cgraph" id="functions_8h_a9378d4fc517465015411134456235a76_cgraph">
+<area shape="rect" id="node2" href="functions_8h.html#a502e3469e1cc253deb142f46c0789a78" title="guass_points_3d" alt="" coords="176,5,298,31"/>
+<area shape="rect" id="node3" href="functions_8h.html#ad99b08ce65ae353e91486d7685c22024" title="guass_weights_3d" alt="" coords="171,55,303,80"/>
+<area shape="rect" id="node5" href="functions_8h.html#ab77a3a6d6f6b436d7e8c600bb0869927" title="fe_shapes_8" alt="" coords="188,104,286,129"/>
+<area shape="rect" id="node6" href="functions_8h.html#afc547bef246c057db6cbd04bf7f866a9" title="fe_dndr_8" alt="" coords="196,153,277,179"/>
+<area shape="rect" id="node7" href="functions_8h.html#ac0b5524525e1f2e89bb064c15ab8e664" title="fe_dnds_8" alt="" coords="195,203,278,228"/>
+<area shape="rect" id="node8" href="functions_8h.html#a57e8e5c9f740c98e4767f29c121c2d0a" title="fe_dndt_8" alt="" coords="196,252,277,277"/>
+<area shape="rect" id="node9" href="functions_8h.html#a12aa5a7a3443c6fcc5e65d3bcfc9bcc3" title="fe_calJacobian" alt="" coords="182,301,292,327"/>
+<area shape="rect" id="node10" href="functions_8h.html#afc6be1a5667e68156cb099e8da71170f" title="fe_dndx_8" alt="" coords="195,351,278,376"/>
+<area shape="rect" id="node11" href="functions_8h.html#a0572d7818e085c67f7fbb84eef8ecfb4" title="fe_dndy_8" alt="" coords="195,400,278,425"/>
+<area shape="rect" id="node12" href="functions_8h.html#aaf75db8433433807839c6ea17f2cf72c" title="fe_dndz_8" alt="" coords="195,449,278,475"/>
+<area shape="rect" id="node13" href="functions_8h.html#a4b49d2df4f86e7d0755971ab4bfa48b2" title="fe_strDispMatrix" alt="" coords="178,499,296,524"/>
+<area shape="rect" id="node4" href="functions_8h.html#a84dcc9575e861bdb2872c10ba6238ee4" title="guass_weights" alt="" coords="351,55,460,80"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1921,6 +2973,15 @@ Variables</h2></td></tr>
 <p>Strain displacement matrix B </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__str_disp_matrix_8cpp_source.html#l00005">5</a> of file <a class="el" href="fe__str_disp_matrix_8cpp_source.html">fe_strDispMatrix.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a4b49d2df4f86e7d0755971ab4bfa48b2_icgraph.png" border="0" usemap="#functions_8h_a4b49d2df4f86e7d0755971ab4bfa48b2_icgraph" alt=""/></div>
+<map name="functions_8h_a4b49d2df4f86e7d0755971ab4bfa48b2_icgraph" id="functions_8h_a4b49d2df4f86e7d0755971ab4bfa48b2_icgraph">
+<area shape="rect" id="node2" href="fe__stiffness__embed__truss_8cpp.html#ab3798340a27f0972299b3820aab0ccba" title="fe_stiffness_embed\l_truss" alt="" coords="171,5,308,44"/>
+<area shape="rect" id="node3" href="fe__stiffness__hex_8cpp.html#a9378d4fc517465015411134456235a76" title="fe_stiffness_hex" alt="" coords="181,68,298,93"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -1976,6 +3037,24 @@ Variables</h2></td></tr>
 <p>Calculates the strain displacement matrix in total lagrangian system </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__str_disp_matrix_8cpp_source.html#l00031">31</a> of file <a class="el" href="fe__str_disp_matrix_8cpp_source.html">fe_strDispMatrix.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a8c9fd519c93c847cdf52de947964eb67_cgraph.png" border="0" usemap="#functions_8h_a8c9fd519c93c847cdf52de947964eb67_cgraph" alt=""/></div>
+<map name="functions_8h_a8c9fd519c93c847cdf52de947964eb67_cgraph" id="functions_8h_a8c9fd519c93c847cdf52de947964eb67_cgraph">
+<area shape="rect" id="node2" href="functions_8h.html#ae50379f74802347e04dbc022897f9cb0" title="fe_calDefGrad" alt="" coords="270,5,378,31"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a8c9fd519c93c847cdf52de947964eb67_icgraph.png" border="0" usemap="#functions_8h_a8c9fd519c93c847cdf52de947964eb67_icgraph" alt=""/></div>
+<map name="functions_8h_a8c9fd519c93c847cdf52de947964eb67_icgraph" id="functions_8h_a8c9fd519c93c847cdf52de947964eb67_icgraph">
+<area shape="rect" id="node2" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="270,5,358,31"/>
+<area shape="rect" id="node3" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="406,5,534,31"/>
+<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="582,5,633,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -2034,15 +3113,41 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Updates the stress at each time step based on the material model</p>
+
 <p>This function calculates the updated stress for 3d elements - elastic, hyperelastic material models were implemented so far. </p>
+<p>Updates the stress at each time step based on the material model </p>
+<p>This function is for 2d or 3d elements. For 1d elements, different stress update function was included</p>
 <p>This block develops outputs the updated stress for a 3d elastic material</p>
-<p>This block develops outputs the updated stress for a 3d incompressible mooney-rivlin hyperelastic material</p>
-<p>outputs 2nd cauchy stress tensor in vector form</p>
-<p>outputs cauchy stress tensor in vector form</p>
+<p>This block outputs the updated stress for a mooney-rivlin hyperelastic material model</p>
 <p>This block develops outputs the updated stress for a 3d ogden hyperelastic material </p>
 
-<p class="definition">Definition at line <a class="el" href="fe__stress_update_8cpp_source.html#l00006">6</a> of file <a class="el" href="fe__stress_update_8cpp_source.html">fe_stressUpdate.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fe__stress_update_8cpp_source.html#l00007">7</a> of file <a class="el" href="fe__stress_update_8cpp_source.html">fe_stressUpdate.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a7d0fd8cfef8b891901eb6f0f780fd9f2_cgraph.png" border="0" usemap="#functions_8h_a7d0fd8cfef8b891901eb6f0f780fd9f2_cgraph" alt=""/></div>
+<map name="functions_8h_a7d0fd8cfef8b891901eb6f0f780fd9f2_cgraph" id="functions_8h_a7d0fd8cfef8b891901eb6f0f780fd9f2_cgraph">
+<area shape="rect" id="node2" href="functions_8h.html#a34d6fb85943d945b7e8600d2ef4220d0" title="fe_get_model" alt="" coords="217,5,319,31"/>
+<area shape="rect" id="node3" href="functions_8h.html#ab0911abb05a0ca06eb4f330890ee0641" title="fe_simple_elastic" alt="" coords="207,55,330,80"/>
+<area shape="rect" id="node6" href="functions_8h.html#af2a970e883d0c4a7ad750547c07c5f24" title="fe_saintvenant_elastic" alt="" coords="192,104,345,129"/>
+<area shape="rect" id="node9" href="functions_8h.html#a66b469439c736421744f6aef9e05a485" title="fe_mooneyrivlin_hyperelastic" alt="" coords="172,153,365,179"/>
+<area shape="rect" id="node10" href="functions_8h.html#ab27ecb703db33cb21a8a6d2fbfbf125f" title="fe_ogden_hyperelastic" alt="" coords="191,203,346,228"/>
+<area shape="rect" id="node4" href="functions_8h.html#af7ffbad6dfcc99fc88b130c1a7b1720a" title="fe_get_mats" alt="" coords="439,104,534,129"/>
+<area shape="rect" id="node5" href="fe__simple__elastic_8cpp.html#abbc5cafd6bb8048b69b3bd6f26ceb5f8" title="fe_calculate_matlmat" alt="" coords="413,55,560,80"/>
+<area shape="rect" id="node7" href="functions_8h.html#ae50379f74802347e04dbc022897f9cb0" title="fe_calDefGrad" alt="" coords="433,153,540,179"/>
+<area shape="rect" id="node8" href="functions_8h.html#a73c4523ec7068af2af9e8431021f5fdf" title="fe_tensor2voigt" alt="" coords="430,203,543,228"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a7d0fd8cfef8b891901eb6f0f780fd9f2_icgraph.png" border="0" usemap="#functions_8h_a7d0fd8cfef8b891901eb6f0f780fd9f2_icgraph" alt=""/></div>
+<map name="functions_8h_a7d0fd8cfef8b891901eb6f0f780fd9f2_icgraph" id="functions_8h_a7d0fd8cfef8b891901eb6f0f780fd9f2_icgraph">
+<area shape="rect" id="node2" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="172,5,260,31"/>
+<area shape="rect" id="node3" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="308,5,436,31"/>
+<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="484,5,534,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -2099,6 +3204,17 @@ Variables</h2></td></tr>
 <p>This function calculates the updated stress for 1d elements - hyperelastic material model was implemented so far. </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__stress_update__1d_8cpp_source.html#l00006">6</a> of file <a class="el" href="fe__stress_update__1d_8cpp_source.html">fe_stressUpdate_1d.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a94c1b672863e28bc2c70d08726939929_cgraph.png" border="0" usemap="#functions_8h_a94c1b672863e28bc2c70d08726939929_cgraph" alt=""/></div>
+<map name="functions_8h_a94c1b672863e28bc2c70d08726939929_cgraph" id="functions_8h_a94c1b672863e28bc2c70d08726939929_cgraph">
+<area shape="rect" id="node2" href="functions_8h.html#ae50379f74802347e04dbc022897f9cb0" title="fe_calDefGrad" alt="" coords="213,5,321,31"/>
+<area shape="rect" id="node3" href="functions_8h.html#a34d6fb85943d945b7e8600d2ef4220d0" title="fe_get_model" alt="" coords="216,55,318,80"/>
+<area shape="rect" id="node4" href="functions_8h.html#af7ffbad6dfcc99fc88b130c1a7b1720a" title="fe_get_mats" alt="" coords="220,104,314,129"/>
+<area shape="rect" id="node5" href="functions_8h.html#aa41c40dffea4251a07a8a3f5062f47ae" title="fe_calTransformation" alt="" coords="194,153,340,179"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -2122,6 +3238,20 @@ Variables</h2></td></tr>
 <p>The tensor should be symmetric for its transformation into Voigt Vector </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__tensor2voigt_8cpp_source.html#l00008">8</a> of file <a class="el" href="fe__tensor2voigt_8cpp_source.html">fe_tensor2voigt.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a73c4523ec7068af2af9e8431021f5fdf_icgraph.png" border="0" usemap="#functions_8h_a73c4523ec7068af2af9e8431021f5fdf_icgraph" alt=""/></div>
+<map name="functions_8h_a73c4523ec7068af2af9e8431021f5fdf_icgraph" id="functions_8h_a73c4523ec7068af2af9e8431021f5fdf_icgraph">
+<area shape="rect" id="node2" href="fe__mooneyrivlin__hyperelastic_8cpp.html#a66b469439c736421744f6aef9e05a485" title="fe_mooneyrivlin_hyperelastic" alt="" coords="166,5,359,31"/>
+<area shape="rect" id="node7" href="fe__ogden__hyperelastic_8cpp.html#ab27ecb703db33cb21a8a6d2fbfbf125f" title="fe_ogden_hyperelastic" alt="" coords="185,55,340,80"/>
+<area shape="rect" id="node8" href="fe__saintvenant__elastic_8cpp.html#af2a970e883d0c4a7ad750547c07c5f24" title="fe_saintvenant_elastic" alt="" coords="186,104,339,129"/>
+<area shape="rect" id="node3" href="fe__stress_update_8cpp.html#a7d0fd8cfef8b891901eb6f0f780fd9f2" title="This function calculates the updated stress for 3d elements &#45; elastic, hyperelastic material models w..." alt="" coords="407,55,526,80"/>
+<area shape="rect" id="node4" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="574,55,662,80"/>
+<area shape="rect" id="node5" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="710,55,838,80"/>
+<area shape="rect" id="node6" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="886,55,936,80"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -2153,6 +3283,15 @@ Variables</h2></td></tr>
 <p>Converts a normal mass matrix into a lumped mass matrix </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__transform_mass_8cpp_source.html#l00006">6</a> of file <a class="el" href="fe__transform_mass_8cpp_source.html">fe_transformMass.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ab747d046148af042245ed13ca720c5ec_icgraph.png" border="0" usemap="#functions_8h_ab747d046148af042245ed13ca720c5ec_icgraph" alt=""/></div>
+<map name="functions_8h_ab747d046148af042245ed13ca720c5ec_icgraph" id="functions_8h_ab747d046148af042245ed13ca720c5ec_icgraph">
+<area shape="rect" id="node2" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="181,5,309,31"/>
+<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="357,5,408,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -2261,6 +3400,15 @@ Variables</h2></td></tr>
 <p>Writes VTK files for host mesh </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__vtk_8cpp_source.html#l00006">6</a> of file <a class="el" href="fe__vtk_8cpp_source.html">fe_vtk.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a45a1daa8de18fc5fc463f9b569970245_icgraph.png" border="0" usemap="#functions_8h_a45a1daa8de18fc5fc463f9b569970245_icgraph" alt=""/></div>
+<map name="functions_8h_a45a1daa8de18fc5fc463f9b569970245_icgraph" id="functions_8h_a45a1daa8de18fc5fc463f9b569970245_icgraph">
+<area shape="rect" id="node2" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="174,5,302,31"/>
+<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="350,5,400,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -2316,6 +3464,70 @@ Variables</h2></td></tr>
 <p>Writes VTK files for truss mesh </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__vtk_8cpp_source.html#l00138">138</a> of file <a class="el" href="fe__vtk_8cpp_source.html">fe_vtk.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a6e838460f501267efe34f29d4cf6d9cd_icgraph.png" border="0" usemap="#functions_8h_a6e838460f501267efe34f29d4cf6d9cd_icgraph" alt=""/></div>
+<map name="functions_8h_a6e838460f501267efe34f29d4cf6d9cd_icgraph" id="functions_8h_a6e838460f501267efe34f29d4cf6d9cd_icgraph">
+<area shape="rect" id="node2" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="177,5,305,31"/>
+<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="353,5,404,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad631819edfa9ade5d6e379d0085810b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad631819edfa9ade5d6e379d0085810b6">&#9670;&nbsp;</a></span>fe_vtuWrite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void fe_vtuWrite </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>time_step</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MatrixXd&#160;</td>
+          <td class="paramname"><em>nodes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">MatrixXd&#160;</td>
+          <td class="paramname"><em>elements</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Points Data</p>
+<p>Cell Data</p>
+<p>Point Vector Data - Displacements</p>
+<p>Cell Data - Stresses and Strains </p>
+
+<p class="definition">Definition at line <a class="el" href="fe__vtu_8cpp_source.html#l00005">5</a> of file <a class="el" href="fe__vtu_8cpp_source.html">fe_vtu.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ad631819edfa9ade5d6e379d0085810b6_icgraph.png" border="0" usemap="#functions_8h_ad631819edfa9ade5d6e379d0085810b6_icgraph" alt=""/></div>
+<map name="functions_8h_ad631819edfa9ade5d6e379d0085810b6_icgraph" id="functions_8h_ad631819edfa9ade5d6e379d0085810b6_icgraph">
+<area shape="rect" id="node2" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="142,5,270,31"/>
+<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="318,5,368,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -2346,6 +3558,14 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="fe__write_8cpp_source.html#l00012">12</a> of file <a class="el" href="fe__write_8cpp_source.html">fe_write.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a9dec90c41460e15aa1d8dce787683406_cgraph.png" border="0" usemap="#functions_8h_a9dec90c41460e15aa1d8dce787683406_cgraph" alt=""/></div>
+<map name="functions_8h_a9dec90c41460e15aa1d8dce787683406_cgraph" id="functions_8h_a9dec90c41460e15aa1d8dce787683406_cgraph">
+<area shape="rect" id="node2" href="functions_8h.html#a346547477d2a1fbeff6b5e0b05314283" title="matrix2text" alt="" coords="208,5,295,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -2367,6 +3587,14 @@ Variables</h2></td></tr>
 <p>Create a guass_point vector of n values </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__guass__points_8cpp_source.html#l00005">5</a> of file <a class="el" href="fe__guass__points_8cpp_source.html">fe_guass_points.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_aa6ab8c3298fa10734e299fe8266aed35_icgraph.png" border="0" usemap="#functions_8h_aa6ab8c3298fa10734e299fe8266aed35_icgraph" alt=""/></div>
+<map name="functions_8h_aa6ab8c3298fa10734e299fe8266aed35_icgraph" id="functions_8h_aa6ab8c3298fa10734e299fe8266aed35_icgraph">
+<area shape="rect" id="node2" href="fe__stiffness__embed__truss_8cpp.html#ab3798340a27f0972299b3820aab0ccba" title="fe_stiffness_embed\l_truss" alt="" coords="153,5,290,44"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -2404,6 +3632,18 @@ Variables</h2></td></tr>
 <p>Creates a guass point matrix in 3D </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__guass__points__3d_8cpp_source.html#l00004">4</a> of file <a class="el" href="fe__guass__points__3d_8cpp_source.html">fe_guass_points_3d.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a502e3469e1cc253deb142f46c0789a78_icgraph.png" border="0" usemap="#functions_8h_a502e3469e1cc253deb142f46c0789a78_icgraph" alt=""/></div>
+<map name="functions_8h_a502e3469e1cc253deb142f46c0789a78_icgraph" id="functions_8h_a502e3469e1cc253deb142f46c0789a78_icgraph">
+<area shape="rect" id="node2" href="fe__stiffness__hex_8cpp.html#a9378d4fc517465015411134456235a76" title="fe_stiffness_hex" alt="" coords="175,5,293,31"/>
+<area shape="rect" id="node3" href="fe__mass__hex_8cpp.html#a04906e61b8cfdc7232924a594b95eb1f" title="fe_mass_hex" alt="" coords="184,55,285,80"/>
+<area shape="rect" id="node6" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="190,104,278,129"/>
+<area shape="rect" id="node4" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="341,80,469,105"/>
+<area shape="rect" id="node5" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="517,80,567,105"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -2425,6 +3665,20 @@ Variables</h2></td></tr>
 <p>Creates a guass_weight vector of n values </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__guass__weights_8cpp_source.html#l00005">5</a> of file <a class="el" href="fe__guass__weights_8cpp_source.html">fe_guass_weights.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a84dcc9575e861bdb2872c10ba6238ee4_icgraph.png" border="0" usemap="#functions_8h_a84dcc9575e861bdb2872c10ba6238ee4_icgraph" alt=""/></div>
+<map name="functions_8h_a84dcc9575e861bdb2872c10ba6238ee4_icgraph" id="functions_8h_a84dcc9575e861bdb2872c10ba6238ee4_icgraph">
+<area shape="rect" id="node2" href="fe__stiffness__embed__truss_8cpp.html#ab3798340a27f0972299b3820aab0ccba" title="fe_stiffness_embed\l_truss" alt="" coords="163,5,300,44"/>
+<area shape="rect" id="node3" href="fe__guass__weights__3d_8cpp.html#ad99b08ce65ae353e91486d7685c22024" title="guass_weights_3d" alt="" coords="165,68,297,93"/>
+<area shape="rect" id="node4" href="fe__stiffness__hex_8cpp.html#a9378d4fc517465015411134456235a76" title="fe_stiffness_hex" alt="" coords="348,19,465,44"/>
+<area shape="rect" id="node5" href="fe__mass__hex_8cpp.html#a04906e61b8cfdc7232924a594b95eb1f" title="fe_mass_hex" alt="" coords="356,68,457,93"/>
+<area shape="rect" id="node8" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="362,117,450,143"/>
+<area shape="rect" id="node6" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="513,93,641,119"/>
+<area shape="rect" id="node7" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="689,93,739,119"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -2468,6 +3722,26 @@ Variables</h2></td></tr>
 <p>Creates a guass weight matrix in 3D </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__guass__weights__3d_8cpp_source.html#l00005">5</a> of file <a class="el" href="fe__guass__weights__3d_8cpp_source.html">fe_guass_weights_3d.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ad99b08ce65ae353e91486d7685c22024_cgraph.png" border="0" usemap="#functions_8h_ad99b08ce65ae353e91486d7685c22024_cgraph" alt=""/></div>
+<map name="functions_8h_ad99b08ce65ae353e91486d7685c22024_cgraph" id="functions_8h_ad99b08ce65ae353e91486d7685c22024_cgraph">
+<area shape="rect" id="node2" href="functions_8h.html#a84dcc9575e861bdb2872c10ba6238ee4" title="guass_weights" alt="" coords="185,5,295,31"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_ad99b08ce65ae353e91486d7685c22024_icgraph.png" border="0" usemap="#functions_8h_ad99b08ce65ae353e91486d7685c22024_icgraph" alt=""/></div>
+<map name="functions_8h_ad99b08ce65ae353e91486d7685c22024_icgraph" id="functions_8h_ad99b08ce65ae353e91486d7685c22024_icgraph">
+<area shape="rect" id="node2" href="fe__stiffness__hex_8cpp.html#a9378d4fc517465015411134456235a76" title="fe_stiffness_hex" alt="" coords="185,5,303,31"/>
+<area shape="rect" id="node3" href="fe__mass__hex_8cpp.html#a04906e61b8cfdc7232924a594b95eb1f" title="fe_mass_hex" alt="" coords="194,55,294,80"/>
+<area shape="rect" id="node6" href="fe__getforce_8cpp.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="200,104,288,129"/>
+<area shape="rect" id="node4" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="351,80,479,105"/>
+<area shape="rect" id="node5" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="527,80,577,105"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -2505,6 +3779,17 @@ Variables</h2></td></tr>
 <p>Writes a matrix into a text file </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__matrix2text_8cpp_source.html#l00005">5</a> of file <a class="el" href="fe__matrix2text_8cpp_source.html">fe_matrix2text.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a346547477d2a1fbeff6b5e0b05314283_icgraph.png" border="0" usemap="#functions_8h_a346547477d2a1fbeff6b5e0b05314283_icgraph" alt=""/></div>
+<map name="functions_8h_a346547477d2a1fbeff6b5e0b05314283_icgraph" id="functions_8h_a346547477d2a1fbeff6b5e0b05314283_icgraph">
+<area shape="rect" id="node2" href="fe__stiffness__embed__truss_8cpp.html#ab3798340a27f0972299b3820aab0ccba" title="fe_stiffness_embed\l_truss" alt="" coords="149,5,286,44"/>
+<area shape="rect" id="node3" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="153,68,281,93"/>
+<area shape="rect" id="node5" href="fe__write_8cpp.html#a9dec90c41460e15aa1d8dce787683406" title="fe_writeElementStress" alt="" coords="140,117,295,143"/>
+<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="343,68,393,93"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -2573,6 +3858,15 @@ Variables</h2></td></tr>
 <p>Writes a vector into a text file </p>
 
 <p class="definition">Definition at line <a class="el" href="fe__vector2text_8cpp_source.html#l00005">5</a> of file <a class="el" href="fe__vector2text_8cpp_source.html">fe_vector2text.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="functions_8h_a0b5f62139051473c809da12cc0c45e29_icgraph.png" border="0" usemap="#functions_8h_a0b5f62139051473c809da12cc0c45e29_icgraph" alt=""/></div>
+<map name="functions_8h_a0b5f62139051473c809da12cc0c45e29_icgraph" id="functions_8h_a0b5f62139051473c809da12cc0c45e29_icgraph">
+<area shape="rect" id="node2" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="140,5,268,31"/>
+<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="316,5,366,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -2590,7 +3884,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Variable storing the nodal velocities of the host mesh </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00098">98</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00106">106</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -2607,7 +3901,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Variable storing the nodal velocities of the embedded mesh </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00102">102</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00110">110</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -2624,7 +3918,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>DOF numbers for boundary conditions </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00080">80</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00088">88</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -2641,7 +3935,39 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Displacement of the constrained DOF's </p>
 
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00090">90</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7f448b56fa6e59123cfe5fcf0082e8de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f448b56fa6e59123cfe5fcf0082e8de">&#9670;&nbsp;</a></span>dc_curve</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string dc_curve</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 <p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00082">82</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a769eb6abca3cfe15c55c120f68bf1461"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a769eb6abca3cfe15c55c120f68bf1461">&#9670;&nbsp;</a></span>dcdof</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VectorXi dcdof</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00081">81</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -2657,7 +3983,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00061">61</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00066">66</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -2674,7 +4000,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Initial time step </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00062">62</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00067">67</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -2691,7 +4017,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Stores the stress tensor of an element </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00086">86</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00094">94</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -2708,7 +4034,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Stores the stress of a truss element </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00088">88</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00096">96</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -2724,7 +4050,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00085">85</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00093">93</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -2741,7 +4067,41 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Stores the strain tensor of an element </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00087">87</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00095">95</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad3d80cd8d6370090eb6cc57a523bcd6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3d80cd8d6370090eb6cc57a523bcd6c">&#9670;&nbsp;</a></span>eps_nr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double eps_nr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Variable storing the nodal accelerations of the embedded mesh </p>
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00112">112</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a51e2def539afa6941aecc0db01966133"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51e2def539afa6941aecc0db01966133">&#9670;&nbsp;</a></span>fc_curve</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string fc_curve</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Degrees of freedom &ndash; corresponding to the applied load </p>
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00077">77</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -2756,25 +4116,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Degrees of freedom &ndash; corresponding to the applied load </p>
+<p>Loading Amplitude </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00073">73</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ac1f3d4744efb6ce0d6c5b89774ba91aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1f3d4744efb6ce0d6c5b89774ba91aa">&#9670;&nbsp;</a></span>fcload</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">VectorXd fcload</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00074">74</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00076">76</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -2791,7 +4135,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Internal nodal force vector at previous time step </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00093">93</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00101">101</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -2808,7 +4152,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Stores the strain of a truss element </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00092">92</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00100">100</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -2824,7 +4168,23 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00047">47</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00052">52</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8610c01521192e9f3677b50b275ff2bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8610c01521192e9f3677b50b275ff2bf">&#9670;&nbsp;</a></span>input_disp_amp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double input_disp_amp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00080">80</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -2839,9 +4199,26 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Loading Amplitude </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00071">71</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00075">75</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a43f0d7a4e9f3ece65db80d07bb79192f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43f0d7a4e9f3ece65db80d07bb79192f">&#9670;&nbsp;</a></span>iterations_nr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double iterations_nr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Convergence Criteria for Newton Rhapson Method</p>
+<p>Convergence criteria used in the newton rhapson method </p>
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00113">113</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -2858,7 +4235,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Job folder name </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00048">48</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00053">53</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -2874,7 +4251,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00067">67</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00072">72</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -2891,7 +4268,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Reduces the timestep value by this amount Material Properties are stored in here </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00066">66</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00071">71</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -2907,7 +4284,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00055">55</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00060">60</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -2924,7 +4301,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Job input file name Dimension of the Simulation (3 for 3D, 2 for 2D and 1 for 1D) </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00051">51</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00056">56</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -2939,9 +4316,43 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Number of boundary conditions = nodes x dof </p>
+<p>Type of displacement curve Number of boundary conditions = nodes x dof </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00078">78</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00086">86</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="acfafb3651a4fe2c074c247d95f28635a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfafb3651a4fe2c074c247d95f28635a">&#9670;&nbsp;</a></span>num_disp_constraints</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int num_disp_constraints</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Displacement Loading Conditions</p>
+<p>Type of loading curve </p>
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00079">79</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a724026f5fcdde8a7ee4936d710ac415d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a724026f5fcdde8a7ee4936d710ac415d">&#9670;&nbsp;</a></span>num_load_constraints</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int num_load_constraints</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00074">74</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -2958,7 +4369,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Input meshes - number of meshes and type of meshes </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00054">54</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00059">59</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -2975,7 +4386,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>End Time </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00060">60</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00065">65</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -2992,7 +4403,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Minimum time step </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00063">63</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00068">68</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -3009,7 +4420,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Start Time </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00059">59</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00064">64</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -3025,7 +4436,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00058">58</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00063">63</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -3042,7 +4453,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Internal energy at different time steps </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00096">96</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00104">104</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -3059,7 +4470,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Variable storing the nodal accelerations of the host mesh </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00100">100</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00108">108</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -3076,7 +4487,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Variable storing the nodal displacements of the host mesh </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00097">97</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00105">105</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -3093,7 +4504,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Variable storing the nodal displacements of the embedded mesh </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00101">101</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00109">109</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -3110,16 +4521,20 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Internal nodal force vector at current time step </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00094">94</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00102">102</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_7f57b1e41c5acd0e859ae5f3a2b075a9.html">headers</a></li><li class="navelem"><a class="el" href="functions_8h.html">functions.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
 </body>
 </html>

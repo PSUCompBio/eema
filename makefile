@@ -64,6 +64,9 @@ OBJECTS := $(OBJ)/$(MAIN).o $(OBJ)/fe_vector2text.o\
 			 $(OBJ)/fe_ogden_hyperelastic.o\
 			 $(OBJ)/fe_simple_elastic.o\
 			 $(OBJ)/fe_saintvenant_elastic.o\
+			 $(OBJ)/fe_newtonRhapson.o\
+			 $(OBJ)/fe_minElementLength.o\
+			 $(OBJ)/fe_maxElementLength.o\
 
 all: $(MAIN)
 

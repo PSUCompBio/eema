@@ -5,10 +5,17 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>PSU-Compbio-FEM: /Users/vsg111/Dropbox/Work/Papers/Paper_EEM_Computational/EEM_Dynamic/main.cpp File Reference</title>
+<title>PSU-Compbio-FEM: main.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +31,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PSU-Compbio-FEM
    </div>
-   <div id="projectbrief">Finite element code with support to embedded element technique.</div>
+   <div id="projectbrief">Finite element code with support to FEM</div>
   </td>
  </tr>
  </tbody>
@@ -44,6 +51,21 @@ $(function() {
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('main_8cpp.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -58,13 +80,12 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">/Users/vsg111/Dropbox/Work/Papers/Paper_EEM_Computational/EEM_Dynamic/main.cpp File Reference</div>  </div>
+<div class="title">main.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
@@ -73,10 +94,21 @@ $(function() {
 <code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
+<code>#include &quot;time.h&quot;</code><br />
 <code>#include &lt;Eigen/Dense&gt;</code><br />
 <code>#include &quot;<a class="el" href="functions_8h_source.html">functions.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_mesh_8h_source.html">Mesh.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_materials_8h_source.html">Materials.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for main.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#main_8cpp" alt=""/></div>
+<map name="main_8cpp" id="main_8cpp">
+<area shape="rect" id="node10" href="functions_8h.html" title="functions.h" alt="" coords="455,79,541,104"/>
+<area shape="rect" id="node14" href="_mesh_8h.html" title="Mesh.h" alt="" coords="257,159,322,184"/>
+<area shape="rect" id="node15" href="_materials_8h.html" title="Materials.h" alt="" coords="736,159,822,184"/>
+</map>
+</div>
 </div>
 <p><a href="main_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -113,12 +145,22 @@ Variables</h2></td></tr>
 <tr class="separator:a39328cf72d69139b3b6c5b8ef6c636fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfa6799b35f9301b5fc44e6043624797"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_materials.html">Materials</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#acfa6799b35f9301b5fc44e6043624797">mat</a></td></tr>
 <tr class="separator:acfa6799b35f9301b5fc44e6043624797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a724026f5fcdde8a7ee4936d710ac415d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a724026f5fcdde8a7ee4936d710ac415d">num_load_constraints</a></td></tr>
+<tr class="separator:a724026f5fcdde8a7ee4936d710ac415d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41b0f465c44fe8b2de43cfaa05bb7880"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a41b0f465c44fe8b2de43cfaa05bb7880">input_load_amp</a></td></tr>
 <tr class="separator:a41b0f465c44fe8b2de43cfaa05bb7880"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab49fb3bb15f9624e4ffb12a75c7db55d"><td class="memItemLeft" align="right" valign="top">VectorXi&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab49fb3bb15f9624e4ffb12a75c7db55d">fcdof</a></td></tr>
 <tr class="separator:ab49fb3bb15f9624e4ffb12a75c7db55d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1f3d4744efb6ce0d6c5b89774ba91aa"><td class="memItemLeft" align="right" valign="top">VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ac1f3d4744efb6ce0d6c5b89774ba91aa">fcload</a></td></tr>
-<tr class="separator:ac1f3d4744efb6ce0d6c5b89774ba91aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51e2def539afa6941aecc0db01966133"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a51e2def539afa6941aecc0db01966133">fc_curve</a></td></tr>
+<tr class="separator:a51e2def539afa6941aecc0db01966133"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfafb3651a4fe2c074c247d95f28635a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#acfafb3651a4fe2c074c247d95f28635a">num_disp_constraints</a></td></tr>
+<tr class="separator:acfafb3651a4fe2c074c247d95f28635a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8610c01521192e9f3677b50b275ff2bf"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a8610c01521192e9f3677b50b275ff2bf">input_disp_amp</a></td></tr>
+<tr class="separator:a8610c01521192e9f3677b50b275ff2bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a769eb6abca3cfe15c55c120f68bf1461"><td class="memItemLeft" align="right" valign="top">VectorXi&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a769eb6abca3cfe15c55c120f68bf1461">dcdof</a></td></tr>
+<tr class="separator:a769eb6abca3cfe15c55c120f68bf1461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f448b56fa6e59123cfe5fcf0082e8de"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a7f448b56fa6e59123cfe5fcf0082e8de">dc_curve</a></td></tr>
+<tr class="separator:a7f448b56fa6e59123cfe5fcf0082e8de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd406f244d4145ae5baf4ea059b5232d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#abd406f244d4145ae5baf4ea059b5232d">num_constraints</a></td></tr>
 <tr class="separator:abd406f244d4145ae5baf4ea059b5232d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a389e085bd7632077f619ea67d3fb4087"><td class="memItemLeft" align="right" valign="top">VectorXi&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a389e085bd7632077f619ea67d3fb4087">bcdof</a></td></tr>
@@ -151,6 +193,10 @@ Variables</h2></td></tr>
 <tr class="separator:a5159843113dbbfc6e912c3345c0a7916"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f98cf28208251affb988effe3a89708"><td class="memItemLeft" align="right" valign="top">VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a2f98cf28208251affb988effe3a89708">A_truss</a></td></tr>
 <tr class="separator:a2f98cf28208251affb988effe3a89708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3d80cd8d6370090eb6cc57a523bcd6c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad3d80cd8d6370090eb6cc57a523bcd6c">eps_nr</a></td></tr>
+<tr class="separator:ad3d80cd8d6370090eb6cc57a523bcd6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43f0d7a4e9f3ece65db80d07bb79192f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a43f0d7a4e9f3ece65db80d07bb79192f">iterations_nr</a></td></tr>
+<tr class="separator:a43f0d7a4e9f3ece65db80d07bb79192f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
@@ -167,7 +213,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Variable storing the nodal accelerations of the embedded mesh This is the main file. If you want to submit a new job &ndash; this is where you do it </p>
+<p>This is the main file. If you want to submit a new job &ndash; this is where you do it </p>
+<p>Constants used in the code</p>
 <p>Enter the path address for your job folder</p>
 <p>What is the Problem Dimension - Degrees of Freedom per node?</p>
 <p>Simulation start time</p>
@@ -175,16 +222,73 @@ Variables</h2></td></tr>
 <p>Output frequency &ndash; result ouputs for every 100 timesteps</p>
 <p>Maximum time step</p>
 <p>Reduction factor</p>
+<p>Type of Loading 1 - Force based 2 - Displacement based</p>
 <p>Loading Amplitude</p>
 <p>number of nodes * number of directions</p>
 <p>Degrees of freedom index data</p>
-<p>Number of bounday condition constraints</p>
+<p>Number of boundary condition constraints</p>
 <p>Which nodes are constrained ?</p>
 <p>index corresponding to the constrained degrees of freedom</p>
 <p>Displacements of the constrained degrees of freedom</p>
-<p>Enter your choice for type of simulations below, based on the following options: 1 - Explicit Dynamic 2 - Implicit Dynamic 3 - Static</p>
+<p>Enter your choice for type of simulations below, based on the following options: 1 - Explicit Dynamic 2 - Implicit Dynamic 3 - Static Analysis</p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00108">108</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00119">119</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png" border="0" usemap="#main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" alt=""/></div>
+<map name="main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph" id="main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph">
+<area shape="rect" id="node2" href="functions_8h.html#a8a64e915e17f876fe72bedd820e87c33" title="fe_mainRead" alt="" coords="117,55,218,80"/>
+<area shape="rect" id="node5" href="functions_8h.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="104,476,232,501"/>
+<area shape="rect" id="node3" href="class_mesh.html#a2e0931c78a7ef01ccc9bf8f0dd74afb0" title="Mesh::readMesh" alt="" coords="319,55,440,80"/>
+<area shape="rect" id="node4" href="class_materials.html#a06e59a5742730b2292d39b7488523505" title="Materials::readMats" alt="" coords="310,5,449,31"/>
+<area shape="rect" id="node6" href="class_mesh.html#aa8a6f260e9589be4c0a2fcc146e696d5" title="Mesh::preprocessMesh" alt="" coords="300,203,460,228"/>
+<area shape="rect" id="node8" href="class_mesh.html#a52ecce406bbef80cbf3610db3ea5ea40" title="Mesh::getNewNodes" alt="" coords="307,252,452,277"/>
+<area shape="rect" id="node9" href="class_mesh.html#af242dbb4627c09410975a0e67389e0de" title="Mesh::getNewElements" alt="" coords="299,301,461,327"/>
+<area shape="rect" id="node10" href="functions_8h.html#aba32cc24bd74a4965c560fa62c5b213e" title="fe_apply_bc_load" alt="" coords="317,400,443,425"/>
+<area shape="rect" id="node12" href="functions_8h.html#af7ffbad6dfcc99fc88b130c1a7b1720a" title="fe_get_mats" alt="" coords="1041,828,1136,853"/>
+<area shape="rect" id="node13" href="functions_8h.html#a04906e61b8cfdc7232924a594b95eb1f" title="fe_mass_hex" alt="" coords="586,279,686,304"/>
+<area shape="rect" id="node23" href="functions_8h.html#a04f569c566ca4fbea3b3a2a13cdd0af5" title="fe_assemble_mass" alt="" coords="568,927,704,952"/>
+<area shape="rect" id="node25" href="functions_8h.html#ab747d046148af042245ed13ca720c5ec" title="fe_transformMass" alt="" coords="316,551,444,576"/>
+<area shape="rect" id="node26" href="functions_8h.html#a346547477d2a1fbeff6b5e0b05314283" title="matrix2text" alt="" coords="336,600,423,625"/>
+<area shape="rect" id="node27" href="functions_8h.html#aa8f7f6d72c6b57c721b23a38e2e20fc5" title="Calculates the resultant nodal force after each time step. " alt="" coords="336,501,424,527"/>
+<area shape="rect" id="node42" href="functions_8h.html#ad631819edfa9ade5d6e379d0085810b6" title="fe_vtuWrite" alt="" coords="335,701,424,727"/>
+<area shape="rect" id="node43" href="functions_8h.html#a45a1daa8de18fc5fc463f9b569970245" title="fe_vtkWrite_host" alt="" coords="319,751,440,776"/>
+<area shape="rect" id="node44" href="functions_8h.html#a6e838460f501267efe34f29d4cf6d9cd" title="fe_vtkWrite_truss" alt="" coords="318,800,442,825"/>
+<area shape="rect" id="node45" href="functions_8h.html#af737926a3dfd669254a56dbbf675ac92" title="fe_getTimeStep" alt="" coords="322,928,437,953"/>
+<area shape="rect" id="node48" href="functions_8h.html#af42938e5b32edb33ef4a35866949eba6" title="fe_apply_bc_displacement" alt="" coords="290,351,469,376"/>
+<area shape="rect" id="node49" href="functions_8h.html#ac2d90cb6719488bc8551e6f9437f4f76" title="fe_concatenate_vector2matrix" alt="" coords="280,104,480,129"/>
+<area shape="rect" id="node50" href="functions_8h.html#a0b5f62139051473c809da12cc0c45e29" title="vector2text" alt="" coords="336,153,423,179"/>
+<area shape="rect" id="node7" href="functions_8h.html#a983304137f9a961469a558437d5d2d59" title="fe_find" alt="" coords="605,27,667,52"/>
+<area shape="rect" id="node11" href="functions_8h.html#a5ce8a3cf9dcc8b599ac40f7f3a48f196" title="fe_function" alt="" coords="593,76,679,101"/>
+<area shape="rect" id="node14" href="functions_8h.html#a502e3469e1cc253deb142f46c0789a78" title="guass_points_3d" alt="" coords="828,204,950,229"/>
+<area shape="rect" id="node15" href="functions_8h.html#ad99b08ce65ae353e91486d7685c22024" title="guass_weights_3d" alt="" coords="823,141,955,167"/>
+<area shape="rect" id="node17" href="functions_8h.html#ab77a3a6d6f6b436d7e8c600bb0869927" title="fe_shapes_8" alt="" coords="840,377,938,403"/>
+<area shape="rect" id="node18" href="functions_8h.html#afc547bef246c057db6cbd04bf7f866a9" title="fe_dndr_8" alt="" coords="849,476,930,501"/>
+<area shape="rect" id="node19" href="functions_8h.html#ac0b5524525e1f2e89bb064c15ab8e664" title="fe_dnds_8" alt="" coords="847,279,931,304"/>
+<area shape="rect" id="node20" href="functions_8h.html#a57e8e5c9f740c98e4767f29c121c2d0a" title="fe_dndt_8" alt="" coords="849,427,930,452"/>
+<area shape="rect" id="node21" href="functions_8h.html#a12aa5a7a3443c6fcc5e65d3bcfc9bcc3" title="fe_calJacobian" alt="" coords="834,525,944,551"/>
+<area shape="rect" id="node22" href="functions_8h.html#a98fae74dde5fe33a7062e7457a2d3227" title="fe_shapeMatrix" alt="" coords="833,328,945,353"/>
+<area shape="rect" id="node16" href="functions_8h.html#a84dcc9575e861bdb2872c10ba6238ee4" title="guass_weights" alt="" coords="1034,141,1143,167"/>
+<area shape="rect" id="node24" href="functions_8h.html#ae4dbe24b761cafa3577afab76726b382" title="fe_find_index" alt="" coords="839,927,940,952"/>
+<area shape="rect" id="node28" href="functions_8h.html#ab5053cb12ac67971a7836346e2839725" title="fe_gather" alt="" coords="597,877,675,903"/>
+<area shape="rect" id="node29" href="functions_8h.html#afc6be1a5667e68156cb099e8da71170f" title="fe_dndx_8" alt="" coords="594,328,678,353"/>
+<area shape="rect" id="node30" href="functions_8h.html#a0572d7818e085c67f7fbb84eef8ecfb4" title="fe_dndy_8" alt="" coords="594,377,678,403"/>
+<area shape="rect" id="node31" href="functions_8h.html#aaf75db8433433807839c6ea17f2cf72c" title="fe_dndz_8" alt="" coords="594,427,678,452"/>
+<area shape="rect" id="node32" href="functions_8h.html#a8c9fd519c93c847cdf52de947964eb67" title="fe_strDispMatrix_totalLagrangian" alt="" coords="528,729,745,755"/>
+<area shape="rect" id="node33" href="functions_8h.html#ae50379f74802347e04dbc022897f9cb0" title="fe_calDefGrad" alt="" coords="1035,680,1142,705"/>
+<area shape="rect" id="node34" href="functions_8h.html#a7d0fd8cfef8b891901eb6f0f780fd9f2" title="This function calculates the updated stress for 3d elements &#45; elastic, hyperelastic material models w..." alt="" coords="577,779,695,804"/>
+<area shape="rect" id="node40" href="functions_8h.html#ad7c031b962da3b431c536b473cdba7f8" title="This functions calculates the isoparametric coordinates of a set of coordinates in global system..." alt="" coords="568,476,704,501"/>
+<area shape="rect" id="node41" href="functions_8h.html#a6b8344e12f9005795f93f60ddda26c5c" title="fe_scatter" alt="" coords="596,828,676,853"/>
+<area shape="rect" id="node35" href="functions_8h.html#a34d6fb85943d945b7e8600d2ef4220d0" title="fe_get_model" alt="" coords="838,828,940,853"/>
+<area shape="rect" id="node36" href="functions_8h.html#ab0911abb05a0ca06eb4f330890ee0641" title="fe_simple_elastic" alt="" coords="827,877,951,903"/>
+<area shape="rect" id="node37" href="functions_8h.html#af2a970e883d0c4a7ad750547c07c5f24" title="fe_saintvenant_elastic" alt="" coords="813,779,966,804"/>
+<area shape="rect" id="node38" href="functions_8h.html#a66b469439c736421744f6aef9e05a485" title="fe_mooneyrivlin_hyperelastic" alt="" coords="793,680,986,705"/>
+<area shape="rect" id="node39" href="functions_8h.html#ab27ecb703db33cb21a8a6d2fbfbf125f" title="fe_ogden_hyperelastic" alt="" coords="811,729,967,755"/>
+<area shape="rect" id="node46" href="functions_8h.html#ab0d9d059d2b8f829000e6f1f7d1d4ffb" title="fe_calTimeStep" alt="" coords="579,1028,693,1053"/>
+<area shape="rect" id="node47" href="functions_8h.html#ac1306a43db522f3da30471d2a6c48686" title="fe_calArea_4" alt="" coords="839,1028,939,1053"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -202,7 +306,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Variable storing the nodal velocities of the host mesh </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00098">98</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00106">106</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -219,7 +323,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Variable storing the nodal velocities of the embedded mesh </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00102">102</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00110">110</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -236,7 +340,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>DOF numbers for boundary conditions </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00080">80</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00088">88</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -253,7 +357,39 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Displacement of the constrained DOF's </p>
 
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00090">90</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a7f448b56fa6e59123cfe5fcf0082e8de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f448b56fa6e59123cfe5fcf0082e8de">&#9670;&nbsp;</a></span>dc_curve</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string dc_curve</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 <p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00082">82</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a769eb6abca3cfe15c55c120f68bf1461"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a769eb6abca3cfe15c55c120f68bf1461">&#9670;&nbsp;</a></span>dcdof</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">VectorXi dcdof</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00081">81</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -269,7 +405,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00061">61</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00066">66</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -286,7 +422,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Initial time step </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00062">62</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00067">67</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -303,7 +439,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Stores the stress tensor of an element </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00086">86</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00094">94</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -320,7 +456,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Stores the stress of a truss element </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00088">88</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00096">96</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -336,7 +472,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00085">85</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00093">93</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -353,7 +489,41 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Stores the strain tensor of an element </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00087">87</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00095">95</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ad3d80cd8d6370090eb6cc57a523bcd6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3d80cd8d6370090eb6cc57a523bcd6c">&#9670;&nbsp;</a></span>eps_nr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double eps_nr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Variable storing the nodal accelerations of the embedded mesh </p>
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00112">112</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a51e2def539afa6941aecc0db01966133"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51e2def539afa6941aecc0db01966133">&#9670;&nbsp;</a></span>fc_curve</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string fc_curve</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Degrees of freedom &ndash; corresponding to the applied load </p>
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00077">77</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -368,25 +538,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Degrees of freedom &ndash; corresponding to the applied load </p>
+<p>Loading Amplitude </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00073">73</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ac1f3d4744efb6ce0d6c5b89774ba91aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1f3d4744efb6ce0d6c5b89774ba91aa">&#9670;&nbsp;</a></span>fcload</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">VectorXd fcload</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00074">74</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00076">76</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -403,7 +557,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Internal nodal force vector at previous time step </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00093">93</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00101">101</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -420,7 +574,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Stores the strain of a truss element </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00092">92</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00100">100</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -436,7 +590,23 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00047">47</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00052">52</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8610c01521192e9f3677b50b275ff2bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8610c01521192e9f3677b50b275ff2bf">&#9670;&nbsp;</a></span>input_disp_amp</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double input_disp_amp</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00080">80</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -451,9 +621,25 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Loading Amplitude </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00071">71</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00075">75</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a43f0d7a4e9f3ece65db80d07bb79192f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43f0d7a4e9f3ece65db80d07bb79192f">&#9670;&nbsp;</a></span>iterations_nr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double iterations_nr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Convergence criteria used in the newton rhapson method </p>
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00113">113</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -470,7 +656,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Job folder name </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00048">48</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00053">53</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -486,7 +672,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00067">67</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00072">72</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -503,7 +689,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Reduces the timestep value by this amount Material Properties are stored in here </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00066">66</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00071">71</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -519,7 +705,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00055">55</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00060">60</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -536,7 +722,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Job input file name Dimension of the Simulation (3 for 3D, 2 for 2D and 1 for 1D) </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00051">51</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00056">56</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -551,9 +737,42 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Number of boundary conditions = nodes x dof </p>
+<p>Type of displacement curve Number of boundary conditions = nodes x dof </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00078">78</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00086">86</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="acfafb3651a4fe2c074c247d95f28635a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfafb3651a4fe2c074c247d95f28635a">&#9670;&nbsp;</a></span>num_disp_constraints</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int num_disp_constraints</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Type of loading curve </p>
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00079">79</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a724026f5fcdde8a7ee4936d710ac415d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a724026f5fcdde8a7ee4936d710ac415d">&#9670;&nbsp;</a></span>num_load_constraints</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int num_load_constraints</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00074">74</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -570,7 +789,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Input meshes - number of meshes and type of meshes </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00054">54</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00059">59</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -587,7 +806,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>End Time </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00060">60</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00065">65</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -604,7 +823,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Minimum time step </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00063">63</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00068">68</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -621,7 +840,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Start Time </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00059">59</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00064">64</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -637,7 +856,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00058">58</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00063">63</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -654,7 +873,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Internal energy at different time steps </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00096">96</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00104">104</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -671,7 +890,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Variable storing the nodal accelerations of the host mesh </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00100">100</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00108">108</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -688,7 +907,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Variable storing the nodal displacements of the host mesh </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00097">97</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00105">105</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -705,7 +924,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Variable storing the nodal displacements of the embedded mesh </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00101">101</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00109">109</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -722,16 +941,20 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <p>Internal nodal force vector at current time step </p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00094">94</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00102">102</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
 </body>
 </html>

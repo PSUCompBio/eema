@@ -44,7 +44,7 @@ PROJECT_NUMBER         =
 # for a project that appears at the top of each page and should give viewer a
 # quick idea about the purpose of the project. Keep the description short.
 
-PROJECT_BRIEF          = "Finite element code with support to embedded element technique."
+PROJECT_BRIEF          = "Finite element code with support to FEM"
 
 # With the PROJECT_LOGO tag one can specify a logo or an icon that is included
 # in the documentation. The maximum height of the logo should not exceed 55
@@ -58,7 +58,7 @@ PROJECT_LOGO           = /Users/vsg111/Desktop/web-logo.png
 # entered, it will be relative to the location where doxygen was started. If
 # left blank the current directory will be used.
 
-OUTPUT_DIRECTORY       = /Users/vsg111/Dropbox/Work/Papers/Paper_EEM_Computational/EEM_Dynamic/Documentation
+OUTPUT_DIRECTORY       = /Users/vsg111/Dropbox/Work/Papers/Paper_EEM_Computational/GIT/embeddedfem/Documentation
 
 # If the CREATE_SUBDIRS tag is set to YES then doxygen will create 4096 sub-
 # directories (in 2 levels) under the output directory of each output format and
@@ -790,7 +790,8 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = /Users/vsg111/Dropbox/Work/Papers/Paper_EEM_Computational/EEM_Dynamic
+INPUT                  = /Users/vsg111/Dropbox/Work/Papers/Paper_EEM_Computational/GIT/embeddedfem \
+                         /Users/vsg111/Dropbox/Work/Papers/Paper_EEM_Computational/GIT/embeddedfem/examples
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses
@@ -858,7 +859,8 @@ FILE_PATTERNS          = *.c \
                          *.vhd \
                          *.vhdl \
                          *.ucf \
-                         *.qsf
+                         *.qsf \
+                         *.inp
 
 # The RECURSIVE tag can be used to specify whether or not subdirectories should
 # be searched for input files as well.
@@ -873,11 +875,7 @@ RECURSIVE              = YES
 # Note that relative paths are relative to the directory from which doxygen is
 # run.
 
-EXCLUDE                = /Users/vsg111/Dropbox/Work/Papers/Paper_EEM_Computational/EEM_Dynamic/third-party-libs \
-                         /Users/vsg111/Dropbox/Work/Papers/Paper_EEM_Computational/EEM_Dynamic/backups \
-                         /Users/vsg111/Dropbox/Work/Papers/Paper_EEM_Computational/EEM_Dynamic/job-2 \
-                         /Users/vsg111/Dropbox/Work/Papers/Paper_EEM_Computational/EEM_Dynamic/job-1 \
-                         /Users/vsg111/Dropbox/Work/Papers/Paper_EEM_Computational/EEM_Dynamic/job-3
+EXCLUDE                = /Users/vsg111/Dropbox/Work/Papers/Paper_EEM_Computational/GIT/embeddedfem/third-party-libs
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
 # directories that are symbolic links (a Unix file system feature) are excluded
@@ -1482,7 +1480,7 @@ DISABLE_INDEX          = NO
 # The default value is: NO.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-GENERATE_TREEVIEW      = NO
+GENERATE_TREEVIEW      = YES
 
 # The ENUM_VALUES_PER_LINE tag can be used to set the number of enum values that
 # doxygen will group on one line in the generated HTML documentation.
@@ -1841,7 +1839,7 @@ LATEX_TIMESTAMP        = NO
 # readers/editors.
 # The default value is: NO.
 
-GENERATE_RTF           = YES
+GENERATE_RTF           = NO
 
 # The RTF_OUTPUT tag is used to specify where the RTF docs will be put. If a
 # relative path is entered the value of OUTPUT_DIRECTORY will be put in front of
@@ -2187,7 +2185,7 @@ PERL_PATH              = /usr/bin/perl
 # powerful graphs.
 # The default value is: YES.
 
-CLASS_DIAGRAMS         = YES
+CLASS_DIAGRAMS         = NO
 
 # You can define message sequence charts within doxygen comments using the \msc
 # command. Doxygen will then run the mscgen tool (see:
@@ -2218,7 +2216,7 @@ HIDE_UNDOC_RELATIONS   = YES
 # set to NO
 # The default value is: NO.
 
-HAVE_DOT               = NO
+HAVE_DOT               = YES
 
 # The DOT_NUM_THREADS specifies the number of dot invocations doxygen is allowed
 # to run in parallel. When set to 0 doxygen will base this on the number of
@@ -2396,7 +2394,7 @@ INTERACTIVE_SVG        = NO
 # found. If left blank, it is assumed the dot tool can be found in the path.
 # This tag requires that the tag HAVE_DOT is set to YES.
 
-DOT_PATH               = 
+DOT_PATH               = /usr/local/bin/dot
 
 # The DOTFILE_DIRS tag can be used to specify one or more directories that
 # contain dot files that are included in the documentation (see the \dotfile

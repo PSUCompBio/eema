@@ -5,10 +5,17 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>PSU-Compbio-FEM: /Users/vsg111/Dropbox/Work/Papers/Paper_EEM_Computational/EEM_Dynamic/source/Math/GeneralMath Directory Reference</title>
+<title>PSU-Compbio-FEM: source/Math/GeneralMath Directory Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +31,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PSU-Compbio-FEM
    </div>
-   <div id="projectbrief">Finite element code with support to embedded element technique.</div>
+   <div id="projectbrief">Finite element code with support to FEM</div>
   </td>
  </tr>
  </tbody>
@@ -44,6 +51,21 @@ $(function() {
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('dir_c946547d8c2bf9a456af47e162e2ab0b.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -58,16 +80,22 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_d5914c5e40df86b87a1b086f72f2cc1f.html">Math</a></li><li class="navelem"><a class="el" href="dir_c946547d8c2bf9a456af47e162e2ab0b.html">GeneralMath</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">GeneralMath Directory Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Directory dependency graph for GeneralMath:</div>
+<div class="dyncontent">
+<div class="center"><img src="dir_c946547d8c2bf9a456af47e162e2ab0b_dep.png" border="0" usemap="#dir__c946547d8c2bf9a456af47e162e2ab0b__dep" alt="source/Math/GeneralMath"/></div>
+<map name="dir__c946547d8c2bf9a456af47e162e2ab0b__dep" id="dir__c946547d8c2bf9a456af47e162e2ab0b__dep">
+<area shape="rect" id="node1" href="dir_c946547d8c2bf9a456af47e162e2ab0b.html" title="GeneralMath" alt="" coords="27,51,125,99"/>
+<area shape="rect" id="node2" href="dir_7f57b1e41c5acd0e859ae5f3a2b075a9.html" title="headers" alt="" coords="40,147,112,195"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000027_000002.html" title="8" alt="" coords="81,121,88,135"/>
+<area shape="rect" id="clust1" href="dir_d5914c5e40df86b87a1b086f72f2cc1f.html" title="Math" alt="" coords="16,16,136,109"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="files"></a>
 Files</h2></td></tr>
@@ -81,15 +109,23 @@ Files</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:fe__find_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fe__find_8cpp.html">fe_find.cpp</a> <a href="fe__find_8cpp_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:fe__function_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fe__function_8cpp.html">fe_function.cpp</a> <a href="fe__function_8cpp_source.html">[code]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:fe__inv_matrix_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fe__inv_matrix_8cpp.html">fe_invMatrix.cpp</a> <a href="fe__inv_matrix_8cpp_source.html">[code]</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:fe__newton_rhapson_8cpp"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fe__newton_rhapson_8cpp.html">fe_newtonRhapson.cpp</a> <a href="fe__newton_rhapson_8cpp_source.html">[code]</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_b2f33c71d4aa5e7af42a1ca61ff5af1b.html">source</a></li><li class="navelem"><a class="el" href="dir_d5914c5e40df86b87a1b086f72f2cc1f.html">Math</a></li><li class="navelem"><a class="el" href="dir_c946547d8c2bf9a456af47e162e2ab0b.html">GeneralMath</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
 </body>
 </html>

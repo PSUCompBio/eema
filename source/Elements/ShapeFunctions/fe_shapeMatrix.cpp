@@ -6,8 +6,8 @@ using namespace Eigen;
 
 MatrixXd fe_shapeMatrix(int edof, int nnel, VectorXd shapes){
 	
-	MatrixXd shape_mat(6,edof);
-	shape_mat = MatrixXd::Zero(6,edof);
+	MatrixXd shape_mat(3,edof);
+	shape_mat = MatrixXd::Zero(3,edof);
 	int i1,i2,i3;
 
 	for(int i=0;i<nnel;i++){

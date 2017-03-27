@@ -59,6 +59,14 @@ void fe_mainEXPLICIT(){
 	VectorXd U_prev = VectorXd::Zero(sdof); // Nodal displacements at previous time
 	VectorXd U_curr = VectorXd::Zero(sdof); // Nodal displacements at current time
 
+	fe_prev = VectorXd::Zero(sdof);
+	fe_curr = VectorXd::Zero(sdof);
+	W_ext = VectorXd::Zero(1);
+
+	W_kin = VectorXd::Zero(1);
+	W_tot = VectorXd::Zero(1);
+
+
 	VectorXd F_net = VectorXd::Zero(sdof); // Total Nodal force vector
 
 
@@ -71,7 +79,9 @@ void fe_mainEXPLICIT(){
 // ----------------------------------------------------------------------------
 	//Step-1: Initialize and Calculate the Mass Matrix of the system
 	VectorXi nodes_local = VectorXi::Zero(nnel);
-	double xcoord[nnel],ycoord[nnel],zcoord[nnel];
+	VectorXd xcoord = VectorXd::Zero(nnel);
+	VectorXd ycoord = VectorXd::Zero(nnel);
+	VectorXd zcoord = VectorXd::Zero(nnel);
 
 	for(int i=0;i<nel;i++){
 
@@ -86,9 +96,9 @@ void fe_mainEXPLICIT(){
 				}
 			}
 			nodes_local(j) = elements(i,j+2);
-			xcoord[j] = nodes(g,1);
-			ycoord[j] = nodes(g,2);
-			zcoord[j] = nodes(g,3);
+			xcoord(j) = nodes(g,1);
+			ycoord(j) = nodes(g,2);
+			zcoord(j) = nodes(g,3);
 		}
 
 		MatrixXd m_hex = MatrixXd::Zero(edof,edof); // mass of hex elements
@@ -115,8 +125,8 @@ void fe_mainEXPLICIT(){
 	std::string mass = home_path+"results/system_mass.txt";
 	matrix2text(mass.c_str(),mm,mm.cols());
 
-    std::string mass_inverse = home_path+"results/system_mass_inverse.txt";
-    matrix2text(mass_inverse.c_str(),mm.inverse(),24);
+    //std::string mass_inverse = home_path+"results/system_mass_inverse.txt";
+    //matrix2text(mass_inverse.c_str(),mm.inverse(),24);
 
 // ----------------------------------------------------------------------------
 	//Step-2: getforce step from Belytschko
@@ -191,20 +201,47 @@ void fe_mainEXPLICIT(){
 		W_int.conservativeResize(W_int.size()+1);
 		W_int(size_counter) = new_int_energy;
 
+		/* Calculating the external energy terms */
+		double old_ext_energy = W_ext(size_counter-1);
+		double new_ext_energy = old_ext_energy + 0.5*(del_U.dot(fe_prev + fe_curr));
+		fe_prev = fe_curr;
+		U_prev = U_curr;
+		W_ext.conservativeResize(W_ext.size()+1);
+		W_ext(size_counter) = new_ext_energy;
+
+		/* Calculating the kinetic energy */
+		double kin_energy = 0.5*(V.transpose())*(mm)*(V);
+		W_kin.conservativeResize(W_kin.size()+1);
+		W_kin(size_counter) = kin_energy;
+
+		/* Calculating the total energy of the system */
+		W_tot.conservativeResize(W_tot.size()+1);
+		W_tot(size_counter) = std::abs((W_kin(size_counter) + W_int(size_counter) - W_ext(size_counter)));
+
+		if(W_tot(size_counter)>eps_energy){
+			std::cout << "**********************************************" << std::endl;
+			std::cout << "ALERT: INSTABILITIES IN THE SYSTEM DETECTED \n BASED ON THE ENERGY BALANCE CHECK \n";
+			std::cout << "**********************************************" << std::endl;
+			std::exit(-1);
+		}
+
+
 		/** Writing the output to VTK files */
 		// updated_nodes = fe_updateNodes(nodes,U);
 
 		// std::cout<<"Z Strain: "<<(U(26)/2)<<"\n";
-		//std::cout << "Z displacement: "<<(U(14))<<"\n";
+		std::cout << "Z displacement: "<<(U(14))<<"\n";
 
     	U_host = U;
 		V_host = V;
 		A_host = A;
 
-		fe_vtuWrite("eem_matrix",size_counter,nodes,elements);
-		fe_vtuWrite("eem_truss",size_counter,nodes_truss,elements_truss);
-		//fe_vtkWrite_host("eem_matrix",1,5,size_counter,nodes,elements);
-		//fe_vtkWrite_truss("eem_truss",1,5,size_counter,nodes_truss,elements_truss);
+		if(((size_counter) % (output_frequency))==0){
+			fe_vtuWrite("eem_matrix",size_counter,nodes,elements);
+			fe_vtuWrite("eem_truss",size_counter,nodes_truss,elements_truss);
+			//fe_vtkWrite_host("eem_matrix",1,5,size_counter,nodes,elements);
+			//fe_vtkWrite_truss("eem_truss",1,5,size_counter,nodes_truss,elements_truss);
+		}
 
 		s_prev = s;
 		s = clock();
@@ -229,5 +266,14 @@ void fe_mainEXPLICIT(){
 
 	std::string internal_energy = home_path + "results/internal_energy_system.txt";
 	vector2text(internal_energy,W_int,10);
+
+	std::string external_energy = home_path + "results/external_energy_system.txt";
+	vector2text(external_energy,W_ext,10);
+
+	std::string kinetic_energy = home_path + "results/kinetic_energy_system.txt";
+	vector2text(kinetic_energy,W_kin,10);
+
+	std::string total_energy = home_path + "results/total_energy_system.txt";
+	vector2text(total_energy,W_tot,10);
 
 }
