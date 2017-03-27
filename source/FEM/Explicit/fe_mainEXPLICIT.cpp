@@ -202,6 +202,7 @@ void fe_mainEXPLICIT(){
 		W_int(size_counter) = new_int_energy;
 
 		/* Calculating the external energy terms */
+		fe_curr = fe ;
 		double old_ext_energy = W_ext(size_counter-1);
 		double new_ext_energy = old_ext_energy + 0.5*(del_U.dot(fe_prev + fe_curr));
 		fe_prev = fe_curr;
