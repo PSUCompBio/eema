@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['get_5fcpu_5ftime',['get_cpu_time',['../fe__simulation_time_8cpp.html#acdbcf9be8c879dddacc5aed7d31d7c84',1,'fe_simulationTime.cpp']]],
+  ['get_5fwall_5ftime',['get_wall_time',['../fe__simulation_time_8cpp.html#ae9530b09b27f0c6e5c8836ecbfad493f',1,'fe_simulationTime.cpp']]],
   ['getelements',['getElements',['../class_mesh.html#af3cbe568c8a36832659ac01025e8d774',1,'Mesh']]],
   ['getnewelements',['getNewElements',['../class_mesh.html#af242dbb4627c09410975a0e67389e0de',1,'Mesh']]],
   ['getnewnodes',['getNewNodes',['../class_mesh.html#a52ecce406bbef80cbf3610db3ea5ea40',1,'Mesh']]],

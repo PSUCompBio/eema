@@ -1,4 +1,4 @@
-#include"functions.h"
+#include "functions.h"
 
 using namespace Eigen;
 
@@ -12,7 +12,10 @@ double fe_getTimeStep(MatrixXd nodes, MatrixXd elements, int ndof, VectorXd u, V
 	int nnode = nodes.rows();
 	int sdof = nnode * ndof;
 	int edof = nnel * ndof;
-	double xcoord[nnel], ycoord[nnel], zcoord[nnel];
+	VectorXd xcoord = VectorXd::Zero(nnel);
+	VectorXd ycoord = VectorXd::Zero(nnel);
+	VectorXd zcoord = VectorXd::Zero(nnel);
+
 	VectorXd deltaT_element = VectorXd::Zero(nel);
 
 	for(int i=0;i<nel;i++){
@@ -31,9 +34,9 @@ double fe_getTimeStep(MatrixXd nodes, MatrixXd elements, int ndof, VectorXd u, V
 				}
 			}
 			nodes_local(j) = elements(i,j+2);
-			xcoord[j] = nodes(g,1);
-			ycoord[j] = nodes(g,2);
-			zcoord[j] = nodes(g,3);
+			xcoord(j) = nodes(g,1);
+			ycoord(j) = nodes(g,2);
+			zcoord(j) = nodes(g,3);
 		}
 
 		VectorXd u_e(edof);
@@ -45,9 +48,9 @@ double fe_getTimeStep(MatrixXd nodes, MatrixXd elements, int ndof, VectorXd u, V
 
 		for(int j=0;j<nnel;j++){
 			counter = j*3;
-			xcoord[j] = xcoord[j]+u_e(counter);
-			ycoord[j] = ycoord[j]+u_e(counter+1);
-			zcoord[j] = zcoord[j]+u_e(counter+2);
+			xcoord(j) = xcoord(j)+u_e(counter);
+			ycoord(j) = ycoord(j)+u_e(counter+1);
+			zcoord(j) = zcoord(j)+u_e(counter+2);
 		}
 
 		deltaT_element(i) = fe_calTimeStep(xcoord,ycoord,zcoord,E,nu,rho); // reduction factor for time step added.

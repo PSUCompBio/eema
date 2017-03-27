@@ -75,6 +75,17 @@ extern VectorXd fi_prev;
 extern VectorXd fi_curr;
 extern VectorXd W_int;
 
+/* System External Energy */
+extern VectorXd fe_prev; 
+extern VectorXd fe_curr;
+extern VectorXd W_ext;
+
+/* System Kinetic Energy */
+extern VectorXd W_kin;
+
+/* System Total Energy */
+extern VectorXd W_tot;
+
 extern VectorXd U_host;
 extern VectorXd V_host;
 extern VectorXd A_host;
@@ -84,6 +95,8 @@ extern VectorXd V_truss;
 extern VectorXd A_truss;
 
 extern double eps_nr; /** Convergence Criteria for Newton Rhapson Method */
+extern double iterations_nr;
+extern double eps_energy;
 
 /*
  * Functions
@@ -120,7 +133,7 @@ MatrixXd guass_weights_3d(int ndof, int nx, int ny, int nz);
 MatrixXd fe_calculate_matlmat(int n, double E, double nu);
 
 /** Calculates the jacobian -- using the derivates of shape functions */
-MatrixXd fe_calJacobian(int dim, int nnel, VectorXd dndr, VectorXd dnds, VectorXd dndt, double xcoord[], double ycoord[], double zcoord[]);
+MatrixXd fe_calJacobian(int dim, int nnel, VectorXd dndr, VectorXd dnds, VectorXd dndt, VectorXd xcoord, VectorXd ycoord, VectorXd zcoord);
 
 /** dndx of actual element calculates using jacobian and shape function derivates calculated in the isoparametric element */
 VectorXd fe_dndx_8(int nnel, VectorXd dndr, VectorXd dnds, VectorXd dndt, MatrixXd invJacobian);
@@ -157,7 +170,7 @@ MatrixXd fe_stiffness_embed_truss(MatrixXd nodes_truss, MatrixXd elements_truss,
 MatrixXd fe_shapeMatrix(int edof, int nnel, VectorXd shapes);
 
 /** Calculates the mass matrix for a hex element */
-MatrixXd fe_mass_hex(double rho, int ndof, int nnel, int edof, double xcoord[], double ycoord[], double zcoord[]);
+MatrixXd fe_mass_hex(double rho, int ndof, int nnel, int edof, VectorXd xcoord, VectorXd ycoord, VectorXd zcoord);
 
 /** Updates the stress at each time step based on the material model */
 VectorXd fe_stressUpdate(VectorXd dndx, VectorXd dndy, VectorXd dndz, MatrixXd disp_mat, VectorXd u, int opt, int return_opt);
@@ -169,13 +182,13 @@ VectorXd fe_getforce(MatrixXd nodes, MatrixXd elements, int ndof, VectorXd u, Ve
 double fe_getTimeStep(MatrixXd nodes, MatrixXd elements, int ndof, VectorXd u, VectorXd v, VectorXd fext);
 
 /** Calculates the time step for a single element based on its dimensions and material model */
-double fe_calTimeStep(double xcoord[], double ycoord[], double zcoord[], double E, double nu, double rho);
+double fe_calTimeStep(VectorXd xcoord, VectorXd ycoord, VectorXd zcoord, double E, double nu, double rho);
 
 /** Calculates the area of a face with 4 vertices */
 double fe_calArea_4(double a1, double a2, double a3, double a4, double b1, double b2, double b3, double b4, double c1, double c2, double c3, double c4);
 
 /** Calculates the volume of a 3d element */
-double fe_calVolume(double xcoord[], double ycoord[], double zcoord[]);
+double fe_calVolume(VectorXd xcoord, VectorXd ycoord, VectorXd zcoord);
 
 /** Prints out a vector */
 void fe_display_vector(VectorXd A);
@@ -268,5 +281,13 @@ VectorXd fe_simple_elastic(VectorXd dndx, VectorXd dndy, VectorXd dndz, MatrixXd
 VectorXd fe_saintvenant_elastic(VectorXd dndx, VectorXd dndy, VectorXd dndz, VectorXd u, int opt, int return_opt);
 
 void fe_vtuWrite(std::string output, int time_step, MatrixXd nodes, MatrixXd elements);
+
+/* Date: March 26, 2017 */
+
+VectorXd fe_newtonRhapson(VectorXd nat_coord, VectorXd xcoord, VectorXd ycoord, VectorXd zcoord);
+
+double fe_minElementLength(VectorXd xcoord, VectorXd ycoord, VectorXd zcoord);
+
+double fe_maxElementLength(double xcoord[],double ycoord[],double zcoord[]);
 
 #endif

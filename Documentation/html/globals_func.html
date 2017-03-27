@@ -9,6 +9,13 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +31,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PSU-Compbio-FEM
    </div>
-   <div id="projectbrief">Finite element code with support to embedded element technique.</div>
+   <div id="projectbrief">Finite element code with support to FEM</div>
   </td>
  </tr>
  </tbody>
@@ -45,6 +52,20 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('globals_func.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -64,12 +85,12 @@ $(function() {
 
 <h3><a id="index_f"></a>- f -</h3><ul>
 <li>fe_apply_bc_displacement()
-: <a class="el" href="functions_8h.html#a42274df47bb3a633055b1ccbb2f920ae">functions.h</a>
-, <a class="el" href="fe__apply__bc_8cpp.html#a42274df47bb3a633055b1ccbb2f920ae">fe_apply_bc.cpp</a>
+: <a class="el" href="functions_8h.html#af42938e5b32edb33ef4a35866949eba6">functions.h</a>
+, <a class="el" href="fe__apply__bc_8cpp.html#af42938e5b32edb33ef4a35866949eba6">fe_apply_bc.cpp</a>
 </li>
-<li>fe_apply_bc_force()
-: <a class="el" href="fe__apply__bc_8cpp.html#ac52c0e94b3bad1ca823301ad609a1549">fe_apply_bc.cpp</a>
-, <a class="el" href="functions_8h.html#ac52c0e94b3bad1ca823301ad609a1549">functions.h</a>
+<li>fe_apply_bc_load()
+: <a class="el" href="fe__apply__bc_8cpp.html#aba32cc24bd74a4965c560fa62c5b213e">fe_apply_bc.cpp</a>
+, <a class="el" href="functions_8h.html#aba32cc24bd74a4965c560fa62c5b213e">functions.h</a>
 </li>
 <li>fe_apply_bc_stiffness()
 : <a class="el" href="functions_8h.html#a3c73fda948017ac96aeb19889cfc1cba">functions.h</a>
@@ -83,17 +104,21 @@ $(function() {
 : <a class="el" href="functions_8h.html#ac1306a43db522f3da30471d2a6c48686">functions.h</a>
 , <a class="el" href="fe__cal_area__4_8cpp.html#ac1306a43db522f3da30471d2a6c48686">fe_calArea_4.cpp</a>
 </li>
+<li>fe_calculate_matlmat()
+: <a class="el" href="functions_8h.html#abbc5cafd6bb8048b69b3bd6f26ceb5f8">functions.h</a>
+, <a class="el" href="fe__simple__elastic_8cpp.html#abbc5cafd6bb8048b69b3bd6f26ceb5f8">fe_simple_elastic.cpp</a>
+</li>
 <li>fe_calDefGrad()
 : <a class="el" href="functions_8h.html#ae50379f74802347e04dbc022897f9cb0">functions.h</a>
 , <a class="el" href="fe__cal_def_grad_8cpp.html#ae50379f74802347e04dbc022897f9cb0">fe_calDefGrad.cpp</a>
 </li>
 <li>fe_calJacobian()
-: <a class="el" href="functions_8h.html#a12aa5a7a3443c6fcc5e65d3bcfc9bcc3">functions.h</a>
-, <a class="el" href="fe__cal_jacobian_8cpp.html#a12aa5a7a3443c6fcc5e65d3bcfc9bcc3">fe_calJacobian.cpp</a>
+: <a class="el" href="fe__cal_jacobian_8cpp.html#a12aa5a7a3443c6fcc5e65d3bcfc9bcc3">fe_calJacobian.cpp</a>
+, <a class="el" href="functions_8h.html#a12aa5a7a3443c6fcc5e65d3bcfc9bcc3">functions.h</a>
 </li>
 <li>fe_calSimpTransformation()
-: <a class="el" href="fe__cal_simp_transformation_8cpp.html#ae2eeba997bf4f0bc4749b92130de7ba3">fe_calSimpTransformation.cpp</a>
-, <a class="el" href="functions_8h.html#ae2eeba997bf4f0bc4749b92130de7ba3">functions.h</a>
+: <a class="el" href="functions_8h.html#ae2eeba997bf4f0bc4749b92130de7ba3">functions.h</a>
+, <a class="el" href="fe__cal_simp_transformation_8cpp.html#ae2eeba997bf4f0bc4749b92130de7ba3">fe_calSimpTransformation.cpp</a>
 </li>
 <li>fe_calTimeStep()
 : <a class="el" href="functions_8h.html#ab0d9d059d2b8f829000e6f1f7d1d4ffb">functions.h</a>
@@ -119,12 +144,11 @@ $(function() {
 : <a class="el" href="fe__det_matrix_8cpp.html#a715b940baf396c94255779d0573d9957">fe_detMatrix.cpp</a>
 </li>
 <li>fe_display_matrix()
-: <a class="el" href="functions_8h.html#a5110a192d089c6b26744b9e9d67a7c2d">functions.h</a>
-, <a class="el" href="fe__display_8cpp.html#a5110a192d089c6b26744b9e9d67a7c2d">fe_display.cpp</a>
+: <a class="el" href="fe__display_8cpp.html#a5110a192d089c6b26744b9e9d67a7c2d">fe_display.cpp</a>
+, <a class="el" href="functions_8h.html#a5110a192d089c6b26744b9e9d67a7c2d">functions.h</a>
 </li>
 <li>fe_display_vector()
-: <a class="el" href="fe__display_8cpp.html#ae8f2fe8ea3b7564cbf37116edf47b103">fe_display.cpp</a>
-, <a class="el" href="functions_8h.html#ab3e39c6d01b6fd10c9e264731cef75dc">functions.h</a>
+: <a class="el" href="functions_8h.html#ab3e39c6d01b6fd10c9e264731cef75dc">functions.h</a>
 , <a class="el" href="fe__display_8cpp.html#ab3e39c6d01b6fd10c9e264731cef75dc">fe_display.cpp</a>
 </li>
 <li>fe_dndr_8()
@@ -151,6 +175,9 @@ $(function() {
 : <a class="el" href="functions_8h.html#aaf75db8433433807839c6ea17f2cf72c">functions.h</a>
 , <a class="el" href="fe__dn__actual__8_8cpp.html#aaf75db8433433807839c6ea17f2cf72c">fe_dn_actual_8.cpp</a>
 </li>
+<li>fe_embed_preprocessing()
+: <a class="el" href="fe__embed__preprocessing_8cpp.html#a840ddc7df1916f6b5dfbb141adac32d3">fe_embed_preprocessing.cpp</a>
+</li>
 <li>fe_find()
 : <a class="el" href="functions_8h.html#a983304137f9a961469a558437d5d2d59">functions.h</a>
 , <a class="el" href="fe__find_8cpp.html#a983304137f9a961469a558437d5d2d59">fe_find.cpp</a>
@@ -158,6 +185,10 @@ $(function() {
 <li>fe_find_index()
 : <a class="el" href="functions_8h.html#ae4dbe24b761cafa3577afab76726b382">functions.h</a>
 , <a class="el" href="fe__find__index_8cpp.html#ae4dbe24b761cafa3577afab76726b382">fe_find_index.cpp</a>
+</li>
+<li>fe_function()
+: <a class="el" href="functions_8h.html#a5ce8a3cf9dcc8b599ac40f7f3a48f196">functions.h</a>
+, <a class="el" href="fe__function_8cpp.html#a5ce8a3cf9dcc8b599ac40f7f3a48f196">fe_function.cpp</a>
 </li>
 <li>fe_gather()
 : <a class="el" href="functions_8h.html#ab5053cb12ac67971a7836346e2839725">functions.h</a>
@@ -168,8 +199,8 @@ $(function() {
 , <a class="el" href="fe__get__mats_8cpp.html#af7ffbad6dfcc99fc88b130c1a7b1720a">fe_get_mats.cpp</a>
 </li>
 <li>fe_get_model()
-: <a class="el" href="fe__get__mats_8cpp.html#a34d6fb85943d945b7e8600d2ef4220d0">fe_get_mats.cpp</a>
-, <a class="el" href="functions_8h.html#a34d6fb85943d945b7e8600d2ef4220d0">functions.h</a>
+: <a class="el" href="functions_8h.html#a34d6fb85943d945b7e8600d2ef4220d0">functions.h</a>
+, <a class="el" href="fe__get__mats_8cpp.html#a34d6fb85943d945b7e8600d2ef4220d0">fe_get_mats.cpp</a>
 </li>
 <li>fe_getforce()
 : <a class="el" href="functions_8h.html#aa8f7f6d72c6b57c721b23a38e2e20fc5">functions.h</a>
@@ -182,45 +213,61 @@ $(function() {
 <li>fe_invMatrix()
 : <a class="el" href="fe__inv_matrix_8cpp.html#af9697f88b10fb6419ac04a523e5023ab">fe_invMatrix.cpp</a>
 </li>
-<li>fe_isoElastic()
-: <a class="el" href="functions_8h.html#ada816506319851dcff162fa5e54d72d5">functions.h</a>
-, <a class="el" href="fe__iso_elastic_8cpp.html#ada816506319851dcff162fa5e54d72d5">fe_isoElastic.cpp</a>
-</li>
 <li>fe_mainEXPLICIT()
-: <a class="el" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162">fe_mainEXPLICIT.cpp</a>
-, <a class="el" href="functions_8h.html#ab2f8704631ca6c23a453d1905efbb162">functions.h</a>
+: <a class="el" href="functions_8h.html#ab2f8704631ca6c23a453d1905efbb162">functions.h</a>
+, <a class="el" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162">fe_mainEXPLICIT.cpp</a>
 </li>
 <li>fe_mainRead()
 : <a class="el" href="functions_8h.html#a8a64e915e17f876fe72bedd820e87c33">functions.h</a>
 , <a class="el" href="fe__main_read_8cpp.html#a8a64e915e17f876fe72bedd820e87c33">fe_mainRead.cpp</a>
 </li>
 <li>fe_mass_hex()
-: <a class="el" href="fe__mass__hex_8cpp.html#a04906e61b8cfdc7232924a594b95eb1f">fe_mass_hex.cpp</a>
-, <a class="el" href="functions_8h.html#a04906e61b8cfdc7232924a594b95eb1f">functions.h</a>
+: <a class="el" href="functions_8h.html#a04906e61b8cfdc7232924a594b95eb1f">functions.h</a>
+, <a class="el" href="fe__mass__hex_8cpp.html#a04906e61b8cfdc7232924a594b95eb1f">fe_mass_hex.cpp</a>
 </li>
 <li>fe_mass_truss()
 : <a class="el" href="functions_8h.html#a350d27ea0f1de929495d659b26f428d2">functions.h</a>
 , <a class="el" href="fe__mass__hex_8cpp.html#a350d27ea0f1de929495d659b26f428d2">fe_mass_hex.cpp</a>
 </li>
+<li>fe_mooneyrivlin_hyperelastic()
+: <a class="el" href="functions_8h.html#a66b469439c736421744f6aef9e05a485">functions.h</a>
+, <a class="el" href="fe__mooneyrivlin__hyperelastic_8cpp.html#a66b469439c736421744f6aef9e05a485">fe_mooneyrivlin_hyperelastic.cpp</a>
+</li>
+<li>fe_newtonRhapson()
+: <a class="el" href="functions_8h.html#ad7c031b962da3b431c536b473cdba7f8">functions.h</a>
+, <a class="el" href="fe__newton_rhapson_8cpp.html#ad7c031b962da3b431c536b473cdba7f8">fe_newtonRhapson.cpp</a>
+</li>
+<li>fe_ogden_hyperelastic()
+: <a class="el" href="functions_8h.html#ab27ecb703db33cb21a8a6d2fbfbf125f">functions.h</a>
+, <a class="el" href="fe__ogden__hyperelastic_8cpp.html#ab27ecb703db33cb21a8a6d2fbfbf125f">fe_ogden_hyperelastic.cpp</a>
+</li>
+<li>fe_saintvenant_elastic()
+: <a class="el" href="functions_8h.html#af2a970e883d0c4a7ad750547c07c5f24">functions.h</a>
+, <a class="el" href="fe__saintvenant__elastic_8cpp.html#af2a970e883d0c4a7ad750547c07c5f24">fe_saintvenant_elastic.cpp</a>
+</li>
 <li>fe_scatter()
-: <a class="el" href="fe__scatter_8cpp.html#a6b8344e12f9005795f93f60ddda26c5c">fe_scatter.cpp</a>
-, <a class="el" href="functions_8h.html#a6b8344e12f9005795f93f60ddda26c5c">functions.h</a>
+: <a class="el" href="functions_8h.html#a6b8344e12f9005795f93f60ddda26c5c">functions.h</a>
+, <a class="el" href="fe__scatter_8cpp.html#a6b8344e12f9005795f93f60ddda26c5c">fe_scatter.cpp</a>
 </li>
 <li>fe_shapeMatrix()
 : <a class="el" href="fe__shape_matrix_8cpp.html#a98fae74dde5fe33a7062e7457a2d3227">fe_shapeMatrix.cpp</a>
 , <a class="el" href="functions_8h.html#a98fae74dde5fe33a7062e7457a2d3227">functions.h</a>
 </li>
 <li>fe_shapes_8()
-: <a class="el" href="fe__shapes_8cpp.html#ab77a3a6d6f6b436d7e8c600bb0869927">fe_shapes.cpp</a>
-, <a class="el" href="functions_8h.html#ab77a3a6d6f6b436d7e8c600bb0869927">functions.h</a>
+: <a class="el" href="functions_8h.html#ab77a3a6d6f6b436d7e8c600bb0869927">functions.h</a>
+, <a class="el" href="fe__shapes_8cpp.html#ab77a3a6d6f6b436d7e8c600bb0869927">fe_shapes.cpp</a>
+</li>
+<li>fe_simple_elastic()
+: <a class="el" href="functions_8h.html#ab0911abb05a0ca06eb4f330890ee0641">functions.h</a>
+, <a class="el" href="fe__simple__elastic_8cpp.html#ab0911abb05a0ca06eb4f330890ee0641">fe_simple_elastic.cpp</a>
 </li>
 <li>fe_stiffness_embed_truss()
-: <a class="el" href="fe__stiffness__embed__truss_8cpp.html#ab3798340a27f0972299b3820aab0ccba">fe_stiffness_embed_truss.cpp</a>
-, <a class="el" href="functions_8h.html#ab3798340a27f0972299b3820aab0ccba">functions.h</a>
+: <a class="el" href="functions_8h.html#ab3798340a27f0972299b3820aab0ccba">functions.h</a>
+, <a class="el" href="fe__stiffness__embed__truss_8cpp.html#ab3798340a27f0972299b3820aab0ccba">fe_stiffness_embed_truss.cpp</a>
 </li>
 <li>fe_stiffness_hex()
-: <a class="el" href="fe__stiffness__hex_8cpp.html#a9378d4fc517465015411134456235a76">fe_stiffness_hex.cpp</a>
-, <a class="el" href="functions_8h.html#a9378d4fc517465015411134456235a76">functions.h</a>
+: <a class="el" href="functions_8h.html#a9378d4fc517465015411134456235a76">functions.h</a>
+, <a class="el" href="fe__stiffness__hex_8cpp.html#a9378d4fc517465015411134456235a76">fe_stiffness_hex.cpp</a>
 </li>
 <li>fe_strDispMatrix()
 : <a class="el" href="functions_8h.html#a4b49d2df4f86e7d0755971ab4bfa48b2">functions.h</a>
@@ -231,8 +278,8 @@ $(function() {
 , <a class="el" href="functions_8h.html#a8c9fd519c93c847cdf52de947964eb67">functions.h</a>
 </li>
 <li>fe_stressUpdate()
-: <a class="el" href="fe__stress_update_8cpp.html#a7d0fd8cfef8b891901eb6f0f780fd9f2">fe_stressUpdate.cpp</a>
-, <a class="el" href="functions_8h.html#a7d0fd8cfef8b891901eb6f0f780fd9f2">functions.h</a>
+: <a class="el" href="functions_8h.html#a7d0fd8cfef8b891901eb6f0f780fd9f2">functions.h</a>
+, <a class="el" href="fe__stress_update_8cpp.html#a7d0fd8cfef8b891901eb6f0f780fd9f2">fe_stressUpdate.cpp</a>
 </li>
 <li>fe_stressUpdate_1d()
 : <a class="el" href="functions_8h.html#a94c1b672863e28bc2c70d08726939929">functions.h</a>
@@ -247,36 +294,46 @@ $(function() {
 , <a class="el" href="fe__transform_mass_8cpp.html#ab747d046148af042245ed13ca720c5ec">fe_transformMass.cpp</a>
 </li>
 <li>fe_updateNodes()
-: <a class="el" href="functions_8h.html#a81ce693c4400df82b8753f25cc2dcabc">functions.h</a>
-, <a class="el" href="fe__update_8cpp.html#a81ce693c4400df82b8753f25cc2dcabc">fe_update.cpp</a>
+: <a class="el" href="fe__update_8cpp.html#a81ce693c4400df82b8753f25cc2dcabc">fe_update.cpp</a>
+, <a class="el" href="functions_8h.html#a81ce693c4400df82b8753f25cc2dcabc">functions.h</a>
 </li>
 <li>fe_voigt2tensor()
-: <a class="el" href="fe__voigt2tensor_8cpp.html#a721a169d6a3d34b5584817ccd1c48cd7">fe_voigt2tensor.cpp</a>
-, <a class="el" href="functions_8h.html#a721a169d6a3d34b5584817ccd1c48cd7">functions.h</a>
+: <a class="el" href="functions_8h.html#a721a169d6a3d34b5584817ccd1c48cd7">functions.h</a>
+, <a class="el" href="fe__voigt2tensor_8cpp.html#a721a169d6a3d34b5584817ccd1c48cd7">fe_voigt2tensor.cpp</a>
 </li>
 <li>fe_vtkWrite_host()
-: <a class="el" href="functions_8h.html#a45a1daa8de18fc5fc463f9b569970245">functions.h</a>
-, <a class="el" href="fe__vtk_8cpp.html#a45a1daa8de18fc5fc463f9b569970245">fe_vtk.cpp</a>
+: <a class="el" href="fe__vtk_8cpp.html#a45a1daa8de18fc5fc463f9b569970245">fe_vtk.cpp</a>
+, <a class="el" href="functions_8h.html#a45a1daa8de18fc5fc463f9b569970245">functions.h</a>
 </li>
 <li>fe_vtkWrite_truss()
 : <a class="el" href="fe__vtk_8cpp.html#a6e838460f501267efe34f29d4cf6d9cd">fe_vtk.cpp</a>
 , <a class="el" href="functions_8h.html#a6e838460f501267efe34f29d4cf6d9cd">functions.h</a>
 </li>
+<li>fe_vtuWrite()
+: <a class="el" href="fe__vtu_8cpp.html#ad631819edfa9ade5d6e379d0085810b6">fe_vtu.cpp</a>
+, <a class="el" href="functions_8h.html#ad631819edfa9ade5d6e379d0085810b6">functions.h</a>
+</li>
 <li>fe_writeElementStress()
-: <a class="el" href="fe__write_8cpp.html#a9dec90c41460e15aa1d8dce787683406">fe_write.cpp</a>
-, <a class="el" href="functions_8h.html#a9dec90c41460e15aa1d8dce787683406">functions.h</a>
+: <a class="el" href="functions_8h.html#a9dec90c41460e15aa1d8dce787683406">functions.h</a>
+, <a class="el" href="fe__write_8cpp.html#a9dec90c41460e15aa1d8dce787683406">fe_write.cpp</a>
 </li>
 </ul>
 
 
 <h3><a id="index_g"></a>- g -</h3><ul>
+<li>get_cpu_time()
+: <a class="el" href="fe__simulation_time_8cpp.html#acdbcf9be8c879dddacc5aed7d31d7c84">fe_simulationTime.cpp</a>
+</li>
+<li>get_wall_time()
+: <a class="el" href="fe__simulation_time_8cpp.html#ae9530b09b27f0c6e5c8836ecbfad493f">fe_simulationTime.cpp</a>
+</li>
 <li>guass_points()
-: <a class="el" href="functions_8h.html#aa6ab8c3298fa10734e299fe8266aed35">functions.h</a>
-, <a class="el" href="fe__guass__points_8cpp.html#aa6ab8c3298fa10734e299fe8266aed35">fe_guass_points.cpp</a>
+: <a class="el" href="fe__guass__points_8cpp.html#aa6ab8c3298fa10734e299fe8266aed35">fe_guass_points.cpp</a>
+, <a class="el" href="functions_8h.html#aa6ab8c3298fa10734e299fe8266aed35">functions.h</a>
 </li>
 <li>guass_points_3d()
-: <a class="el" href="fe__guass__points__3d_8cpp.html#a502e3469e1cc253deb142f46c0789a78">fe_guass_points_3d.cpp</a>
-, <a class="el" href="functions_8h.html#a502e3469e1cc253deb142f46c0789a78">functions.h</a>
+: <a class="el" href="functions_8h.html#a502e3469e1cc253deb142f46c0789a78">functions.h</a>
+, <a class="el" href="fe__guass__points__3d_8cpp.html#a502e3469e1cc253deb142f46c0789a78">fe_guass_points_3d.cpp</a>
 </li>
 <li>guass_weights()
 : <a class="el" href="functions_8h.html#a84dcc9575e861bdb2872c10ba6238ee4">functions.h</a>
@@ -315,11 +372,14 @@ $(function() {
 </li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
 </body>
 </html>

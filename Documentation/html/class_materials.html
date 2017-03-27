@@ -9,6 +9,13 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +31,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PSU-Compbio-FEM
    </div>
-   <div id="projectbrief">Finite element code with support to embedded element technique.</div>
+   <div id="projectbrief">Finite element code with support to FEM</div>
   </td>
  </tr>
  </tbody>
@@ -44,6 +51,21 @@ $(function() {
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_materials.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -58,7 +80,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -143,6 +164,15 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_materials_8cpp_source.html#l00006">6</a> of file <a class="el" href="_materials_8cpp_source.html">Materials.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_materials_a06e59a5742730b2292d39b7488523505_icgraph.png" border="0" usemap="#class_materials_a06e59a5742730b2292d39b7488523505_icgraph" alt=""/></div>
+<map name="class_materials_a06e59a5742730b2292d39b7488523505_icgraph" id="class_materials_a06e59a5742730b2292d39b7488523505_icgraph">
+<area shape="rect" id="node2" href="fe__main_read_8cpp.html#a8a64e915e17f876fe72bedd820e87c33" title="fe_mainRead" alt="" coords="192,5,292,31"/>
+<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="340,5,391,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -236,7 +266,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Variable storing the nodal accelerations of the embedded mesh This is the main file. If you want to submit a new job &ndash; this is where you do it </p>
+<p>This is the main file. If you want to submit a new job &ndash; this is where you do it </p>
+<p>Constants used in the code</p>
 <p>Enter the path address for your job folder</p>
 <p>What is the Problem Dimension - Degrees of Freedom per node?</p>
 <p>Simulation start time</p>
@@ -244,29 +275,34 @@ Friends</h2></td></tr>
 <p>Output frequency &ndash; result ouputs for every 100 timesteps</p>
 <p>Maximum time step</p>
 <p>Reduction factor</p>
+<p>Type of Loading 1 - Force based 2 - Displacement based</p>
 <p>Loading Amplitude</p>
 <p>number of nodes * number of directions</p>
 <p>Degrees of freedom index data</p>
-<p>Number of bounday condition constraints</p>
+<p>Number of boundary condition constraints</p>
 <p>Which nodes are constrained ?</p>
 <p>index corresponding to the constrained degrees of freedom</p>
 <p>Displacements of the constrained degrees of freedom</p>
-<p>Enter your choice for type of simulations below, based on the following options: 1 - Explicit Dynamic 2 - Implicit Dynamic 3 - Static</p>
+<p>Enter your choice for type of simulations below, based on the following options: 1 - Explicit Dynamic 2 - Implicit Dynamic 3 - Static Analysis</p>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00108">108</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00119">119</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/Users/vsg111/Dropbox/Work/Papers/Paper_EEM_Computational/EEM_Dynamic/headers/<a class="el" href="_materials_8h_source.html">Materials.h</a></li>
-<li>/Users/vsg111/Dropbox/Work/Papers/Paper_EEM_Computational/EEM_Dynamic/source/Input-Output/Input/<a class="el" href="_materials_8cpp_source.html">Materials.cpp</a></li>
+<li>headers/<a class="el" href="_materials_8h_source.html">Materials.h</a></li>
+<li>source/Input-Output/Input/<a class="el" href="_materials_8cpp_source.html">Materials.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_materials.html">Materials</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
 </body>
 </html>

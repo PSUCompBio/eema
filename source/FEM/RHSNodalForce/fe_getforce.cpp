@@ -22,7 +22,9 @@ VectorXd fe_getforce(MatrixXd nodes, MatrixXd elements, int ndof, VectorXd u, Ve
 
 	VectorXi nodes_local = VectorXi::Zero(nnel);
 
-	double xcoord[nnel], ycoord[nnel], zcoord[nnel];
+	VectorXd xcoord = VectorXd::Zero(nnel);
+	VectorXd ycoord = VectorXd::Zero(nnel);
+	VectorXd zcoord = VectorXd::Zero(nnel);
 
 	VectorXd f_tot(sdof);
 	f_tot = VectorXd::Zero(sdof);
@@ -40,9 +42,9 @@ VectorXd fe_getforce(MatrixXd nodes, MatrixXd elements, int ndof, VectorXd u, Ve
 				}
 			}
 			nodes_local(j) = elements(i,j+2);
-			xcoord[j] = nodes(g,1);
-			ycoord[j] = nodes(g,2);
-			zcoord[j] = nodes(g,3);
+			xcoord(j) = nodes(g,1);
+			ycoord(j) = nodes(g,2);
+			zcoord(j) = nodes(g,3);
 		}
 
 	VectorXd u_e = VectorXd::Zero(edof); // element displacements
@@ -178,7 +180,12 @@ VectorXd fe_getforce(MatrixXd nodes, MatrixXd elements, int ndof, VectorXd u, Ve
 
 		// Host element internal nodal forces
 
+		VectorXd nat_coord = VectorXd::Zero(3);
+		nat_coord(0) = 0.005;
+		nat_coord(1) = 0.005;
+		nat_coord(2) = 0.005;
 
+		VectorXd iso_coord = fe_newtonRhapson(nat_coord,xcoord,ycoord,zcoord);
 
 	/* TRUSS ANALYSIS - WORKS FOR ONLY SINGLE ELEMENT PROBLEMS
 	// truss element nodal force

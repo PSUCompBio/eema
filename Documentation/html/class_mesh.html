@@ -9,6 +9,13 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +31,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PSU-Compbio-FEM
    </div>
-   <div id="projectbrief">Finite element code with support to embedded element technique.</div>
+   <div id="projectbrief">Finite element code with support to FEM</div>
   </td>
  </tr>
  </tbody>
@@ -44,6 +51,21 @@ $(function() {
 });
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('class_mesh.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -58,7 +80,6 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -126,6 +147,16 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_mesh_8cpp_source.html#l00023">23</a> of file <a class="el" href="_mesh_8cpp_source.html">Mesh.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_mesh_af242dbb4627c09410975a0e67389e0de_icgraph.png" border="0" usemap="#class_mesh_af242dbb4627c09410975a0e67389e0de_icgraph" alt=""/></div>
+<map name="class_mesh_af242dbb4627c09410975a0e67389e0de_icgraph" id="class_mesh_af242dbb4627c09410975a0e67389e0de_icgraph">
+<area shape="rect" id="node2" href="fe__embed__preprocessing_8cpp.html#a840ddc7df1916f6b5dfbb141adac32d3" title="fe_embed_preprocessing" alt="" coords="215,5,387,31"/>
+<area shape="rect" id="node3" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="237,55,365,80"/>
+<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="435,55,486,80"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -146,6 +177,16 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_mesh_8cpp_source.html#l00019">19</a> of file <a class="el" href="_mesh_8cpp_source.html">Mesh.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_mesh_a52ecce406bbef80cbf3610db3ea5ea40_icgraph.png" border="0" usemap="#class_mesh_a52ecce406bbef80cbf3610db3ea5ea40_icgraph" alt=""/></div>
+<map name="class_mesh_a52ecce406bbef80cbf3610db3ea5ea40_icgraph" id="class_mesh_a52ecce406bbef80cbf3610db3ea5ea40_icgraph">
+<area shape="rect" id="node2" href="fe__embed__preprocessing_8cpp.html#a840ddc7df1916f6b5dfbb141adac32d3" title="fe_embed_preprocessing" alt="" coords="198,5,370,31"/>
+<area shape="rect" id="node3" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="220,55,348,80"/>
+<area shape="rect" id="node4" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="418,55,468,80"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -189,6 +230,23 @@ Public Member Functions</h2></td></tr>
 <p>find_in_matrix gives the row number of node in nodes matrix </p>
 
 <p class="definition">Definition at line <a class="el" href="_mesh_8cpp_source.html#l00027">27</a> of file <a class="el" href="_mesh_8cpp_source.html">Mesh.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_mesh_aa8a6f260e9589be4c0a2fcc146e696d5_cgraph.png" border="0" usemap="#class_mesh_aa8a6f260e9589be4c0a2fcc146e696d5_cgraph" alt=""/></div>
+<map name="class_mesh_aa8a6f260e9589be4c0a2fcc146e696d5_cgraph" id="class_mesh_aa8a6f260e9589be4c0a2fcc146e696d5_cgraph">
+<area shape="rect" id="node2" href="functions_8h.html#a983304137f9a961469a558437d5d2d59" title="fe_find" alt="" coords="213,5,275,31"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_mesh_aa8a6f260e9589be4c0a2fcc146e696d5_icgraph.png" border="0" usemap="#class_mesh_aa8a6f260e9589be4c0a2fcc146e696d5_icgraph" alt=""/></div>
+<map name="class_mesh_aa8a6f260e9589be4c0a2fcc146e696d5_icgraph" id="class_mesh_aa8a6f260e9589be4c0a2fcc146e696d5_icgraph">
+<area shape="rect" id="node2" href="fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="213,5,341,31"/>
+<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="389,5,440,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -219,19 +277,32 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="_mesh_8cpp_source.html#l00006">6</a> of file <a class="el" href="_mesh_8cpp_source.html">Mesh.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_mesh_a2e0931c78a7ef01ccc9bf8f0dd74afb0_icgraph.png" border="0" usemap="#class_mesh_a2e0931c78a7ef01ccc9bf8f0dd74afb0_icgraph" alt=""/></div>
+<map name="class_mesh_a2e0931c78a7ef01ccc9bf8f0dd74afb0_icgraph" id="class_mesh_a2e0931c78a7ef01ccc9bf8f0dd74afb0_icgraph">
+<area shape="rect" id="node2" href="fe__main_read_8cpp.html#a8a64e915e17f876fe72bedd820e87c33" title="fe_mainRead" alt="" coords="174,5,275,31"/>
+<area shape="rect" id="node3" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="323,5,373,31"/>
+</map>
+</div>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/Users/vsg111/Dropbox/Work/Papers/Paper_EEM_Computational/EEM_Dynamic/headers/<a class="el" href="_mesh_8h_source.html">Mesh.h</a></li>
-<li>/Users/vsg111/Dropbox/Work/Papers/Paper_EEM_Computational/EEM_Dynamic/source/Input-Output/Input/<a class="el" href="_mesh_8cpp_source.html">Mesh.cpp</a></li>
+<li>headers/<a class="el" href="_mesh_8h_source.html">Mesh.h</a></li>
+<li>source/Input-Output/Input/<a class="el" href="_mesh_8cpp_source.html">Mesh.cpp</a></li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_mesh.html">Mesh</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
 </body>
 </html>

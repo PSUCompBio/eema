@@ -9,6 +9,13 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -24,7 +31,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">PSU-Compbio-FEM
    </div>
-   <div id="projectbrief">Finite element code with support to embedded element technique.</div>
+   <div id="projectbrief">Finite element code with support to FEM</div>
   </td>
  </tr>
  </tbody>
@@ -45,6 +52,20 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('globals_vars.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -90,6 +111,14 @@ $(function() {
 <li>d
 : <a class="el" href="fe__det_matrix_8cpp.html#a873684cefeb665f3d5e6b495de57fc0d">fe_detMatrix.cpp</a>
 </li>
+<li>dc_curve
+: <a class="el" href="functions_8h.html#a7f448b56fa6e59123cfe5fcf0082e8de">functions.h</a>
+, <a class="el" href="main_8cpp.html#a7f448b56fa6e59123cfe5fcf0082e8de">main.cpp</a>
+</li>
+<li>dcdof
+: <a class="el" href="functions_8h.html#a769eb6abca3cfe15c55c120f68bf1461">functions.h</a>
+, <a class="el" href="main_8cpp.html#a769eb6abca3cfe15c55c120f68bf1461">main.cpp</a>
+</li>
 <li>dt_initial
 : <a class="el" href="functions_8h.html#a068c627ac33cf3c721d8f28eab205a83">functions.h</a>
 , <a class="el" href="main_8cpp.html#a068c627ac33cf3c721d8f28eab205a83">main.cpp</a>
@@ -118,17 +147,21 @@ $(function() {
 : <a class="el" href="functions_8h.html#a1ae14dd64a0bd3139f1e153dc5e48016">functions.h</a>
 , <a class="el" href="main_8cpp.html#a1ae14dd64a0bd3139f1e153dc5e48016">main.cpp</a>
 </li>
+<li>eps_nr
+: <a class="el" href="functions_8h.html#ad3d80cd8d6370090eb6cc57a523bcd6c">functions.h</a>
+, <a class="el" href="main_8cpp.html#ad3d80cd8d6370090eb6cc57a523bcd6c">main.cpp</a>
+</li>
 </ul>
 
 
 <h3><a id="index_f"></a>- f -</h3><ul>
+<li>fc_curve
+: <a class="el" href="functions_8h.html#a51e2def539afa6941aecc0db01966133">functions.h</a>
+, <a class="el" href="main_8cpp.html#a51e2def539afa6941aecc0db01966133">main.cpp</a>
+</li>
 <li>fcdof
 : <a class="el" href="functions_8h.html#ab49fb3bb15f9624e4ffb12a75c7db55d">functions.h</a>
 , <a class="el" href="main_8cpp.html#ab49fb3bb15f9624e4ffb12a75c7db55d">main.cpp</a>
-</li>
-<li>fcload
-: <a class="el" href="functions_8h.html#ac1f3d4744efb6ce0d6c5b89774ba91aa">functions.h</a>
-, <a class="el" href="main_8cpp.html#ac1f3d4744efb6ce0d6c5b89774ba91aa">main.cpp</a>
 </li>
 <li>fi_curr
 : <a class="el" href="functions_8h.html#a7a1410ed488bb0dd5c10344c4c4951e6">functions.h</a>
@@ -150,9 +183,17 @@ $(function() {
 
 
 <h3><a id="index_i"></a>- i -</h3><ul>
+<li>input_disp_amp
+: <a class="el" href="functions_8h.html#a8610c01521192e9f3677b50b275ff2bf">functions.h</a>
+, <a class="el" href="main_8cpp.html#a8610c01521192e9f3677b50b275ff2bf">main.cpp</a>
+</li>
 <li>input_load_amp
 : <a class="el" href="functions_8h.html#a41b0f465c44fe8b2de43cfaa05bb7880">functions.h</a>
 , <a class="el" href="main_8cpp.html#a41b0f465c44fe8b2de43cfaa05bb7880">main.cpp</a>
+</li>
+<li>iterations_nr
+: <a class="el" href="functions_8h.html#a43f0d7a4e9f3ece65db80d07bb79192f">functions.h</a>
+, <a class="el" href="main_8cpp.html#a43f0d7a4e9f3ece65db80d07bb79192f">main.cpp</a>
 </li>
 </ul>
 
@@ -189,6 +230,14 @@ $(function() {
 <li>num_constraints
 : <a class="el" href="functions_8h.html#abd406f244d4145ae5baf4ea059b5232d">functions.h</a>
 , <a class="el" href="main_8cpp.html#abd406f244d4145ae5baf4ea059b5232d">main.cpp</a>
+</li>
+<li>num_disp_constraints
+: <a class="el" href="functions_8h.html#acfafb3651a4fe2c074c247d95f28635a">functions.h</a>
+, <a class="el" href="main_8cpp.html#acfafb3651a4fe2c074c247d95f28635a">main.cpp</a>
+</li>
+<li>num_load_constraints
+: <a class="el" href="functions_8h.html#a724026f5fcdde8a7ee4936d710ac415d">functions.h</a>
+, <a class="el" href="main_8cpp.html#a724026f5fcdde8a7ee4936d710ac415d">main.cpp</a>
 </li>
 <li>num_meshes
 : <a class="el" href="functions_8h.html#a509bc84434af1eff0173e4a71bd758ac">functions.h</a>
@@ -256,11 +305,14 @@ $(function() {
 </li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.13
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
 </body>
 </html>
