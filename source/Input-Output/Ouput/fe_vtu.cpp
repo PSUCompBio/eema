@@ -24,7 +24,7 @@ void fe_vtuWrite(std::string output, int time_step, MatrixXd nodes, MatrixXd ele
     myfile << "\t\t\t\t<DataArray type=\"Float32\" NumberOfComponents=\"3\" format=\"ascii\">\n";
     for(int i=0;i<nodes.rows();i++){
         	for(int j=1;j<nodes.cols();j++){
-				myfile<<"\t\t\t\t\t"<<std::fixed<<std::setprecision(10)<<nodes(i,j)<<" ";
+				myfile<<"\t\t\t\t\t"<<std::scientific<<std::setprecision(10)<<nodes(i,j)<<" ";
         	}
         	myfile<<"\n";
     }
@@ -62,7 +62,7 @@ void fe_vtuWrite(std::string output, int time_step, MatrixXd nodes, MatrixXd ele
     myfile << "\t\t\t\t<DataArray type=\"Float32\" Name=\"Displacement\" NumberOfComponents=\"3\" ComponentName0=\"X\" ComponentName1=\"Y\" ComponentName2=\"Z\" format=\"ascii\">\n";
     int num = 0;
     for(int i=0;i<nodes.rows();i++){
-        	myfile << "\t\t\t\t\t" << std::fixed << std::setprecision(10) << U_host(num) << " " << U_host(num+1) << " " << U_host(num+2) << " \n";
+        	myfile << "\t\t\t\t\t" << std::scientific << std::setprecision(10) << U_host(num) << " " << U_host(num+1) << " " << U_host(num+2) << " \n";
         	num = num+3;
     }
     myfile << "\t\t\t\t</DataArray>\n";
@@ -72,16 +72,16 @@ void fe_vtuWrite(std::string output, int time_step, MatrixXd nodes, MatrixXd ele
     myfile << "\t\t\t<CellData>\n";
     myfile << "\t\t\t\t<DataArray type=\"Float32\" Name=\"Stress (Cauchy)\" NumberOfComponents=\"9\" ComponentName0=\"XX\" ComponentName1=\"XY\" ComponentName2=\"XZ\" ComponentName3=\"YX\" ComponentName4=\"YY\" ComponentName5=\"YZ\" ComponentName6=\"ZX\" ComponentName7=\"ZY\" ComponentName8=\"ZZ\" format=\"ascii\">\n";
     for(int i=0;i<element_stress_host.rows();i++){
-       	    myfile << "\t\t\t\t\t" << std::fixed << std::setprecision(10) << element_stress_host(i,0) << " " << element_stress_host(i,1) << " " << element_stress_host(i,2) << "\n";
-       	    myfile << "\t\t\t\t\t" << std::fixed << std::setprecision(10) << element_stress_host(i,3) << " " << element_stress_host(i,4) << " " << element_stress_host(i,5) << "\n";
-        	myfile << "\t\t\t\t\t" << std::fixed << std::setprecision(10) << element_stress_host(i,6) << " " << element_stress_host(i,7) << " " << element_stress_host(i,8) << "\n";
+       	    myfile << "\t\t\t\t\t" << std::scientific << std::setprecision(10) << element_stress_host(i,0) << " " << element_stress_host(i,1) << " " << element_stress_host(i,2) << "\n";
+       	    myfile << "\t\t\t\t\t" << std::scientific << std::setprecision(10) << element_stress_host(i,3) << " " << element_stress_host(i,4) << " " << element_stress_host(i,5) << "\n";
+        	myfile << "\t\t\t\t\t" << std::scientific << std::setprecision(10) << element_stress_host(i,6) << " " << element_stress_host(i,7) << " " << element_stress_host(i,8) << "\n";
     }
     myfile << "\t\t\t\t</DataArray>\n";
     myfile << "\t\t\t\t<DataArray type=\"Float32\" Name=\"Strain (Logarithmic)\" NumberOfComponents=\"9\" ComponentName0=\"XX\" ComponentName1=\"XY\" ComponentName2=\"XZ\" ComponentName3=\"YX\" ComponentName4=\"YY\" ComponentName5=\"YZ\" ComponentName6=\"ZX\" ComponentName7=\"ZY\" ComponentName8=\"ZZ\" format=\"ascii\">\n";
     for(int i=0;i<element_stress_host.rows();i++){
-       	    myfile << "\t\t\t\t\t" << std::fixed << std::setprecision(10) << element_strain_host(i,0) << " " << element_strain_host(i,1) << " " << element_strain_host(i,2) << "\n";
-       	    myfile << "\t\t\t\t\t" << std::fixed << std::setprecision(10) << element_strain_host(i,3) << " " << element_strain_host(i,4) << " " << element_strain_host(i,5) << "\n";
-        	myfile << "\t\t\t\t\t" << std::fixed << std::setprecision(10) << element_strain_host(i,6) << " " << element_strain_host(i,7) << " " << element_strain_host(i,8) << "\n";
+       	    myfile << "\t\t\t\t\t" << std::scientific << std::setprecision(10) << element_strain_host(i,0) << " " << element_strain_host(i,1) << " " << element_strain_host(i,2) << "\n";
+       	    myfile << "\t\t\t\t\t" << std::scientific << std::setprecision(10) << element_strain_host(i,3) << " " << element_strain_host(i,4) << " " << element_strain_host(i,5) << "\n";
+        	myfile << "\t\t\t\t\t" << std::scientific << std::setprecision(10) << element_strain_host(i,6) << " " << element_strain_host(i,7) << " " << element_strain_host(i,8) << "\n";
     }
     myfile << "\t\t\t\t</DataArray>\n";
     myfile << "\t\t\t</CellData>\n"; 
