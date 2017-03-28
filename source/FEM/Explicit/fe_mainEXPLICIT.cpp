@@ -229,11 +229,7 @@ void fe_mainEXPLICIT(){
 
 		/** Writing the output to VTK files */
 		// updated_nodes = fe_updateNodes(nodes,U);
-
-		// std::cout<<"Z Strain: "<<(U(26)/2)<<"\n";
-		std::cout << "Z displacement: "<<(U(14))<<"\n";
-
-    	U_host = U;
+	    	U_host = U;
 		V_host = V;
 		A_host = A;
 
@@ -242,16 +238,16 @@ void fe_mainEXPLICIT(){
 			fe_vtuWrite("eem_truss",size_counter,nodes_truss,elements_truss);
 			//fe_vtkWrite_host("eem_matrix",1,5,size_counter,nodes,elements);
 			//fe_vtkWrite_truss("eem_truss",1,5,size_counter,nodes_truss,elements_truss);
+                        std::cout <<"Timestep Value = "<<std::setw(5)<<std::scientific<<std::setprecision(1)<<dT
+				  <<"  Current Time = "<<std::setw(5)<<std::setprecision(1)<< t 
+				  <<"  Timestep Number = "<<(size_counter) 
+				  <<"  CPU Time = " <<std::setw(5)<<std::setprecision(1)
+					<< ((float)ds/CLOCKS_PER_SEC) << "s \n";
 		}
-
 		s_prev = s;
 		s = clock();
 		ds = s - s_prev;
-
-		std::cout << "Timestep Value = "<<dT<<" ; Current Time = "<< t << " ; Timestep Number = " << (size_counter) << "; CPU Time (Step) = " << ((float)ds/CLOCKS_PER_SEC) << "s \n";
-
 		size_counter = size_counter+1;
-
 	}
 
 
