@@ -23,10 +23,10 @@ void fe_vtuWrite(std::string output, int time_step, MatrixXd nodes, MatrixXd ele
     myfile << "\t\t\t<Points>\n";
     myfile << "\t\t\t\t<DataArray type=\"Float32\" NumberOfComponents=\"3\" format=\"ascii\">\n";
     for(int i=0;i<nodes.rows();i++){
-        	for(int j=1;j<nodes.cols();j++){
-				myfile<<"\t\t\t\t\t"<<std::scientific<<std::setprecision(10)<<nodes(i,j)<<" ";
-        	}
-        	myfile<<"\n";
+	myfile<<"\t\t\t\t\t"<<std::setw(10)<<std::scientific<<std::setprecision(8)
+		<<nodes(i,0)<<" "
+		<<nodes(i,1)<<" "
+		<<nodes(i,2)<<"\n";
     }
     myfile << "\t\t\t\t</DataArray>\n";
     myfile << "\t\t\t</Points>\n";
@@ -37,7 +37,7 @@ void fe_vtuWrite(std::string output, int time_step, MatrixXd nodes, MatrixXd ele
     for(int i=0;i<elements.rows();i++){
                 myfile << "\t\t\t\t\t" ;
         	    for(int j=2;j<elements.cols();j++){
-				    myfile<<std::setprecision(0)<<elements(i,j)<<"\t";
+			 myfile<<elements(i,j)<<"\t";
                 }
     }
     myfile<<"\n";
@@ -59,10 +59,15 @@ void fe_vtuWrite(std::string output, int time_step, MatrixXd nodes, MatrixXd ele
 
     /** Point Vector Data - Displacements */
     myfile << "\t\t\t<PointData>\n";
-    myfile << "\t\t\t\t<DataArray type=\"Float32\" Name=\"Displacement\" NumberOfComponents=\"3\" ComponentName0=\"X\" ComponentName1=\"Y\" ComponentName2=\"Z\" format=\"ascii\">\n";
+    myfile << "\t\t\t\t<DataArray type=\"Float32\" Name=\"Displacement\" " 
+		<<"NumberOfComponents=\"3\" ComponentName0=\"X\" " 
+		<<"ComponentName1=\"Y\" ComponentName2=\"Z\" format=\"ascii\">\n" ;
     int num = 0;
     for(int i=0;i<nodes.rows();i++){
-        	myfile << "\t\t\t\t\t" << std::scientific << std::setprecision(10) << U_host(num) << " " << U_host(num+1) << " " << U_host(num+2) << " \n";
+        myfile << "\t\t\t\t\t" << std::setw(10)<<std::scientific << std::setprecision(10) 
+		<<U_host(num) << " " 
+		<< U_host(num+1) << " " 
+		<< U_host(num+2) << " \n";
         	num = num+3;
     }
     myfile << "\t\t\t\t</DataArray>\n";

@@ -151,7 +151,7 @@ int main(){
 	// Initialize Time Variables
 	t_start = 0; /** Simulation start time */
 	t_end = 0.001; /** Simulation end time */
-	output_frequency = 50; /** Output frequency -- result ouputs for every 100 timesteps */
+	output_frequency = 20; /** Output frequency -- result ouputs for every 100 timesteps */
 	dt_initial = 1*pow(10,-6); /** Maximum time step */
 	dt_min = dt_initial;
 	reduction = 0.5; /** Reduction factor */
