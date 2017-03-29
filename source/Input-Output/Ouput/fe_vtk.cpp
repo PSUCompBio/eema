@@ -3,7 +3,7 @@
 
 using namespace Eigen;
 
-void fe_vtkWrite_host(std::string output,int format_choice,int mesh_choice,int time_step,MatrixXd nodes, MatrixXd elements){
+void fe_vtkWrite_host(std::string output,int format_choice,int mesh_choice,int time_step,MatrixXd nodes, MatrixXi elements){
 
 	std::string name;
 
@@ -135,7 +135,7 @@ void fe_vtkWrite_host(std::string output,int format_choice,int mesh_choice,int t
 	}
 }
 
-void fe_vtkWrite_truss(std::string output,int format_choice,int mesh_choice,int time_step,MatrixXd nodes, MatrixXd elements){
+void fe_vtkWrite_truss(std::string output,int format_choice,int mesh_choice,int time_step,MatrixXd nodes, MatrixXi elements){
 
 	std::string name;
 

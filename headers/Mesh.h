@@ -22,15 +22,15 @@ using namespace Eigen;
 
 class Mesh{
 	MatrixXd nodes;
-	MatrixXd elements;
+	MatrixXi elements;
 	MatrixXd nodes_new;
-	MatrixXd elements_new;
+	MatrixXi elements_new;
 public:
-	void readMesh(MatrixXd n, MatrixXd e);
+	void readMesh(MatrixXd n, MatrixXi e);
 	MatrixXd getNodes();
-	MatrixXd getElements();
+	MatrixXi getElements();
 	MatrixXd getNewNodes();
-	MatrixXd getNewElements();
+	MatrixXi getNewElements();
 	void preprocessMesh();
 };
 

@@ -129,7 +129,7 @@ double eps_energy;
  * This is the main file. If you want to submit a new job -- this is where you do it
  */
 
-int main(){
+int main(int argc, char **argv){
 
 	clock_t t;
 	t = clock();
@@ -140,18 +140,20 @@ int main(){
 	eps_energy = 0.01;
 
 	/** Enter the path address for your job folder */
-	home_path = "./examples/example-1/";
-	job_file = "input.inp";
+
+	std::cout << argv[0] << "\n";
+	home_path = argv[1];
+	job_file = argv[2];
 
 	/** What is the Problem Dimension - Degrees of Freedom per node? */
 	ndof = 3; // DOFs per node
 
-	fe_mainRead(home_path+job_file);
+	fe_mainRead(home_path+"/"+job_file);
 
 	// Initialize Time Variables
 	t_start = 0; /** Simulation start time */
 	t_end = 0.001; /** Simulation end time */
-	output_frequency = 50; /** Output frequency -- result ouputs for every 100 timesteps */
+	output_frequency = 20; /** Number of output files desired */
 	dt_initial = 1*pow(10,-6); /** Maximum time step */
 	dt_min = dt_initial;
 	reduction = 0.5; /** Reduction factor */
@@ -160,7 +162,7 @@ int main(){
 	   1 - Force based
 	   2 - Displacement based
 	 */
-	int type_of_loading = 1;
+	int type_of_loading = 2;
 
 	if(type_of_loading == 1) {
 		// Input the loading conditions
@@ -173,7 +175,7 @@ int main(){
 
 	if(type_of_loading == 2) {
 		// Nodes upon which displacement is forced
-		input_disp_amp = 0.001;
+		input_disp_amp = 0.0025;
 		num_disp_constraints = 4;
 		dcdof = VectorXi::Zero(num_disp_constraints);
 		dcdof << 14, 17, 20, 23;

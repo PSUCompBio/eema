@@ -4,8 +4,8 @@
 		<Piece NumberOfPoints="2" NumberOfCells="1">
 			<Points>
 				<DataArray type="Float32" NumberOfComponents="3" format="ascii">
-					0.0025000000 					0.0025000000 					0.0000000000 
-					0.0025000000 					0.0025000000 					0.0050000000 
+					2.5000000000e-03 					2.5000000000e-03 					0.0000000000e+00 
+					2.5000000000e-03 					2.5000000000e-03 					5.0000000000e-03 
 				</DataArray>
 			</Points>
 			<Cells>
@@ -21,20 +21,20 @@
 			</Cells>
 			<PointData>
 				<DataArray type="Float32" Name="Displacement" NumberOfComponents="3" ComponentName0="X" ComponentName1="Y" ComponentName2="Z" format="ascii">
-					0.0000000000 0.0000000000 0.0000000000 
-					-0.0001594653 0.0000000000 0.0000000000 
+					0.0000000000e+00 0.0000000000e+00 0.0000000000e+00 
+					-6.7911146414e-04 0.0000000000e+00 0.0000000000e+00 
 				</DataArray>
 			</PointData>
 			<CellData>
 				<DataArray type="Float32" Name="Stress (Cauchy)" NumberOfComponents="9" ComponentName0="XX" ComponentName1="XY" ComponentName2="XZ" ComponentName3="YX" ComponentName4="YY" ComponentName5="YZ" ComponentName6="ZX" ComponentName7="ZY" ComponentName8="ZZ" format="ascii">
-					2837.1567869639 0.0000000000 -0.0000000000
-					0.0000000000 2837.1567869639 -0.0000000000
-					-0.0000000000 -0.0000000000 3616.7090106954
+					2.4353393381e+04 3.1873775716e-14 -4.1024136312e-31
+					3.1873775716e-14 2.4353393381e+04 1.2240351552e-13
+					-4.1024136312e-31 1.2240351552e-13 2.8326530605e+04
 				</DataArray>
 				<DataArray type="Float32" Name="Strain (Logarithmic)" NumberOfComponents="9" ComponentName0="XX" ComponentName1="XY" ComponentName2="XZ" ComponentName3="YX" ComponentName4="YY" ComponentName5="YZ" ComponentName6="ZX" ComponentName7="ZY" ComponentName8="ZZ" format="ascii">
-					-0.0324127165 0.0000000000 0.0000000000
-					0.0000000000 -0.0324127165 0.0000000000
-					0.0000000000 0.0000000000 0.0648269814
+					-1.4597685173e-01 0.0000000000e+00 0.0000000000e+00
+					0.0000000000e+00 -1.4597685173e-01 0.0000000000e+00
+					0.0000000000e+00 0.0000000000e+00 3.5417181372e-01
 				</DataArray>
 			</CellData>
 		</Piece>

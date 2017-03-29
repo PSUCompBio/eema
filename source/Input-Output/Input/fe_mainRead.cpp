@@ -43,7 +43,7 @@ void fe_mainRead(std::string file){
 
           while(line!="*END_MESH"){
             MatrixXd nodes;
-            MatrixXd elements;
+            MatrixXi elements;
 
             if(line=="*NODES"){
               int rows = 0;
@@ -64,7 +64,7 @@ void fe_mainRead(std::string file){
               int cols = 0;
               myfile1 >> rows;
               myfile1 >> cols;
-              elements = MatrixXd::Zero(rows,cols+2);
+              elements = MatrixXi::Zero(rows,cols+2);
               for(int i=0;i<rows;i++){
                 for(int j=0;j<(cols+2);j++){
                   myfile1 >> elements(i,j);

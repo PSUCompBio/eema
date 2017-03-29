@@ -3,7 +3,7 @@
 using namespace Eigen;
 
 /** For all elements -- this function calculates the minimum critical timestep */
-double fe_getTimeStep(MatrixXd nodes, MatrixXd elements, int ndof, VectorXd u, VectorXd v, VectorXd fext){
+double fe_getTimeStep(MatrixXd nodes, MatrixXi elements, int ndof, VectorXd u, VectorXd v, VectorXd fext){
 
 	double deltaT_crit = 0;
 

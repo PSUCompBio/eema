@@ -29,7 +29,6 @@ private:
 	double data;
 	friend double fe_get_mats(int matl_code, int obj_interest);
 	friend std::string fe_get_model(int matl_code);
-	friend int main();
 public:
 	void readMats(int a, std::string b, VectorXd c);
 	void printMats();
