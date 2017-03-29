@@ -32,6 +32,7 @@ University Park, Pennsylvania, USA.
 Email: reuben.kraft@psu.edu
 
 ## How to run the code?
+
 -Step-1: Build the code using the command "make" or "make all". 
          If the system you are running the code has multiple processors, 
          one can use the command "make -j <number of processors>".
@@ -39,3 +40,4 @@ Email: reuben.kraft@psu.edu
 
 -Step-2: Run the code using the command "./main <JOB-HOME-FOLDER> <JOB-INPUT-FILE-NAME>"
 	 for example: ./main examples/example-1 input.inp
+
