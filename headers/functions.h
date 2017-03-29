@@ -176,10 +176,10 @@ MatrixXd fe_mass_hex(double rho, int ndof, int nnel, int edof, VectorXd xcoord, 
 VectorXd fe_stressUpdate(VectorXd dndx, VectorXd dndy, VectorXd dndz, MatrixXd disp_mat, VectorXd u, int opt, int return_opt);
 
 /** Calculates the resultant force vector - Box 6.1 of Belytschko */
-VectorXd fe_getforce(MatrixXd nodes, MatrixXd elements, int ndof, VectorXd u, VectorXd v, VectorXd fext, int size_counter, MatrixXd nodes_truss, MatrixXd elements_truss);
+VectorXd fe_getforce(MatrixXd nodes, MatrixXi elements, int ndof, VectorXd u, VectorXd v, VectorXd fext, int size_counter, MatrixXd nodes_truss, MatrixXi elements_truss);
 
 /** Outputs the critical time step based on all the elements in a FE analysis */
-double fe_getTimeStep(MatrixXd nodes, MatrixXd elements, int ndof, VectorXd u, VectorXd v, VectorXd fext);
+double fe_getTimeStep(MatrixXd nodes, MatrixXi elements, int ndof, VectorXd u, VectorXd v, VectorXd fext);
 
 /** Calculates the time step for a single element based on its dimensions and material model */
 double fe_calTimeStep(VectorXd xcoord, VectorXd ycoord, VectorXd zcoord, double E, double nu, double rho);
@@ -222,10 +222,10 @@ MatrixXd fe_mass_truss(double rho,double A_truss,int edof,MatrixXd nodes,MatrixX
 VectorXd fe_stressUpdate_1d(VectorXd dndx, VectorXd dndy, VectorXd dndz, VectorXd u_e, int opt, MatrixXd nodes);
 
 /** Writes VTK files for host mesh */
-void fe_vtkWrite_host(std::string output,int format_choice,int mesh_choice,int time_step,MatrixXd nodes, MatrixXd elements);
+void fe_vtkWrite_host(std::string output,int format_choice,int mesh_choice,int time_step,MatrixXd nodes, MatrixXi elements);
 
 /** Writes VTK files for truss mesh */
-void fe_vtkWrite_truss(std::string output,int format_choice,int mesh_choice,int time_step,MatrixXd nodes, MatrixXd elements);
+void fe_vtkWrite_truss(std::string output,int format_choice,int mesh_choice,int time_step,MatrixXd nodes, MatrixXi elements);
 
 /** Updates the nodal coordinates based on the displacements */
 MatrixXd fe_updateNodes(MatrixXd nodes,VectorXd displacements);
@@ -280,7 +280,7 @@ VectorXd fe_simple_elastic(VectorXd dndx, VectorXd dndy, VectorXd dndz, MatrixXd
 
 VectorXd fe_saintvenant_elastic(VectorXd dndx, VectorXd dndy, VectorXd dndz, VectorXd u, int opt, int return_opt);
 
-void fe_vtuWrite(std::string output, int time_step, MatrixXd nodes, MatrixXd elements);
+void fe_vtuWrite(std::string output, int time_step, Mesh mesh1);
 
 /* Date: March 26, 2017 */
 

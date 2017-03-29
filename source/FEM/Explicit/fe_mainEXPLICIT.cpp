@@ -12,9 +12,9 @@ void fe_mainEXPLICIT(){
 	}
 
 	MatrixXd nodes = mesh[0].getNewNodes();
-	MatrixXd elements = mesh[0].getNewElements();
+	MatrixXi elements = mesh[0].getNewElements();
 	MatrixXd nodes_truss = mesh[1].getNewNodes();
-	MatrixXd elements_truss = mesh[1].getNewElements();
+	MatrixXi elements_truss = mesh[1].getNewElements();
 
 	// Following variables - Only for Hex Element
 	int nel = elements.rows(); /*! number of elements */
@@ -42,6 +42,8 @@ void fe_mainEXPLICIT(){
 	double t_half = 0; // t(n + 1/2)
 	double t=t_start;
 	int size_counter = 0; // time step count
+	int time_temp_1 = 1;
+	double output_temp_1 = ((double)(t_end/output_frequency)); 
 
 	VectorXd A = VectorXd::Zero(sdof); // Acceleration Vector
 	MatrixXd AA = MatrixXd::Zero(A.size(),1); // Matrix storing nodal accln at different time steps
@@ -131,10 +133,9 @@ void fe_mainEXPLICIT(){
 // ----------------------------------------------------------------------------
 	//Step-2: getforce step from Belytschko
 	F_net = fe_getforce(nodes,elements,ndof,U,V,fe,size_counter,nodes_truss,elements_truss);
-	fe_vtuWrite("eem_matrix",size_counter,nodes,elements);
-	fe_vtuWrite("eem_truss",size_counter,nodes_truss,elements_truss);
-	fe_vtkWrite_host("eem_matrix",1,5,size_counter,nodes,elements);
-	fe_vtkWrite_truss("eem_truss",1,5,size_counter,nodes_truss,elements_truss);
+	fe_vtuWrite("eem_matrix",size_counter,mesh[0]);
+	fe_vtuWrite("eem_truss",size_counter,mesh[1]);
+	
 
 	dT = reduction * fe_getTimeStep(nodes,elements,ndof,U,V,fe);
 	if(dT>dt_min){
@@ -206,7 +207,6 @@ void fe_mainEXPLICIT(){
 		double old_ext_energy = W_ext(size_counter-1);
 		double new_ext_energy = old_ext_energy + 0.5*(del_U.dot(fe_prev + fe_curr));
 		fe_prev = fe_curr;
-		U_prev = U_curr;
 		W_ext.conservativeResize(W_ext.size()+1);
 		W_ext(size_counter) = new_ext_energy;
 
@@ -223,19 +223,25 @@ void fe_mainEXPLICIT(){
 			std::cout << "**********************************************" << std::endl;
 			std::cout << "ALERT: INSTABILITIES IN THE SYSTEM DETECTED \n BASED ON THE ENERGY BALANCE CHECK \n";
 			std::cout << "**********************************************" << std::endl;
-			std::exit(-1);
+			// std::exit(-1);
 		}
 
 
 		/** Writing the output to VTK files */
 		// updated_nodes = fe_updateNodes(nodes,U);
-	    	U_host = U;
+
+
+		// std::cout<<"Z Strain: "<<(U(26)/2)<<"\n";
+		// std::cout << "Z displacement: "<<(U(14))<<"\n";
+
+    U_host = U;
 		V_host = V;
 		A_host = A;
 
-		if(((size_counter) % (output_frequency))==0){
-			fe_vtuWrite("eem_matrix",size_counter,nodes,elements);
-			fe_vtuWrite("eem_truss",size_counter,nodes_truss,elements_truss);
+		if(t >= (time_temp_1 * (output_temp_1))){
+			fe_vtuWrite("eem_matrix",size_counter,mesh[0]);
+			fe_vtuWrite("eem_truss",size_counter,mesh[1]);
+			time_temp_1 = time_temp_1 + 1;
 			//fe_vtkWrite_host("eem_matrix",1,5,size_counter,nodes,elements);
 			//fe_vtkWrite_truss("eem_truss",1,5,size_counter,nodes_truss,elements_truss);
                         std::cout <<"Timestep Value = "<<std::setw(5)<<std::scientific<<std::setprecision(1)<<dT

@@ -2,8 +2,10 @@
 
 using namespace Eigen;
 
-void fe_vtuWrite(std::string output, int time_step, MatrixXd nodes, MatrixXd elements){
+void fe_vtuWrite(std::string output, int time_step, Mesh mesh1){
 
+    MatrixXd nodes = mesh1.getNewNodes();
+    MatrixXi elements = mesh1.getNewElements();
 
     std::string name;
 
@@ -37,7 +39,7 @@ void fe_vtuWrite(std::string output, int time_step, MatrixXd nodes, MatrixXd ele
     for(int i=0;i<elements.rows();i++){
                 myfile << "\t\t\t\t\t" ;
         	    for(int j=2;j<elements.cols();j++){
-			 myfile<<elements(i,j)<<"\t";
+				          myfile<<elements(i,j)<<"\t";
                 }
     }
     myfile<<"\n";

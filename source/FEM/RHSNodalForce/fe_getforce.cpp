@@ -10,7 +10,7 @@ using namespace Eigen;
 * the resultant vectors are scattered into global vectors.
 */
 
-VectorXd fe_getforce(MatrixXd nodes, MatrixXd elements, int ndof, VectorXd u, VectorXd v, VectorXd fext, int size_counter, MatrixXd nodes_truss, MatrixXd elements_truss){
+VectorXd fe_getforce(MatrixXd nodes, MatrixXi elements, int ndof, VectorXd u, VectorXd v, VectorXd fext, int size_counter, MatrixXd nodes_truss, MatrixXi elements_truss){
 
 	int nel = elements.rows();
 	int nnel = (elements.cols()-2);

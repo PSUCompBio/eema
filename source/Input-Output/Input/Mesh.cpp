@@ -3,7 +3,7 @@
 
 using namespace Eigen;
 
-void Mesh::readMesh(MatrixXd n, MatrixXd e){
+void Mesh::readMesh(MatrixXd n, MatrixXi e){
 	nodes = n;
 	elements = e;
 }
@@ -12,7 +12,7 @@ MatrixXd Mesh::getNodes(void){
 	return nodes;
 }
 
-MatrixXd Mesh::getElements(void){
+MatrixXi Mesh::getElements(void){
 	return elements;
 }
 
@@ -20,7 +20,7 @@ MatrixXd Mesh::getNewNodes(void){
 	return nodes_new;
 }
 
-MatrixXd Mesh::getNewElements(void){
+MatrixXi Mesh::getNewElements(void){
 	return elements_new;
 }
 
