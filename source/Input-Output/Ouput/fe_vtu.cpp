@@ -26,9 +26,9 @@ void fe_vtuWrite(std::string output, int time_step, Mesh mesh1){
     myfile << "\t\t\t\t<DataArray type=\"Float32\" NumberOfComponents=\"3\" format=\"ascii\">\n";
     for(int i=0;i<nodes.rows();i++){
 	myfile<<"\t\t\t\t\t"<<std::setw(10)<<std::scientific<<std::setprecision(8)
-		<<nodes(i,0)<<" "
 		<<nodes(i,1)<<" "
-		<<nodes(i,2)<<"\n";
+		<<nodes(i,2)<<" "
+		<<nodes(i,3)<<"\n";
     }
     myfile << "\t\t\t\t</DataArray>\n";
     myfile << "\t\t\t</Points>\n";
