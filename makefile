@@ -1,4 +1,4 @@
-CC = g++
+CC = /usr/bin/g++
 CFLAGS = -g -Wall
 INCLUDES = -I./third-party-libs/eigen3 -I./headers
 
