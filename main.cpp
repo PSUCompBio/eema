@@ -154,7 +154,7 @@ int main(int argc, char **argv){
 	t_start = 0; /** Simulation start time */
 	t_end = 0.001; /** Simulation end time */
 	output_frequency = 20; /** Number of output files desired */
-	dt_initial = 1*pow(10,-6); /** Maximum time step */
+	dt_initial = 1*pow(10,-5); /** Maximum time step */
 	dt_min = dt_initial;
 	reduction = 0.5; /** Reduction factor */
 
