@@ -60,16 +60,9 @@ void fe_embed_preprocessing_length(Mesh host, Mesh embed){
 
 }
 
-VectorXd fe_embed_preprocessing_mapping(){
-    
-   // VectorXd embed_vector;
-//
-//    MatrixXd nodes1 = host.getNewNodes();
-//    MatrixXd elements1 = host.getNewElements();
-//    MatrixXd nodes2 = embed.getNewNodes();
-//    MatrixXd elements2 = embed.getNewElements();
-//
-//    MatrixXd nodes_embed = MatrixXd::Zero(nodes2.rows(),(nodes2.cols()+1));
-//
-//    return embed_vector;
+VectorXd fe_embed_preprocessing_mapping(Mesh host, Mesh embed){
+
+    MatrixXd nodes_host = host.getNewNodes();
+    MatrixXi elements_host = host.getNewElements();
+
 }
