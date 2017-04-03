@@ -10,91 +10,53 @@ VectorXd fe_embed_preprocessing(Mesh host,Mesh embed){
 
 }
 
-VectorXd fe_embed_preprocessing_length(Mesh host, Mesh embed){
+void fe_embed_preprocessing_length(Mesh host, Mesh embed){
 
-    MatrixXd nodes_host = host.getNewNodes();
-    MatrixXd elements_host = host.getNewElements();
-    MatrixXd nodes_embed = embed.getNewNodes();
-    MatrixXd elements_embed = embed.getNewElements();
-    double xcoord[(elements_host.cols()-2)];
-    double ycoord[(elements_host.cols()-2)];
-    double zcoord[(elements_host.cols()-2)];
+    /** Checks if the host mesh has zero length edges */
+    host.checkMesh();
+    /** Checks if the embedded mesh has zero length edges */
+    embed.checkMesh();
 
-    double min_length = 10000000;
-    double lc_host;
-    double lc_embed;
+    VectorXd lc_host = host.getMinCharLength("new");
+    VectorXd lc_embed = embed.getMaxCharLength("new");
 
-    /* Calculate the min length of the host system */
-    for(int i=0;i<elements_host.rows();i++){
-        for(int j=0;j<(elements_host.cols()-2);j++){
-			int g = -1;
-			for(int f=0;f<nodes_host.rows();f++){
-				if(elements_host(i,j+2)==nodes_host(f,0)){
-					g = f;
-					break;
-				}
-			}
-			xcoord[j] = nodes_host(g,1);
-			ycoord[j] = nodes_host(g,2);
-			zcoord[j] = nodes_host(g,3);
-		}
+    MatrixXd nodes_local;
+    MatrixXi elements_local;
 
-        lc_host = fe_minElementLength(xcoord,ycoord,zcoord);
+    while (lc_embed(0) > lc_host(0)){
 
-        if(lc_host<min_length){
-            min_length = lc_host;
-        }
+        nodes_local = embed.getNewNodes();
+        elements_local = embed.getNewElements();
 
-        if(lc_host == 0){
-        std::cout << "**********************************************" << std::endl;
-        std::cout << "ZERO LENGTH HOST ELEMENT IN THE SYSTEM \n FIBER LENGTH PREPROCESSING NOT POSSIBLE" << etd::endl;
-        std::cout << "**********************************************" << std::endl;
-        std::exit(-1);
+        for (int i=0;i<elements_local.rows();i++){
+
+            if(i==(int)lc_embed(1)){
+                 int i_1 = fe_find(nodes_local.col(0),elements_local(i,2));
+                 int i_2 = fe_find(nodes_local.col(0),elements_local(i,3));
+                 
+                 VectorXd mid_point;
+                 mid_point << ((nodes_local(i_1,1)+nodes_local(i_2,1))/2) , ((nodes_local(i_1,2)+nodes_local(i_2,2))/2), ((nodes_local(i_1,3)+nodes_local(i_2,3))/2);
+                
+                int new_node_num = nodes_local.((nodes_local.rows()-1),0) + 1 ;
+                VectorXd new_node << new_node_num , mid_point(0), mid_point(1), mid_point(2);
+                nodes_local = fe_concatenate_vector2matrix(nodes_local,new_node,1);
+                elements_local(i,3) = new_node_num;
+                
+                VectorXd new_element;
+                new_element << 0, new_node_num, i_2;
+                elements_local = fe_insert_vector2matrix(elements_local,new_element,i,1);
+
+                embed.replaceElements(elements_local,"old");
+                embed.replaceNodes(nodes_local,"old");
+                embed.preprocessMesh();
+
+                lc_embed = embed.getMaxCharLength("new");
+
+            }
+
         }
 
     }
-
-    /* Modify the fiber length so that every fiber's length is less than that of the system min length */
-    for(int i=0;i<elements_embed.rows();i++){
-        for(int j=0;j<(elements_embed.cols()-2);j++){
-			int g = -1;
-			for(int f=0;f<nodes_embed.rows();f++){
-				if(elements_embed(i,j+2)==nodes_embed(f,0)){
-					g = f;
-					break;
-				}
-			}
-			xcoord[j] = nodes_embed(g,1);
-			ycoord[j] = nodes_embed(g,2);
-			zcoord[j] = nodes_embed(g,3);
-		}
-
-        lc_embed = fe_maxElementLength(xcoord,ycoord,zcoord);
-
-        if(lc_embed<min_length){
-            min_length = lc_embed;
-        }
-
-        if(lc_embed == 0){
-        std::cout << "**********************************************" << std::endl;
-        std::cout << "ZERO LENGTH HOST ELEMENT IN THE SYSTEM \n FIBER LENGTH PREPROCESSING NOT POSSIBLE" << etd::endl;
-        std::cout << "**********************************************" << std::endl;
-        std::exit(-1);
-        }
-        
-    }
-
-    while (lc_embed > lc_host){
-
-    }
-    
-
-
-
-
-    
-
-
 
 }
 

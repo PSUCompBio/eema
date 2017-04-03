@@ -219,14 +219,6 @@ void fe_mainEXPLICIT(){
 		W_tot.conservativeResize(W_tot.size()+1);
 		W_tot(size_counter) = std::abs((W_kin(size_counter) + W_int(size_counter) - W_ext(size_counter)));
 
-		if(W_tot(size_counter)>eps_energy){
-			std::cout << "**********************************************" << std::endl;
-			std::cout << "ALERT: INSTABILITIES IN THE SYSTEM DETECTED \n BASED ON THE ENERGY BALANCE CHECK \n";
-			std::cout << "**********************************************" << std::endl;
-			// std::exit(-1);
-		}
-
-
 		/** Writing the output to VTK files */
 		// updated_nodes = fe_updateNodes(nodes,U);
 
@@ -249,6 +241,14 @@ void fe_mainEXPLICIT(){
 				  <<"  Timestep Number = "<<(size_counter) 
 				  <<"  CPU Time = " <<std::setw(5)<<std::setprecision(1)
 					<< ((float)ds/CLOCKS_PER_SEC) << "s \n";
+
+			if(W_tot(size_counter)>eps_energy){
+				std::cout << "**********************************************" << std::endl;
+				std::cout << "ALERT: INSTABILITIES IN THE SYSTEM DETECTED \n BASED ON THE ENERGY BALANCE CHECK \n";
+				std::cout << "**********************************************" << std::endl;
+			// std::exit(-1);
+			}
+			
 		}
 		s_prev = s;
 		s = clock();

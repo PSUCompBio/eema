@@ -288,6 +288,6 @@ VectorXd fe_newtonRhapson(VectorXd nat_coord, VectorXd xcoord, VectorXd ycoord, 
 
 double fe_minElementLength(VectorXd xcoord, VectorXd ycoord, VectorXd zcoord);
 
-double fe_maxElementLength(double xcoord[],double ycoord[],double zcoord[]);
+double fe_maxElementLength(VectorXd xcoord, VectorXd ycoord, VectorXd zcoord);
 
 #endif

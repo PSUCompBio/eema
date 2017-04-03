@@ -12,7 +12,7 @@ void fe_vtuWrite(std::string output, int time_step, Mesh mesh1){
     std::ostringstream ss;
     ss << time_step;
 
-    name = home_path + "results/vtu/" + output + "_" + ss.str() + ".vtu";
+    name = home_path + "/" + "results/vtu/" + output + "_" + ss.str() + ".vtu";
 
     std::ofstream myfile(name.c_str());
 
@@ -41,6 +41,7 @@ void fe_vtuWrite(std::string output, int time_step, Mesh mesh1){
         	    for(int j=2;j<elements.cols();j++){
 				          myfile<<elements(i,j)<<"\t";
                 }
+    myfile << "\n";
     }
     myfile<<"\n";
     myfile << "\t\t\t\t</DataArray>\n";

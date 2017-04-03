@@ -1,6 +1,6 @@
 CC = g++
 CFLAGS = -g -Wall
-INCLUDES = -I./third-party-libs/eigen3 -I./headers
+INCLUDES = -I./third-party-libs/eigen3 -I./include
 
 # If you increase the number of source subdirectories, then add include the new name here and
 # add the new rule at the end.
@@ -9,7 +9,7 @@ SRC_0 = ./source
 SRC_1 = ./source/*
 SRC_2 = ./source/*/*
 SRC_3 = ./source/*/*/*
-HDR = ./headers
+HDR = ./include
 OBJ = ./obj
 MAIN = main
 JOB = ./examples/example-1
