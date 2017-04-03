@@ -175,7 +175,7 @@ void fe_mainEXPLICIT(){
 		// Displacement Calculations
 		U = U + dT*(V_half); // Calculating the new displacements from nodal velocites.
 		U = fe_apply_bc_displacement(U,t); // Enforcing displacement BCs.
-		UU = fe_concatenate_vector2matrix(UU,U,2);
+		// UU = fe_concatenate_vector2matrix(UU,U,2);
 
 		F_net = fe_getforce(nodes,elements,ndof,U,V,fe,size_counter,nodes_truss,elements_truss); // Calculating the force term.
 		dT = reduction * fe_getTimeStep(nodes, elements, ndof, U, V, fe);
@@ -186,11 +186,11 @@ void fe_mainEXPLICIT(){
 
 		// Acceleration calculations
 		A = mm.inverse()*(F_net); // Calculating the new accelerations from total nodal forces.
-		AA = fe_concatenate_vector2matrix(AA,A,2);
+		// AA = fe_concatenate_vector2matrix(AA,A,2);
 
 		// Velocity calculations
 		V = V_half + (t - t_half)*A; // Calculating the new velocities.
-		VV = fe_concatenate_vector2matrix(VV,V,2);
+		// VV = fe_concatenate_vector2matrix(VV,V,2);
 
 		/* Calculating the internal energy terms */
 		double old_int_energy = W_int(size_counter-1);
@@ -226,7 +226,7 @@ void fe_mainEXPLICIT(){
 		// std::cout<<"Z Strain: "<<(U(26)/2)<<"\n";
 		// std::cout << "Z displacement: "<<(U(14))<<"\n";
 
-    U_host = U;
+      	U_host = U;
 		V_host = V;
 		A_host = A;
 

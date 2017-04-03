@@ -68,7 +68,7 @@ void fe_vtuWrite(std::string output, int time_step, Mesh mesh1){
     int num = 0;
     for(int i=0;i<nodes.rows();i++){
         myfile << "\t\t\t\t\t" << std::setw(10)<<std::scientific << std::setprecision(10) 
-		<<U_host(num) << " " 
+		<< U_host(num) << " " 
 		<< U_host(num+1) << " " 
 		<< U_host(num+2) << " \n";
         	num = num+3;
