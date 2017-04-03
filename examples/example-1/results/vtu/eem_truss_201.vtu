@@ -4,13 +4,14 @@
 		<Piece NumberOfPoints="2" NumberOfCells="1">
 			<Points>
 				<DataArray type="Float32" NumberOfComponents="3" format="ascii">
-					2.5000000000e-03 					2.5000000000e-03 					0.0000000000e+00 
-					2.5000000000e-03 					2.5000000000e-03 					5.0000000000e-03 
+					2.50000000e-03 2.50000000e-03 0.00000000e+00
+					2.50000000e-03 2.50000000e-03 5.00000000e-03
 				</DataArray>
 			</Points>
 			<Cells>
 				<DataArray type="Int32" Name="connectivity" format="ascii">
 					0	1	
+
 				</DataArray>
 				<DataArray type="Int32" Name="offsets" format="ascii">
 					2
@@ -22,18 +23,18 @@
 			<PointData>
 				<DataArray type="Float32" Name="Displacement" NumberOfComponents="3" ComponentName0="X" ComponentName1="Y" ComponentName2="Z" format="ascii">
 					0.0000000000e+00 0.0000000000e+00 0.0000000000e+00 
-					-9.4164082496e-05 0.0000000000e+00 0.0000000000e+00 
+					-1.6810418450e-04 0.0000000000e+00 0.0000000000e+00 
 				</DataArray>
 			</PointData>
 			<CellData>
 				<DataArray type="Float32" Name="Stress (Cauchy)" NumberOfComponents="9" ComponentName0="XX" ComponentName1="XY" ComponentName2="XZ" ComponentName3="YX" ComponentName4="YY" ComponentName5="YZ" ComponentName6="ZX" ComponentName7="ZY" ComponentName8="ZZ" format="ascii">
-					2.3485969538e+04 2.6779428782e-14 3.3400958835e-15
-					2.6779428782e-14 2.3485969538e+04 6.6801917670e-15
-					3.3400958835e-15 6.6801917670e-15 2.4355209760e+04
+					1.0759318637e+04 0.0000000000e+00 0.0000000000e+00
+					0.0000000000e+00 1.0759318637e+04 0.0000000000e+00
+					0.0000000000e+00 0.0000000000e+00 1.1774762610e+04
 				</DataArray>
 				<DataArray type="Float32" Name="Strain (Logarithmic)" NumberOfComponents="9" ComponentName0="XX" ComponentName1="XY" ComponentName2="XZ" ComponentName3="YX" ComponentName4="YY" ComponentName5="YZ" ComponentName6="ZX" ComponentName7="ZY" ComponentName8="ZZ" format="ascii">
-					-1.9012412427e-02 0.0000000000e+00 0.0000000000e+00
-					0.0000000000e+00 -1.9012412427e-02 0.0000000000e+00
+					-3.4199013397e-02 0.0000000000e+00 0.0000000000e+00
+					0.0000000000e+00 -3.4199013397e-02 0.0000000000e+00
 					0.0000000000e+00 0.0000000000e+00 9.5764621984e-02
 				</DataArray>
 			</CellData>
