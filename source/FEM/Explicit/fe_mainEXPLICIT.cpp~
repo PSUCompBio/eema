@@ -257,8 +257,8 @@ void fe_mainEXPLICIT(){
 	}
 
 
-	//std::string displacements = home_path+"results/nodal_displacements.txt";
-	//matrix2text(displacements.c_str(),UU,UU.cols());
+	std::string displacements = home_path+"results/nodal_displacements.txt";
+	matrix2text(displacements.c_str(),UU,UU.cols());
 
 	/*std::string velocities = home_path+"results/nodal_velocities.txt";
 	matrix2text(velocities.c_str(),VV,VV.cols());
