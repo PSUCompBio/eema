@@ -29,6 +29,8 @@ void fe_mainEXPLICIT(){
 	element_stress_truss = MatrixXd::Zero(elements_truss.rows(),(3*ndof));
 	element_strain_truss = MatrixXd::Zero(elements_truss.rows(),(3*ndof));
 	U_host = VectorXd::Zero(sdof);
+	V_host = VectorXd::Zero(sdof);
+	A_host = VectorXd::Zero(sdof);
 
 	// Updated Nodes and Elements
 	MatrixXd updated_nodes = nodes;
@@ -67,6 +69,7 @@ void fe_mainEXPLICIT(){
 
 	W_kin = VectorXd::Zero(1);
 	W_tot = VectorXd::Zero(1);
+	W_max = VectorXd::Zero(1);
 
 
 	VectorXd F_net = VectorXd::Zero(sdof); // Total Nodal force vector
@@ -174,6 +177,7 @@ void fe_mainEXPLICIT(){
 
 		// Displacement Calculations
 		U = U + dT*(V_half); // Calculating the new displacements from nodal velocites.
+		//std::cout << "Z Displacement: " << U(14) << "\n";
 		U = fe_apply_bc_displacement(U,t); // Enforcing displacement BCs.
 		// UU = fe_concatenate_vector2matrix(UU,U,2);
 
@@ -190,6 +194,7 @@ void fe_mainEXPLICIT(){
 
 		// Velocity calculations
 		V = V_half + (t - t_half)*A; // Calculating the new velocities.
+		// std::cout << "Z Velocity: " << V(14) << "\n";
 		// VV = fe_concatenate_vector2matrix(VV,V,2);
 
 		/* Calculating the internal energy terms */
@@ -219,16 +224,14 @@ void fe_mainEXPLICIT(){
 		W_tot.conservativeResize(W_tot.size()+1);
 		W_tot(size_counter) = std::abs((W_kin(size_counter) + W_int(size_counter) - W_ext(size_counter)));
 
-		/** Writing the output to VTK files */
-		// updated_nodes = fe_updateNodes(nodes,U);
-
-
-		// std::cout<<"Z Strain: "<<(U(26)/2)<<"\n";
-		// std::cout << "Z displacement: "<<(U(14))<<"\n";
+		W_max.conservativeResize(W_max.size()+1);
+		W_max(size_counter) = std::max(std::max(W_kin(size_counter),W_int(size_counter)),W_ext(size_counter));
+		// std::cout << "Max Energy: " << W_max(size_counter) << "\n";
 
       	U_host = U;
 		V_host = V;
 		A_host = A;
+			
 
 		if(t >= (time_temp_1 * (output_temp_1))){
 			fe_vtuWrite("eem_matrix",size_counter,mesh[0]);
@@ -242,7 +245,7 @@ void fe_mainEXPLICIT(){
 				  <<"  CPU Time = " <<std::setw(5)<<std::setprecision(1)
 					<< ((float)ds/CLOCKS_PER_SEC) << "s \n";
 
-			if(W_tot(size_counter)>eps_energy){
+			if(W_tot(size_counter) > (eps_energy*(W_max(size_counter)))){
 				std::cout << "**********************************************" << std::endl;
 				std::cout << "ALERT: INSTABILITIES IN THE SYSTEM DETECTED \n BASED ON THE ENERGY BALANCE CHECK \n";
 				std::cout << "**********************************************" << std::endl;
@@ -260,7 +263,7 @@ void fe_mainEXPLICIT(){
 	//std::string displacements = home_path+"results/nodal_displacements.txt";
 	//matrix2text(displacements.c_str(),UU,UU.cols());
 
-	/*std::string velocities = home_path+"results/nodal_velocities.txt";
+	/* std::string velocities = home_path+"results/nodal_velocities.txt";
 	matrix2text(velocities.c_str(),VV,VV.cols());
 
 	std::string accelerations = home_path+"results/nodal_accelerations.txt";

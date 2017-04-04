@@ -74,6 +74,34 @@ void fe_vtuWrite(std::string output, int time_step, Mesh mesh1){
         	num = num+3;
     }
     myfile << "\t\t\t\t</DataArray>\n";
+
+    /** Point Vector Data - Velocities */
+    myfile << "\t\t\t\t<DataArray type=\"Float32\" Name=\"Velocity\" " 
+		<<"NumberOfComponents=\"3\" ComponentName0=\"X\" " 
+		<<"ComponentName1=\"Y\" ComponentName2=\"Z\" format=\"ascii\">\n" ;
+    num = 0;
+    for(int i=0;i<nodes.rows();i++){
+        myfile << "\t\t\t\t\t" << std::setw(10)<<std::scientific << std::setprecision(10) 
+		<< V_host(num) << " " 
+		<< V_host(num+1) << " " 
+		<< V_host(num+2) << " \n";
+        	num = num+3;
+    }
+    myfile << "\t\t\t\t</DataArray>\n";
+
+    /** Point Vector Data - Accelerations */
+    myfile << "\t\t\t\t<DataArray type=\"Float32\" Name=\"Acceleration\" " 
+		<<"NumberOfComponents=\"3\" ComponentName0=\"X\" " 
+		<<"ComponentName1=\"Y\" ComponentName2=\"Z\" format=\"ascii\">\n" ;
+    num = 0;
+    for(int i=0;i<nodes.rows();i++){
+        myfile << "\t\t\t\t\t" << std::setw(10)<<std::scientific << std::setprecision(10) 
+		<< A_host(num) << " " 
+		<< A_host(num+1) << " " 
+		<< A_host(num+2) << " \n";
+        	num = num+3;
+    }
+    myfile << "\t\t\t\t</DataArray>\n";
     myfile << "\t\t\t</PointData>\n";
 
     /** Cell Data - Stresses and Strains */

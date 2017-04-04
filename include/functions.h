@@ -86,6 +86,9 @@ extern VectorXd W_kin;
 /* System Total Energy */
 extern VectorXd W_tot;
 
+/* System Max Energy */
+extern VectorXd W_max;
+
 extern VectorXd U_host;
 extern VectorXd V_host;
 extern VectorXd A_host;
@@ -260,6 +263,8 @@ MatrixXd fe_concatenate_vector2matrix(MatrixXd A, VectorXd B,int opt);
 /** find the poistion index of a value in a vector -- analogous to 'find' function in MATLAB */
 int fe_find(VectorXd A, double a);
 
+int fe_find(VectorXd A, int a);
+
 /** Read the input text file -- for a particular job */
 void fe_mainRead(std::string file);
 
@@ -289,5 +294,19 @@ VectorXd fe_newtonRhapson(VectorXd nat_coord, VectorXd xcoord, VectorXd ycoord, 
 double fe_minElementLength(VectorXd xcoord, VectorXd ycoord, VectorXd zcoord);
 
 double fe_maxElementLength(VectorXd xcoord, VectorXd ycoord, VectorXd zcoord);
+
+/* Embedded Element Constraint */
+
+MatrixXd fe_insert_vector2matrix(MatrixXd A, VectorXd B, int num, int opt);
+
+VectorXd fe_embed_preprocessing_mapping(Mesh host, Mesh embed);
+
+VectorXd fe_embed_preprocessing(Mesh host,Mesh embed);
+
+void fe_embed_preprocessing_length(Mesh host, Mesh embed);
+
+int fe_compute_host(VectorXd A, MatrixXd nodes_host, MatrixXd elements_host_tmp);
+
+MatrixXd fe_create_bbox(VectorXd A, MatrixXd nodes_host, MatrixXd elements_host, double length);
 
 #endif
