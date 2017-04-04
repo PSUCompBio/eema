@@ -14,3 +14,17 @@ int fe_find(VectorXd A, double a){
 
   return number;
 }
+
+int fe_find(VectorXd A, int a){
+
+  int number = 100000000;
+
+  for(int i=0;i<A.size();i++){
+    if(A(i)==(double)a){
+      number = i;
+      break;
+    }
+  }
+
+  return number;
+}

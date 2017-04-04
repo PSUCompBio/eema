@@ -37,8 +37,9 @@ void fe_embed_preprocessing_length(Mesh host, Mesh embed){
                  VectorXd mid_point;
                  mid_point << ((nodes_local(i_1,1)+nodes_local(i_2,1))/2) , ((nodes_local(i_1,2)+nodes_local(i_2,2))/2), ((nodes_local(i_1,3)+nodes_local(i_2,3))/2);
                 
-                int new_node_num = nodes_local.((nodes_local.rows()-1),0) + 1 ;
-                VectorXd new_node << new_node_num , mid_point(0), mid_point(1), mid_point(2);
+                int new_node_num = nodes_local((nodes_local.rows()-1),0) + 1 ;
+                VectorXd new_node;
+                new_node << new_node_num, mid_point(0), mid_point(1), mid_point(2);
                 nodes_local = fe_concatenate_vector2matrix(nodes_local,new_node,1);
                 elements_local(i,3) = new_node_num;
                 
@@ -60,9 +61,3 @@ void fe_embed_preprocessing_length(Mesh host, Mesh embed){
 
 }
 
-VectorXd fe_embed_preprocessing_mapping(Mesh host, Mesh embed){
-
-    MatrixXd nodes_host = host.getNewNodes();
-    MatrixXi elements_host = host.getNewElements();
-
-}

@@ -113,6 +113,9 @@ VectorXd W_kin;
 /* System Total Energy */
 VectorXd W_tot;
 
+/* System Maximum of all energies */
+VectorXd W_max;
+
 VectorXd U_host; /** Variable storing the nodal displacements of the host mesh */
 VectorXd V_host; /** Variable storing the nodal velocities of the host mesh */
 VectorXd A_host; /** Variable storing the nodal accelerations of the host mesh */
@@ -152,9 +155,9 @@ int main(int argc, char **argv){
 
 	// Initialize Time Variables
 	t_start = 0; /** Simulation start time */
-	t_end = 0.001; /** Simulation end time */
+	t_end = 0.1; /** Simulation end time */
 	output_frequency = 20; /** Number of output files desired */
-	dt_initial = 1*pow(10,-6); /** Maximum time step */
+	dt_initial = 1*pow(10,-1); /** Maximum time step */
 	dt_min = dt_initial;
 	reduction = 0.5; /** Reduction factor */
 
@@ -175,7 +178,7 @@ int main(int argc, char **argv){
 
 	if(type_of_loading == 2) {
 		// Nodes upon which displacement is forced
-		input_disp_amp = 0.0025;
+		input_disp_amp = 0.001;
 		num_disp_constraints = 4;
 		dcdof = VectorXi::Zero(num_disp_constraints);
 		dcdof << 14, 17, 20, 23;
