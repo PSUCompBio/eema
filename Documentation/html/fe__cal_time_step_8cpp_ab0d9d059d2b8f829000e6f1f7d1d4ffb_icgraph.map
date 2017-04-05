@@ -1,5 +1,0 @@
-<map id="fe_calTimeStep" name="fe_calTimeStep">
-<area shape="rect" id="node2" href="$fe__get_time_step_8cpp.html#af737926a3dfd669254a56dbbf675ac92" title="fe_getTimeStep" alt="" coords="167,5,282,31"/>
-<area shape="rect" id="node3" href="$fe__main_e_x_p_l_i_c_i_t_8cpp.html#ab2f8704631ca6c23a453d1905efbb162" title="This function carries out the explicit dynamic analysis of the FEM problem. " alt="" coords="330,5,458,31"/>
-<area shape="rect" id="node4" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title="main" alt="" coords="506,5,556,31"/>
-</map>
