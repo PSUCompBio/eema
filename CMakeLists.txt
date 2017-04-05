@@ -19,9 +19,13 @@ add_subdirectory(src)
 #install(TARGETS eema DESTINATION ./lib)
 
 #add_executable(eem  ${SOURCES})
+#===============================================================================
+# Examples and tests
+#===============================================================================
+option(EEMA_EXAMPLES "Activate examples" OFF)
 
-option (EXAMPLE1  "Build library with Explicit Dynamic Example 1" OFF)
-if (EXAMPLE1)
-   add_subdirectory(examples)
-endif (EXAMPLE1)
+if(EEMA_EXAMPLES)
+  add_subdirectory(examples)
+endif()
+
 
