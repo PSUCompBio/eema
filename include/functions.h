@@ -164,10 +164,10 @@ MatrixXd fe_calTransformation(MatrixXd truss_nodes, int choice);
 MatrixXd fe_calSimpTransformation(MatrixXd truss_nodes);
 
 /** Internal nodal force vector for a hexahedral element */
-MatrixXd fe_stiffness_hex(double E, double nu, int ndof, int nnel, int edof, double xcoord[], double ycoord[], double zcoord[]);
+MatrixXd fe_stiffness_hex(double E, double nu, int ndof, int nnel, int edof, VectorXd xcoord, VectorXd ycoord, VectorXd zcoord);
 
 /** Internal nodal force vector for a truss (1D) element */
-MatrixXd fe_stiffness_embed_truss(MatrixXd nodes_truss, MatrixXd elements_truss, double E_truss, double A_truss, int ndof, int nnel, int edof, double xcoord[], double ycoord[], double zcoord[]);
+MatrixXd fe_stiffness_embed_truss(MatrixXd nodes_truss, MatrixXd elements_truss, double E_truss, double A_truss, int ndof, int nnel, int edof, VectorXd xcoord, VectorXd ycoord, VectorXd zcoord);
 
 /** Outputs the shape function matrix for an element */
 MatrixXd fe_shapeMatrix(int edof, int nnel, VectorXd shapes);
