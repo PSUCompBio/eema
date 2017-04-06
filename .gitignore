@@ -9,10 +9,11 @@
 #tmp/**/*
 obj
 build
+lib
 doc/doxygen/latex
 doc/doxygen/html
-examples/results
-#Documentation/* 
+examples/example-1/results
+examples/example-2/results
 .settings
 .vscode
 .idea

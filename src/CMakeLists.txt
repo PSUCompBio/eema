@@ -63,6 +63,7 @@ SET(src
     FEM/Assembly-Global-Local/fe_gather.cpp
     FEM/Assembly-Global-Local/fe_find_index.cpp
     FEM/Assembly-Global-Local/fe_assemble_mass.cpp
-     ) 
+     )
 
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib) 
 ADD_LIBRARY(eema STATIC ${src})
