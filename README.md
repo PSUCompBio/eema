@@ -31,6 +31,20 @@ The Pennsylvania State University, <br />
 University Park, Pennsylvania, USA. <br />
 Email: reuben.kraft@psu.edu <br />
 
+
+## TO INSTALL USING CMAKE
+1. cd embeddedfem
+2. mkdir build
+3. cd build
+4. ccmake ..
+5. make 
+
+## How to run the code:
+1. you need to compile with examples ON in the 
+cmake configuration (step 4 above)
+2. navigate to ~/embeddedfem/build/examples/example-1
+3. ./example1 . input.inp
+
 ## How to run the code?
 
 1. Build the code using the command "make" or "make all". <br />

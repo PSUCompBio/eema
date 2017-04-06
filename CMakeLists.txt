@@ -1,0 +1,31 @@
+cmake_minimum_required(VERSION 2.6)
+project(eema)
+enable_language(CXX)
+
+# Eigen support
+option (USE_EIGEN  "Build library with Eigen support" ON)
+set (EIGEN_INCLUDE_DIR "INCLUDE directory for Eigen library" third-party-libs/eigen3)
+include_directories(${EIGEN_INCLUDE_DIR})
+
+#Bring the headers, such as *.h into the project, should be renamed to include
+include_directories(include)
+
+
+# All the source code we care about
+add_subdirectory(src)
+
+#===============================================================================
+# Examples and tests
+#===============================================================================
+option(EEMA_EXAMPLES "Activate examples" OFF)
+if(EEMA_EXAMPLES)
+  add_subdirectory(examples)
+endif()
+
+#===============================================================================
+# Documentation
+#===============================================================================
+option(EEMA_DOCUMENTATION "Build source documentation using Doxygen." OFF)
+if(EEMA_DOCUMENTATION)
+  add_subdirectory(doc)
+endif()

@@ -1,9 +1,4 @@
-/*
- * Mesh.h
- *
- *  Created on: Dec 15, 2016
- *      Author: vsg111
- */
+/** @file Mesh.h */ 
 
 #ifndef HEADERS_MESH_H_
 #define HEADERS_MESH_H_

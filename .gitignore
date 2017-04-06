@@ -7,4 +7,16 @@
 
 # Can also ignore all directories and files in a directory.
 #tmp/**/*
-obj/*.o 
+obj
+build
+lib
+doc/doxygen/latex
+doc/doxygen/html
+examples/example-1/results
+examples/example-2/results
+.settings
+.vscode
+.idea
+.cproject
+.project
+
