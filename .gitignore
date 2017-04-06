@@ -9,6 +9,8 @@
 #tmp/**/*
 obj
 build
+doc/doxygen/latex
+doc/doxygen/html
 examples/results
 #Documentation/* 
 .settings
