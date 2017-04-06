@@ -9,7 +9,8 @@
 #tmp/**/*
 obj
 build
-Documentation/* 
+examples/results
+#Documentation/* 
 .settings
 .vscode
 .idea

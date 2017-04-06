@@ -1,0 +1,85 @@
+\hypertarget{fe__apply__bc_8cpp}{}\section{source/\+F\+E\+M/\+Boundary\+Conditions/fe\+\_\+apply\+\_\+bc.cpp File Reference}
+\label{fe__apply__bc_8cpp}\index{source/\+F\+E\+M/\+Boundary\+Conditions/fe\+\_\+apply\+\_\+bc.\+cpp@{source/\+F\+E\+M/\+Boundary\+Conditions/fe\+\_\+apply\+\_\+bc.\+cpp}}
+{\ttfamily \#include \char`\"{}functions.\+h\char`\"{}}\newline
+Include dependency graph for fe\+\_\+apply\+\_\+bc.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fe__apply__bc_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Vector\+Xd \hyperlink{fe__apply__bc_8cpp_af42938e5b32edb33ef4a35866949eba6}{fe\+\_\+apply\+\_\+bc\+\_\+displacement} (Vector\+Xd U, double time)
+\item 
+Vector\+Xd \hyperlink{fe__apply__bc_8cpp_aba32cc24bd74a4965c560fa62c5b213e}{fe\+\_\+apply\+\_\+bc\+\_\+load} (Vector\+Xd fe, double time)
+\item 
+Matrix\+Xd \hyperlink{fe__apply__bc_8cpp_a3c73fda948017ac96aeb19889cfc1cba}{fe\+\_\+apply\+\_\+bc\+\_\+stiffness} (Matrix\+Xd kk, Vector\+Xi \hyperlink{main_8cpp_a389e085bd7632077f619ea67d3fb4087}{bcdof}, Vector\+Xd \hyperlink{main_8cpp_a3a53182d9f97dc5acff0a10125857cfb}{bcval})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{fe__apply__bc_8cpp_af42938e5b32edb33ef4a35866949eba6}\label{fe__apply__bc_8cpp_af42938e5b32edb33ef4a35866949eba6}} 
+\index{fe\+\_\+apply\+\_\+bc.\+cpp@{fe\+\_\+apply\+\_\+bc.\+cpp}!fe\+\_\+apply\+\_\+bc\+\_\+displacement@{fe\+\_\+apply\+\_\+bc\+\_\+displacement}}
+\index{fe\+\_\+apply\+\_\+bc\+\_\+displacement@{fe\+\_\+apply\+\_\+bc\+\_\+displacement}!fe\+\_\+apply\+\_\+bc.\+cpp@{fe\+\_\+apply\+\_\+bc.\+cpp}}
+\subsubsection{\texorpdfstring{fe\+\_\+apply\+\_\+bc\+\_\+displacement()}{fe\_apply\_bc\_displacement()}}
+{\footnotesize\ttfamily Vector\+Xd fe\+\_\+apply\+\_\+bc\+\_\+displacement (\begin{DoxyParamCaption}\item[{Vector\+Xd}]{U,  }\item[{double}]{time }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file fe\+\_\+apply\+\_\+bc.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{fe__apply__bc_8cpp_af42938e5b32edb33ef4a35866949eba6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fe__apply__bc_8cpp_af42938e5b32edb33ef4a35866949eba6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{fe__apply__bc_8cpp_aba32cc24bd74a4965c560fa62c5b213e}\label{fe__apply__bc_8cpp_aba32cc24bd74a4965c560fa62c5b213e}} 
+\index{fe\+\_\+apply\+\_\+bc.\+cpp@{fe\+\_\+apply\+\_\+bc.\+cpp}!fe\+\_\+apply\+\_\+bc\+\_\+load@{fe\+\_\+apply\+\_\+bc\+\_\+load}}
+\index{fe\+\_\+apply\+\_\+bc\+\_\+load@{fe\+\_\+apply\+\_\+bc\+\_\+load}!fe\+\_\+apply\+\_\+bc.\+cpp@{fe\+\_\+apply\+\_\+bc.\+cpp}}
+\subsubsection{\texorpdfstring{fe\+\_\+apply\+\_\+bc\+\_\+load()}{fe\_apply\_bc\_load()}}
+{\footnotesize\ttfamily Vector\+Xd fe\+\_\+apply\+\_\+bc\+\_\+load (\begin{DoxyParamCaption}\item[{Vector\+Xd}]{fe,  }\item[{double}]{time }\end{DoxyParamCaption})}
+
+
+
+Definition at line 24 of file fe\+\_\+apply\+\_\+bc.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{fe__apply__bc_8cpp_aba32cc24bd74a4965c560fa62c5b213e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fe__apply__bc_8cpp_aba32cc24bd74a4965c560fa62c5b213e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{fe__apply__bc_8cpp_a3c73fda948017ac96aeb19889cfc1cba}\label{fe__apply__bc_8cpp_a3c73fda948017ac96aeb19889cfc1cba}} 
+\index{fe\+\_\+apply\+\_\+bc.\+cpp@{fe\+\_\+apply\+\_\+bc.\+cpp}!fe\+\_\+apply\+\_\+bc\+\_\+stiffness@{fe\+\_\+apply\+\_\+bc\+\_\+stiffness}}
+\index{fe\+\_\+apply\+\_\+bc\+\_\+stiffness@{fe\+\_\+apply\+\_\+bc\+\_\+stiffness}!fe\+\_\+apply\+\_\+bc.\+cpp@{fe\+\_\+apply\+\_\+bc.\+cpp}}
+\subsubsection{\texorpdfstring{fe\+\_\+apply\+\_\+bc\+\_\+stiffness()}{fe\_apply\_bc\_stiffness()}}
+{\footnotesize\ttfamily Matrix\+Xd fe\+\_\+apply\+\_\+bc\+\_\+stiffness (\begin{DoxyParamCaption}\item[{Matrix\+Xd}]{kk,  }\item[{Vector\+Xi}]{bcdof,  }\item[{Vector\+Xd}]{bcval }\end{DoxyParamCaption})}
+
+
+
+Definition at line 36 of file fe\+\_\+apply\+\_\+bc.\+cpp.
+
