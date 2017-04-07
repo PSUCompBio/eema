@@ -1,0 +1,10 @@
+this is a template you can edit for your self. 
+
+cmake is all set up. note that you need to have 
+EEMA_HOME defined though. do this in .bashrc file 
+
+to run: 
+
+in this directory run: ccmake .
+
+then: ./main . input.inp

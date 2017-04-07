@@ -14,6 +14,10 @@ include_directories(include)
 # All the source code we care about
 add_subdirectory(src)
 
+file(COPY templates DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY third-party-libs DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+file(COPY include DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+
 #===============================================================================
 # Examples and tests
 #===============================================================================
