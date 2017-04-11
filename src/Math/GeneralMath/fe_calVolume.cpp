@@ -1,12 +1,11 @@
 
-
 #include"functions.h"
 
 using namespace Eigen;
 
 double fe_calVolume(VectorXd xcoord, VectorXd ycoord, VectorXd zcoord){
 
-	
+
 	//Area of a side is the sum of area of triangles
 	// area of triangle is half the cross-product of two edges
 
@@ -46,6 +45,6 @@ double fe_calVolume(VectorXd xcoord, VectorXd ycoord, VectorXd zcoord){
 	double tet5_vol = e1.dot(e2.cross(e3));
 
 	double volume = (std::abs(tet1_vol) + std::abs(tet2_vol) + std::abs(tet3_vol) + std::abs(tet4_vol) + std::abs(tet5_vol))/6;
-	
+
 	return volume;
 }

@@ -2,6 +2,9 @@
 
 using namespace Eigen;
 
+double eps_nr = 1e-6; /** Convergence criteria used in the newton rhapson method */
+double iterations_nr = 100;
+
 /**n \brief This functions calculates the isoparametric coordinates of a set of coordinates in global system */
 
 VectorXd fe_newtonRhapson(VectorXd nat_coord, VectorXd xcoord, VectorXd ycoord, VectorXd zcoord){

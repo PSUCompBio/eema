@@ -20,9 +20,7 @@ double fe_getTimeStep(MatrixXd nodes, MatrixXi elements, int ndof, VectorXd u, V
 
 	for(int i=0;i<nel;i++){
 
-		double E = fe_get_mats(elements(i,1),1);
-		double nu = fe_get_mats(elements(i,1),2);
-		double rho = fe_get_mats(elements(i,1),0);
+
 		VectorXi nodes_local = VectorXi::Zero(nnel);
 
 		for(int j=0;j<nnel;j++){
@@ -53,7 +51,7 @@ double fe_getTimeStep(MatrixXd nodes, MatrixXi elements, int ndof, VectorXd u, V
 			zcoord(j) = zcoord(j)+u_e(counter+2);
 		}
 
-		deltaT_element(i) = fe_calTimeStep(xcoord,ycoord,zcoord,E,nu,rho); // reduction factor for time step added.
+		deltaT_element(i) = fe_calTimeStep(xcoord,ycoord,zcoord,elements(i,1)); // reduction factor for time step added.
 	}
 
 	deltaT_crit = deltaT_element.minCoeff();

@@ -24,6 +24,37 @@ MatrixXi Mesh::getNewElements(void){
 	return elements_new;
 }
 
+void Mesh::readNodalKinematics(VectorXd Usystem, VectorXd Vsystem, VectorXd Asystem){
+	U = Usystem;
+	V = Vsystem;
+	A = Asystem;
+}
+
+VectorXd Mesh::getNodalDisp(void){
+	return U;
+}
+
+VectorXd Mesh::getNodalVel(void){
+	return V;
+}
+
+VectorXd Mesh::getNodalAcc(void){
+	return A;
+}
+
+void Mesh::readStressStrain(MatrixXd stress_tmp, MatrixXd strain_tmp){
+	stress = stress_tmp;
+	strain = strain_tmp;
+}
+
+MatrixXd Mesh::getCellStress(){
+	return stress;
+}
+
+MatrixXd Mesh::getCellStrain(){
+	return strain;
+}
+
 void Mesh::preprocessMesh(void){
 
 	nodes_new = nodes;
@@ -37,7 +68,7 @@ void Mesh::preprocessMesh(void){
 		elements_new(i,0) = i;
 		elements_new(i,1) = elements(i,1);
 		for(int j=2;j<elements.cols();j++){
-			elements_new(i,j) = fe_find(nodes.col(0),elements(i,j)); 
+			elements_new(i,j) = fe_find(nodes.col(0),elements(i,j));
 		}
 	}*/
 }
@@ -79,7 +110,7 @@ VectorXd Mesh::getMinCharLength(std::string choice){
 		nodes_local = nodes_new;
 		elements_local = elements_new;
 	}
-	
+
 	VectorXd xcoord;
     VectorXd ycoord;
     VectorXd zcoord;
@@ -120,7 +151,7 @@ VectorXd Mesh::getMinCharLength(std::string choice){
 
 /** \brief Calculates the maximum charateristic length of the mesh */
 VectorXd Mesh::getMaxCharLength(std::string choice){
-	
+
 	VectorXd max_details;
 	double id;
 
@@ -136,7 +167,7 @@ VectorXd Mesh::getMaxCharLength(std::string choice){
 		nodes_local = nodes_new;
 		elements_local = elements_new;
 	}
-	
+
 	VectorXd xcoord;
     VectorXd ycoord;
     VectorXd zcoord;
