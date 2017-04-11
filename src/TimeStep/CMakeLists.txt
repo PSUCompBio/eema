@@ -5,4 +5,4 @@ SET(TimeStep_src
      )
 
 #set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib) 
-ADD_LIBRARY(TimeStep STATIC ${TimeStep_src})
+ADD_LIBRARY(TimeStep OBJECT ${TimeStep_src})
