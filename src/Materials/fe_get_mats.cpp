@@ -19,21 +19,6 @@ double fe_get_mats(int matl_code, int obj_interest){
 	return mat_param;
 }
 
-std::string fe_get_model(int matl_code){
-	std::string model;
-	int num_pointer=0;
-
-	for(int i=0;i<material_types;i++){
-		if(matl_code == mat[i].mat_id){
-			num_pointer = i;
-			break;
-		}
-	}
-
-	model = mat[num_pointer].mat_model;
-	return model;
-}
-
 // obj_interest table:
 // 0 - density
 // 1 - young's or bulk modulus

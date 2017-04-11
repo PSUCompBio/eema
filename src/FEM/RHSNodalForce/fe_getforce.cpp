@@ -18,6 +18,9 @@ VectorXd fe_getforce(MatrixXd nodes, MatrixXi elements, int ndof, VectorXd u, Ve
 	int sdof = nnode * ndof;
 	int edof = nnel * ndof;
 
+	MatrixXd element_stress_host = MatrixXd::Zero(nel,9);
+	MatrixXd element_strain_host = MatrixXd::Zero(nel,9);
+
 	// node_IntForce_system[size_counter] = MatrixXd::Zero(nel,nnel);
 
 	VectorXi nodes_local = VectorXi::Zero(nnel);
@@ -47,8 +50,19 @@ VectorXd fe_getforce(MatrixXd nodes, MatrixXi elements, int ndof, VectorXd u, Ve
 			zcoord(j) = nodes(g,3);
 		}
 
+
+    //std::cout << "Nodes Local: " << nodes_local << "\n";
+
 	VectorXd u_e = VectorXd::Zero(edof); // element displacements
 	u_e = fe_gather(u,u_e,nodes_local,sdof);
+
+	/*int disp_counter = 0;
+	for(int j=0;j<xcoord.size();j++){
+		xcoord(j) = xcoord(j) + u_e(disp_counter);
+		ycoord(j) = ycoord(j) + u_e(disp_counter+1);
+		zcoord(j) = zcoord(j) + u_e(disp_counter+2);
+		disp_counter = j*3;
+	}*/
 
 	VectorXd f_ext_e = VectorXd::Zero(edof);
 	f_ext_e = fe_gather(fext,f_ext_e,nodes_local,sdof); // element external nodal forces
@@ -96,21 +110,13 @@ VectorXd fe_getforce(MatrixXd nodes, MatrixXi elements, int ndof, VectorXd u, Ve
 				//VectorXd dndt(edof);
 				dndt = fe_dndt_8(x,y,z);
 
-				//MatrixXd jacobian(ndof,ndof);
 				jacobian = fe_calJacobian(ndof,nnel,dndr,dnds,dndt,xcoord,ycoord,zcoord);
-
 				double detJacobian = jacobian.determinant();
-				// std::cout << "Determinant (Jacobian): " << detJacobian << std::endl;
-				//MatrixXd invJacobian(ndof,ndof);
 				invJacobian = jacobian.inverse();
 
-				//VectorXd dndx(edof);
 				dndx = fe_dndx_8(nnel, dndr, dnds, dndt, invJacobian);
-				//VectorXd dndy(edof);
 				dndy = fe_dndy_8(nnel, dndr, dnds, dndt, invJacobian);
-				//VectorXd dndz(edof);
 				dndz = fe_dndz_8(nnel, dndr, dnds, dndt, invJacobian);
-
 
 				disp_mat = fe_strDispMatrix_totalLagrangian(edof,nnel,dndx,dndy,dndz,u_e);
 				// disp_mat = fe_strDispMatrix(edof,nnel,dndx,dndy,dndz);
@@ -118,10 +124,9 @@ VectorXd fe_getforce(MatrixXd nodes, MatrixXi elements, int ndof, VectorXd u, Ve
 				VectorXd sigma_e = VectorXd::Zero(6);
 				sigma_e = fe_stressUpdate(dndx,dndy,dndz,disp_mat,u_e,elements(i,1),0);
 
-				// fe_display_vector(sigma_e);
-
 				// f_int_e = f_int_e + ((disp_mat.transpose())*sigma_e*wtx*wty*wtz*detJacobian); (previous correct)
 				//std::cout<<k<<std::endl;
+
 				f_int_e = f_int_e + ((disp_mat.transpose())*sigma_e*wtx*wty*wtz*detJacobian);
 			}
 		}
@@ -268,14 +273,13 @@ VectorXd fe_getforce(MatrixXd nodes, MatrixXi elements, int ndof, VectorXd u, Ve
 		element_stress_truss(i,8) = 0;
 	*/
 
-
-	fi_curr = fe_scatter(fi_curr,f_int_e,nodes_local,sdof);
-
     }
 
 	f_tot_e = f_ext_e - f_int_e;
 	f_tot = fe_scatter(f_tot,f_tot_e,nodes_local,sdof);
 	}
+
+	mesh[0].readStressStrain(element_stress_host,element_strain_host);
 
 	return f_tot;
 }

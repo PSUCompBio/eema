@@ -23,3 +23,47 @@ double fe_function(double a, std::string b, double time){
 
   return result;
 }
+
+double fe_function_derivative(double a, std::string b, double time){
+  double result;
+
+  if(b=="RAMP"){
+    result = (a/t_end);
+  }
+
+  if(b=="SIN"){
+    result = a*cos(time);
+  }
+
+  if(b=="COS"){
+    result = a*(-1.0)*sin(time);
+  }
+
+  if(b=="STEP"){
+    result = 0;
+  }
+
+  return result;
+}
+
+double fe_function_d_derivative(double a, std::string b, double time){
+  double result;
+
+  if(b=="RAMP"){
+    result = 0;
+  }
+
+  if(b=="SIN"){
+    result = a*-1.0*sin(time);
+  }
+
+  if(b=="COS"){
+    result = a*-1.0*cos(time);
+  }
+
+  if(b=="STEP"){
+    result = 0;
+  }
+
+  return result;
+}

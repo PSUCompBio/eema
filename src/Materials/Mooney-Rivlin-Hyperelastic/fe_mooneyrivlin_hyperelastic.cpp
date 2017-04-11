@@ -6,7 +6,7 @@ VectorXd fe_mooneyrivlin_hyperelastic(VectorXd dndx, VectorXd dndy, VectorXd dnd
 
     VectorXd sigma_local = VectorXd::Zero(ndof*2);
 
-        double one_third = 1.0/3.0;
+    double one_third = 1.0/3.0;
 		double two_third = 2.0/3.0;
 		double four_third = 4.0/3.0;
 		double one_half = 1.0/2.0;
@@ -53,4 +53,3 @@ VectorXd fe_mooneyrivlin_hyperelastic(VectorXd dndx, VectorXd dndy, VectorXd dnd
 
     return sigma_local;
 }
-

@@ -2,7 +2,7 @@
 using namespace Eigen;
 
 /** For a single element - this function calculates the volume of the element and calculates the critical time step based on the wave speed.*/
-double fe_calTimeStep(VectorXd xcoord, VectorXd ycoord, VectorXd zcoord, double E, double nu, double rho){
+double fe_calTimeStep(VectorXd xcoord, VectorXd ycoord, VectorXd zcoord,int material_id){
 
 	double deltaT;
 
@@ -12,7 +12,7 @@ double fe_calTimeStep(VectorXd xcoord, VectorXd ycoord, VectorXd zcoord, double 
 	// std::cout<<"Largest Face Area: "<<largest_face<<"\n";
 	// std::cout<<"characteristic Length: "<<lc<<"\n";
 
-	double c_wave = fe_calWaveSpeed(E,nu,rho);
+	double c_wave = fe_calWaveSpeed(material_id);
 
 	// std::cout<<"wave speed: "<<c_wave<<"\n";
 
