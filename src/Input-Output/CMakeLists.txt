@@ -11,5 +11,4 @@ SET(Input_Output_src
     Output/fe_matrix2text.cpp
     Output/fe_display.cpp
      )
-ADD_LIBRARY(Input-Output STATIC ${Input_Output_src})
-target_link_libraries(Input-Output Materials)
+ADD_LIBRARY(Input-Output OBJECT ${Input_Output_src})

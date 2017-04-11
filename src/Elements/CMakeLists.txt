@@ -19,5 +19,4 @@ SET(Elements_src
     ElementCalculations/fe_calJacobian.cpp
     ElementCalculations/fe_calDefGrad.cpp
      )
-ADD_LIBRARY(Elements STATIC ${Elements_src})
-target_link_libraries(Elements Input-Output)
+ADD_LIBRARY(Elements OBJECT ${Elements_src})

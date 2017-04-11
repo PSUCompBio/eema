@@ -8,5 +8,4 @@ SET(Materials_src
     Mooney-Rivlin-Hyperelastic/fe_mooneyrivlin_hyperelastic.cpp
     Elastic/fe_simple_elastic.cpp
      )
-ADD_LIBRARY(Materials STATIC ${Materials_src})
-target_link_libraries(Materials Math)
+ADD_LIBRARY(Materials OBJECT ${Materials_src})

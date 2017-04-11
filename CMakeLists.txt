@@ -7,6 +7,14 @@ option (USE_EIGEN  "Build library with Eigen support" ON)
 set (EIGEN_INCLUDE_DIR "INCLUDE directory for Eigen library" third-party-libs/eigen3)
 include_directories(${EIGEN_INCLUDE_DIR})
 
+#===============================================================================
+# Used to link multiple static libraries
+#===============================================================================
+#set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+#set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fpic")
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fpic")
+
+
 #Bring the headers, such as *.h into the project, should be renamed to include
 include_directories(include)
 

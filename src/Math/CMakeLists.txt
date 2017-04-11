@@ -8,5 +8,4 @@ SET(Math_src
     GeneralMath/fe_calVolume.cpp
     GeneralMath/fe_calArea_4.cpp
      )
-ADD_LIBRARY(Math STATIC ${Math_src})
-target_link_libraries(Math TimeStep )
+ADD_LIBRARY(Math OBJECT ${Math_src})
