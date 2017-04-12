@@ -28,7 +28,7 @@ MatrixXd text2matrix(std::string name, int cols);
 /** Writes a matrix into a text file */
 void matrix2text(std::string name,MatrixXd new_slave_master,int width);
 /** Writes a vector into a text file */
-void vector2text(std::string name, VectorXd vector, int width);
+void new_vector2text(std::string name, VectorXd vector, int width);
 /** Function appends a double value to a text file */
 void append_double2text(std::string name, double a);
 /** Function creates a new text file and writes a double value to it */
@@ -207,5 +207,18 @@ MatrixXd fe_stiffness_hex(double E, double nu, int ndof, int nnel, int edof, dou
 MatrixXd fe_stiffness_embed_truss(MatrixXd nodes_truss, MatrixXd elements_truss, double E_truss, double A_truss, int ndof, int nnel, int edof, double xcoord[], double ycoord[], double zcoord[]);
 
 void fe_writeElementStress(MatrixXd sigma_all, double time);
+
+/* =================================================================== */
+/* New Changes */
+/* =================================================================== */
+VectorXd fe_calculateMass(VectorXd mm, std::string type);
+VectorXd fe_calculateMassDirectLumped(VectorXd mm);
+VectorXd fe_massLumped(MatrixXd nodes, VectorXi elements_row);
+
+VectorXd fe_calculateAccln(VectorXd mm, VectorXd F_net);
+
+double fe_calculateKE(VectorXd mm, VectorXd V);
+double fe_calculateKE(MatrixXd mm, VectorXd V);
+
 
 #endif

@@ -8,6 +8,7 @@ SET(Elements_src
     Quadrature/fe_guass_points_3d.cpp
     Quadrature/fe_guass_points.cpp
     Mass/fe_mass_hex.cpp
+    Mass/fe_massLumped.cpp
     ElementCalculations/fe_voigt2tensor.cpp
     ElementCalculations/fe_transformMass.cpp
     ElementCalculations/fe_tensor2voigt.cpp

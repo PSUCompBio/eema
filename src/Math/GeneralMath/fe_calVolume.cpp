@@ -5,7 +5,9 @@ using namespace Eigen;
 
 double fe_calVolume(VectorXd xcoord, VectorXd ycoord, VectorXd zcoord){
 
+double volume = 0;
 
+if(xcoord.size()==8){
 	//Area of a side is the sum of area of triangles
 	// area of triangle is half the cross-product of two edges
 
@@ -44,7 +46,15 @@ double fe_calVolume(VectorXd xcoord, VectorXd ycoord, VectorXd zcoord){
 	e3 << (xcoord(0)-xcoord(5)), (ycoord(0)-ycoord(5)), (zcoord(0)-zcoord(5));
 	double tet5_vol = e1.dot(e2.cross(e3));
 
-	double volume = (std::abs(tet1_vol) + std::abs(tet2_vol) + std::abs(tet3_vol) + std::abs(tet4_vol) + std::abs(tet5_vol))/6;
+	volume = (std::abs(tet1_vol) + std::abs(tet2_vol) + std::abs(tet3_vol) + std::abs(tet4_vol) + std::abs(tet5_vol))/6;
+
+}
+
+if(xcoord.size()==2){ // Return length for a 1D element
+	VectorXd vec;
+	vec << (xcoord(1)-xcoord(0)),(ycoord(1)-ycoord(0)),(zcoord(1)-zcoord(0));
+	volume = vec.norm();
+}
 
 	return volume;
 }
