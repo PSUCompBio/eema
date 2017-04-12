@@ -76,7 +76,7 @@ VectorXd fe_apply_bc_acceleration(VectorXd A,double time){
 			VectorXi local_dof = bc[i].getDOF();
 			for(int j=0;j<number_of_dof;j++){
 				int c = local_dof(j);
-				A(c) = fe_function_derivative(input_vel_amp,vel_curve,time);
+				A(c) = fe_function(input_vel_amp,vel_curve,time);
 			}
 		}
 
