@@ -15,6 +15,6 @@ script:
   - gcc -v && g++ -v && cmake --version
   # Run your build commands next
   -  mkdir build; cd build/; cmake ../; make
-     cd examples/example-1;  
+  -  cd examples/example-1
   - ./eema_example-1 ./ input.inp
 
