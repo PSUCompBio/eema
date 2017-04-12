@@ -1,6 +1,9 @@
 SET(FEM_src 
-    RHSNodalForce/fe_update.cpp
-    RHSNodalForce/fe_getforce.cpp
+    SolidMechanics/fe_update.cpp
+    SolidMechanics/fe_getforce.cpp
+    SolidMechanics/fe_calculateMass.cpp
+    SolidMechanics/fe_calculateAccln.cpp
+    SolidMechanics/fe_calculateKE.cpp
     Explicit/fe_mainEXPLICIT.cpp
     Electromechanics/fe_electromechanics.cpp
     BoundaryConditions/fe_apply_bc.cpp
