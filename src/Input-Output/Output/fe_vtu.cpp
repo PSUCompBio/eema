@@ -62,8 +62,10 @@ void fe_vtuWrite(std::string output, int time_step, Mesh mesh1){
     myfile<<"\n";
     myfile << "\t\t\t\t</DataArray>\n";
     myfile << "\t\t\t\t<DataArray type=\"Int32\" Name=\"offsets\" format=\"ascii\">\n";
+    int tmp = elements.row(0).cols()-2;
     for(int i=0;i<elements.rows();i++){
-            myfile << "\t\t\t\t\t" << (elements.row(i).cols()-2) << "\n";
+            myfile << "\t\t\t\t\t" << tmp << "\n";
+            tmp = tmp + (elements.row(i).cols()-2);
     }
     myfile << "\t\t\t\t</DataArray>\n";
 

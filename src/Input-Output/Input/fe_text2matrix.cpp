@@ -40,3 +40,23 @@ MatrixXd text2matrix(std::string name, int cols){
 	// std::cout<<"Exiting the text2matrix function. \n";
         return A;
 }
+
+VectorXd text2vector(std::string name){
+        std::ifstream myfile(name.c_str());
+
+        int tmp = 0;
+        double data;
+        
+        while(myfile>>data){
+          tmp = tmp + 1;
+        }
+
+        VectorXd A(tmp);
+
+        std::ifstream myfile1(name.c_str());
+        for(int i=0;i<tmp;i++){
+          myfile1 >> A(i);
+        }
+
+        return A;
+}
