@@ -39,23 +39,18 @@ void fe_mainEXPLICIT(){
 	int size_counter = 0; // time step count
 	int time_temp_1 = 1;
 	double output_temp_1 = ((double)(t_end/output_frequency));
-
 	VectorXd A = VectorXd::Zero(sdof); // Acceleration Vector
 	VectorXd V = VectorXd::Zero(sdof); // Velocity Vector
 	VectorXd V_half = VectorXd::Zero(sdof); // Velocity Vector at n+1/2
 	VectorXd U = VectorXd::Zero(sdof); // Displacement Vector
-
+	VectorXd F_net = VectorXd::Zero(sdof); // Total Nodal force vector
 	VectorXd fe = VectorXd::Zero(sdof); // External Nodal force vector
-
-	VectorXd fi_prev = VectorXd::Zero(sdof); // Internal nodal force vector at previous timestep
-	VectorXd fi_curr = VectorXd::Zero(sdof); // Internal Nodal force vector at current timestep
-
-	VectorXd U_prev = VectorXd::Zero(sdof); // Nodal displacements at previous time
-	VectorXd U_curr = VectorXd::Zero(sdof); // Nodal displacements at current time
-
 	VectorXd fe_prev = VectorXd::Zero(sdof);
 	VectorXd fe_curr = VectorXd::Zero(sdof);
-
+	VectorXd fi_prev = VectorXd::Zero(sdof); // Internal nodal force vector at previous timestep
+	VectorXd fi_curr = VectorXd::Zero(sdof); // Internal Nodal force vector at current timestep
+	VectorXd U_prev = VectorXd::Zero(sdof); // Nodal displacements at previous time
+	VectorXd U_curr = VectorXd::Zero(sdof); // Nodal displacements at current time
 	double energy_int_old = 0;
 	double energy_int_new = 0;
 	double energy_ext_old = 0;
@@ -73,21 +68,21 @@ void fe_mainEXPLICIT(){
 	std::string total_energy = home_path + "/" +"results/total_energy_system.txt";
 	new_double2text(total_energy,0);
 
-	VectorXd F_net = VectorXd::Zero(sdof); // Total Nodal force vector
+
 	// Loading Conditions
 	fe = fe_apply_bc_load(fe,0);
 
-	VectorXd mm = VectorXd::Zero(edof);
+	// ----------------------------------------------------------------------------
+	//Step-1: Calculate the mass matrix similar to that of belytschko.
+
+	VectorXd mm = VectorXd::Zero(sdof);
 	mm = fe_calculateMass(mm,"direct_lumped");
 
 	std::string mass = home_path+"/"+"results/system_mass.txt";
 	new_vector2text(mass.c_str(),mm,mm.cols());
 
-	//std::string mass_inverse = home_path+"results/system_mass_inverse.txt";
-	  //matrix2text(mass_inverse.c_str(),mm.inverse(),24);
-
 	// ----------------------------------------------------------------------------
-		//Step-2: getforce step from Belytschko
+ //Step-2: getforce step from Belytschko
 	F_net = fe_getforce(nodes,elements,ndof,U,V,fe,size_counter,nodes_truss,elements_truss);
 
 	mesh[0].readNodalKinematics(U,V,A);

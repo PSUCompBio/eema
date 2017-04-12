@@ -16,13 +16,14 @@ VectorXd fe_massLumped(MatrixXd nodes, VectorXi elements_row){
 
     for(int j=0;j<nnel;j++){
       int g = -1;
-      for(int f=0;f<nnode;f++){
+      /*for(int f=0;f<nnode;f++){
         if(elements_row(j+2)==nodes(f,0)){
           g = f;
           break;
         }
-      }
+      }*/
       nodes_local(j) = elements_row(j+2);
+      g = nodes_local(j);
       xcoord(j) = nodes(g,1);
       ycoord(j) = nodes(g,2);
       zcoord(j) = nodes(g,3);
