@@ -60,13 +60,13 @@ void fe_mainEXPLICIT(){
 	double energy_max = 0;
 
 	std::string internal_energy = home_path + "/" + "results/internal_energy_system.txt";
-	new_double2text(internal_energy,0);
+	new_double2textWithTime(internal_energy,time_temp_1 - 1,t,energy_int_new);
 	std::string external_energy = home_path + "/" +"results/external_energy_system.txt";
-	new_double2text(external_energy,0);
+	new_double2textWithTime(external_energy,time_temp_1 - 1,t,energy_ext_new);
 	std::string kinetic_energy = home_path + "/" + "results/kinetic_energy_system.txt";
-	new_double2text(kinetic_energy,0);
+	new_double2textWithTime(kinetic_energy,time_temp_1 - 1,t,energy_kin);
 	std::string total_energy = home_path + "/" +"results/total_energy_system.txt";
-	new_double2text(total_energy,0);
+	new_double2textWithTime(total_energy,time_temp_1 - 1,t,energy_total);
 
 
 	// Loading Conditions
@@ -200,18 +200,17 @@ void fe_mainEXPLICIT(){
 					//std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"External Work: " << energy_ext_new << "\n";
 					//std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"Kinetic Energy: " << energy_kin << "\n";
 
-					append_double2text(internal_energy,energy_int_new);
-					append_double2text(external_energy,energy_ext_new);
-					append_double2text(kinetic_energy,energy_kin);
-					append_double2text(total_energy,energy_total);
-
+					/*print current frame, current time, and energy to individual .txt files*/
+					append_double2textWithTime(internal_energy,time_temp_1 -1,t,energy_int_new);
+					append_double2textWithTime(external_energy,time_temp_1 - 1,t,energy_ext_new);
+					append_double2textWithTime(kinetic_energy,time_temp_1 - 1,t,energy_kin);
+					append_double2textWithTime(total_energy,time_temp_1 - 1,t,energy_total);
 			}
 
 			s_prev = s;
 			s = clock();
 			ds = s - s_prev;
 			size_counter = size_counter+1;
-
 		}
 
 }
