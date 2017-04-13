@@ -194,11 +194,11 @@ void fe_mainEXPLICIT(){
 					  								<<"  Timestep Number = "<<(size_counter)
 					  								<<"  CPU Time = " <<std::setw(5)<<std::setprecision(1)
 														<< ((float)ds/CLOCKS_PER_SEC) << "s \n";
-					std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"Current Precise Time: " << t << "\n";
-					std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"Z Displacement: " << U(20) << "\n";
-					std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"Internal Energy: " << energy_int_new << "\n";
-					std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"External Work: " << energy_ext_new << "\n";
-					std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"Kinetic Energy: " << energy_kin << "\n";
+					//std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"Current Precise Time: " << t << "\n";
+					//std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"Z Displacement: " << U(20) << "\n";
+					//std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"Internal Energy: " << energy_int_new << "\n";
+					//std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"External Work: " << energy_ext_new << "\n";
+					//std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"Kinetic Energy: " << energy_kin << "\n";
 
 					append_double2text(internal_energy,energy_int_new);
 					append_double2text(external_energy,energy_ext_new);
