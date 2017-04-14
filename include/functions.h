@@ -39,6 +39,10 @@ void new_double2text(std::string name, double a);
 void new_double2textWithTime(std::string name, int frame, double time, double value);
 /** Function writes the results into the VTU folder */
 void fe_vtuWrite(std::string output, int time_step, Mesh mesh1);
+/** Function creates new PVD file in the VTU folder */
+void fe_pvdNew(std::string output, int time_step, double time);
+/** Function appends PVD file in the VTU folder */
+void fe_pvdAppend(std::string output, int time_step, double time);
 /** Read the input text file -- for a particular job */
 void fe_mainRead(std::string file);
 

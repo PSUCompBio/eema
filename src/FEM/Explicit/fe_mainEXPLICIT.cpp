@@ -87,6 +87,7 @@ void fe_mainEXPLICIT(){
 
 	mesh[0].readNodalKinematics(U,V,A);
 	fe_vtuWrite("eem_matrix",size_counter,mesh[0]);
+	fe_pvdNew("eem_matrix",size_counter,t);
 
 	dT = reduction * fe_getTimeStep(nodes,elements,ndof,U,V,fe);
 	if(dT>dt_min){
@@ -185,6 +186,7 @@ void fe_mainEXPLICIT(){
 					mesh[0].readNodalKinematics(U,V,A);
 
 					fe_vtuWrite("eem_matrix",size_counter,mesh[0]);
+					fe_pvdAppend("eem_matrix",size_counter,t);
 
 					time_temp_1 = time_temp_1 + 1;
 					//fe_vtkWrite_host("eem_matrix",1,5,size_counter,nodes,elements);
@@ -194,11 +196,11 @@ void fe_mainEXPLICIT(){
 					  								<<"  Timestep Number = "<<(size_counter)
 					  								<<"  CPU Time = " <<std::setw(5)<<std::setprecision(1)
 														<< ((float)ds/CLOCKS_PER_SEC) << "s \n";
-					std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"Current Precise Time: " << t << "\n";
-					std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"Z Displacement: " << U(20) << "\n";
-					std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"Internal Energy: " << energy_int_new << "\n";
-					std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"External Work: " << energy_ext_new << "\n";
-					std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"Kinetic Energy: " << energy_kin << "\n";
+					//std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"Current Precise Time: " << t << "\n";
+					//std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"Z Displacement: " << U(20) << "\n";
+					//std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"Internal Energy: " << energy_int_new << "\n";
+					//std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"External Work: " << energy_ext_new << "\n";
+					//std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"Kinetic Energy: " << energy_kin << "\n";
 
 					/*print current frame, current time, and energy to individual .txt files*/
 					append_double2textWithTime(internal_energy,time_temp_1 -1,t,energy_int_new);
