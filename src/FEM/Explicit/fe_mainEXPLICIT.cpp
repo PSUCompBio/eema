@@ -87,8 +87,7 @@ void fe_mainEXPLICIT(){
 
 	mesh[0].readNodalKinematics(U,V,A);
 	fe_vtuWrite("eem_matrix",size_counter,mesh[0]);
-
-	fe_pvdNew("eem_matrix",time_temp_1 - 1,t);
+	fe_pvdNew("eem_matrix",size_counter,t);
 
 	dT = reduction * fe_getTimeStep(nodes,elements,ndof,U,V,fe);
 	if(dT>dt_min){
@@ -187,6 +186,7 @@ void fe_mainEXPLICIT(){
 					mesh[0].readNodalKinematics(U,V,A);
 
 					fe_vtuWrite("eem_matrix",size_counter,mesh[0]);
+					fe_pvdAppend("eem_matrix",size_counter,t);
 
 					time_temp_1 = time_temp_1 + 1;
 					//fe_vtkWrite_host("eem_matrix",1,5,size_counter,nodes,elements);
