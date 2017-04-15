@@ -101,6 +101,10 @@ extern int bc_types;
 /** Pointer to the Boundary Condition Data */
 extern BC *bc;
 
+/** Number of constraints */
+extern num_constraints;
+extern Constraint *cons;
+
 /** Convergence Criteria for Newton Rhapson Method */
 extern double eps_nr;
 

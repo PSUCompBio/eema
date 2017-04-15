@@ -50,19 +50,8 @@ VectorXd fe_getforce(MatrixXd nodes, MatrixXi elements, int ndof, VectorXd u, Ve
 			zcoord(j) = nodes(g,3);
 		}
 
-
-    //std::cout << "Nodes Local: " << nodes_local << "\n";
-
 	VectorXd u_e = VectorXd::Zero(edof); // element displacements
 	u_e = fe_gather(u,u_e,nodes_local,sdof);
-
-	/*int disp_counter = 0;
-	for(int j=0;j<xcoord.size();j++){
-		xcoord(j) = xcoord(j) + u_e(disp_counter);
-		ycoord(j) = ycoord(j) + u_e(disp_counter+1);
-		zcoord(j) = zcoord(j) + u_e(disp_counter+2);
-		disp_counter = j*3;
-	}*/
 
 	VectorXd f_ext_e = VectorXd::Zero(edof);
 	f_ext_e = fe_gather(fext,f_ext_e,nodes_local,sdof); // element external nodal forces

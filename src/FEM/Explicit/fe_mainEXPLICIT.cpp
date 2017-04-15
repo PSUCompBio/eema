@@ -10,6 +10,7 @@ double eps_energy = 0.01;
 void fe_mainEXPLICIT(){
 
 	for(int i=0;i<num_meshes;i++){
+		mesh[i].printInfo();
 		mesh[i].preprocessMesh();
 	}
 
@@ -36,7 +37,7 @@ void fe_mainEXPLICIT(){
 	double dT = dt_initial;
 	double t_half = 0; // t(n + 1/2)
 	double t=t_start;
-	int size_counter = 0; // time step count
+	int time_step_counter = 0; // time step count
 	int time_temp_1 = 1;
 	double output_temp_1 = ((double)(t_end/output_frequency));
 	VectorXd A = VectorXd::Zero(sdof); // Acceleration Vector
@@ -83,11 +84,11 @@ void fe_mainEXPLICIT(){
 
 	// ----------------------------------------------------------------------------
  //Step-2: getforce step from Belytschko
-	F_net = fe_getforce(nodes,elements,ndof,U,V,fe,size_counter,nodes_truss,elements_truss);
+	F_net = fe_getforce(nodes,elements,ndof,U,V,fe,time_step_counter,nodes_truss,elements_truss);
 
 	mesh[0].readNodalKinematics(U,V,A);
-	fe_vtuWrite("eem_matrix",size_counter,mesh[0]);
-	fe_pvdNew("eem_matrix",size_counter,t);
+	fe_vtuWrite("eem_matrix",time_step_counter,mesh[0]);
+	fe_pvdNew("eem_matrix",time_step_counter,t);
 
 	dT = reduction * fe_getTimeStep(nodes,elements,ndof,U,V,fe);
 	if(dT>dt_min){
@@ -103,7 +104,7 @@ void fe_mainEXPLICIT(){
 	// ----------------------------------------------------------------------------
 
 	//Step-4: Time loop starts....
-	size_counter = size_counter+1;
+	time_step_counter = time_step_counter + 1;
 	clock_t s,s_prev,ds;
 	s = clock();
 
@@ -129,7 +130,7 @@ void fe_mainEXPLICIT(){
 				U = U + dT*(V_half);
 				U = fe_apply_bc_displacement(U,t);
 
-				F_net = fe_getforce(nodes,elements,ndof,U,V,fe,size_counter,nodes_truss,elements_truss); // Calculating the force term.
+				F_net = fe_getforce(nodes,elements,ndof,U,V,fe,time_step_counter,nodes_truss,elements_truss); // Calculating the force term.
 
 				dT = reduction * fe_getTimeStep(nodes, elements, ndof, U, V, fe);
 				if(dT>dt_min){
@@ -185,15 +186,15 @@ void fe_mainEXPLICIT(){
 
 					mesh[0].readNodalKinematics(U,V,A);
 
-					fe_vtuWrite("eem_matrix",size_counter,mesh[0]);
-					fe_pvdAppend("eem_matrix",size_counter,t);
+					fe_vtuWrite("eem_matrix",time_step_counter,mesh[0]);
+					fe_pvdAppend("eem_matrix",time_step_counter,t);
 
 					time_temp_1 = time_temp_1 + 1;
 					//fe_vtkWrite_host("eem_matrix",1,5,size_counter,nodes,elements);
 					//fe_vtkWrite_truss("eem_truss",1,5,size_counter,nodes_truss,elements_truss);
 	        std::cout <<"Timestep Value = "<<std::setw(5)<<std::scientific<<std::setprecision(1)<<dT
 					  								<<"  Current Time = "<<std::setw(5)<<std::setprecision(1)<< t
-					  								<<"  Timestep Number = "<<(size_counter)
+					  								<<"  Timestep Number = "<<(time_step_counter)
 					  								<<"  CPU Time = " <<std::setw(5)<<std::setprecision(1)
 														<< ((float)ds/CLOCKS_PER_SEC) << "s \n";
 					//std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"Current Precise Time: " << t << "\n";
@@ -212,7 +213,7 @@ void fe_mainEXPLICIT(){
 			s_prev = s;
 			s = clock();
 			ds = s - s_prev;
-			size_counter = size_counter+1;
+			time_step_counter = time_step_counter+1;
 		}
 
 }

@@ -6,6 +6,8 @@
 # -------------------------------
 # Mesh-1 (Hex Mesh)
 *MESH
+*NAME
+Matrix
 *NODES
 8	3
 0	0	0	0
@@ -23,6 +25,8 @@
 # -------------------------------
 # Mesh-2 (Truss Mesh)
 *MESH
+*NAME
+Fiber
 *NODES
 2	3
 0	0.0025	0.0025	0
@@ -95,4 +99,7 @@ load
 RAMP
 *END_BC
 # ------------------------------
+*CONSTRAINT
+embedded 1 Matrix Fiber
+*END_CONSTRAINT
 *END

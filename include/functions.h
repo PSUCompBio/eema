@@ -13,11 +13,11 @@
 #include "Eigen/Eigenvalues"
 #include "unsupported/Eigen/MatrixFunctions"
 
+#include "GlobalVariables.h"
 #include "Mesh.h"
 #include "Materials.h"
 #include "BC.h"
-
-#include "GlobalVariables.h"
+#include "Constraint.h"
 
 using namespace Eigen;
 

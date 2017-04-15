@@ -29,6 +29,10 @@ double reduction; /** Reduces the timestep value by this amount */
 int bc_types;
 BC *bc;
 
+/* Embedded Element - Host and embedded mesh ids */
+int num_constraints;
+Constraint *cons;
+
 void fe_mainRead(std::string file){
 
   num_meshes = 0;
@@ -37,6 +41,8 @@ void fe_mainRead(std::string file){
   int material_types_counter = 0;
   bc_types = 0;
   int bc_types_counter = 0;
+  num_constraints = 0;
+  int num_constraints_counter = 0;
 
   std::ifstream myfile(file.c_str());
   std::string line;
@@ -53,6 +59,9 @@ void fe_mainRead(std::string file){
         if(line=="*BC"){
           bc_types = bc_types+1;
         }
+        if(line=="*CONSTTAINT"){
+          num_constraint = num_constraints + 1;
+        }
     }
     std::getline(myfile,line);
   }
@@ -60,11 +69,10 @@ void fe_mainRead(std::string file){
   mesh = new Mesh[num_meshes];
   mat = new Materials[material_types];
   bc = new BC[bc_types];
+  cons = new Constraint[num_constraints];
 
   std::ifstream myfile1(file.c_str());
   std::getline(myfile1,line);
-
-
 
   while(line!="*END"){
 
@@ -82,8 +90,14 @@ void fe_mainRead(std::string file){
           std::getline(myfile1,line);
 
           while(line!="*END_MESH"){
+            std::string name;
             MatrixXd nodes;
             MatrixXi elements;
+
+            if(line=="*NAME"){
+              myfile1 >> name;
+              myfile1 >> line;
+            }
 
             if(line=="*NODES"){
               int rows = 0;
@@ -113,8 +127,8 @@ void fe_mainRead(std::string file){
               myfile1 >> line;
             }
 
-            if(nodes.rows()!=0 && elements.rows()!=0){
-              mesh[num_meshes_counter].readMesh(nodes,elements);
+            if(nodes.rows()!=0 && elements.rows()!=0 && name.length()!=0){
+              mesh[num_meshes_counter].readMesh(name,nodes,elements);
               num_meshes_counter = num_meshes_counter + 1;
             }
           }
@@ -173,6 +187,24 @@ void fe_mainRead(std::string file){
           }
           bc[bc_types_counter].readBC(type,amplitude,num_dof,dof,time_curve);
           bc_types_counter = bc_types_counter + 1;
+          myfile1 >> line;
+        }
+
+        if(line=="*CONSTRAINT"){
+          std::string type;
+          int id;
+          std::string master;
+          std::string slave;
+          while(line!="*END_CONSTRAINT"){
+            myfile1 >> type;
+            if(type=="embedded"){
+              myfile1 >> id;
+              myfile1 >> master;
+              myfile1 >> slave;
+            }
+          }
+          cons[num_constraints_counter].readConstraints(type,id,master,slave);
+          num_constraints_counter = num_constraints_counter + 1;
           myfile1 >> line;
         }
 

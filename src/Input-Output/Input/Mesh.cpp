@@ -3,7 +3,8 @@
 
 using namespace Eigen;
 
-void Mesh::readMesh(MatrixXd n, MatrixXi e){
+void Mesh::readMesh(std::string name, MatrixXd n, MatrixXi e){
+	mesh_name = name;
 	nodes = n;
 	elements = e;
 }
@@ -217,4 +218,10 @@ void Mesh::checkMesh(){
         std::exit(-1);
     }
 
+}
+
+void Mesh::printInfo(){
+	std::cout << "Mesh: " << mesh_name <<"\n";
+	std::cout << "Number of elements: " << elements.rows() << "\n";
+	std::cout << "Number of nodes: " << nodes.rows() << "\n";
 }

@@ -21,6 +21,9 @@
 using namespace Eigen;
 
 class Mesh{
+
+	std::string mesh_name;
+
 	/** This contains the nodal data read from the mesh */
 	MatrixXd nodes;
 	/** This contains the element data read from the mesh */
@@ -46,7 +49,7 @@ class Mesh{
 	MatrixXd strain;
 
 public:
-	void readMesh(MatrixXd n, MatrixXi e);
+	void readMesh(std::string name, MatrixXd n, MatrixXi e);
 	void readNodalKinematics(VectorXd Usystem, VectorXd Vsystem, VectorXd Asystem);
 	void readStressStrain(MatrixXd stress_tmp,MatrixXd strain_tmp);
 
@@ -76,6 +79,7 @@ public:
 	void replaceNodes(MatrixXd A, std::string B);
 	void replaceElements(MatrixXi A, std::string B);
 	void checkMesh();
+	void printInfo();
 };
 
 #endif /* HEADERS_MESH_H_ */
