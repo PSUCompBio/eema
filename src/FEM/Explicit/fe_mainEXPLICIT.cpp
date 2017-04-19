@@ -155,10 +155,8 @@ void fe_mainEXPLICIT(){
 				/* Calculating the internal energy terms */
 				U_curr = U;
 				VectorXd del_U = U_curr - U_prev;
-				//fi_curr = fe - F_net;
 				energy_int_new = energy_int_old + 0.5*(del_U.dot(fi_prev + fi_curr));
 				fi_prev = fi_curr;
-				//fi_curr = VectorXd::Zero(sdof);
 				U_prev = U_curr;
 				energy_int_old = energy_int_new;
 

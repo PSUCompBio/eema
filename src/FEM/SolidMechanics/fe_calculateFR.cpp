@@ -20,6 +20,5 @@ VectorXd fe_calculateFR(int sdof, VectorXd fi_curr, VectorXd mm, VectorXd A){
 			}
 		}
 	}
- //fr = fi_curr + mm.cwiseProduct(A);
 	return fr;
 }
