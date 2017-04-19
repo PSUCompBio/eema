@@ -47,7 +47,6 @@ void fe_mainEXPLICIT(){
 	VectorXd fe = VectorXd::Zero(sdof); // External Nodal force vector
 	VectorXd fe_prev = VectorXd::Zero(sdof);
 	VectorXd fe_curr = VectorXd::Zero(sdof);
-	//VectorXd fr = VectorXd::Zero(sdof); // Reaction Nodal force vector
 	VectorXd fr_prev = VectorXd::Zero(sdof);
 	VectorXd fr_curr = VectorXd::Zero(sdof);
 	VectorXd fi_prev = VectorXd::Zero(sdof); // Internal nodal force vector at previous timestep
