@@ -62,8 +62,10 @@ void fe_vtuWrite(std::string output, int time_step, Mesh mesh1){
     myfile<<"\n";
     myfile << "\t\t\t\t</DataArray>\n";
     myfile << "\t\t\t\t<DataArray type=\"Int32\" Name=\"offsets\" format=\"ascii\">\n";
+    int tmp = elements.row(0).cols()-2;
     for(int i=0;i<elements.rows();i++){
-            myfile << "\t\t\t\t\t" << (elements.row(i).cols()-2) << "\n";
+            myfile << "\t\t\t\t\t" << tmp << "\n";
+            tmp = tmp + (elements.row(i).cols()-2);
     }
     myfile << "\t\t\t\t</DataArray>\n";
 
@@ -142,4 +144,58 @@ void fe_vtuWrite(std::string output, int time_step, Mesh mesh1){
     myfile << "\t\t</Piece>\n";
     myfile << "\t</UnstructuredGrid>\n";
     myfile << "</VTKFile>\n";
+}
+
+void fe_pvdNew(std::string output, int time_step, double time){
+
+    /** Output File Name */
+    std::string name;
+    name = home_path + "/" + "results/vtu/" + output + ".pvd";
+    std::ofstream myfile(name.c_str());
+
+    /** Write Header */
+    myfile << "<?xml version=\"1.0\"?>\n";
+    myfile << "<VTKFile type=\"Collection\" version=\"0.1\"\n";
+    myfile << "\t byte_order=\"LittleEndian\"\n";
+    myfile << "\t compressor=\"vtkZLibDataCompressor\">\n";
+    myfile << "   <Collection>\n";
+
+    /** Write First Line of Data */
+    myfile << "     <DataSet timestep= \"" << std::scientific << std::setprecision(5) << time << "\" group=\"\" part=\"0\"\n";
+    std::ostringstream ss;
+    ss << time_step;
+    std::string vtuFileName;
+    //vtuFileName = home_path + "/" + "results/vtu/" + output + "_" + ss.str() + ".vtu";
+    vtuFileName = output + "_" + ss.str() + ".vtu";
+    myfile << "\t      file=\"" << vtuFileName << "\"/>\n";
+}
+
+void fe_pvdAppend(std::string output, int time_step, double time){
+
+    /** Output File Name */
+    std::string name;
+    name = home_path + "/" + "results/vtu/" + output + ".pvd";
+    std::ofstream myfile(name.c_str(), std::ios_base::app);
+
+    /** Append New Line of Data */
+    if(myfile.is_open()){
+    	myfile << "     <DataSet timestep= \"" << std::scientific << std::setprecision(5) << time << "\" group=\"\" part=\"0\"\n";
+    	std::ostringstream ss;
+    	ss << time_step;
+    	std::string vtuFileName;
+    	//vtuFileName = home_path + "/" + "results/vtu/" + output + "_" + ss.str() + ".vtu";
+	vtuFileName = output + "_" + ss.str() + ".vtu";
+    	myfile << "\t      file=\"" << vtuFileName << "\"/>\n";
+
+    	/** Write Footer */
+    	if(time == t_end){
+	    myfile << "   </Collection>\n";
+	    myfile << "</VTKFile>\n";
+    	}
+    }
+
+    else{
+    	std::cout << "No Such Text File With This Name Exists - " << name << "\n";
+    	std::exit(-1);
+    }
 }

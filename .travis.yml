@@ -37,3 +37,4 @@ script:
   - ./eema_gui &
   - pkill eema_gui
   - cd ..
+
