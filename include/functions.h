@@ -227,6 +227,7 @@ VectorXd fe_calculateAccln(VectorXd mm, VectorXd F_net);
 
 double fe_calculateKE(VectorXd mm, VectorXd V);
 double fe_calculateKE(MatrixXd mm, VectorXd V);
+VectorXd fe_calculateFR(int sdof, VectorXd fi_curr, VectorXd mm, VectorXd A);
 
 VectorXd text2vector(std::string name);
 

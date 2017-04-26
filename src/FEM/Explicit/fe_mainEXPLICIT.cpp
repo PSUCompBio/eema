@@ -47,6 +47,8 @@ void fe_mainEXPLICIT(){
 	VectorXd fe = VectorXd::Zero(sdof); // External Nodal force vector
 	VectorXd fe_prev = VectorXd::Zero(sdof);
 	VectorXd fe_curr = VectorXd::Zero(sdof);
+	VectorXd fr_prev = VectorXd::Zero(sdof);
+	VectorXd fr_curr = VectorXd::Zero(sdof);
 	VectorXd fi_prev = VectorXd::Zero(sdof); // Internal nodal force vector at previous timestep
 	VectorXd fi_curr = VectorXd::Zero(sdof); // Internal Nodal force vector at current timestep
 	VectorXd U_prev = VectorXd::Zero(sdof); // Nodal displacements at previous time
@@ -130,6 +132,8 @@ void fe_mainEXPLICIT(){
 				U = fe_apply_bc_displacement(U,t);
 
 				F_net = fe_getforce(nodes,elements,ndof,U,V,fe,size_counter,nodes_truss,elements_truss); // Calculating the force term.
+				fi_curr = fe - F_net; // Calculating internal forces.
+				fr_curr = fe_calculateFR(sdof,fi_curr,mm,A); // Calculating reaction forces.
 
 				dT = reduction * fe_getTimeStep(nodes, elements, ndof, U, V, fe);
 				if(dT>dt_min){
@@ -150,18 +154,18 @@ void fe_mainEXPLICIT(){
 				/* Calculating the internal energy terms */
 				U_curr = U;
 				VectorXd del_U = U_curr - U_prev;
-				fi_curr = fe - F_net;
 				energy_int_new = energy_int_old + 0.5*(del_U.dot(fi_prev + fi_curr));
 				fi_prev = fi_curr;
-				fi_curr = VectorXd::Zero(sdof);
 				U_prev = U_curr;
 				energy_int_old = energy_int_new;
 
 
 				/* Calculating the external energy terms */
-				fe_curr = fe ;
-				energy_ext_new = energy_ext_old + 0.5*(del_U.dot(fe_prev + fe_curr));
+				fe_curr = fe;
+				energy_ext_new = energy_ext_old + 0.5*(del_U.dot((fe_prev + fr_prev) + (fe_curr + fr_curr)));
+				fi_curr = VectorXd::Zero(sdof);
 				fe_prev = fe_curr;
+				fr_prev = fr_curr;
 				energy_ext_old = energy_ext_new;
 
 				/* Calculating the kinetic energy */
