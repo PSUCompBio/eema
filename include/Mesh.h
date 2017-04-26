@@ -82,8 +82,10 @@ public:
   VectorXd getNodalStress();
   /** Outputs Nodal Strain of the entire mesh */
   VectorXd getNodalStrain();
+
   int getNumNodes();
   int getNumElements();
+  int getNumNodesPerElement();
 
   void preprocessMesh();
   void replaceNodes(MatrixXd A, std::string B);

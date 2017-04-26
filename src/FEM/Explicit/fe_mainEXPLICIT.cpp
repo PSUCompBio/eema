@@ -14,19 +14,23 @@ VectorXd m_system;
 void
 fe_mainEXPLICIT()
 {
+
+    if (num_meshes == 0) {
+        std::cout << "No meshes included - Simulation is not possible !! " << "\n";
+        std::exit(-1);
+    }
+
     for (int i = 0; i < num_meshes; i++) {
         mesh[i].preprocessMesh();
     }
 
     MatrixXd nodes          = mesh[0].getNewNodes();
     MatrixXi elements       = mesh[0].getNewElements();
-    MatrixXd nodes_truss    = mesh[1].getNewNodes();
-    MatrixXi elements_truss = mesh[1].getNewElements();
 
     // Following variables - Only for Hex Element
-    int nel   = elements.rows();       /*! number of elements */
-    int nnel  = (elements.cols() - 2); // number of nodes per element
-    int nnode = nodes.rows();          // number of nodes
+    int nel   = mesh[0].getNumElements();       /*! number of elements */
+    int nnel  = mesh[0].getNumNodesPerElement(); // number of nodes per element
+    int nnode = mesh[0].getNumNodes();          // number of nodes
     int sdof  = nnode * ndof;          // system degrees of freedom
     int edof  = nnel * ndof;           // element degrees of freedom
 
@@ -92,11 +96,11 @@ fe_mainEXPLICIT()
     mesh[0].readNodalKinematics(U, V, A);
 
     for (int i = 0; i < num_meshes; i++) {
-        fe_vtuWrite(plot_state_counter - 1, mesh[i]);
+        fe_vtuWrite(plot_state_counter - 1, t, mesh[i]);
     }
 
 
-    dT = reduction * fe_getTimeStep(nodes, elements, ndof, U, V, fe);
+    dT = reduction * fe_getTimeStep();
     if (dT > dt_min) {
         dT = dt_min;
     }
@@ -140,7 +144,7 @@ fe_mainEXPLICIT()
         fi_curr = fe - F_net;
         fr_curr = fe_calculateFR(sdof, fi_curr, m_system, A);
 
-        dT = reduction * fe_getTimeStep(nodes, elements, ndof, U, V, fe);
+        dT = reduction * fe_getTimeStep();
         if (dT < failure_time_step) {
             std::cout << "Simulation Failed - Timestep too small" << "\n";
             std::cout << "Timestep is: " << dT << "\n";
@@ -197,10 +201,9 @@ fe_mainEXPLICIT()
         /* */
 
         if (t >= (plot_state_counter * (output_temp_1))) {
-            mesh[0].readNodalKinematics(U, V, A);
 
             for (int i = 0; i < num_meshes; i++) {
-                fe_vtuWrite(plot_state_counter, mesh[i]);
+                fe_vtuWrite(plot_state_counter, t, mesh[i]);
             }
 
             plot_state_counter = plot_state_counter + 1;
@@ -213,7 +216,7 @@ fe_mainEXPLICIT()
                       << "\n Plot State = " << (plot_state_counter - 1)
                       << "\n CPU Time = " << std::setw(5) << std::setprecision(1)
                       << ((float) ds / CLOCKS_PER_SEC) << "s \n";
-            // std::cout << std::setw(5) << std::scientific << std::setprecision(5) << "Z Displacement: " << U(20) << "\n";
+            std::cout << std::setw(5) << std::scientific << std::setprecision(5) << "Z Displacement: " << U(20) << "\n";
             // std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"Current Precise Time: " << t << "\n";
             // std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"Internal Energy: " << energy_int_new << "\n";
             // std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"External Work: " << energy_ext_new << "\n";
@@ -230,5 +233,6 @@ fe_mainEXPLICIT()
         s      = clock();
         ds     = s - s_prev;
         time_step_counter = time_step_counter + 1;
+        mesh[0].readNodalKinematics(U, V, A);
     }
 } // fe_mainEXPLICIT
