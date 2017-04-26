@@ -1,5 +1,7 @@
 dist: trusty
 sudo: required
+env:
+  - DISPLAY=:99.0
 language:
   - cpp
 compiler:
@@ -11,10 +13,13 @@ addons:
     packages:
       - cmake
 before_install:
- - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
- - sudo apt-get update -qq
- - sudo apt-get install qtbase5-dev qtdeclarative5-dev libqt5webkit5-dev libsqlite3-dev
- - sudo apt-get install qt5-default qttools5-dev-tools
+  # stuff needed for qt5 which is for GUI  
+  - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
+  - sudo apt-get update -qq
+  - sudo apt-get install qtbase5-dev qtdeclarative5-dev libqt5webkit5-dev libsqlite3-dev
+  - sudo apt-get install qt5-default qttools5-dev-tools
+  # test/start GUI
+  - sh -e /etc/init.d/xvfb start
 script:
   # Check versions of gcc, g++ and cmake
   - gcc -v && g++ -v && cmake --version
@@ -22,4 +27,5 @@ script:
   -  mkdir build; cd build/; cmake ../; make
      cd examples/example-1;  
   - ./eema_example-1 ./ input.inp
-
+  # test gui compile
+  - ./gui/eema_gui
