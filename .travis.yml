@@ -33,5 +33,7 @@ script:
   # test example 1 
   - cd examples/example-1;  
   - ./eema_example1 ./ input.inp
+  - cd ../../
   # test gui compile
-  - ./gui/eema_gui
+  - cd gui
+  - ./eema_gui
