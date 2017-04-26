@@ -24,7 +24,7 @@ script:
   # Check versions of gcc, g++ and cmake
   - gcc -v && g++ -v && cmake --version
   # Run your build commands next
-  -  mkdir build; cd build/; cmake ../; make
+  -  mkdir build; cd build/; cmake ../ -DEEMA_EXAMPLES=ON -DEXAMPLE1=ON -DEEMA_GUI=ON; make
      cd examples/example-1;  
   - ./eema_example-1 ./ input.inp
   # test gui compile
