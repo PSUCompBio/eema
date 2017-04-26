@@ -21,14 +21,12 @@ before_install:
   - gcc -v && g++ -v && cmake --version
 install:
   - sudo apt-get install -y qt5-default qttools5-dev-tools
-#  - sudo apt-get install -qq qt551base qt551multimedia qt551translations qt551tools
 before_script:
   # Run your build commands next
   - mkdir build
   - cd build/
   - cmake ../ -DEEMA_EXAMPLES=ON -DEXAMPLE1=ON -DEEMA_GUI=ON -DCMAKE_VERBOSE_MAKEFILE=ON
 script:
-  - source /opt/qt55/bin/qt55-env.sh
   - make
   # test example 1 
   - cd examples/example-1;  
