@@ -15,7 +15,7 @@ addons:
 before_install:
 # stuff needed for qt5 which is for GUI  
   - sudo apt-add-repository -y ppa:beineri/opt-qt551-trusty
-  - sudo apt-get install -qq qt55-dev-tools
+  - sudo apt-get install -qq qt55base qt55multimedia qt55translations qt55tools
   # test/start GUI
   - sh -e /etc/init.d/xvfb start
     # print configuration 
