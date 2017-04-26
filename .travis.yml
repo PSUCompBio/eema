@@ -13,7 +13,7 @@ addons:
     packages:
       - cmake
 before_install:
-# stuff needed for qt5 which is for GUI  
+  # stuff needed for qt5 which is for GUI  
   - sudo apt-add-repository -y ppa:beineri/opt-qt551-trusty
   # test/start GUI
   - sh -e /etc/init.d/xvfb start
@@ -37,4 +37,4 @@ script:
   - ./eema_gui
 after_script:
   # killing GUI process 
-  - - kill -9 $(ps aux | grep 'eema_gui' | awk '{print $2}') 
+  - kill -9 $(ps aux | grep 'eema_gui' | awk '{print $2}') 
