@@ -15,13 +15,12 @@ addons:
 before_install:
 # stuff needed for qt5 which is for GUI  
   - sudo apt-add-repository -y ppa:beineri/opt-qt551-trusty
-  - sudo apt-get install -qq qt55base qt55multimedia qt55translations qt55tools
   # test/start GUI
   - sh -e /etc/init.d/xvfb start
-    # print configuration 
-  - echo "Configuration info:"
   # Check versions of gcc, g++ and cmake
   - gcc -v && g++ -v && cmake --version
+install:
+  - sudo apt-get install -qq qt55base qt55multimedia qt55translations qt55tools
 before_script:
   # Run your build commands next
   - mkdir build
