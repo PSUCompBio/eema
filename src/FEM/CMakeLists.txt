@@ -4,6 +4,10 @@ SET(FEM_src
     SolidMechanics/fe_calculateMass.cpp
     SolidMechanics/fe_calculateAccln.cpp
     SolidMechanics/fe_calculateKE.cpp
+    SolidMechanics/fe_getForce_3d_normal.cpp
+    SolidMechanics/fe_getForce_3d_embed.cpp
+    SolidMechanics/fe_findIntgPoints_1d.cpp
+    SolidMechanics/fe_calculateFR.cpp
     Explicit/fe_mainEXPLICIT.cpp
     Electromechanics/fe_electromechanics.cpp
     BoundaryConditions/fe_apply_bc.cpp

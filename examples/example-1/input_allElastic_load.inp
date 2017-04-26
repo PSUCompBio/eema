@@ -36,24 +36,25 @@ Fiber
 1	2	0	1
 *END_MESH
 # -------------------------------
+# -------------------------------
+# -------------------------------
+# -------------------------------
 # Material-1
 *MATERIAL
 1
-mooney-rivlin_hyperelastic
+simple_elastic
 500
-4e5
-0.5
-1000
-1000
+1e5
+0.3
 *END_MATERIAL
 # -------------------------------
 # Material-2
 *MATERIAL
 2
 simple_elastic
-800
-4e5
-0.4
+500
+1e5
+0.3
 *END_MATERIAL
 # ------------------------------
 # Time Details. Include the values in this order line by line.
@@ -66,7 +67,7 @@ simple_elastic
 0
 0.05
 100
-10e-3
+1e-5
 0.5
 *END_TIME
 # ------------------------------
@@ -91,7 +92,7 @@ RAMP
 # BC-2 (Load)
 *BC
 load
-0.015
+0.02
 4
 14 17 20 23
 RAMP

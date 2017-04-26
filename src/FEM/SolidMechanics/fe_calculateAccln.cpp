@@ -2,15 +2,15 @@
 
 using namespace Eigen;
 
-VectorXd fe_calculateAccln(VectorXd mm, VectorXd F_net){
+VectorXd fe_calculateAccln(VectorXd mm, VectorXd F_net) {
 
-  VectorXd A = VectorXd::Zero(F_net.size());
+	VectorXd A = VectorXd::Zero(F_net.size());
 
-  for(int i=0;i<F_net.size();i++){
+	for (int i = 0; i < F_net.size(); i++) {
 
-    A(i) = (F_net(i)/mm(i));
+		A(i) = (F_net(i) / mm(i));
 
-  }
+	}
 
-  return A;
+	return A;
 }

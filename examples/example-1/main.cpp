@@ -6,7 +6,7 @@ using namespace Eigen;
 int main(int argc, char **argv){
 	clock_t t;
 	t = clock();
-	
+
 	/** Enter the path address for your job folder */
 	home_path = argv[1];
 	job_file = argv[2];
