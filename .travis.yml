@@ -27,8 +27,6 @@ before_script:
   - cd build/
   - cmake ../ -DEEMA_EXAMPLES=ON -DEXAMPLE1=ON -DEEMA_GUI=ON
 script:
-  - ls /opt/qt55/bin/qt55-env.sh
-  - echo $Qt5_DIR
   - make
   # test example 1 
   - cd examples/example-1;  
