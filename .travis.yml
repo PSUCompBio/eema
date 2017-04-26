@@ -10,13 +10,12 @@ addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
-      - beineri/opt-qt562-trusty
     packages:
       - cmake
-      - qt5
 before_install:
 # stuff needed for qt5 which is for GUI  
-  - sudo apt-get install -qq qt5-dev-tools
+  - sudo apt-add-repository -y ppa:beineri/opt-qt551-trusty
+  - sudo apt-get install -qq qt55-dev-tools
   # test/start GUI
   - sh -e /etc/init.d/xvfb start
     # print configuration 
@@ -29,6 +28,7 @@ before_script:
   - cd build/
   - cmake ../ -DEEMA_EXAMPLES=ON -DEXAMPLE1=ON -DEEMA_GUI=ON -DCMAKE_VERBOSE_MAKEFILE=ON
 script:
+  - source /opt/qt55/bin/qt55-env.sh
   - make
   # test example 1 
   - cd examples/example-1;  
