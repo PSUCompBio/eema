@@ -30,6 +30,6 @@ script:
   - make
   # test example 1 
   - cd examples/example-1;  
-  - ./eema_example-1 ./ input.inp
+  - ./eema_example1 ./ input.inp
   # test gui compile
   - ./gui/eema_gui
