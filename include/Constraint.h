@@ -13,19 +13,27 @@
 
 using namespace Eigen;
 
-class Constraint{
+class Constraint {
 
 private:
 	std::string constraint_name;
 	int constraint_id;
-	int master_name;
-	int slave_name;
+
+	// Embedded Element Constraint
+	std::string master_name;
+	std::string slave_name;
+	bool address_volume_redundancy;
+
 public:
-	void readConstraints();
+	void readConstraints(std::string name, int id, std::string master, std::string slave, bool address_VR);
 	void printInfo();
+
 	std::string getName();
-	std::string getMaster();
-	std::string getSlave();
-}
+
+	// Embedded Element Constraint Get Functions
+	std::string get_EmbedMaster();
+	std::string get_EmbedSlave();
+	bool get_EmbedAddressVR();
+};
 
 #endif /* HEADERS_CONSTRAINT_H_ */
