@@ -34,7 +34,6 @@ script:
   - cd ../../
   # test gui compile
   - cd gui
-  - ./eema_gui
-after_script:
-  # killing GUI process 
-  - kill -9 $(ps aux | grep 'eema_gui' | awk '{print $2}') 
+  - ./eema_gui &
+  - pkill eema_gui
+  - cd ..
