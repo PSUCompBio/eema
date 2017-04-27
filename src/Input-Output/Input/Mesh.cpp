@@ -40,6 +40,10 @@ int Mesh::getNumNodes()
     return nodes_new.rows();
 }
 
+int Mesh::getNumNodesPerElement() {
+    return (elements_new.cols() - 2) ;
+}
+
 std::string Mesh::getName(void)
 {
     return mesh_name;
@@ -106,27 +110,27 @@ void Mesh::preprocessMesh(void)
     elements_new = elements;
     /** Nodes Preprocessing - Putting the numbering in order */
     /* for(int i=0;i<nodes.rows();i++){
-		nodes_new(i,0) = i;
-	} */
+        nodes_new(i,0) = i;
+    } */
     /** Elements Preprocessing - Correcting the element definitions */
     /* for(int i=0;i<elements.rows();i++){
-		elements_new(i,0) = i;
-		elements_new(i,1) = elements(i,1);
-		for(int j=2;j<elements.cols();j++){
-			elements_new(i,j) = fe_find(nodes.col(0),elements(i,j));
-		}
-	}*/
+        elements_new(i,0) = i;
+        elements_new(i,1) = elements(i,1);
+        for(int j=2;j<elements.cols();j++){
+            elements_new(i,j) = fe_find(nodes.col(0),elements(i,j));
+        }
+    }*/
 }
 
 void Mesh::replaceNodes(MatrixXd new_nodes, std::string choice)
 {
     if (choice == "old")
     {
-	nodes = new_nodes;
+        nodes = new_nodes;
     }
     else
     {
-	nodes_new = new_nodes;
+        nodes_new = new_nodes;
     }
 }
 
@@ -134,11 +138,11 @@ void Mesh::replaceElements(MatrixXi new_elements, std::string choice)
 {
     if (choice == "old")
     {
-	elements = new_elements;
+        elements = new_elements;
     }
     else
     {
-	elements_new = new_elements;
+        elements_new = new_elements;
     }
 }
 
@@ -153,13 +157,13 @@ VectorXd Mesh::getMinCharLength(std::string choice)
 
     if (choice == "old")
     {
-	nodes_local = nodes;
-	elements_local = elements;
+        nodes_local = nodes;
+        elements_local = elements;
     }
     else
     {
-	nodes_local = nodes_new;
-	elements_local = elements_new;
+        nodes_local = nodes_new;
+        elements_local = elements_new;
     }
 
     VectorXd xcoord;
@@ -174,29 +178,29 @@ VectorXd Mesh::getMinCharLength(std::string choice)
     zcoord = VectorXd::Zero(elements_local.cols() - 2);
     for (int i = 0; i < elements_local.rows(); i++)
     {
-	for (int j = 0; j < (elements_local.cols() - 2); j++)
-	{
-	    int g = -1;
-	    for (int f = 0; f < nodes_local.rows(); f++)
-	    {
-		if (elements_local(i, j + 2) == nodes_local(f, 0))
-		{
-		    g = f;
-		    break;
-		}
-	    }
-	    xcoord[j] = nodes_local(g, 1);
-	    ycoord[j] = nodes_local(g, 2);
-	    zcoord[j] = nodes_local(g, 3);
-	}
+        for (int j = 0; j < (elements_local.cols() - 2); j++)
+        {
+            int g = -1;
+            for (int f = 0; f < nodes_local.rows(); f++)
+            {
+                if (elements_local(i, j + 2) == nodes_local(f, 0))
+                {
+                    g = f;
+                    break;
+                }
+            }
+            xcoord[j] = nodes_local(g, 1);
+            ycoord[j] = nodes_local(g, 2);
+            zcoord[j] = nodes_local(g, 3);
+        }
 
-	lc = fe_minElementLength(xcoord, ycoord, zcoord);
+        lc = fe_minElementLength(xcoord, ycoord, zcoord);
 
-	if (lc < min_length)
-	{
-	    min_length = lc;
-	    id = i;
-	}
+        if (lc < min_length)
+        {
+            min_length = lc;
+            id = i;
+        }
     }
 
     min_details << min_length, id;
@@ -216,13 +220,13 @@ VectorXd Mesh::getMaxCharLength(std::string choice)
 
     if (choice == "old")
     {
-	nodes_local = nodes;
-	elements_local = elements;
+        nodes_local = nodes;
+        elements_local = elements;
     }
     else
     {
-	nodes_local = nodes_new;
-	elements_local = elements_new;
+        nodes_local = nodes_new;
+        elements_local = elements_new;
     }
 
     VectorXd xcoord;
@@ -236,29 +240,29 @@ VectorXd Mesh::getMaxCharLength(std::string choice)
     zcoord = VectorXd::Zero(elements_local.cols() - 2);
     for (int i = 0; i < elements_local.rows(); i++)
     {
-	for (int j = 0; j < (elements_local.cols() - 2); j++)
-	{
-	    int g = -1;
-	    for (int f = 0; f < nodes_local.rows(); f++)
-	    {
-		if (elements_local(i, j + 2) == nodes_local(f, 0))
-		{
-		    g = f;
-		    break;
-		}
-	    }
-	    xcoord[j] = nodes_local(g, 1);
-	    ycoord[j] = nodes_local(g, 2);
-	    zcoord[j] = nodes_local(g, 3);
-	}
+        for (int j = 0; j < (elements_local.cols() - 2); j++)
+        {
+            int g = -1;
+            for (int f = 0; f < nodes_local.rows(); f++)
+            {
+                if (elements_local(i, j + 2) == nodes_local(f, 0))
+                {
+                    g = f;
+                    break;
+                }
+            }
+            xcoord[j] = nodes_local(g, 1);
+            ycoord[j] = nodes_local(g, 2);
+            zcoord[j] = nodes_local(g, 3);
+        }
 
-	lc = fe_maxElementLength(xcoord, ycoord, zcoord);
+        lc = fe_maxElementLength(xcoord, ycoord, zcoord);
 
-	if (lc > max_length)
-	{
-	    max_length = lc;
-	    id = i;
-	}
+        if (lc > max_length)
+        {
+            max_length = lc;
+            id = i;
+        }
     }
 
     max_details << max_length, id;
@@ -274,10 +278,10 @@ void Mesh::checkMesh()
 
     if (lc(0) == 0)
     {
-	std::cout << "**********************************************" << std::endl;
-	std::cout << "ZERO LENGTH ELEMENT IN THE SYSTEM \n FIBER LENGTH PREPROCESSING NOT POSSIBLE" << std::endl;
-	std::cout << "**********************************************" << std::endl;
-	std::exit(-1);
+        std::cout << "**********************************************" << std::endl;
+        std::cout << "ZERO LENGTH ELEMENT IN THE SYSTEM \n FIBER LENGTH PREPROCESSING NOT POSSIBLE" << std::endl;
+        std::cout << "**********************************************" << std::endl;
+        std::exit(-1);
     }
 }
 

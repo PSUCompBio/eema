@@ -2,7 +2,7 @@
 
 using namespace Eigen;
 
-void fe_vtuWrite(int time_step, Mesh mesh1)
+void fe_vtuWrite(int time_step, double time, Mesh mesh1)
 {
 
     std::string output = mesh1.getName();
@@ -167,6 +167,13 @@ void fe_vtuWrite(int time_step, Mesh mesh1)
     myfile << "\t\t</Piece>\n";
     myfile << "\t</UnstructuredGrid>\n";
     myfile << "</VTKFile>\n";
+
+    if (time_step == 0) {
+        fe_pvdNew(output, time_step, time);
+    }
+    else {
+        fe_pvdAppend(output, time_step, time);
+    }
 }
 
 void fe_pvdNew(std::string output, int time_step, double time)
