@@ -211,11 +211,11 @@ std::cout << "****************************************************\n";*/
             // fe_vtkWrite_host("eem_matrix",1,5,size_counter,nodes,elements);
             // fe_vtkWrite_truss("eem_truss",1,5,size_counter,nodes_truss,elements_truss);
             std::cout << "-----------------------------------" << "\n";
-            std::cout << " Timestep Value = " << std::setw(5) << std::scientific << std::setprecision(5) << dT
-                      << "\n Current Time = " << std::setw(5) << std::setprecision(5) << t
+            std::cout << " Timestep Value = " << std::setw(5) << std::scientific << std::setprecision(1) << dT
+                      << "\n Current Time = " << std::setw(5) << std::setprecision(1) << t
                       << "\n Timestep Number = " << (time_step_counter)
                       << "\n Plot State = " << (plot_state_counter - 1)
-                      << "\n CPU Time = " << std::setw(5) << std::setprecision(5)
+                      << "\n CPU Time = " << std::setw(5) << std::setprecision(1)
                       << ((float) ds / CLOCKS_PER_SEC) << "s \n";
             std::cout << std::setw(5) << std::scientific << std::setprecision(5) << "Z Displacement: " << U(20) << "\n";
             // std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"Current Precise Time: " << t << "\n";
