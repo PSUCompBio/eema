@@ -172,6 +172,7 @@ fe_mainEXPLICIT()
         fe_curr        = fe;
         energy_ext_new = energy_ext_old + 0.5 * (del_U.dot((fe_prev + fr_prev) + (fe_curr + fr_curr)));
         fe_prev        = fe_curr;
+	fr_prev = fr_curr;
         energy_ext_old = energy_ext_new;
 
         /* Calculating the kinetic energy */
