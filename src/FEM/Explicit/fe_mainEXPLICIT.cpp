@@ -135,6 +135,14 @@ fe_mainEXPLICIT()
         fi_curr = fe - F_net;
         fr_curr = fe_calculateFR(sdof, fi_curr, m_system, A);
 
+/*std::cout << "****************************************************\n";
+std::cout << "current time = " << t << std::endl;
+std::cout << "RF3 node #4 = " << fr_curr[14] << std::endl;
+std::cout << "RF3 node #5 = " << fr_curr[17] << std::endl;
+std::cout << "RF3 node #6 = " << fr_curr[20] << std::endl;
+std::cout << "RF3 node #7 = " << fr_curr[23] << std::endl;
+std::cout << "****************************************************\n";*/
+
         dT = reduction * fe_getTimeStep();
         if (dT < failure_time_step) {
             std::cout << "Simulation Failed - Timestep too small" << "\n";
@@ -171,7 +179,9 @@ fe_mainEXPLICIT()
         /* Calculating the external energy terms */
         fe_curr        = fe;
         energy_ext_new = energy_ext_old + 0.5 * (del_U.dot((fe_prev + fr_prev) + (fe_curr + fr_curr)));
+
         fe_prev        = fe_curr;
+	fr_prev = fr_curr;
         energy_ext_old = energy_ext_new;
 
         /* Calculating the kinetic energy */
@@ -190,7 +200,7 @@ fe_mainEXPLICIT()
         /** Projection of displacements to the embedded mesh is needed */
         /* */
         /* */
-
+        mesh[0].readNodalKinematics(U, V, A);
         if (t >= (plot_state_counter * (output_temp_1))) {
 
             for (int i = 0; i < num_meshes; i++) {
@@ -201,11 +211,11 @@ fe_mainEXPLICIT()
             // fe_vtkWrite_host("eem_matrix",1,5,size_counter,nodes,elements);
             // fe_vtkWrite_truss("eem_truss",1,5,size_counter,nodes_truss,elements_truss);
             std::cout << "-----------------------------------" << "\n";
-            std::cout << " Timestep Value = " << std::setw(5) << std::scientific << std::setprecision(1) << dT
-                      << "\n Current Time = " << std::setw(5) << std::setprecision(1) << t
+            std::cout << " Timestep Value = " << std::setw(5) << std::scientific << std::setprecision(5) << dT
+                      << "\n Current Time = " << std::setw(5) << std::setprecision(5) << t
                       << "\n Timestep Number = " << (time_step_counter)
                       << "\n Plot State = " << (plot_state_counter - 1)
-                      << "\n CPU Time = " << std::setw(5) << std::setprecision(1)
+                      << "\n CPU Time = " << std::setw(5) << std::setprecision(5)
                       << ((float) ds / CLOCKS_PER_SEC) << "s \n";
             std::cout << std::setw(5) << std::scientific << std::setprecision(5) << "Z Displacement: " << U(20) << "\n";
             // std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"Current Precise Time: " << t << "\n";
@@ -224,6 +234,6 @@ fe_mainEXPLICIT()
         s      = clock();
         ds     = s - s_prev;
         time_step_counter = time_step_counter + 1;
-        mesh[0].readNodalKinematics(U, V, A);
+
     }
 } // fe_mainEXPLICIT
