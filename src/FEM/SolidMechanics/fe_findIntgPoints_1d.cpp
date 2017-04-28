@@ -3,7 +3,7 @@
 using namespace Eigen;
 
 VectorXd
-fe_findIntgPoints_1d(VectorXd x, VectorXd y, VectorXd z, double point, double length)
+fe_findIntgPoints_1d(VectorXd& x, VectorXd& y, VectorXd& z, double point, double length)
 {
 	VectorXd intg_points = VectorXd::Zero(3);
 

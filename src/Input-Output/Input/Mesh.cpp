@@ -3,7 +3,7 @@
 
 using namespace Eigen;
 
-void Mesh::readMesh(std::string name, MatrixXd n, MatrixXi e)
+void Mesh::readMesh(std::string name, MatrixXd& n, MatrixXi& e)
 {
     mesh_name = name;
     nodes = n;
@@ -30,6 +30,14 @@ MatrixXi Mesh::getNewElements(void)
     return elements_new;
 }
 
+MatrixXd* Mesh::getNewNodesPointer(void) {
+    return nodes_new_pointer;
+}
+
+MatrixXi* Mesh::getNewElementsPointer(void) {
+    return elements_new_pointer;
+}
+
 int Mesh::getNumElements()
 {
     return elements_new.rows();
@@ -49,7 +57,7 @@ std::string Mesh::getName(void)
     return mesh_name;
 }
 
-void Mesh::readNodalKinematics(VectorXd Usystem, VectorXd Vsystem, VectorXd Asystem)
+void Mesh::readNodalKinematics(VectorXd& Usystem, VectorXd& Vsystem, VectorXd& Asystem)
 {
     U = Usystem;
     V = Vsystem;
@@ -61,9 +69,17 @@ VectorXd Mesh::getNodalDisp(void)
     return U;
 }
 
+VectorXd* Mesh::getNodalDispPointer(void) {
+    return U_pointer;
+}
+
 VectorXd Mesh::getNodalVel(void)
 {
     return V;
+}
+
+VectorXd* Mesh::getNodalVelPointer(void) {
+    return V_pointer;
 }
 
 VectorXd Mesh::getNodalAcc(void)
@@ -71,13 +87,17 @@ VectorXd Mesh::getNodalAcc(void)
     return A;
 }
 
-void Mesh::readNodalStressStrain(VectorXd stress_tmp, VectorXd strain_tmp)
+VectorXd* Mesh::getNodalAccPointer(void) {
+    return A_pointer;
+}
+
+void Mesh::readNodalStressStrain(VectorXd& stress_tmp, VectorXd& strain_tmp)
 {
     nodal_stress = stress_tmp;
     nodal_strain = strain_tmp;
 }
 
-void Mesh::readElementStressStrain(VectorXd stress_tmp, VectorXd strain_tmp)
+void Mesh::readElementStressStrain(VectorXd& stress_tmp, VectorXd& strain_tmp)
 {
     element_stress = stress_tmp;
     element_strain = strain_tmp;
@@ -88,9 +108,17 @@ VectorXd Mesh::getCellStress()
     return element_stress;
 }
 
+VectorXd* Mesh::getCellStressPointer() {
+    return element_stress_pointer;
+}
+
 VectorXd Mesh::getCellStrain()
 {
     return element_strain;
+}
+
+VectorXd* Mesh::getCellStrainPointer() {
+    return element_strain_pointer;
 }
 
 VectorXd Mesh::getNodalStress()
@@ -108,6 +136,7 @@ void Mesh::preprocessMesh(void)
 
     nodes_new = nodes;
     elements_new = elements;
+
     /** Nodes Preprocessing - Putting the numbering in order */
     /* for(int i=0;i<nodes.rows();i++){
         nodes_new(i,0) = i;
@@ -120,6 +149,41 @@ void Mesh::preprocessMesh(void)
             elements_new(i,j) = fe_find(nodes.col(0),elements(i,j));
         }
     }*/
+
+    calculateElementCharateristic();
+
+    nodes_new_pointer = &nodes_new;
+    elements_new_pointer = &elements_new;
+    U_pointer = &U;
+    V_pointer = &V;
+    A_pointer = &A;
+    element_stress_pointer = &element_stress;
+    element_strain_pointer = &element_strain;
+    element_charateristic_pointer = &element_charateristic;
+}
+
+void Mesh::calculateElementCharateristic() {
+
+    element_charateristic = VectorXd::Zero(elements_new.rows());
+
+    VectorXd xcoord = VectorXd::Zero(elements_new.cols() - 2);
+    VectorXd ycoord = VectorXd::Zero(elements_new.cols() - 2);
+    VectorXd zcoord = VectorXd::Zero(elements_new.cols() - 2);
+    double volume;
+
+    for (int i = 0; i < elements_new.rows(); i++) {
+        for (int j = 0; j < elements_new.cols() - 2; j++) {
+            xcoord(j) = nodes_new(elements_new(i, j + 2), 1);
+            ycoord(j) = nodes_new(elements_new(i, j + 2), 2);
+            zcoord(j) = nodes_new(elements_new(i, j + 2), 3);
+        }
+        element_charateristic(i) = fe_calVolume(xcoord, ycoord, zcoord);
+    }
+
+}
+
+VectorXd* Mesh::getElementCharacteristicPointer() {
+    return element_charateristic_pointer;
 }
 
 void Mesh::replaceNodes(MatrixXd new_nodes, std::string choice)

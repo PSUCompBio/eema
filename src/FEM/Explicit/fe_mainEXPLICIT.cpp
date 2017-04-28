@@ -4,8 +4,6 @@ using namespace Eigen;
 double eps_energy = 0.01;
 double area_truss = 5e-6;
 double failure_time_step = 1e-8;
-VectorXd m_system;
-
 
 /*! \brief
  * This function carries out the explicit dynamic analysis of the FEM problem.
@@ -24,18 +22,9 @@ fe_mainEXPLICIT()
         mesh[i].preprocessMesh();
     }
 
-    MatrixXd nodes          = mesh[0].getNewNodes();
-    MatrixXi elements       = mesh[0].getNewElements();
-
     // Following variables - Only for Hex Element
-    int nel   = mesh[0].getNumElements();       /*! number of elements */
-    int nnel  = mesh[0].getNumNodesPerElement(); // number of nodes per element
     int nnode = mesh[0].getNumNodes();          // number of nodes
     int sdof  = nnode * ndof;          // system degrees of freedom
-    int edof  = nnel * ndof;           // element degrees of freedom
-
-    // Updated Nodes and Elements
-    MatrixXd updated_nodes = nodes;
 
     // Writing the Read Mesh
     // fe_vtkWrite_host("eem_matrix",1,5,0,updated_nodes,elements);
@@ -84,7 +73,8 @@ fe_mainEXPLICIT()
 
     // ----------------------------------------------------------------------------
     // Step-1: Calculate the mass matrix similar to that of belytschko.
-    fe_calculateMass("direct_lumped");
+    VectorXd m_system = VectorXd::Zero(sdof);
+    fe_calculateMass(m_system, "direct_lumped");
 
     std::string mass = home_path + "/" + "results/system_mass.txt";
     new_vector2text(mass.c_str(), m_system, m_system.cols());
@@ -99,11 +89,12 @@ fe_mainEXPLICIT()
         fe_vtuWrite(plot_state_counter - 1, t, mesh[i]);
     }
 
-
     dT = reduction * fe_getTimeStep();
     if (dT > dt_min) {
         dT = dt_min;
     }
+
+    //std::exit(-1);
 
     // ----------------------------------------------------------------------------
 
@@ -190,11 +181,11 @@ fe_mainEXPLICIT()
         energy_total = std::abs(energy_kin + energy_int_new - energy_ext_new);
         energy_max   = std::max(std::max(energy_kin, energy_int_new), energy_ext_new);
 
-        if (energy_total > (eps_energy * (energy_max))) {
+        /*if (energy_total > (eps_energy * (energy_max))) {
             std::cout << "**********************************************" << std::endl;
             std::cout << "ALERT: INSTABILITIES IN THE SYSTEM DETECTED \n BASED ON THE ENERGY BALANCE CHECK \n";
             std::cout << "**********************************************" << std::endl;
-        }
+        }*/
 
         /** Projection of displacements to the embedded mesh is needed */
         /* */

@@ -19,7 +19,9 @@ VectorXd fe_scatter(VectorXd global_vec, VectorXd local_vec, VectorXi node_list,
 
 }
 
-void fe_scatterMass(VectorXd local_vec, VectorXi node_list, int sdof) {
+void fe_scatter_pbr(VectorXd& global_vec, VectorXd& local_vec, VectorXi node_list, int sdof) {
+
+	// pbr - pass by reference
 
 	int edof = (node_list.size()) * ndof;
 	VectorXi index = fe_find_index(node_list);
@@ -28,7 +30,7 @@ void fe_scatterMass(VectorXd local_vec, VectorXi node_list, int sdof) {
 
 	for (int i = 0; i < edof; i++) {
 		ii = index(i);
-		m_system(ii) = m_system(ii) + local_vec(i);
+		global_vec(ii) = global_vec(ii) + local_vec(i);
 	}
 
 }
