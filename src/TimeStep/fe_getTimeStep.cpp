@@ -5,10 +5,13 @@ using namespace Eigen;
 /** For all elements -- this function calculates the minimum critical timestep */
 double fe_getTimeStep(void)
 {
+
+    //std::cout << "Started Calculating Timestep..." << "\n";
+
     double deltaT_crit = 0;
 
-    MatrixXd nodes = mesh[0].getNewNodes();
-    MatrixXi elements = mesh[0].getNewElements();
+    MatrixXd* nodes = mesh[0].getNewNodesPointer();
+    MatrixXi* elements = mesh[0].getNewElementsPointer();
 
     VectorXd u = mesh[0].getNodalDisp();
 
@@ -17,6 +20,7 @@ double fe_getTimeStep(void)
     int nnode = mesh[0].getNumNodes();          // number of nodes
     int sdof  = nnode * ndof;          // system degrees of freedom
     int edof  = nnel * ndof;           // element degrees of freedom
+    VectorXd* element_volumes = mesh[0].getElementCharacteristicPointer();
 
     VectorXd xcoord = VectorXd::Zero(nnel);
     VectorXd ycoord = VectorXd::Zero(nnel);
@@ -25,18 +29,27 @@ double fe_getTimeStep(void)
     VectorXd deltaT_element = VectorXd::Zero(nel);
 
     for (int i = 0; i < nel; i++) {
+
+        //std::cout << "Here..." << i << "\n";
+
         for (int j = 0; j < nnel; j++) {
-            int g = elements(i, j + 2);
-            xcoord(j) = nodes(g, 1);
-            ycoord(j) = nodes(g, 2);
-            zcoord(j) = nodes(g, 3);
+            int g = (*elements)(i, j + 2);
+            xcoord(j) = (*nodes)(g, 1);
+            ycoord(j) = (*nodes)(g, 2);
+            zcoord(j) = (*nodes)(g, 3);
         }
-        VectorXd u_e(edof);
-        u_e = fe_gather(u, u_e, elements.block<1, 8>(i, 2), sdof);
-        deltaT_element(i) = fe_calTimeStep(xcoord, ycoord, zcoord, elements(i, 1), u_e); // reduction factor for time step added.
+
+        VectorXd u_e = VectorXd::Zero(edof);
+        fe_gather_pbr(u, u_e, (*elements).block<1, 8>(i, 2), sdof);
+        deltaT_element(i) = fe_calTimeStep(xcoord, ycoord, zcoord, (*elements)(i, 1), u_e, (*element_volumes)(i));
     }
 
     deltaT_crit = deltaT_element.minCoeff();
+
+    nodes = NULL;
+    elements = NULL;
+
+    //std::cout << "Completed Calculating Timestep !!!" << "\n";
 
     return deltaT_crit;
 } // fe_getTimeStep

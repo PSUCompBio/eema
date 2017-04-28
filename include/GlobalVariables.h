@@ -120,6 +120,4 @@ extern double iterations_nr;
 /** Energy Balance Criterion */
 extern double eps_energy;
 
-extern VectorXd m_system;
-
 #endif

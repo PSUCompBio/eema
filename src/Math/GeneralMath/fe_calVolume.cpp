@@ -3,7 +3,7 @@
 using namespace Eigen;
 
 double
-fe_calVolume(VectorXd xcoord, VectorXd ycoord, VectorXd zcoord)
+fe_calVolume(VectorXd& xcoord, VectorXd& ycoord, VectorXd& zcoord)
 {
     double volume = 0;
 
@@ -47,7 +47,7 @@ fe_calVolume(VectorXd xcoord, VectorXd ycoord, VectorXd zcoord)
         double tet5_vol = e1.dot(e2.cross(e3));
 
         volume =
-          (std::abs(tet1_vol) + std::abs(tet2_vol) + std::abs(tet3_vol) + std::abs(tet4_vol) + std::abs(tet5_vol)) / 6;
+            (std::abs(tet1_vol) + std::abs(tet2_vol) + std::abs(tet3_vol) + std::abs(tet4_vol) + std::abs(tet5_vol)) / 6;
     }
 
     if (xcoord.size() == 2) { // Return length for a 1D element

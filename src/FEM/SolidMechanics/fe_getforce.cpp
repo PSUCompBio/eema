@@ -10,9 +10,9 @@ using namespace Eigen;
  * the resultant vectors are scattered into global vectors.
  */
 
-VectorXd
-fe_getforce(int ndof, VectorXd u, VectorXd fext, int time_step_counter)
+VectorXd fe_getforce(int ndof, VectorXd& u, VectorXd& fext, int time_step_counter)
 {
+
     VectorXd f_tot;
 
     if (ndof == 3 && embedded_constraint == true) {

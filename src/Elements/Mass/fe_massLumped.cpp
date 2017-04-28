@@ -1,11 +1,11 @@
 #include "functions.h"
 using namespace Eigen;
 
-VectorXd fe_massLumped(MatrixXd& nodes, VectorXi elements_row) {
+VectorXd fe_massLumped(MatrixXd* nodes, VectorXi elements_row) {
 
   double mass = 0;
   int nnel = elements_row.size() - 2;
-  int nnode = nodes.rows();
+  int nnode = (*nodes).rows();
   int edof = nnel * ndof;
   VectorXd m_element = VectorXd::Zero(edof);
   VectorXd xcoord = VectorXd::Zero(nnel);
@@ -14,9 +14,9 @@ VectorXd fe_massLumped(MatrixXd& nodes, VectorXi elements_row) {
 
   for (int j = 0; j < nnel; j++) {
     int g = elements_row(j + 2);
-    xcoord(j) = nodes(g, 1);
-    ycoord(j) = nodes(g, 2);
-    zcoord(j) = nodes(g, 3);
+    xcoord(j) = (*nodes)(g, 1);
+    ycoord(j) = (*nodes)(g, 2);
+    zcoord(j) = (*nodes)(g, 3);
   }
 
   double rho = fe_get_mats(elements_row(1), 0); // material density
