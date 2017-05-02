@@ -2,9 +2,7 @@
 
 using namespace Eigen;
 
-VectorXd fe_calculateFR(int sdof, VectorXd fi_curr, VectorXd mm, VectorXd A) {
-
-	VectorXd fr = VectorXd::Zero(sdof);
+void fe_calculateFR(VectorXd& fr, int& sdof, VectorXd& fi_curr, VectorXd& mm, VectorXd& A) {
 
 	for (int i = 0; i < bc_types; i++) {
 		std::string type = bc[i].getType();
@@ -17,5 +15,5 @@ VectorXd fe_calculateFR(int sdof, VectorXd fi_curr, VectorXd mm, VectorXd A) {
 			}
 		}
 	}
-	return fr;
+
 }

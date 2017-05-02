@@ -10,10 +10,8 @@ using namespace Eigen;
  * the resultant vectors are scattered into global vectors.
  */
 
-VectorXd fe_getforce(int ndof, VectorXd& u, VectorXd& fext, int time_step_counter)
+void fe_getforce(VectorXd& f_tot, int ndof, VectorXd& u, VectorXd& fext, int time_step_counter)
 {
-
-    VectorXd f_tot;
 
     if (ndof == 3 && embedded_constraint == true) {
         for (int i = 0; i < num_constraints; ++i) {
@@ -34,7 +32,7 @@ VectorXd fe_getforce(int ndof, VectorXd& u, VectorXd& fext, int time_step_counte
                     }
                 }
                 f_tot = VectorXd::Zero((mesh[host_id].getNumNodes() * ndof));
-                f_tot = fe_getForce_3d_embed(u, fext, time_step_counter, host_id, embed_id, correct_vr);
+                fe_getForce_3d_embed(f_tot, u, fext, time_step_counter, host_id, embed_id, correct_vr);
             }
         }
     }
@@ -49,11 +47,11 @@ VectorXd fe_getforce(int ndof, VectorXd& u, VectorXd& fext, int time_step_counte
      * }*/
     else if (ndof == 3 && embedded_constraint != true) {
         f_tot = VectorXd::Zero((mesh[0].getNumNodes() * ndof));
-        f_tot = fe_getForce_3d_normal(u, fext, time_step_counter, 0);
+        fe_getForce_3d_normal(f_tot, u, fext, time_step_counter, 0);
     } else {
         f_tot = VectorXd::Zero((mesh[0].getNumNodes() * ndof));
-        f_tot = fe_getForce_3d_normal(u, fext, time_step_counter, 0);
+        fe_getForce_3d_normal(f_tot, u, fext, time_step_counter, 0);
     }
 
-    return f_tot;
+
 } // fe_getforce

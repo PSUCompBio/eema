@@ -2,8 +2,7 @@
 
 using namespace Eigen;
 
-VectorXd
-fe_getForce_3d_embed(VectorXd& u, VectorXd& fext, int time_step_counter, int host_id, int embed_id, bool address_vr)
+void fe_getForce_3d_embed(VectorXd& f_tot, VectorXd& u, VectorXd& fext, int time_step_counter, int host_id, int embed_id, bool address_vr)
 {
 
     MatrixXd* nodes_host     = mesh[host_id].getNewNodesPointer();
@@ -36,9 +35,6 @@ fe_getForce_3d_embed(VectorXd& u, VectorXd& fext, int time_step_counter, int hos
     VectorXd u_embed_local = VectorXd::Zero(((*elements_embed).cols() - 2) * ndof);
     VectorXd v_embed       = VectorXd::Zero(((*nodes_embed).rows()) * ndof);
     VectorXd a_embed       = VectorXd::Zero(((*nodes_embed).rows()) * ndof);
-
-    // Total nodal force vector for the system.
-    VectorXd f_tot = VectorXd::Zero(sdof);
 
     for (int i = 0; i < nel; i++) {
         for (int j = 0; j < nnel; j++) {
@@ -244,5 +240,4 @@ fe_getForce_3d_embed(VectorXd& u, VectorXd& fext, int time_step_counter, int hos
     nodes_embed = NULL;
     elements_embed = NULL;
 
-    return f_tot;
 } // fe_getForce_3d_embed

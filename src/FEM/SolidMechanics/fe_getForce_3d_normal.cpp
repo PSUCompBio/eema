@@ -2,8 +2,7 @@
 
 using namespace Eigen;
 
-VectorXd
-fe_getForce_3d_normal(VectorXd& u, VectorXd& fext, int time_step_counter, int host_id)
+void fe_getForce_3d_normal(VectorXd& f_tot, VectorXd& u, VectorXd& fext, int time_step_counter, int host_id)
 {
 
     MatrixXd* nodes_host    = mesh[host_id].getNewNodesPointer();
@@ -25,20 +24,11 @@ fe_getForce_3d_normal(VectorXd& u, VectorXd& fext, int time_step_counter, int ho
     VectorXd ycoord      = VectorXd::Zero(nnel);
     VectorXd zcoord      = VectorXd::Zero(nnel);
 
-    // Total nodal force vector for the system.
-    VectorXd f_tot = VectorXd::Zero(sdof);
-
     for (int i = 0; i < nel; i++) {
 
-        for (int j = 0; j < nnel; j++) {
-            //  int g = -1;
-            //  for(int f=0;f<nnode;f++){
-            //      if(elements(i,j+2)==nodes(f,0)){
-            //          g = f;
-            //          break;
-            //      }
-            //  }
+        //std::cout << "Here...." << i << "\n";
 
+        for (int j = 0; j < nnel; j++) {
             int g = (*elements_host)(i, j + 2);
             xcoord(j)      = (*nodes_host)(g, 1);
             ycoord(j)      = (*nodes_host)(g, 2);
@@ -129,6 +119,4 @@ fe_getForce_3d_normal(VectorXd& u, VectorXd& fext, int time_step_counter, int ho
 
     nodes_host = NULL;
     elements_host = NULL;
-
-    return f_tot;
 } // fe_getForce_3d_normal

@@ -10,5 +10,6 @@ SET(Input_Output_src
     Output/fe_simulationTime.cpp
     Output/fe_matrix2text.cpp
     Output/fe_display.cpp
+    Output/fe_energyWrite.cpp
      )
 ADD_LIBRARY(Input-Output OBJECT ${Input_Output_src})
