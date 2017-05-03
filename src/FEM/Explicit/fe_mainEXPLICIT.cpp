@@ -94,7 +94,16 @@ fe_mainEXPLICIT()
     clock_t s, s_prev, ds;
     s = clock();
 
-    while (t <= t_end) {
+    while (t < t_end) {
+
+
+        if (((t + dT) >= t_end) && (t != t_end)) {
+            dT = t_end - t;
+            if (dT <= 0) {
+                break;
+            }
+        }
+
 
         /** Update Loading Conditions - time dependent loading conditions */
         fe_apply_bc_load(fe, t);
@@ -105,16 +114,7 @@ fe_mainEXPLICIT()
         /** Step - 8 from Belytschko Box 6.1 - Calculate net nodal force*/
         fe_getforce(F_net, ndof, U, fe, time_step_counter); // Calculating the force term.
 
-        fi_curr = fe - F_net;
-        fe_calculateFR(fr_curr, sdof, fi_curr, m_system, A);
 
-        /*std::cout << "****************************************************\n";
-        std::cout << "current time = " << t << std::endl;
-        std::cout << "RF3 node #4 = " << fr_curr[14] << std::endl;
-        std::cout << "RF3 node #5 = " << fr_curr[17] << std::endl;
-        std::cout << "RF3 node #6 = " << fr_curr[20] << std::endl;
-        std::cout << "RF3 node #7 = " << fr_curr[23] << std::endl;
-        std::cout << "****************************************************\n";*/
 
         /** Step - 9 from Belytschko Box 6.1 - Calculate Accelerations */
         fe_calculateAccln(A, m_system, F_net); // Calculating the new accelerations from total nodal forces.
@@ -122,6 +122,20 @@ fe_mainEXPLICIT()
 
         /** Step- 10 from Belytschko Box 6.1 - Second Partial Update of Nodal Velocities */
         fe_timeUpdate_velocity(V, V_half, A, t, dT, "newmark-beta-central-difference");
+
+
+        fi_curr = fe - F_net;
+        fe_calculateFR(fr_curr, sdof, fi_curr, m_system, A);
+
+        std::cout << "****************************************************\n";
+        std::cout << "current time = " << t << std::endl;
+        std::cout << "RF3 node #4 = " << fr_curr[14] << std::endl;
+        std::cout << "RF3 node #5 = " << fr_curr[17] << std::endl;
+        std::cout << "RF3 node #6 = " << fr_curr[20] << std::endl;
+        std::cout << "RF3 node #7 = " << fr_curr[23] << std::endl;
+        std::cout << "****************************************************\n";
+
+
 
         /** Step - 11 from Belytschko Box 6.1 - Calculating energies and Checking Energy Balance */
         fe_checkEnergies(U_prev, U, fi_prev, fi_curr, fe_prev, fe, fr_prev, fr_curr, m_system, V, energy_int_old, energy_int_new, energy_ext_old, energy_ext_new, energy_kin, energy_total, energy_max);
@@ -159,12 +173,7 @@ fe_mainEXPLICIT()
         time_step_counter = time_step_counter + 1;
 
         dT = fe_getTimeStep();
-        if (((t + dT) > t_end) && (t != t_end)) {
-            dT = t_end - t;
-            if (dT < 0) {
-                break;
-            }
-        }
+
 
     }
 } // fe_mainEXPLICIT
