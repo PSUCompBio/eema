@@ -64,19 +64,9 @@ fe_mainRead(std::string file);
 /** Creates the shape functions for an 8 noded element */
 VectorXd
 fe_shapes_8(double rvalue, double svalue, double tvalue);
-/** dndr of isoparametric element calculated for particular r, s, and t */
-VectorXd
-fe_dndr_8(double rvalue, double svalue, double tvalue);
-/** dnds of isoparametric element calculated for particular r, s, and t */
-VectorXd
-fe_dnds_8(double rvalue, double svalue, double tvalue);
-/** dndt of isoparametric element calculated for particular r, s, and t */
-VectorXd
-fe_dndt_8(double rvalue, double svalue, double tvalue);
+/** dn of isoparametric element calculated for particular r, s, and t */
 
-void fe_dndr_8_pbr(VectorXd& dndr, double rvalue, double svalue, double tvalue);
-void fe_dnds_8_pbr(VectorXd& dnds, double rvalue, double svalue, double tvalue);
-void fe_dndt_8_pbr(VectorXd& dndt, double rvalue, double svalue, double tvalue);
+void fe_dniso_8(VectorXd& dndr, VectorXd& dnds, VectorXd& dndt, double& r, double& s, double& t);
 
 /** Create a guass_point vector of n values */
 VectorXd

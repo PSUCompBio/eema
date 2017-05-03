@@ -95,12 +95,7 @@ void fe_getForce_3d_embed(VectorXd& f_tot, VectorXd& u, VectorXd& fext, int time
                         double z   = points(intz);
                         double wtz = weights(intz);
 
-                        // VectorXd dndr(edof);
-                        fe_dndr_8_pbr(dndr, x, y, z);
-                        // VectorXd dnds(edof);
-                        fe_dnds_8_pbr(dnds, x, y, z);
-                        // VectorXd dndt(edof);
-                        fe_dndt_8_pbr(dndt, x, y, z);
+                        fe_dniso_8(dndr, dnds, dndt, x, y, z);
 
                         jacobian = fe_calJacobian(ndof, nnel, dndr, dnds, dndt, xcoord, ycoord, zcoord);
                         double detJacobian = jacobian.determinant();
@@ -123,6 +118,8 @@ void fe_getForce_3d_embed(VectorXd& f_tot, VectorXd& u, VectorXd& fext, int time
                 }
             }
 
+
+
             fe_calCentroidStress_3d_pbr(tmp_storage, nnel, xcoord, ycoord, zcoord, u_e, (*elements_host)(i, 1));
             element_stress_host_local.segment<9>(i * 9) = tmp_storage;
             fe_calCentroidStrain_3d_pbr(tmp_storage, nnel, xcoord, ycoord, zcoord, u_e);
@@ -140,6 +137,8 @@ void fe_getForce_3d_embed(VectorXd& f_tot, VectorXd& u, VectorXd& fext, int time
             VectorXd weights_embed = guass_weights(ngl_embed);
             VectorXd sigma_embed = VectorXd::Zero(6);
             VectorXd sigma_correction = VectorXd::Zero(6);
+
+
 
             for (int fib = 0; fib < (*elements_embed).rows(); fib++) {
                 for (int j = 0; j < ((*elements_embed).cols() - 2); j++) {
@@ -159,6 +158,8 @@ void fe_getForce_3d_embed(VectorXd& f_tot, VectorXd& u, VectorXd& fext, int time
                     u_embed_local.segment<3>(j * ndof) = u_embed.segment<3>(g * ndof);
                 }
 
+
+
                 //std::cout << "Embedded Displacements: \n" << u_embed << "\n";
                 //std::cout << "Local Embed Displacement: \n" << u_embed_local << "\n";
 
@@ -177,9 +178,8 @@ void fe_getForce_3d_embed(VectorXd& f_tot, VectorXd& u, VectorXd& fext, int time
 
                     double wtt = weights_embed(embed_intg);
 
-                    fe_dndr_8_pbr(dndr, global_intg_points(0), global_intg_points(1), global_intg_points(2));
-                    fe_dnds_8_pbr(dnds, global_intg_points(0), global_intg_points(1), global_intg_points(2));
-                    fe_dndt_8_pbr(dndt, global_intg_points(0), global_intg_points(1), global_intg_points(2));
+                    fe_dniso_8(dndr, dnds, dndt, global_intg_points(0), global_intg_points(1), global_intg_points(2));
+
                     jacobian    = fe_calJacobian(ndof, nnel, dndr, dnds, dndt, xcoord, ycoord, zcoord);
                     invJacobian = jacobian.inverse();
                     fe_dndx_8_pbr(dndx, nnel, dndr, dnds, dndt, invJacobian);

@@ -26,7 +26,7 @@ void fe_getForce_3d_normal(VectorXd& f_tot, VectorXd& u, VectorXd& fext, int tim
 
     for (int i = 0; i < nel; i++) {
 
-        //std::cout << "Here...." << i << "\n";
+        // std::cout << "Here...." << i << "\n";
 
         for (int j = 0; j < nnel; j++) {
             int g = (*elements_host)(i, j + 2);
@@ -78,12 +78,7 @@ void fe_getForce_3d_normal(VectorXd& f_tot, VectorXd& u, VectorXd& fext, int tim
                         double z   = points(intz);
                         double wtz = weights(intz);
 
-                        // VectorXd dndr(edof);
-                        fe_dndr_8_pbr(dndr, x, y, z);
-                        // VectorXd dnds(edof);
-                        fe_dnds_8_pbr(dnds, x, y, z);
-                        // VectorXd dndt(edof);
-                        fe_dndt_8_pbr(dndt, x, y, z);
+                        fe_dniso_8(dndr, dnds, dndt, x, y, z);
 
                         jacobian = fe_calJacobian(ndof, nnel, dndr, dnds, dndt, xcoord, ycoord, zcoord);
                         double detJacobian = jacobian.determinant();
