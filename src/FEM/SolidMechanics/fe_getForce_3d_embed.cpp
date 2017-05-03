@@ -2,8 +2,7 @@
 
 using namespace Eigen;
 
-VectorXd
-fe_getForce_3d_embed(VectorXd& u, VectorXd& fext, int time_step_counter, int host_id, int embed_id, bool address_vr)
+void fe_getForce_3d_embed(VectorXd& f_tot, VectorXd& u, VectorXd& fext, int time_step_counter, int host_id, int embed_id, bool address_vr)
 {
 
     MatrixXd* nodes_host     = mesh[host_id].getNewNodesPointer();
@@ -36,9 +35,6 @@ fe_getForce_3d_embed(VectorXd& u, VectorXd& fext, int time_step_counter, int hos
     VectorXd u_embed_local = VectorXd::Zero(((*elements_embed).cols() - 2) * ndof);
     VectorXd v_embed       = VectorXd::Zero(((*nodes_embed).rows()) * ndof);
     VectorXd a_embed       = VectorXd::Zero(((*nodes_embed).rows()) * ndof);
-
-    // Total nodal force vector for the system.
-    VectorXd f_tot = VectorXd::Zero(sdof);
 
     for (int i = 0; i < nel; i++) {
         for (int j = 0; j < nnel; j++) {
@@ -99,12 +95,7 @@ fe_getForce_3d_embed(VectorXd& u, VectorXd& fext, int time_step_counter, int hos
                         double z   = points(intz);
                         double wtz = weights(intz);
 
-                        // VectorXd dndr(edof);
-                        fe_dndr_8_pbr(dndr, x, y, z);
-                        // VectorXd dnds(edof);
-                        fe_dnds_8_pbr(dnds, x, y, z);
-                        // VectorXd dndt(edof);
-                        fe_dndt_8_pbr(dndt, x, y, z);
+                        fe_dniso_8(dndr, dnds, dndt, x, y, z);
 
                         jacobian = fe_calJacobian(ndof, nnel, dndr, dnds, dndt, xcoord, ycoord, zcoord);
                         double detJacobian = jacobian.determinant();
@@ -127,6 +118,8 @@ fe_getForce_3d_embed(VectorXd& u, VectorXd& fext, int time_step_counter, int hos
                 }
             }
 
+
+
             fe_calCentroidStress_3d_pbr(tmp_storage, nnel, xcoord, ycoord, zcoord, u_e, (*elements_host)(i, 1));
             element_stress_host_local.segment<9>(i * 9) = tmp_storage;
             fe_calCentroidStrain_3d_pbr(tmp_storage, nnel, xcoord, ycoord, zcoord, u_e);
@@ -144,6 +137,8 @@ fe_getForce_3d_embed(VectorXd& u, VectorXd& fext, int time_step_counter, int hos
             VectorXd weights_embed = guass_weights(ngl_embed);
             VectorXd sigma_embed = VectorXd::Zero(6);
             VectorXd sigma_correction = VectorXd::Zero(6);
+
+
 
             for (int fib = 0; fib < (*elements_embed).rows(); fib++) {
                 for (int j = 0; j < ((*elements_embed).cols() - 2); j++) {
@@ -163,6 +158,8 @@ fe_getForce_3d_embed(VectorXd& u, VectorXd& fext, int time_step_counter, int hos
                     u_embed_local.segment<3>(j * ndof) = u_embed.segment<3>(g * ndof);
                 }
 
+
+
                 //std::cout << "Embedded Displacements: \n" << u_embed << "\n";
                 //std::cout << "Local Embed Displacement: \n" << u_embed_local << "\n";
 
@@ -181,9 +178,8 @@ fe_getForce_3d_embed(VectorXd& u, VectorXd& fext, int time_step_counter, int hos
 
                     double wtt = weights_embed(embed_intg);
 
-                    fe_dndr_8_pbr(dndr, global_intg_points(0), global_intg_points(1), global_intg_points(2));
-                    fe_dnds_8_pbr(dnds, global_intg_points(0), global_intg_points(1), global_intg_points(2));
-                    fe_dndt_8_pbr(dndt, global_intg_points(0), global_intg_points(1), global_intg_points(2));
+                    fe_dniso_8(dndr, dnds, dndt, global_intg_points(0), global_intg_points(1), global_intg_points(2));
+
                     jacobian    = fe_calJacobian(ndof, nnel, dndr, dnds, dndt, xcoord, ycoord, zcoord);
                     invJacobian = jacobian.inverse();
                     fe_dndx_8_pbr(dndx, nnel, dndr, dnds, dndt, invJacobian);
@@ -244,5 +240,4 @@ fe_getForce_3d_embed(VectorXd& u, VectorXd& fext, int time_step_counter, int hos
     nodes_embed = NULL;
     elements_embed = NULL;
 
-    return f_tot;
 } // fe_getForce_3d_embed

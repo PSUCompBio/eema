@@ -32,14 +32,13 @@ VectorXd fe_newtonRhapson(VectorXd& nat_coord, VectorXd& xcoord, VectorXd& ycoor
     MatrixXd shape_mat = fe_shapeMatrix(edof, nnel, shapes);
     VectorXd fx = VectorXd::Zero(3);
 
-    VectorXd dndr;
-    VectorXd dnds;
-    VectorXd dndt;
+    VectorXd dndr = VectorXd::Zero(xcoord.size());
+    VectorXd dnds = VectorXd::Zero(xcoord.size());
+    VectorXd dndt = VectorXd::Zero(xcoord.size());
     MatrixXd jacobian;
 
-    dndr = fe_dndr_8(iso_coord(0), iso_coord(1), iso_coord(2));
-    dnds = fe_dnds_8(iso_coord(0), iso_coord(1), iso_coord(2));
-    dndt = fe_dndt_8(iso_coord(0), iso_coord(1), iso_coord(2));
+    fe_dniso_8(dndr, dnds, dndt, iso_coord(0), iso_coord(1), iso_coord(2));
+
     jacobian = fe_calJacobian(ndof, nnel, dndr, dnds, dndt, xcoord, ycoord, zcoord);
     MatrixXd transJacobian = jacobian.transpose();
     MatrixXd it_Jacobian = transJacobian.inverse();
@@ -57,9 +56,7 @@ VectorXd fe_newtonRhapson(VectorXd& nat_coord, VectorXd& xcoord, VectorXd& ycoor
 
         eps = fx.norm();
 
-        dndr = fe_dndr_8(iso_coord(0), iso_coord(1), iso_coord(2));
-        dnds = fe_dnds_8(iso_coord(0), iso_coord(1), iso_coord(2));
-        dndt = fe_dndt_8(iso_coord(0), iso_coord(1), iso_coord(2));
+        fe_dniso_8(dndr, dnds, dndt, iso_coord(0), iso_coord(1), iso_coord(2));
         jacobian = fe_calJacobian(ndof, nnel, dndr, dnds, dndt, xcoord, ycoord, zcoord);
         transJacobian = jacobian.transpose();
         it_Jacobian = transJacobian.inverse();

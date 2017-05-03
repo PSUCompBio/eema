@@ -64,19 +64,9 @@ fe_mainRead(std::string file);
 /** Creates the shape functions for an 8 noded element */
 VectorXd
 fe_shapes_8(double rvalue, double svalue, double tvalue);
-/** dndr of isoparametric element calculated for particular r, s, and t */
-VectorXd
-fe_dndr_8(double rvalue, double svalue, double tvalue);
-/** dnds of isoparametric element calculated for particular r, s, and t */
-VectorXd
-fe_dnds_8(double rvalue, double svalue, double tvalue);
-/** dndt of isoparametric element calculated for particular r, s, and t */
-VectorXd
-fe_dndt_8(double rvalue, double svalue, double tvalue);
+/** dn of isoparametric element calculated for particular r, s, and t */
 
-void fe_dndr_8_pbr(VectorXd& dndr, double rvalue, double svalue, double tvalue);
-void fe_dnds_8_pbr(VectorXd& dnds, double rvalue, double svalue, double tvalue);
-void fe_dndt_8_pbr(VectorXd& dndt, double rvalue, double svalue, double tvalue);
+void fe_dniso_8(VectorXd& dndr, VectorXd& dnds, VectorXd& dndt, double& r, double& s, double& t);
 
 /** Create a guass_point vector of n values */
 VectorXd
@@ -236,7 +226,7 @@ fe_insert_vector2matrix(MatrixXd A, VectorXd B, int num, int opt);
 /* FEM */
 /* =================================================================== */
 /** Calculates the resultant force vector - Box 6.1 of Belytschko */
-VectorXd fe_getforce(int ndof, VectorXd& u, VectorXd& fext, int time_step_counter);
+void fe_getforce(VectorXd& f_tot, int ndof, VectorXd& u, VectorXd& fext, int time_step_counter);
 
 /** Find the index based on the DOF of a particular node */
 VectorXi
@@ -244,18 +234,16 @@ fe_find_index(VectorXi node_list);
 /** Run the finite element analysis using an explicit dynamic method */
 void
 fe_mainEXPLICIT();
+
 /** Function enforces displacement boundary condition */
-VectorXd
-fe_apply_bc_displacement(VectorXd U, double time);
+void fe_apply_bc_displacement(VectorXd& U, double& time);
 /** Function enforces velocity boundary condition */
-VectorXd
-fe_apply_bc_velocity(VectorXd V, double time);
+void fe_apply_bc_velocity(VectorXd& V, double& time);
 /** Function enforces acceleration boundary condition */
-VectorXd
-fe_apply_bc_acceleration(VectorXd A, double time);
+void fe_apply_bc_acceleration(VectorXd& A, double& time);
 /** Function updates the applied load */
-VectorXd
-fe_apply_bc_load(VectorXd fe, double time);
+void fe_apply_bc_load(VectorXd& fe, double& time);
+
 /** Assembles the global mass matrix */
 MatrixXd
 fe_assemble_mass(MatrixXd mm, MatrixXd m, VectorXi node_list, int sdof);
@@ -339,22 +327,19 @@ void fe_calculateMassDirectLumped_embed(VectorXd& m_system, int host_id, int emb
 VectorXd
 fe_massLumped(MatrixXd* nodes, VectorXi elements_row);
 
-VectorXd
-fe_calculateAccln(VectorXd mm, VectorXd F_net);
+void fe_calculateAccln(VectorXd& A, VectorXd& mm, VectorXd& F_net);
 
-double
-fe_calculateKE(VectorXd mm, VectorXd V);
+void fe_calculateKE(double& KE, VectorXd& mm, VectorXd& V);
+
 double
 fe_calculateKE(MatrixXd mm, VectorXd V);
 
 VectorXd
 text2vector(std::string name);
 
-VectorXd
-fe_getForce_3d_normal(VectorXd& u, VectorXd& fext, int time_step_counter, int host_id);
+void fe_getForce_3d_normal(VectorXd& f_tot, VectorXd& u, VectorXd& fext, int time_step_counter, int host_id);
 
-VectorXd
-fe_getForce_3d_embed(VectorXd& u, VectorXd& fext, int time_step_counter, int host_id, int embed_id, bool address_vr);
+void fe_getForce_3d_embed(VectorXd& f_tot, VectorXd& u, VectorXd& fext, int time_step_counter, int host_id, int embed_id, bool address_vr);
 
 VectorXd fe_calCentroidStress_3d(int nnel, VectorXd& xcoord, VectorXd& ycoord, VectorXd& zcoord, VectorXd& u_e, int material_id);
 void fe_calCentroidStress_3d_pbr(VectorXd& element_stress, int nnel, VectorXd& xcoord, VectorXd& ycoord, VectorXd& zcoord, VectorXd& u_e, int material_id);
@@ -376,6 +361,20 @@ fe_calCentroidStrain_embed_3d(VectorXd& u_embed, VectorXd& xcoord_embed, VectorX
                               double length_old);
 void fe_calCentroidStrain_embed_3d_pbr(VectorXd& element_strain, VectorXd& u_embed, VectorXd& xcoord_embed, VectorXd& ycoord_embed, VectorXd& zcoord_embed, double length_old);
 
-VectorXd fe_calculateFR(int sdof, VectorXd fi_curr, VectorXd mm, VectorXd A);
+void fe_calculateFR(VectorXd& fr, int& sdof, VectorXd& fi_curr, VectorXd& mm, VectorXd& A);
+
+void fe_timeUpdate(VectorXd& U, VectorXd& V, VectorXd& V_half, VectorXd& A, double& t, double& dT, std::string time_integration_method);
+
+void fe_timeUpdate_velocity(VectorXd& V, VectorXd& V_half, VectorXd& A, double& t, double& dT, std::string time_integration_method);
+
+void fe_calculateEW(VectorXd& U_prev, VectorXd& U, VectorXd& fe_prev, VectorXd& fe, VectorXd& fr_prev, VectorXd& fr_curr, double& energy_ext_old, double& energy_ext_new);
+
+void fe_calculateIE(VectorXd& U_prev, VectorXd& U, VectorXd& fi_prev, VectorXd& fi_curr, double& energy_int_old, double& energy_int_new);
+
+void fe_checkEnergies(VectorXd& U_prev, VectorXd& U, VectorXd& fi_prev, VectorXd& fi_curr, VectorXd& fe_prev, VectorXd& fe, VectorXd& fr_prev, VectorXd& fr_curr, VectorXd& m_system, VectorXd& V, double& energy_int_old, double& energy_int_new, double& energy_ext_old, double& energy_ext_new, double& energy_kin, double& energy_total, double& energy_max) ;
+
+void fe_energyWrite_new(std::string& internal_energy, std::string& external_energy, std::string& kinetic_energy, std::string& total_energy, int plot_state_counter, double& t, double& energy_int_new, double& energy_ext_new, double& energy_kin, double& energy_total);
+
+void fe_energyWrite_append(std::string& internal_energy, std::string& external_energy, std::string& kinetic_energy, std::string& total_energy, int plot_state_counter, double& t, double& energy_int_new, double& energy_ext_new, double& energy_kin, double& energy_total);
 
 #endif // ifndef FUNCTIONS_H_

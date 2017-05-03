@@ -46,6 +46,22 @@ double fe_getTimeStep(void)
 
     deltaT_crit = deltaT_element.minCoeff();
 
+    deltaT_crit = deltaT_crit * reduction;
+
+    if (deltaT_crit < failure_time_step) {
+        std::cout << "Simulation Failed - Timestep too small" << "\n";
+        std::cout << "Timestep is: " << deltaT_crit << "\n";
+        std::exit(-1);
+    }
+
+    if (deltaT_crit > dt_min) {
+        deltaT_crit = dt_min;
+    }
+
+    if (deltaT_crit > (t_end / ((double)output_frequency))) {
+        deltaT_crit = (t_end / ((double)output_frequency));
+    }
+
     nodes = NULL;
     elements = NULL;
 

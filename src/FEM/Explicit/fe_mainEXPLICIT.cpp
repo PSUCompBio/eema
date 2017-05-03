@@ -26,13 +26,8 @@ fe_mainEXPLICIT()
     int nnode = mesh[0].getNumNodes();          // number of nodes
     int sdof  = nnode * ndof;          // system degrees of freedom
 
-    // Writing the Read Mesh
-    // fe_vtkWrite_host("eem_matrix",1,5,0,updated_nodes,elements);
-    // return;
-
     // Initialization
     double dT             = dt_initial;
-    double t_half         = 0; // t(n + 1/2)
     double t              = t_start;
     int time_step_counter = 0; // time step count
     int plot_state_counter = 1;
@@ -44,13 +39,13 @@ fe_mainEXPLICIT()
     VectorXd F_net        = VectorXd::Zero(sdof); // Total Nodal force vector
     VectorXd fe           = VectorXd::Zero(sdof); // External Nodal force vector
     VectorXd fe_prev      = VectorXd::Zero(sdof);
-    VectorXd fe_curr      = VectorXd::Zero(sdof);
+
     VectorXd fr_prev      = VectorXd::Zero(sdof);
     VectorXd fr_curr      = VectorXd::Zero(sdof);
     VectorXd fi_prev      = VectorXd::Zero(sdof); // Internal nodal force vector at previous timestep
     VectorXd fi_curr      = VectorXd::Zero(sdof); // Internal Nodal force vector at current timestep
-    VectorXd U_prev       = VectorXd::Zero(sdof); // Nodal displacements at previous time
-    VectorXd U_curr       = VectorXd::Zero(sdof); // Nodal displacements at current time
+    VectorXd U_prev       = VectorXd::Zero(sdof);
+
     double energy_int_old = 0;
     double energy_int_new = 0;
     double energy_ext_old = 0;
@@ -60,16 +55,13 @@ fe_mainEXPLICIT()
     double energy_max     = 0;
 
     std::string internal_energy = home_path + "/" + "results/internal_energy_system.txt";
-    new_double2textWithTime(internal_energy, plot_state_counter - 1, t, energy_int_new);
     std::string external_energy = home_path + "/" + "results/external_energy_system.txt";
-    new_double2textWithTime(external_energy, plot_state_counter - 1, t, energy_ext_new);
     std::string kinetic_energy = home_path + "/" + "results/kinetic_energy_system.txt";
-    new_double2textWithTime(kinetic_energy, plot_state_counter - 1, t, energy_kin);
     std::string total_energy = home_path + "/" + "results/total_energy_system.txt";
-    new_double2textWithTime(total_energy, plot_state_counter - 1, t, energy_total);
+    fe_energyWrite_new(internal_energy, external_energy, kinetic_energy, total_energy, plot_state_counter, t, energy_int_new, energy_ext_new, energy_kin, energy_total);
 
     // Loading Conditions
-    fe = fe_apply_bc_load(fe, 0);
+    fe_apply_bc_load(fe, t_start);
 
     // ----------------------------------------------------------------------------
     // Step-1: Calculate the mass matrix similar to that of belytschko.
@@ -81,7 +73,7 @@ fe_mainEXPLICIT()
 
     // ----------------------------------------------------------------------------
     // Step-2: getforce step from Belytschko
-    F_net = fe_getforce(ndof, U, fe, time_step_counter);
+    fe_getforce(F_net, ndof, U, fe, time_step_counter);
 
     mesh[0].readNodalKinematics(U, V, A);
 
@@ -89,118 +81,53 @@ fe_mainEXPLICIT()
         fe_vtuWrite(plot_state_counter - 1, t, mesh[i]);
     }
 
-    dT = reduction * fe_getTimeStep();
-    if (dT > dt_min) {
-        dT = dt_min;
-    }
-
-    //std::exit(-1);
+    dT = fe_getTimeStep();
 
     // ----------------------------------------------------------------------------
-
     // Step-3: Calculate accelerations
-    A      = fe_calculateAccln(m_system, F_net);
+    fe_calculateAccln(A, m_system, F_net);
     U_prev = U;
 
     // ----------------------------------------------------------------------------
-
     // Step-4: Time loop starts....
     time_step_counter = time_step_counter + 1;
     clock_t s, s_prev, ds;
     s = clock();
 
     while (t <= t_end) {
-        /** Apply Loading Conditions - time dependent loading conditions */
-        fe = fe_apply_bc_load(fe, t);
 
-        /** Calculate the time at half time step */
-        t_half = 0.5 * (t + t + dT);
+        /** Update Loading Conditions - time dependent loading conditions */
+        fe_apply_bc_load(fe, t);
 
-        /** Update the time by adding full time step */
-        t = t + dT;
+        /** Steps - 4,5,6 and 7 from Belytschko Box 6.1 - Update time, velocity and displacements */
+        fe_timeUpdate(U, V, V_half, A, t, dT, "newmark-beta-central-difference");
 
-        /** Partially Update Nodal Velocities */
-        V_half = V + (t_half - (t - dT)) * A;
-
-        /** Enforce Velocity Boundary Conditions */
-        // V_half = fe_apply_bc_velocity(V_half,t_half);
-        // std::cout << "V_half: \n" << V_half << '\n';
-
-        /** Update Nodal Displacements */
-        U = U + dT * (V_half);
-        U = fe_apply_bc_displacement(U, t);
-
-        F_net = fe_getforce(ndof, U, fe, time_step_counter); // Calculating the force term.
+        /** Step - 8 from Belytschko Box 6.1 - Calculate net nodal force*/
+        fe_getforce(F_net, ndof, U, fe, time_step_counter); // Calculating the force term.
 
         fi_curr = fe - F_net;
-        fr_curr = fe_calculateFR(sdof, fi_curr, m_system, A);
+        fe_calculateFR(fr_curr, sdof, fi_curr, m_system, A);
 
-/*std::cout << "****************************************************\n";
-std::cout << "current time = " << t << std::endl;
-std::cout << "RF3 node #4 = " << fr_curr[14] << std::endl;
-std::cout << "RF3 node #5 = " << fr_curr[17] << std::endl;
-std::cout << "RF3 node #6 = " << fr_curr[20] << std::endl;
-std::cout << "RF3 node #7 = " << fr_curr[23] << std::endl;
-std::cout << "****************************************************\n";*/
+        /*std::cout << "****************************************************\n";
+        std::cout << "current time = " << t << std::endl;
+        std::cout << "RF3 node #4 = " << fr_curr[14] << std::endl;
+        std::cout << "RF3 node #5 = " << fr_curr[17] << std::endl;
+        std::cout << "RF3 node #6 = " << fr_curr[20] << std::endl;
+        std::cout << "RF3 node #7 = " << fr_curr[23] << std::endl;
+        std::cout << "****************************************************\n";*/
 
-        dT = reduction * fe_getTimeStep();
-        if (dT < failure_time_step) {
-            std::cout << "Simulation Failed - Timestep too small" << "\n";
-            std::cout << "Timestep is: " << dT << "\n";
-            std::exit(-1);
-        }
-        if (dT > dt_min) {
-            dT = dt_min;
-        }
-        if (((t + dT) > t_end) && (t != t_end)) {
-            dT = t_end - t;
-            if (dT < 0) {
-                break;
-            }
-        }
+        /** Step - 9 from Belytschko Box 6.1 - Calculate Accelerations */
+        fe_calculateAccln(A, m_system, F_net); // Calculating the new accelerations from total nodal forces.
+        fe_apply_bc_acceleration(A, t);
 
-        /** Calculate Accelerations */
-        A = fe_calculateAccln(m_system, F_net); // Calculating the new accelerations from total nodal forces.
-        A = fe_apply_bc_acceleration(A, t);
+        /** Step- 10 from Belytschko Box 6.1 - Second Partial Update of Nodal Velocities */
+        fe_timeUpdate_velocity(V, V_half, A, t, dT, "newmark-beta-central-difference");
 
-        /** Completely Update the nodal velocities */
-        V = V_half + (t - t_half) * A; // Calculating the new velocities.
-        V = fe_apply_bc_velocity(V, t);
+        /** Step - 11 from Belytschko Box 6.1 - Calculating energies and Checking Energy Balance */
+        fe_checkEnergies(U_prev, U, fi_prev, fi_curr, fe_prev, fe, fr_prev, fr_curr, m_system, V, energy_int_old, energy_int_new, energy_ext_old, energy_ext_new, energy_kin, energy_total, energy_max);
 
-        /* Calculating the internal energy terms */
-        U_curr = U;
-        VectorXd del_U = U_curr - U_prev;
-        energy_int_new = energy_int_old + 0.5 * (del_U.dot(fi_prev + fi_curr));
-        fi_prev        = fi_curr;
-        U_prev         = U_curr;
-        energy_int_old = energy_int_new;
-        fi_curr = VectorXd::Zero(sdof);
-
-        /* Calculating the external energy terms */
-        fe_curr        = fe;
-        energy_ext_new = energy_ext_old + 0.5 * (del_U.dot((fe_prev + fr_prev) + (fe_curr + fr_curr)));
-
-        fe_prev        = fe_curr;
-	fr_prev = fr_curr;
-        energy_ext_old = energy_ext_new;
-
-        /* Calculating the kinetic energy */
-        energy_kin = fe_calculateKE(m_system, V);
-
-        /* Calculating the total energy of the system */
-        energy_total = std::abs(energy_kin + energy_int_new - energy_ext_new);
-        energy_max   = std::max(std::max(energy_kin, energy_int_new), energy_ext_new);
-
-        /*if (energy_total > (eps_energy * (energy_max))) {
-            std::cout << "**********************************************" << std::endl;
-            std::cout << "ALERT: INSTABILITIES IN THE SYSTEM DETECTED \n BASED ON THE ENERGY BALANCE CHECK \n";
-            std::cout << "**********************************************" << std::endl;
-        }*/
-
-        /** Projection of displacements to the embedded mesh is needed */
-        /* */
-        /* */
         mesh[0].readNodalKinematics(U, V, A);
+
         if (t >= (plot_state_counter * (output_temp_1))) {
 
             for (int i = 0; i < num_meshes; i++) {
@@ -208,8 +135,7 @@ std::cout << "****************************************************\n";*/
             }
 
             plot_state_counter = plot_state_counter + 1;
-            // fe_vtkWrite_host("eem_matrix",1,5,size_counter,nodes,elements);
-            // fe_vtkWrite_truss("eem_truss",1,5,size_counter,nodes_truss,elements_truss);
+
             std::cout << "-----------------------------------" << "\n";
             std::cout << " Timestep Value = " << std::setw(5) << std::scientific << std::setprecision(1) << dT
                       << "\n Current Time = " << std::setw(5) << std::setprecision(1) << t
@@ -224,16 +150,21 @@ std::cout << "****************************************************\n";*/
             // std::cout << std::setw(5)<<std::scientific<<std::setprecision(5) <<"Kinetic Energy: " << energy_kin << "\n";
 
             /*print current frame, current time, and energy to individual .txt files*/
-            append_double2textWithTime(internal_energy, plot_state_counter - 1, t, energy_int_new);
-            append_double2textWithTime(external_energy, plot_state_counter - 1, t, energy_ext_new);
-            append_double2textWithTime(kinetic_energy, plot_state_counter - 1, t, energy_kin);
-            append_double2textWithTime(total_energy, plot_state_counter - 1, t, energy_total);
+            fe_energyWrite_append(internal_energy, external_energy, kinetic_energy, total_energy, plot_state_counter, t, energy_int_new, energy_ext_new, energy_kin, energy_total);
         }
 
         s_prev = s;
         s      = clock();
         ds     = s - s_prev;
         time_step_counter = time_step_counter + 1;
+
+        dT = fe_getTimeStep();
+        if (((t + dT) > t_end) && (t != t_end)) {
+            dT = t_end - t;
+            if (dT < 0) {
+                break;
+            }
+        }
 
     }
 } // fe_mainEXPLICIT

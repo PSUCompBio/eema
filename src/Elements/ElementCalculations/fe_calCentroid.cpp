@@ -9,6 +9,7 @@ fe_calCentroidStress_3d(int nnel, VectorXd& xcoord, VectorXd& ycoord, VectorXd& 
 
     VectorXd sigma_centroid = VectorXd::Zero(6);
     VectorXd element_stress = VectorXd::Zero(9);
+    double zero = 0.0;
     /** Strain Displacement Matrix of size 6 X edof (= nnel*ndof) */
     MatrixXd disp_mat(6, edof);
     VectorXd dndr(nnel);
@@ -20,9 +21,7 @@ fe_calCentroidStress_3d(int nnel, VectorXd& xcoord, VectorXd& ycoord, VectorXd& 
     MatrixXd jacobian(ndof, ndof);
     MatrixXd invJacobian(ndof, ndof);
 
-    dndr        = fe_dndr_8(0, 0, 0);
-    dnds        = fe_dnds_8(0, 0, 0);
-    dndt        = fe_dndt_8(0, 0, 0);
+    fe_dniso_8(dndr, dnds, dndt, zero, zero, zero);
     jacobian    = fe_calJacobian(ndof, nnel, dndr, dnds, dndt, xcoord, ycoord, zcoord);
     invJacobian = jacobian.inverse();
     dndx        = fe_dndx_8(nnel, dndr, dnds, dndt, invJacobian);
@@ -52,6 +51,7 @@ void fe_calCentroidStress_3d_pbr(VectorXd& element_stress, int nnel, VectorXd& x
 
     VectorXd sigma_centroid = VectorXd::Zero(6);
     element_stress = VectorXd::Zero(ndof * ndof);
+    double zero = 0.0;
 
     /** Strain Displacement Matrix of size 6 X edof (= nnel*ndof) */
     MatrixXd disp_mat(6, edof);
@@ -64,9 +64,7 @@ void fe_calCentroidStress_3d_pbr(VectorXd& element_stress, int nnel, VectorXd& x
     MatrixXd jacobian(ndof, ndof);
     MatrixXd invJacobian(ndof, ndof);
 
-    fe_dndr_8_pbr(dndr, 0, 0, 0);
-    fe_dnds_8_pbr(dnds, 0, 0, 0);
-    fe_dndt_8_pbr(dndt, 0, 0, 0);
+    fe_dniso_8(dndr, dnds, dndt, zero, zero, zero);
     jacobian    = fe_calJacobian(ndof, nnel, dndr, dnds, dndt, xcoord, ycoord, zcoord);
     invJacobian = jacobian.inverse();
     fe_dndx_8_pbr(dndx, nnel, dndr, dnds, dndt, invJacobian);
@@ -95,6 +93,7 @@ fe_calCentroidStrain_3d(int nnel, VectorXd& xcoord, VectorXd& ycoord, VectorXd& 
     int edof = nnel * ndof;
 
     VectorXd element_strain = VectorXd::Zero(9);
+    double zero = 0.0;
     MatrixXd disp_mat(6, edof);
     VectorXd dndr(nnel);
     VectorXd dnds(nnel);
@@ -105,9 +104,7 @@ fe_calCentroidStrain_3d(int nnel, VectorXd& xcoord, VectorXd& ycoord, VectorXd& 
     MatrixXd jacobian(ndof, ndof);
     MatrixXd invJacobian(ndof, ndof);
 
-    dndr        = fe_dndr_8(0, 0, 0);
-    dnds        = fe_dnds_8(0, 0, 0);
-    dndt        = fe_dndt_8(0, 0, 0);
+    fe_dniso_8(dndr, dnds, dndt, zero, zero, zero);
     jacobian    = fe_calJacobian(ndof, nnel, dndr, dnds, dndt, xcoord, ycoord, zcoord);
     invJacobian = jacobian.inverse();
     dndx        = fe_dndx_8(nnel, dndr, dnds, dndt, invJacobian);
@@ -151,6 +148,7 @@ void fe_calCentroidStrain_3d_pbr(VectorXd& element_strain, int nnel, VectorXd& x
     int edof = nnel * ndof;
 
     element_strain = VectorXd::Zero(ndof * ndof);
+    double zero = 0.0;
     MatrixXd disp_mat(6, edof);
     VectorXd dndr(nnel);
     VectorXd dnds(nnel);
@@ -161,9 +159,7 @@ void fe_calCentroidStrain_3d_pbr(VectorXd& element_strain, int nnel, VectorXd& x
     MatrixXd jacobian(ndof, ndof);
     MatrixXd invJacobian(ndof, ndof);
 
-    fe_dndr_8_pbr(dndr, 0, 0, 0);
-    fe_dnds_8_pbr(dnds, 0, 0, 0);
-    fe_dndt_8_pbr(dndt, 0, 0, 0);
+    fe_dniso_8(dndr, dnds, dndt, zero, zero, zero);
     jacobian    = fe_calJacobian(ndof, nnel, dndr, dnds, dndt, xcoord, ycoord, zcoord);
     invJacobian = jacobian.inverse();
     fe_dndx_8_pbr(dndx, nnel, dndr, dnds, dndt, invJacobian);
